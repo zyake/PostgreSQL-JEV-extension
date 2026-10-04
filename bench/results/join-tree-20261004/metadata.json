@@ -1,0 +1,10 @@
+{
+  "postgres": "PostgreSQL 17.10 (Homebrew)",
+  "extension_version": "0.3.0",
+  "source_sha256": {
+    "sql/jev--0.3.0.sql": "9cbd4a2bfeff3cd002d491c00c01d83dc1d5ab3812011c1b83e3222d1d986e36",
+    "sql/jev--0.2.0--0.3.0.sql": "c4b726ae02bf98914212dab9b5d783bcf6524f80cffd0963d57a815fa2600cec",
+    "test/sql/join_tree.sql": "3eeab0e7864484ff713a9b25e044a6070d14c90003b02628f809cfff1530fc8a",
+    "examples/join_tree_demo.sql": "89f5514dc3c3a94be866c35615a916fc86c01e5131cfecc1ad941f9143da53a6"
+  }
+}

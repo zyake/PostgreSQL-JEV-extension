@@ -1,0 +1,46 @@
+Pager usage is off.
+Null display is "(NULL)".
+psql:examples/join_tree_demo.sql:4: NOTICE:  extension "jev" already exists, skipping
+CREATE EXTENSION
+BEGIN
+CREATE TABLE
+INSERT 0 6
+CREATE TABLE
+INSERT 0 10
+CREATE TABLE
+INSERT 0 6
+SELECT 3
+ node | source_relation | input_rows | retained_rows 
+------+-----------------+------------+---------------
+    1 | jev_tree_a      |          6 |             3
+    2 | jev_tree_b      |         10 |             5
+    3 | jev_tree_c      |          6 |             3
+(3 rows)
+
+SELECT 5
+SELECT 5
+SELECT 9
+ candidate_occurrences | nonnull_occurrences | distinct_nonnull_pairs 
+-----------------------+---------------------+------------------------
+                     5 |                   4 |                      3
+(1 row)
+
+ semantic_result_rows 
+----------------------
+                    9
+(1 row)
+
+  a_id  | b_id  |  c_id  | left_text | right_text | multiplicity 
+--------+-------+--------+-----------+------------+--------------
+ shop   | offer | stock  | boots     | boots      |            8
+ (NULL) | offer | (NULL) | coat      | coat       |            1
+(2 rows)
+
+SELECT 9
+ result_bags_equal 
+-------------------
+ t
+(1 row)
+
+DO
+ROLLBACK

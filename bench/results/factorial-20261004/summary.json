@@ -1,0 +1,5506 @@
+[
+  {
+    "mask": 0,
+    "bits": "0000000",
+    "settings": {
+      "enable_batching": false,
+      "enable_deduplication": false,
+      "enable_result_cache": false,
+      "enable_relational_prefilter": false,
+      "reuse_kernel_plan": false,
+      "enable_join_reduction": false,
+      "enable_selective_fallback": false
+    },
+    "median_ms": 1078.714,
+    "min_ms": 964.279,
+    "max_ms": 1217.393,
+    "samples_ms": [
+      971.681,
+      964.279,
+      1217.393,
+      1078.714,
+      1080.864,
+      980.183,
+      1131.026
+    ],
+    "median_stage_ms": {
+      "reduction": 13.665,
+      "semantic": 1063.296,
+      "join": 2.002
+    },
+    "work": {
+      "Candidate Rows": 8192,
+      "Kernel Inputs": 8108,
+      "Kernel Calls": 8108,
+      "Cache Hits": 0,
+      "Batch Size": 1
+    },
+    "retained_rows": [
+      5,
+      8192,
+      5
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 1,
+    "bits": "1000000",
+    "settings": {
+      "enable_batching": true,
+      "enable_deduplication": false,
+      "enable_result_cache": false,
+      "enable_relational_prefilter": false,
+      "reuse_kernel_plan": false,
+      "enable_join_reduction": false,
+      "enable_selective_fallback": false
+    },
+    "median_ms": 47.032,
+    "min_ms": 44.391,
+    "max_ms": 72.433,
+    "samples_ms": [
+      47.856,
+      48.599,
+      72.433,
+      47.032,
+      44.843,
+      46.283,
+      44.391
+    ],
+    "median_stage_ms": {
+      "reduction": 14.274,
+      "semantic": 30.872,
+      "join": 1.966
+    },
+    "work": {
+      "Candidate Rows": 8192,
+      "Kernel Inputs": 8108,
+      "Kernel Calls": 64,
+      "Cache Hits": 0,
+      "Batch Size": 128
+    },
+    "retained_rows": [
+      5,
+      8192,
+      5
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 2,
+    "bits": "0100000",
+    "settings": {
+      "enable_batching": false,
+      "enable_deduplication": true,
+      "enable_result_cache": false,
+      "enable_relational_prefilter": false,
+      "reuse_kernel_plan": false,
+      "enable_join_reduction": false,
+      "enable_selective_fallback": false
+    },
+    "median_ms": 1035.725,
+    "min_ms": 991.54,
+    "max_ms": 1242.513,
+    "samples_ms": [
+      1022.613,
+      991.54,
+      1063.186,
+      1242.513,
+      1140.139,
+      994.25,
+      1035.725
+    ],
+    "median_stage_ms": {
+      "reduction": 13.873,
+      "semantic": 1016.47,
+      "join": 1.974
+    },
+    "work": {
+      "Candidate Rows": 8192,
+      "Kernel Inputs": 8108,
+      "Kernel Calls": 8108,
+      "Cache Hits": 0,
+      "Batch Size": 1
+    },
+    "retained_rows": [
+      5,
+      8192,
+      5
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 3,
+    "bits": "1100000",
+    "settings": {
+      "enable_batching": true,
+      "enable_deduplication": true,
+      "enable_result_cache": false,
+      "enable_relational_prefilter": false,
+      "reuse_kernel_plan": false,
+      "enable_join_reduction": false,
+      "enable_selective_fallback": false
+    },
+    "median_ms": 33.557,
+    "min_ms": 32.538,
+    "max_ms": 47.229,
+    "samples_ms": [
+      33.557,
+      47.229,
+      35.812,
+      34.119,
+      33.362,
+      33.038,
+      32.538
+    ],
+    "median_stage_ms": {
+      "reduction": 13.506,
+      "semantic": 18.834,
+      "join": 1.647
+    },
+    "work": {
+      "Candidate Rows": 8192,
+      "Kernel Inputs": 2048,
+      "Kernel Calls": 64,
+      "Cache Hits": 0,
+      "Batch Size": 128
+    },
+    "retained_rows": [
+      5,
+      8192,
+      5
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 4,
+    "bits": "0010000",
+    "settings": {
+      "enable_batching": false,
+      "enable_deduplication": false,
+      "enable_result_cache": true,
+      "enable_relational_prefilter": false,
+      "reuse_kernel_plan": false,
+      "enable_join_reduction": false,
+      "enable_selective_fallback": false
+    },
+    "median_ms": 49.888,
+    "min_ms": 49.055,
+    "max_ms": 61.112,
+    "samples_ms": [
+      51.351,
+      49.055,
+      61.08,
+      49.617,
+      49.888,
+      49.362,
+      61.112
+    ],
+    "median_stage_ms": {
+      "reduction": 13.952,
+      "semantic": 34.64,
+      "join": 1.736
+    },
+    "work": {
+      "Candidate Rows": 8192,
+      "Kernel Inputs": 256,
+      "Kernel Calls": 256,
+      "Cache Hits": 7852,
+      "Batch Size": 1
+    },
+    "retained_rows": [
+      5,
+      8192,
+      5
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 5,
+    "bits": "1010000",
+    "settings": {
+      "enable_batching": true,
+      "enable_deduplication": false,
+      "enable_result_cache": true,
+      "enable_relational_prefilter": false,
+      "reuse_kernel_plan": false,
+      "enable_join_reduction": false,
+      "enable_selective_fallback": false
+    },
+    "median_ms": 22.142,
+    "min_ms": 21.172,
+    "max_ms": 30.769,
+    "samples_ms": [
+      21.172,
+      21.682,
+      21.79,
+      30.769,
+      24.448,
+      22.142,
+      24.463
+    ],
+    "median_stage_ms": {
+      "reduction": 13.975,
+      "semantic": 7.552,
+      "join": 1.633
+    },
+    "work": {
+      "Candidate Rows": 8192,
+      "Kernel Inputs": 1014,
+      "Kernel Calls": 8,
+      "Cache Hits": 7094,
+      "Batch Size": 128
+    },
+    "retained_rows": [
+      5,
+      8192,
+      5
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 6,
+    "bits": "0110000",
+    "settings": {
+      "enable_batching": false,
+      "enable_deduplication": true,
+      "enable_result_cache": true,
+      "enable_relational_prefilter": false,
+      "reuse_kernel_plan": false,
+      "enable_join_reduction": false,
+      "enable_selective_fallback": false
+    },
+    "median_ms": 51.798,
+    "min_ms": 50.612,
+    "max_ms": 65.662,
+    "samples_ms": [
+      65.662,
+      50.96,
+      50.612,
+      51.798,
+      52.244,
+      51.691,
+      54.453
+    ],
+    "median_stage_ms": {
+      "reduction": 13.509,
+      "semantic": 36.891,
+      "join": 1.609
+    },
+    "work": {
+      "Candidate Rows": 8192,
+      "Kernel Inputs": 256,
+      "Kernel Calls": 256,
+      "Cache Hits": 7852,
+      "Batch Size": 1
+    },
+    "retained_rows": [
+      5,
+      8192,
+      5
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 7,
+    "bits": "1110000",
+    "settings": {
+      "enable_batching": true,
+      "enable_deduplication": true,
+      "enable_result_cache": true,
+      "enable_relational_prefilter": false,
+      "reuse_kernel_plan": false,
+      "enable_join_reduction": false,
+      "enable_selective_fallback": false
+    },
+    "median_ms": 20.561,
+    "min_ms": 19.204,
+    "max_ms": 39.133,
+    "samples_ms": [
+      19.204,
+      21.566,
+      20.647,
+      39.133,
+      19.64,
+      20.561,
+      19.732
+    ],
+    "median_stage_ms": {
+      "reduction": 13.346,
+      "semantic": 5.385,
+      "join": 1.541
+    },
+    "work": {
+      "Candidate Rows": 8192,
+      "Kernel Inputs": 256,
+      "Kernel Calls": 8,
+      "Cache Hits": 7094,
+      "Batch Size": 128
+    },
+    "retained_rows": [
+      5,
+      8192,
+      5
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 8,
+    "bits": "0001000",
+    "settings": {
+      "enable_batching": false,
+      "enable_deduplication": false,
+      "enable_result_cache": false,
+      "enable_relational_prefilter": true,
+      "reuse_kernel_plan": false,
+      "enable_join_reduction": false,
+      "enable_selective_fallback": false
+    },
+    "median_ms": 521.401,
+    "min_ms": 487.091,
+    "max_ms": 862.973,
+    "samples_ms": [
+      862.973,
+      521.401,
+      567.729,
+      588.498,
+      495.448,
+      487.091,
+      492.997
+    ],
+    "median_stage_ms": {
+      "reduction": 14.378,
+      "semantic": 505.347,
+      "join": 1.964
+    },
+    "work": {
+      "Candidate Rows": 4096,
+      "Kernel Inputs": 4052,
+      "Kernel Calls": 4052,
+      "Cache Hits": 0,
+      "Batch Size": 1
+    },
+    "retained_rows": [
+      5,
+      8192,
+      5
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 9,
+    "bits": "1001000",
+    "settings": {
+      "enable_batching": true,
+      "enable_deduplication": false,
+      "enable_result_cache": false,
+      "enable_relational_prefilter": true,
+      "reuse_kernel_plan": false,
+      "enable_join_reduction": false,
+      "enable_selective_fallback": false
+    },
+    "median_ms": 30.502,
+    "min_ms": 29.273,
+    "max_ms": 34.969,
+    "samples_ms": [
+      30.089,
+      30.193,
+      29.273,
+      33.477,
+      31.003,
+      30.502,
+      34.969
+    ],
+    "median_stage_ms": {
+      "reduction": 13.227,
+      "semantic": 15.695,
+      "join": 1.605
+    },
+    "work": {
+      "Candidate Rows": 4096,
+      "Kernel Inputs": 4052,
+      "Kernel Calls": 32,
+      "Cache Hits": 0,
+      "Batch Size": 128
+    },
+    "retained_rows": [
+      5,
+      8192,
+      5
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 10,
+    "bits": "0101000",
+    "settings": {
+      "enable_batching": false,
+      "enable_deduplication": true,
+      "enable_result_cache": false,
+      "enable_relational_prefilter": true,
+      "reuse_kernel_plan": false,
+      "enable_join_reduction": false,
+      "enable_selective_fallback": false
+    },
+    "median_ms": 527.0,
+    "min_ms": 504.856,
+    "max_ms": 585.481,
+    "samples_ms": [
+      552.86,
+      569.424,
+      525.401,
+      515.275,
+      527.0,
+      585.481,
+      504.856
+    ],
+    "median_stage_ms": {
+      "reduction": 14.548,
+      "semantic": 510.161,
+      "join": 2.009
+    },
+    "work": {
+      "Candidate Rows": 4096,
+      "Kernel Inputs": 4052,
+      "Kernel Calls": 4052,
+      "Cache Hits": 0,
+      "Batch Size": 1
+    },
+    "retained_rows": [
+      5,
+      8192,
+      5
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 11,
+    "bits": "1101000",
+    "settings": {
+      "enable_batching": true,
+      "enable_deduplication": true,
+      "enable_result_cache": false,
+      "enable_relational_prefilter": true,
+      "reuse_kernel_plan": false,
+      "enable_join_reduction": false,
+      "enable_selective_fallback": false
+    },
+    "median_ms": 24.734,
+    "min_ms": 24.245,
+    "max_ms": 27.667,
+    "samples_ms": [
+      24.734,
+      24.637,
+      24.245,
+      27.667,
+      26.808,
+      24.318,
+      25.553
+    ],
+    "median_stage_ms": {
+      "reduction": 13.321,
+      "semantic": 10.378,
+      "join": 1.509
+    },
+    "work": {
+      "Candidate Rows": 4096,
+      "Kernel Inputs": 1024,
+      "Kernel Calls": 32,
+      "Cache Hits": 0,
+      "Batch Size": 128
+    },
+    "retained_rows": [
+      5,
+      8192,
+      5
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 12,
+    "bits": "0011000",
+    "settings": {
+      "enable_batching": false,
+      "enable_deduplication": false,
+      "enable_result_cache": true,
+      "enable_relational_prefilter": true,
+      "reuse_kernel_plan": false,
+      "enable_join_reduction": false,
+      "enable_selective_fallback": false
+    },
+    "median_ms": 34.889,
+    "min_ms": 32.289,
+    "max_ms": 45.851,
+    "samples_ms": [
+      45.851,
+      36.382,
+      40.503,
+      32.386,
+      32.289,
+      32.391,
+      34.889
+    ],
+    "median_stage_ms": {
+      "reduction": 13.992,
+      "semantic": 18.831,
+      "join": 1.762
+    },
+    "work": {
+      "Candidate Rows": 4096,
+      "Kernel Inputs": 128,
+      "Kernel Calls": 128,
+      "Cache Hits": 3924,
+      "Batch Size": 1
+    },
+    "retained_rows": [
+      5,
+      8192,
+      5
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 13,
+    "bits": "1011000",
+    "settings": {
+      "enable_batching": true,
+      "enable_deduplication": false,
+      "enable_result_cache": true,
+      "enable_relational_prefilter": true,
+      "reuse_kernel_plan": false,
+      "enable_join_reduction": false,
+      "enable_selective_fallback": false
+    },
+    "median_ms": 19.31,
+    "min_ms": 18.011,
+    "max_ms": 20.486,
+    "samples_ms": [
+      19.31,
+      19.399,
+      19.43,
+      18.509,
+      20.486,
+      18.011,
+      19.043
+    ],
+    "median_stage_ms": {
+      "reduction": 13.599,
+      "semantic": 4.112,
+      "join": 1.422
+    },
+    "work": {
+      "Candidate Rows": 4096,
+      "Kernel Inputs": 504,
+      "Kernel Calls": 4,
+      "Cache Hits": 3548,
+      "Batch Size": 128
+    },
+    "retained_rows": [
+      5,
+      8192,
+      5
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 14,
+    "bits": "0111000",
+    "settings": {
+      "enable_batching": false,
+      "enable_deduplication": true,
+      "enable_result_cache": true,
+      "enable_relational_prefilter": true,
+      "reuse_kernel_plan": false,
+      "enable_join_reduction": false,
+      "enable_selective_fallback": false
+    },
+    "median_ms": 34.912,
+    "min_ms": 33.671,
+    "max_ms": 38.41,
+    "samples_ms": [
+      33.671,
+      38.41,
+      36.052,
+      34.295,
+      34.912,
+      34.353,
+      35.797
+    ],
+    "median_stage_ms": {
+      "reduction": 13.411,
+      "semantic": 19.644,
+      "join": 1.804
+    },
+    "work": {
+      "Candidate Rows": 4096,
+      "Kernel Inputs": 128,
+      "Kernel Calls": 128,
+      "Cache Hits": 3924,
+      "Batch Size": 1
+    },
+    "retained_rows": [
+      5,
+      8192,
+      5
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 15,
+    "bits": "1111000",
+    "settings": {
+      "enable_batching": true,
+      "enable_deduplication": true,
+      "enable_result_cache": true,
+      "enable_relational_prefilter": true,
+      "reuse_kernel_plan": false,
+      "enable_join_reduction": false,
+      "enable_selective_fallback": false
+    },
+    "median_ms": 18.828,
+    "min_ms": 17.291,
+    "max_ms": 21.03,
+    "samples_ms": [
+      19.332,
+      21.03,
+      17.291,
+      18.828,
+      18.979,
+      17.927,
+      17.861
+    ],
+    "median_stage_ms": {
+      "reduction": 13.565,
+      "semantic": 3.469,
+      "join": 1.52
+    },
+    "work": {
+      "Candidate Rows": 4096,
+      "Kernel Inputs": 128,
+      "Kernel Calls": 4,
+      "Cache Hits": 3548,
+      "Batch Size": 128
+    },
+    "retained_rows": [
+      5,
+      8192,
+      5
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 16,
+    "bits": "0000100",
+    "settings": {
+      "enable_batching": false,
+      "enable_deduplication": false,
+      "enable_result_cache": false,
+      "enable_relational_prefilter": false,
+      "reuse_kernel_plan": true,
+      "enable_join_reduction": false,
+      "enable_selective_fallback": false
+    },
+    "median_ms": 950.165,
+    "min_ms": 916.257,
+    "max_ms": 1038.557,
+    "samples_ms": [
+      1038.557,
+      950.165,
+      950.184,
+      990.618,
+      943.593,
+      916.257,
+      918.773
+    ],
+    "median_stage_ms": {
+      "reduction": 13.233,
+      "semantic": 933.194,
+      "join": 1.965
+    },
+    "work": {
+      "Candidate Rows": 8192,
+      "Kernel Inputs": 8108,
+      "Kernel Calls": 8108,
+      "Cache Hits": 0,
+      "Batch Size": 1
+    },
+    "retained_rows": [
+      5,
+      8192,
+      5
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 17,
+    "bits": "1000100",
+    "settings": {
+      "enable_batching": true,
+      "enable_deduplication": false,
+      "enable_result_cache": false,
+      "enable_relational_prefilter": false,
+      "reuse_kernel_plan": true,
+      "enable_join_reduction": false,
+      "enable_selective_fallback": false
+    },
+    "median_ms": 46.398,
+    "min_ms": 43.861,
+    "max_ms": 54.646,
+    "samples_ms": [
+      46.389,
+      43.861,
+      54.646,
+      46.48,
+      46.78,
+      45.319,
+      46.398
+    ],
+    "median_stage_ms": {
+      "reduction": 13.79,
+      "semantic": 30.708,
+      "join": 1.589
+    },
+    "work": {
+      "Candidate Rows": 8192,
+      "Kernel Inputs": 8108,
+      "Kernel Calls": 64,
+      "Cache Hits": 0,
+      "Batch Size": 128
+    },
+    "retained_rows": [
+      5,
+      8192,
+      5
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 18,
+    "bits": "0100100",
+    "settings": {
+      "enable_batching": false,
+      "enable_deduplication": true,
+      "enable_result_cache": false,
+      "enable_relational_prefilter": false,
+      "reuse_kernel_plan": true,
+      "enable_join_reduction": false,
+      "enable_selective_fallback": false
+    },
+    "median_ms": 964.392,
+    "min_ms": 945.718,
+    "max_ms": 1275.432,
+    "samples_ms": [
+      1275.432,
+      951.82,
+      964.392,
+      1075.737,
+      991.621,
+      953.588,
+      945.718
+    ],
+    "median_stage_ms": {
+      "reduction": 13.457,
+      "semantic": 949.345,
+      "join": 1.96
+    },
+    "work": {
+      "Candidate Rows": 8192,
+      "Kernel Inputs": 8108,
+      "Kernel Calls": 8108,
+      "Cache Hits": 0,
+      "Batch Size": 1
+    },
+    "retained_rows": [
+      5,
+      8192,
+      5
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 19,
+    "bits": "1100100",
+    "settings": {
+      "enable_batching": true,
+      "enable_deduplication": true,
+      "enable_result_cache": false,
+      "enable_relational_prefilter": false,
+      "reuse_kernel_plan": true,
+      "enable_join_reduction": false,
+      "enable_selective_fallback": false
+    },
+    "median_ms": 33.283,
+    "min_ms": 31.765,
+    "max_ms": 34.331,
+    "samples_ms": [
+      31.768,
+      32.512,
+      33.831,
+      33.498,
+      34.331,
+      33.283,
+      31.765
+    ],
+    "median_stage_ms": {
+      "reduction": 13.136,
+      "semantic": 18.204,
+      "join": 1.716
+    },
+    "work": {
+      "Candidate Rows": 8192,
+      "Kernel Inputs": 2048,
+      "Kernel Calls": 64,
+      "Cache Hits": 0,
+      "Batch Size": 128
+    },
+    "retained_rows": [
+      5,
+      8192,
+      5
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 20,
+    "bits": "0010100",
+    "settings": {
+      "enable_batching": false,
+      "enable_deduplication": false,
+      "enable_result_cache": true,
+      "enable_relational_prefilter": false,
+      "reuse_kernel_plan": true,
+      "enable_join_reduction": false,
+      "enable_selective_fallback": false
+    },
+    "median_ms": 51.104,
+    "min_ms": 46.54,
+    "max_ms": 125.176,
+    "samples_ms": [
+      46.54,
+      53.923,
+      125.176,
+      49.077,
+      51.104,
+      53.67,
+      47.245
+    ],
+    "median_stage_ms": {
+      "reduction": 14.615,
+      "semantic": 34.544,
+      "join": 1.827
+    },
+    "work": {
+      "Candidate Rows": 8192,
+      "Kernel Inputs": 256,
+      "Kernel Calls": 256,
+      "Cache Hits": 7852,
+      "Batch Size": 1
+    },
+    "retained_rows": [
+      5,
+      8192,
+      5
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 21,
+    "bits": "1010100",
+    "settings": {
+      "enable_batching": true,
+      "enable_deduplication": false,
+      "enable_result_cache": true,
+      "enable_relational_prefilter": false,
+      "reuse_kernel_plan": true,
+      "enable_join_reduction": false,
+      "enable_selective_fallback": false
+    },
+    "median_ms": 21.6,
+    "min_ms": 20.417,
+    "max_ms": 23.441,
+    "samples_ms": [
+      22.033,
+      21.6,
+      21.271,
+      23.441,
+      23.418,
+      20.417,
+      21.384
+    ],
+    "median_stage_ms": {
+      "reduction": 13.422,
+      "semantic": 6.869,
+      "join": 1.456
+    },
+    "work": {
+      "Candidate Rows": 8192,
+      "Kernel Inputs": 1014,
+      "Kernel Calls": 8,
+      "Cache Hits": 7094,
+      "Batch Size": 128
+    },
+    "retained_rows": [
+      5,
+      8192,
+      5
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 22,
+    "bits": "0110100",
+    "settings": {
+      "enable_batching": false,
+      "enable_deduplication": true,
+      "enable_result_cache": true,
+      "enable_relational_prefilter": false,
+      "reuse_kernel_plan": true,
+      "enable_join_reduction": false,
+      "enable_selective_fallback": false
+    },
+    "median_ms": 53.714,
+    "min_ms": 51.765,
+    "max_ms": 108.489,
+    "samples_ms": [
+      52.285,
+      53.66,
+      60.858,
+      108.489,
+      53.714,
+      91.379,
+      51.765
+    ],
+    "median_stage_ms": {
+      "reduction": 14.046,
+      "semantic": 38.474,
+      "join": 1.809
+    },
+    "work": {
+      "Candidate Rows": 8192,
+      "Kernel Inputs": 256,
+      "Kernel Calls": 256,
+      "Cache Hits": 7852,
+      "Batch Size": 1
+    },
+    "retained_rows": [
+      5,
+      8192,
+      5
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 23,
+    "bits": "1110100",
+    "settings": {
+      "enable_batching": true,
+      "enable_deduplication": true,
+      "enable_result_cache": true,
+      "enable_relational_prefilter": false,
+      "reuse_kernel_plan": true,
+      "enable_join_reduction": false,
+      "enable_selective_fallback": false
+    },
+    "median_ms": 20.198,
+    "min_ms": 18.812,
+    "max_ms": 32.757,
+    "samples_ms": [
+      19.192,
+      20.983,
+      32.757,
+      21.836,
+      20.198,
+      20.062,
+      18.812
+    ],
+    "median_stage_ms": {
+      "reduction": 13.675,
+      "semantic": 5.184,
+      "join": 1.467
+    },
+    "work": {
+      "Candidate Rows": 8192,
+      "Kernel Inputs": 256,
+      "Kernel Calls": 8,
+      "Cache Hits": 7094,
+      "Batch Size": 128
+    },
+    "retained_rows": [
+      5,
+      8192,
+      5
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 24,
+    "bits": "0001100",
+    "settings": {
+      "enable_batching": false,
+      "enable_deduplication": false,
+      "enable_result_cache": false,
+      "enable_relational_prefilter": true,
+      "reuse_kernel_plan": true,
+      "enable_join_reduction": false,
+      "enable_selective_fallback": false
+    },
+    "median_ms": 484.862,
+    "min_ms": 470.439,
+    "max_ms": 500.597,
+    "samples_ms": [
+      483.745,
+      470.439,
+      475.686,
+      500.597,
+      495.865,
+      484.862,
+      488.211
+    ],
+    "median_stage_ms": {
+      "reduction": 13.329,
+      "semantic": 468.483,
+      "join": 1.899
+    },
+    "work": {
+      "Candidate Rows": 4096,
+      "Kernel Inputs": 4052,
+      "Kernel Calls": 4052,
+      "Cache Hits": 0,
+      "Batch Size": 1
+    },
+    "retained_rows": [
+      5,
+      8192,
+      5
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 25,
+    "bits": "1001100",
+    "settings": {
+      "enable_batching": true,
+      "enable_deduplication": false,
+      "enable_result_cache": false,
+      "enable_relational_prefilter": true,
+      "reuse_kernel_plan": true,
+      "enable_join_reduction": false,
+      "enable_selective_fallback": false
+    },
+    "median_ms": 31.405,
+    "min_ms": 29.738,
+    "max_ms": 38.677,
+    "samples_ms": [
+      29.738,
+      32.112,
+      38.677,
+      31.405,
+      31.293,
+      30.701,
+      34.126
+    ],
+    "median_stage_ms": {
+      "reduction": 13.741,
+      "semantic": 16.088,
+      "join": 1.736
+    },
+    "work": {
+      "Candidate Rows": 4096,
+      "Kernel Inputs": 4052,
+      "Kernel Calls": 32,
+      "Cache Hits": 0,
+      "Batch Size": 128
+    },
+    "retained_rows": [
+      5,
+      8192,
+      5
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 26,
+    "bits": "0101100",
+    "settings": {
+      "enable_batching": false,
+      "enable_deduplication": true,
+      "enable_result_cache": false,
+      "enable_relational_prefilter": true,
+      "reuse_kernel_plan": true,
+      "enable_join_reduction": false,
+      "enable_selective_fallback": false
+    },
+    "median_ms": 492.662,
+    "min_ms": 476.546,
+    "max_ms": 541.275,
+    "samples_ms": [
+      500.965,
+      476.546,
+      490.791,
+      541.275,
+      510.247,
+      492.662,
+      482.257
+    ],
+    "median_stage_ms": {
+      "reduction": 13.438,
+      "semantic": 476.406,
+      "join": 2.06
+    },
+    "work": {
+      "Candidate Rows": 4096,
+      "Kernel Inputs": 4052,
+      "Kernel Calls": 4052,
+      "Cache Hits": 0,
+      "Batch Size": 1
+    },
+    "retained_rows": [
+      5,
+      8192,
+      5
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 27,
+    "bits": "1101100",
+    "settings": {
+      "enable_batching": true,
+      "enable_deduplication": true,
+      "enable_result_cache": false,
+      "enable_relational_prefilter": true,
+      "reuse_kernel_plan": true,
+      "enable_join_reduction": false,
+      "enable_selective_fallback": false
+    },
+    "median_ms": 24.802,
+    "min_ms": 24.176,
+    "max_ms": 36.614,
+    "samples_ms": [
+      24.802,
+      24.176,
+      24.183,
+      25.536,
+      36.614,
+      24.623,
+      25.576
+    ],
+    "median_stage_ms": {
+      "reduction": 13.256,
+      "semantic": 10.0,
+      "join": 1.574
+    },
+    "work": {
+      "Candidate Rows": 4096,
+      "Kernel Inputs": 1024,
+      "Kernel Calls": 32,
+      "Cache Hits": 0,
+      "Batch Size": 128
+    },
+    "retained_rows": [
+      5,
+      8192,
+      5
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 28,
+    "bits": "0011100",
+    "settings": {
+      "enable_batching": false,
+      "enable_deduplication": false,
+      "enable_result_cache": true,
+      "enable_relational_prefilter": true,
+      "reuse_kernel_plan": true,
+      "enable_join_reduction": false,
+      "enable_selective_fallback": false
+    },
+    "median_ms": 33.639,
+    "min_ms": 31.753,
+    "max_ms": 36.977,
+    "samples_ms": [
+      31.753,
+      31.934,
+      33.385,
+      34.479,
+      33.639,
+      35.605,
+      36.977
+    ],
+    "median_stage_ms": {
+      "reduction": 14.007,
+      "semantic": 18.253,
+      "join": 1.73
+    },
+    "work": {
+      "Candidate Rows": 4096,
+      "Kernel Inputs": 128,
+      "Kernel Calls": 128,
+      "Cache Hits": 3924,
+      "Batch Size": 1
+    },
+    "retained_rows": [
+      5,
+      8192,
+      5
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 29,
+    "bits": "1011100",
+    "settings": {
+      "enable_batching": true,
+      "enable_deduplication": false,
+      "enable_result_cache": true,
+      "enable_relational_prefilter": true,
+      "reuse_kernel_plan": true,
+      "enable_join_reduction": false,
+      "enable_selective_fallback": false
+    },
+    "median_ms": 19.098,
+    "min_ms": 17.881,
+    "max_ms": 25.237,
+    "samples_ms": [
+      19.098,
+      18.664,
+      25.237,
+      20.234,
+      17.881,
+      18.959,
+      23.242
+    ],
+    "median_stage_ms": {
+      "reduction": 13.538,
+      "semantic": 4.406,
+      "join": 1.603
+    },
+    "work": {
+      "Candidate Rows": 4096,
+      "Kernel Inputs": 504,
+      "Kernel Calls": 4,
+      "Cache Hits": 3548,
+      "Batch Size": 128
+    },
+    "retained_rows": [
+      5,
+      8192,
+      5
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 30,
+    "bits": "0111100",
+    "settings": {
+      "enable_batching": false,
+      "enable_deduplication": true,
+      "enable_result_cache": true,
+      "enable_relational_prefilter": true,
+      "reuse_kernel_plan": true,
+      "enable_join_reduction": false,
+      "enable_selective_fallback": false
+    },
+    "median_ms": 34.19,
+    "min_ms": 32.812,
+    "max_ms": 37.145,
+    "samples_ms": [
+      36.027,
+      32.812,
+      36.258,
+      34.19,
+      37.145,
+      32.893,
+      33.263
+    ],
+    "median_stage_ms": {
+      "reduction": 13.656,
+      "semantic": 19.002,
+      "join": 1.547
+    },
+    "work": {
+      "Candidate Rows": 4096,
+      "Kernel Inputs": 128,
+      "Kernel Calls": 128,
+      "Cache Hits": 3924,
+      "Batch Size": 1
+    },
+    "retained_rows": [
+      5,
+      8192,
+      5
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 31,
+    "bits": "1111100",
+    "settings": {
+      "enable_batching": true,
+      "enable_deduplication": true,
+      "enable_result_cache": true,
+      "enable_relational_prefilter": true,
+      "reuse_kernel_plan": true,
+      "enable_join_reduction": false,
+      "enable_selective_fallback": false
+    },
+    "median_ms": 18.762,
+    "min_ms": 17.911,
+    "max_ms": 32.147,
+    "samples_ms": [
+      18.449,
+      17.911,
+      32.147,
+      18.762,
+      18.839,
+      18.382,
+      19.913
+    ],
+    "median_stage_ms": {
+      "reduction": 13.519,
+      "semantic": 3.725,
+      "join": 1.541
+    },
+    "work": {
+      "Candidate Rows": 4096,
+      "Kernel Inputs": 128,
+      "Kernel Calls": 4,
+      "Cache Hits": 3548,
+      "Batch Size": 128
+    },
+    "retained_rows": [
+      5,
+      8192,
+      5
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 32,
+    "bits": "0000010",
+    "settings": {
+      "enable_batching": false,
+      "enable_deduplication": false,
+      "enable_result_cache": false,
+      "enable_relational_prefilter": false,
+      "reuse_kernel_plan": false,
+      "enable_join_reduction": true,
+      "enable_selective_fallback": false
+    },
+    "median_ms": 517.346,
+    "min_ms": 506.869,
+    "max_ms": 723.0,
+    "samples_ms": [
+      509.18,
+      521.919,
+      545.425,
+      517.346,
+      506.869,
+      723.0,
+      514.983
+    ],
+    "median_stage_ms": {
+      "reduction": 28.503,
+      "semantic": 485.614,
+      "join": 1.815
+    },
+    "work": {
+      "Candidate Rows": 4096,
+      "Kernel Inputs": 4054,
+      "Kernel Calls": 4054,
+      "Cache Hits": 0,
+      "Batch Size": 1
+    },
+    "retained_rows": [
+      3,
+      4096,
+      3
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 33,
+    "bits": "1000010",
+    "settings": {
+      "enable_batching": true,
+      "enable_deduplication": false,
+      "enable_result_cache": false,
+      "enable_relational_prefilter": false,
+      "reuse_kernel_plan": false,
+      "enable_join_reduction": true,
+      "enable_selective_fallback": false
+    },
+    "median_ms": 45.4,
+    "min_ms": 44.41,
+    "max_ms": 88.448,
+    "samples_ms": [
+      45.996,
+      44.41,
+      88.448,
+      44.553,
+      45.4,
+      44.977,
+      49.986
+    ],
+    "median_stage_ms": {
+      "reduction": 27.65,
+      "semantic": 16.241,
+      "join": 1.561
+    },
+    "work": {
+      "Candidate Rows": 4096,
+      "Kernel Inputs": 4054,
+      "Kernel Calls": 32,
+      "Cache Hits": 0,
+      "Batch Size": 128
+    },
+    "retained_rows": [
+      3,
+      4096,
+      3
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 34,
+    "bits": "0100010",
+    "settings": {
+      "enable_batching": false,
+      "enable_deduplication": true,
+      "enable_result_cache": false,
+      "enable_relational_prefilter": false,
+      "reuse_kernel_plan": false,
+      "enable_join_reduction": true,
+      "enable_selective_fallback": false
+    },
+    "median_ms": 536.82,
+    "min_ms": 522.638,
+    "max_ms": 574.93,
+    "samples_ms": [
+      574.93,
+      527.937,
+      522.638,
+      526.44,
+      556.788,
+      544.331,
+      536.82
+    ],
+    "median_stage_ms": {
+      "reduction": 27.679,
+      "semantic": 506.141,
+      "join": 1.879
+    },
+    "work": {
+      "Candidate Rows": 4096,
+      "Kernel Inputs": 4054,
+      "Kernel Calls": 4054,
+      "Cache Hits": 0,
+      "Batch Size": 1
+    },
+    "retained_rows": [
+      3,
+      4096,
+      3
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 35,
+    "bits": "1100010",
+    "settings": {
+      "enable_batching": true,
+      "enable_deduplication": true,
+      "enable_result_cache": false,
+      "enable_relational_prefilter": false,
+      "reuse_kernel_plan": false,
+      "enable_join_reduction": true,
+      "enable_selective_fallback": false
+    },
+    "median_ms": 38.072,
+    "min_ms": 37.56,
+    "max_ms": 43.55,
+    "samples_ms": [
+      40.061,
+      37.56,
+      37.578,
+      38.072,
+      38.723,
+      43.55,
+      37.651
+    ],
+    "median_stage_ms": {
+      "reduction": 27.002,
+      "semantic": 9.733,
+      "join": 1.478
+    },
+    "work": {
+      "Candidate Rows": 4096,
+      "Kernel Inputs": 1024,
+      "Kernel Calls": 32,
+      "Cache Hits": 0,
+      "Batch Size": 128
+    },
+    "retained_rows": [
+      3,
+      4096,
+      3
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 36,
+    "bits": "0010010",
+    "settings": {
+      "enable_batching": false,
+      "enable_deduplication": false,
+      "enable_result_cache": true,
+      "enable_relational_prefilter": false,
+      "reuse_kernel_plan": false,
+      "enable_join_reduction": true,
+      "enable_selective_fallback": false
+    },
+    "median_ms": 47.408,
+    "min_ms": 44.825,
+    "max_ms": 57.319,
+    "samples_ms": [
+      47.408,
+      44.825,
+      47.689,
+      45.017,
+      45.392,
+      57.319,
+      50.848
+    ],
+    "median_stage_ms": {
+      "reduction": 27.325,
+      "semantic": 18.417,
+      "join": 1.632
+    },
+    "work": {
+      "Candidate Rows": 4096,
+      "Kernel Inputs": 128,
+      "Kernel Calls": 128,
+      "Cache Hits": 3926,
+      "Batch Size": 1
+    },
+    "retained_rows": [
+      3,
+      4096,
+      3
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 37,
+    "bits": "1010010",
+    "settings": {
+      "enable_batching": true,
+      "enable_deduplication": false,
+      "enable_result_cache": true,
+      "enable_relational_prefilter": false,
+      "reuse_kernel_plan": false,
+      "enable_join_reduction": true,
+      "enable_selective_fallback": false
+    },
+    "median_ms": 33.848,
+    "min_ms": 32.967,
+    "max_ms": 37.814,
+    "samples_ms": [
+      33.7,
+      36.658,
+      37.814,
+      34.459,
+      32.967,
+      33.848,
+      33.099
+    ],
+    "median_stage_ms": {
+      "reduction": 28.273,
+      "semantic": 4.306,
+      "join": 1.393
+    },
+    "work": {
+      "Candidate Rows": 4096,
+      "Kernel Inputs": 507,
+      "Kernel Calls": 4,
+      "Cache Hits": 3547,
+      "Batch Size": 128
+    },
+    "retained_rows": [
+      3,
+      4096,
+      3
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 38,
+    "bits": "0110010",
+    "settings": {
+      "enable_batching": false,
+      "enable_deduplication": true,
+      "enable_result_cache": true,
+      "enable_relational_prefilter": false,
+      "reuse_kernel_plan": false,
+      "enable_join_reduction": true,
+      "enable_selective_fallback": false
+    },
+    "median_ms": 48.74,
+    "min_ms": 46.995,
+    "max_ms": 51.602,
+    "samples_ms": [
+      50.418,
+      47.792,
+      46.995,
+      48.74,
+      48.776,
+      51.602,
+      48.306
+    ],
+    "median_stage_ms": {
+      "reduction": 27.631,
+      "semantic": 19.419,
+      "join": 1.556
+    },
+    "work": {
+      "Candidate Rows": 4096,
+      "Kernel Inputs": 128,
+      "Kernel Calls": 128,
+      "Cache Hits": 3926,
+      "Batch Size": 1
+    },
+    "retained_rows": [
+      3,
+      4096,
+      3
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 39,
+    "bits": "1110010",
+    "settings": {
+      "enable_batching": true,
+      "enable_deduplication": true,
+      "enable_result_cache": true,
+      "enable_relational_prefilter": false,
+      "reuse_kernel_plan": false,
+      "enable_join_reduction": true,
+      "enable_selective_fallback": false
+    },
+    "median_ms": 33.411,
+    "min_ms": 30.649,
+    "max_ms": 51.164,
+    "samples_ms": [
+      30.649,
+      33.411,
+      32.111,
+      30.819,
+      34.116,
+      51.164,
+      33.515
+    ],
+    "median_stage_ms": {
+      "reduction": 28.378,
+      "semantic": 3.47,
+      "join": 1.39
+    },
+    "work": {
+      "Candidate Rows": 4096,
+      "Kernel Inputs": 128,
+      "Kernel Calls": 4,
+      "Cache Hits": 3547,
+      "Batch Size": 128
+    },
+    "retained_rows": [
+      3,
+      4096,
+      3
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 40,
+    "bits": "0001010",
+    "settings": {
+      "enable_batching": false,
+      "enable_deduplication": false,
+      "enable_result_cache": false,
+      "enable_relational_prefilter": true,
+      "reuse_kernel_plan": false,
+      "enable_join_reduction": true,
+      "enable_selective_fallback": false
+    },
+    "median_ms": 277.086,
+    "min_ms": 267.619,
+    "max_ms": 293.843,
+    "samples_ms": [
+      283.915,
+      277.086,
+      267.667,
+      267.619,
+      271.38,
+      293.843,
+      290.78
+    ],
+    "median_stage_ms": {
+      "reduction": 27.649,
+      "semantic": 246.379,
+      "join": 1.891
+    },
+    "work": {
+      "Candidate Rows": 2048,
+      "Kernel Inputs": 2026,
+      "Kernel Calls": 2026,
+      "Cache Hits": 0,
+      "Batch Size": 1
+    },
+    "retained_rows": [
+      3,
+      4096,
+      3
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 41,
+    "bits": "1001010",
+    "settings": {
+      "enable_batching": true,
+      "enable_deduplication": false,
+      "enable_result_cache": false,
+      "enable_relational_prefilter": true,
+      "reuse_kernel_plan": false,
+      "enable_join_reduction": true,
+      "enable_selective_fallback": false
+    },
+    "median_ms": 38.585,
+    "min_ms": 35.852,
+    "max_ms": 41.413,
+    "samples_ms": [
+      36.005,
+      35.852,
+      39.67,
+      37.675,
+      38.644,
+      38.585,
+      41.413
+    ],
+    "median_stage_ms": {
+      "reduction": 27.761,
+      "semantic": 8.888,
+      "join": 1.438
+    },
+    "work": {
+      "Candidate Rows": 2048,
+      "Kernel Inputs": 2026,
+      "Kernel Calls": 16,
+      "Cache Hits": 0,
+      "Batch Size": 128
+    },
+    "retained_rows": [
+      3,
+      4096,
+      3
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 42,
+    "bits": "0101010",
+    "settings": {
+      "enable_batching": false,
+      "enable_deduplication": true,
+      "enable_result_cache": false,
+      "enable_relational_prefilter": true,
+      "reuse_kernel_plan": false,
+      "enable_join_reduction": true,
+      "enable_selective_fallback": false
+    },
+    "median_ms": 282.949,
+    "min_ms": 276.715,
+    "max_ms": 333.295,
+    "samples_ms": [
+      279.322,
+      281.805,
+      284.694,
+      333.295,
+      282.949,
+      276.715,
+      284.064
+    ],
+    "median_stage_ms": {
+      "reduction": 27.362,
+      "semantic": 254.967,
+      "join": 1.852
+    },
+    "work": {
+      "Candidate Rows": 2048,
+      "Kernel Inputs": 2026,
+      "Kernel Calls": 2026,
+      "Cache Hits": 0,
+      "Batch Size": 1
+    },
+    "retained_rows": [
+      3,
+      4096,
+      3
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 43,
+    "bits": "1101010",
+    "settings": {
+      "enable_batching": true,
+      "enable_deduplication": true,
+      "enable_result_cache": false,
+      "enable_relational_prefilter": true,
+      "reuse_kernel_plan": false,
+      "enable_join_reduction": true,
+      "enable_selective_fallback": false
+    },
+    "median_ms": 35.463,
+    "min_ms": 33.511,
+    "max_ms": 42.526,
+    "samples_ms": [
+      35.722,
+      35.463,
+      42.526,
+      33.511,
+      36.413,
+      34.512,
+      34.532
+    ],
+    "median_stage_ms": {
+      "reduction": 27.781,
+      "semantic": 5.994,
+      "join": 1.557
+    },
+    "work": {
+      "Candidate Rows": 2048,
+      "Kernel Inputs": 512,
+      "Kernel Calls": 16,
+      "Cache Hits": 0,
+      "Batch Size": 128
+    },
+    "retained_rows": [
+      3,
+      4096,
+      3
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 44,
+    "bits": "0011010",
+    "settings": {
+      "enable_batching": false,
+      "enable_deduplication": false,
+      "enable_result_cache": true,
+      "enable_relational_prefilter": true,
+      "reuse_kernel_plan": false,
+      "enable_join_reduction": true,
+      "enable_selective_fallback": false
+    },
+    "median_ms": 40.365,
+    "min_ms": 37.589,
+    "max_ms": 62.079,
+    "samples_ms": [
+      38.187,
+      43.284,
+      40.619,
+      62.079,
+      39.134,
+      40.365,
+      37.589
+    ],
+    "median_stage_ms": {
+      "reduction": 28.135,
+      "semantic": 10.151,
+      "join": 1.508
+    },
+    "work": {
+      "Candidate Rows": 2048,
+      "Kernel Inputs": 64,
+      "Kernel Calls": 64,
+      "Cache Hits": 1962,
+      "Batch Size": 1
+    },
+    "retained_rows": [
+      3,
+      4096,
+      3
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 45,
+    "bits": "1011010",
+    "settings": {
+      "enable_batching": true,
+      "enable_deduplication": false,
+      "enable_result_cache": true,
+      "enable_relational_prefilter": true,
+      "reuse_kernel_plan": false,
+      "enable_join_reduction": true,
+      "enable_selective_fallback": false
+    },
+    "median_ms": 32.349,
+    "min_ms": 31.672,
+    "max_ms": 49.688,
+    "samples_ms": [
+      31.672,
+      32.055,
+      49.688,
+      33.422,
+      31.915,
+      32.349,
+      32.423
+    ],
+    "median_stage_ms": {
+      "reduction": 27.712,
+      "semantic": 2.9,
+      "join": 1.48
+    },
+    "work": {
+      "Candidate Rows": 2048,
+      "Kernel Inputs": 252,
+      "Kernel Calls": 2,
+      "Cache Hits": 1774,
+      "Batch Size": 128
+    },
+    "retained_rows": [
+      3,
+      4096,
+      3
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 46,
+    "bits": "0111010",
+    "settings": {
+      "enable_batching": false,
+      "enable_deduplication": true,
+      "enable_result_cache": true,
+      "enable_relational_prefilter": true,
+      "reuse_kernel_plan": false,
+      "enable_join_reduction": true,
+      "enable_selective_fallback": false
+    },
+    "median_ms": 40.169,
+    "min_ms": 36.894,
+    "max_ms": 41.594,
+    "samples_ms": [
+      36.894,
+      40.169,
+      40.733,
+      41.594,
+      38.593,
+      39.038,
+      40.671
+    ],
+    "median_stage_ms": {
+      "reduction": 27.909,
+      "semantic": 10.65,
+      "join": 1.447
+    },
+    "work": {
+      "Candidate Rows": 2048,
+      "Kernel Inputs": 64,
+      "Kernel Calls": 64,
+      "Cache Hits": 1962,
+      "Batch Size": 1
+    },
+    "retained_rows": [
+      3,
+      4096,
+      3
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 47,
+    "bits": "1111010",
+    "settings": {
+      "enable_batching": true,
+      "enable_deduplication": true,
+      "enable_result_cache": true,
+      "enable_relational_prefilter": true,
+      "reuse_kernel_plan": false,
+      "enable_join_reduction": true,
+      "enable_selective_fallback": false
+    },
+    "median_ms": 30.58,
+    "min_ms": 29.783,
+    "max_ms": 49.97,
+    "samples_ms": [
+      29.783,
+      30.633,
+      49.97,
+      30.289,
+      30.58,
+      31.458,
+      30.312
+    ],
+    "median_stage_ms": {
+      "reduction": 26.915,
+      "semantic": 2.359,
+      "join": 1.308
+    },
+    "work": {
+      "Candidate Rows": 2048,
+      "Kernel Inputs": 64,
+      "Kernel Calls": 2,
+      "Cache Hits": 1774,
+      "Batch Size": 128
+    },
+    "retained_rows": [
+      3,
+      4096,
+      3
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 48,
+    "bits": "0000110",
+    "settings": {
+      "enable_batching": false,
+      "enable_deduplication": false,
+      "enable_result_cache": false,
+      "enable_relational_prefilter": false,
+      "reuse_kernel_plan": true,
+      "enable_join_reduction": true,
+      "enable_selective_fallback": false
+    },
+    "median_ms": 510.86,
+    "min_ms": 476.448,
+    "max_ms": 581.401,
+    "samples_ms": [
+      520.785,
+      510.86,
+      476.448,
+      581.401,
+      483.167,
+      544.107,
+      489.682
+    ],
+    "median_stage_ms": {
+      "reduction": 28.227,
+      "semantic": 480.607,
+      "join": 1.95
+    },
+    "work": {
+      "Candidate Rows": 4096,
+      "Kernel Inputs": 4054,
+      "Kernel Calls": 4054,
+      "Cache Hits": 0,
+      "Batch Size": 1
+    },
+    "retained_rows": [
+      3,
+      4096,
+      3
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 49,
+    "bits": "1000110",
+    "settings": {
+      "enable_batching": true,
+      "enable_deduplication": false,
+      "enable_result_cache": false,
+      "enable_relational_prefilter": false,
+      "reuse_kernel_plan": true,
+      "enable_join_reduction": true,
+      "enable_selective_fallback": false
+    },
+    "median_ms": 44.63,
+    "min_ms": 43.225,
+    "max_ms": 47.816,
+    "samples_ms": [
+      43.225,
+      44.91,
+      43.622,
+      46.155,
+      47.816,
+      44.63,
+      44.52
+    ],
+    "median_stage_ms": {
+      "reduction": 27.557,
+      "semantic": 15.776,
+      "join": 1.536
+    },
+    "work": {
+      "Candidate Rows": 4096,
+      "Kernel Inputs": 4054,
+      "Kernel Calls": 32,
+      "Cache Hits": 0,
+      "Batch Size": 128
+    },
+    "retained_rows": [
+      3,
+      4096,
+      3
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 50,
+    "bits": "0100110",
+    "settings": {
+      "enable_batching": false,
+      "enable_deduplication": true,
+      "enable_result_cache": false,
+      "enable_relational_prefilter": false,
+      "reuse_kernel_plan": true,
+      "enable_join_reduction": true,
+      "enable_selective_fallback": false
+    },
+    "median_ms": 509.815,
+    "min_ms": 502.196,
+    "max_ms": 531.473,
+    "samples_ms": [
+      502.196,
+      521.285,
+      509.815,
+      507.223,
+      509.714,
+      531.473,
+      527.049
+    ],
+    "median_stage_ms": {
+      "reduction": 27.777,
+      "semantic": 481.165,
+      "join": 1.942
+    },
+    "work": {
+      "Candidate Rows": 4096,
+      "Kernel Inputs": 4054,
+      "Kernel Calls": 4054,
+      "Cache Hits": 0,
+      "Batch Size": 1
+    },
+    "retained_rows": [
+      3,
+      4096,
+      3
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 51,
+    "bits": "1100110",
+    "settings": {
+      "enable_batching": true,
+      "enable_deduplication": true,
+      "enable_result_cache": false,
+      "enable_relational_prefilter": false,
+      "reuse_kernel_plan": true,
+      "enable_join_reduction": true,
+      "enable_selective_fallback": false
+    },
+    "median_ms": 38.147,
+    "min_ms": 37.015,
+    "max_ms": 69.601,
+    "samples_ms": [
+      39.18,
+      37.411,
+      37.015,
+      38.147,
+      43.739,
+      69.601,
+      37.853
+    ],
+    "median_stage_ms": {
+      "reduction": 27.33,
+      "semantic": 9.818,
+      "join": 1.437
+    },
+    "work": {
+      "Candidate Rows": 4096,
+      "Kernel Inputs": 1024,
+      "Kernel Calls": 32,
+      "Cache Hits": 0,
+      "Batch Size": 128
+    },
+    "retained_rows": [
+      3,
+      4096,
+      3
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 52,
+    "bits": "0010110",
+    "settings": {
+      "enable_batching": false,
+      "enable_deduplication": false,
+      "enable_result_cache": true,
+      "enable_relational_prefilter": false,
+      "reuse_kernel_plan": true,
+      "enable_join_reduction": true,
+      "enable_selective_fallback": false
+    },
+    "median_ms": 46.342,
+    "min_ms": 45.208,
+    "max_ms": 51.952,
+    "samples_ms": [
+      46.342,
+      45.447,
+      45.208,
+      51.952,
+      50.48,
+      47.879,
+      46.163
+    ],
+    "median_stage_ms": {
+      "reduction": 27.667,
+      "semantic": 17.459,
+      "join": 1.455
+    },
+    "work": {
+      "Candidate Rows": 4096,
+      "Kernel Inputs": 128,
+      "Kernel Calls": 128,
+      "Cache Hits": 3926,
+      "Batch Size": 1
+    },
+    "retained_rows": [
+      3,
+      4096,
+      3
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 53,
+    "bits": "1010110",
+    "settings": {
+      "enable_batching": true,
+      "enable_deduplication": false,
+      "enable_result_cache": true,
+      "enable_relational_prefilter": false,
+      "reuse_kernel_plan": true,
+      "enable_join_reduction": true,
+      "enable_selective_fallback": false
+    },
+    "median_ms": 33.991,
+    "min_ms": 32.193,
+    "max_ms": 60.143,
+    "samples_ms": [
+      33.991,
+      32.988,
+      34.308,
+      60.143,
+      37.125,
+      33.978,
+      32.193
+    ],
+    "median_stage_ms": {
+      "reduction": 28.044,
+      "semantic": 4.158,
+      "join": 1.568
+    },
+    "work": {
+      "Candidate Rows": 4096,
+      "Kernel Inputs": 507,
+      "Kernel Calls": 4,
+      "Cache Hits": 3547,
+      "Batch Size": 128
+    },
+    "retained_rows": [
+      3,
+      4096,
+      3
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 54,
+    "bits": "0110110",
+    "settings": {
+      "enable_batching": false,
+      "enable_deduplication": true,
+      "enable_result_cache": true,
+      "enable_relational_prefilter": false,
+      "reuse_kernel_plan": true,
+      "enable_join_reduction": true,
+      "enable_selective_fallback": false
+    },
+    "median_ms": 47.969,
+    "min_ms": 46.003,
+    "max_ms": 54.749,
+    "samples_ms": [
+      48.27,
+      47.969,
+      46.003,
+      54.749,
+      49.96,
+      47.503,
+      47.056
+    ],
+    "median_stage_ms": {
+      "reduction": 27.672,
+      "semantic": 18.582,
+      "join": 1.523
+    },
+    "work": {
+      "Candidate Rows": 4096,
+      "Kernel Inputs": 128,
+      "Kernel Calls": 128,
+      "Cache Hits": 3926,
+      "Batch Size": 1
+    },
+    "retained_rows": [
+      3,
+      4096,
+      3
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 55,
+    "bits": "1110110",
+    "settings": {
+      "enable_batching": true,
+      "enable_deduplication": true,
+      "enable_result_cache": true,
+      "enable_relational_prefilter": false,
+      "reuse_kernel_plan": true,
+      "enable_join_reduction": true,
+      "enable_selective_fallback": false
+    },
+    "median_ms": 34.185,
+    "min_ms": 31.292,
+    "max_ms": 38.808,
+    "samples_ms": [
+      32.96,
+      32.961,
+      35.044,
+      31.292,
+      34.185,
+      35.733,
+      38.808
+    ],
+    "median_stage_ms": {
+      "reduction": 28.846,
+      "semantic": 3.663,
+      "join": 1.467
+    },
+    "work": {
+      "Candidate Rows": 4096,
+      "Kernel Inputs": 128,
+      "Kernel Calls": 4,
+      "Cache Hits": 3547,
+      "Batch Size": 128
+    },
+    "retained_rows": [
+      3,
+      4096,
+      3
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 56,
+    "bits": "0001110",
+    "settings": {
+      "enable_batching": false,
+      "enable_deduplication": false,
+      "enable_result_cache": false,
+      "enable_relational_prefilter": true,
+      "reuse_kernel_plan": true,
+      "enable_join_reduction": true,
+      "enable_selective_fallback": false
+    },
+    "median_ms": 258.263,
+    "min_ms": 253.635,
+    "max_ms": 282.089,
+    "samples_ms": [
+      261.009,
+      255.228,
+      253.635,
+      282.089,
+      266.54,
+      258.263,
+      254.71
+    ],
+    "median_stage_ms": {
+      "reduction": 27.353,
+      "semantic": 228.031,
+      "join": 1.827
+    },
+    "work": {
+      "Candidate Rows": 2048,
+      "Kernel Inputs": 2026,
+      "Kernel Calls": 2026,
+      "Cache Hits": 0,
+      "Batch Size": 1
+    },
+    "retained_rows": [
+      3,
+      4096,
+      3
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 57,
+    "bits": "1001110",
+    "settings": {
+      "enable_batching": true,
+      "enable_deduplication": false,
+      "enable_result_cache": false,
+      "enable_relational_prefilter": true,
+      "reuse_kernel_plan": true,
+      "enable_join_reduction": true,
+      "enable_selective_fallback": false
+    },
+    "median_ms": 38.503,
+    "min_ms": 36.214,
+    "max_ms": 40.305,
+    "samples_ms": [
+      36.214,
+      37.816,
+      38.503,
+      40.186,
+      40.042,
+      40.305,
+      38.036
+    ],
+    "median_stage_ms": {
+      "reduction": 28.249,
+      "semantic": 8.688,
+      "join": 1.55
+    },
+    "work": {
+      "Candidate Rows": 2048,
+      "Kernel Inputs": 2026,
+      "Kernel Calls": 16,
+      "Cache Hits": 0,
+      "Batch Size": 128
+    },
+    "retained_rows": [
+      3,
+      4096,
+      3
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 58,
+    "bits": "0101110",
+    "settings": {
+      "enable_batching": false,
+      "enable_deduplication": true,
+      "enable_result_cache": false,
+      "enable_relational_prefilter": true,
+      "reuse_kernel_plan": true,
+      "enable_join_reduction": true,
+      "enable_selective_fallback": false
+    },
+    "median_ms": 284.885,
+    "min_ms": 260.87,
+    "max_ms": 453.248,
+    "samples_ms": [
+      453.248,
+      290.668,
+      260.87,
+      297.131,
+      268.387,
+      272.364,
+      284.885
+    ],
+    "median_stage_ms": {
+      "reduction": 27.461,
+      "semantic": 253.161,
+      "join": 1.905
+    },
+    "work": {
+      "Candidate Rows": 2048,
+      "Kernel Inputs": 2026,
+      "Kernel Calls": 2026,
+      "Cache Hits": 0,
+      "Batch Size": 1
+    },
+    "retained_rows": [
+      3,
+      4096,
+      3
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 59,
+    "bits": "1101110",
+    "settings": {
+      "enable_batching": true,
+      "enable_deduplication": true,
+      "enable_result_cache": false,
+      "enable_relational_prefilter": true,
+      "reuse_kernel_plan": true,
+      "enable_join_reduction": true,
+      "enable_selective_fallback": false
+    },
+    "median_ms": 36.489,
+    "min_ms": 33.72,
+    "max_ms": 55.4,
+    "samples_ms": [
+      55.4,
+      34.222,
+      44.991,
+      36.489,
+      49.159,
+      33.72,
+      35.35
+    ],
+    "median_stage_ms": {
+      "reduction": 28.112,
+      "semantic": 6.838,
+      "join": 1.709
+    },
+    "work": {
+      "Candidate Rows": 2048,
+      "Kernel Inputs": 512,
+      "Kernel Calls": 16,
+      "Cache Hits": 0,
+      "Batch Size": 128
+    },
+    "retained_rows": [
+      3,
+      4096,
+      3
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 60,
+    "bits": "0011110",
+    "settings": {
+      "enable_batching": false,
+      "enable_deduplication": false,
+      "enable_result_cache": true,
+      "enable_relational_prefilter": true,
+      "reuse_kernel_plan": true,
+      "enable_join_reduction": true,
+      "enable_selective_fallback": false
+    },
+    "median_ms": 38.103,
+    "min_ms": 36.026,
+    "max_ms": 44.38,
+    "samples_ms": [
+      38.241,
+      38.103,
+      36.026,
+      44.38,
+      42.893,
+      37.816,
+      37.782
+    ],
+    "median_stage_ms": {
+      "reduction": 27.004,
+      "semantic": 9.652,
+      "join": 1.486
+    },
+    "work": {
+      "Candidate Rows": 2048,
+      "Kernel Inputs": 64,
+      "Kernel Calls": 64,
+      "Cache Hits": 1962,
+      "Batch Size": 1
+    },
+    "retained_rows": [
+      3,
+      4096,
+      3
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 61,
+    "bits": "1011110",
+    "settings": {
+      "enable_batching": true,
+      "enable_deduplication": false,
+      "enable_result_cache": true,
+      "enable_relational_prefilter": true,
+      "reuse_kernel_plan": true,
+      "enable_join_reduction": true,
+      "enable_selective_fallback": false
+    },
+    "median_ms": 33.141,
+    "min_ms": 30.475,
+    "max_ms": 35.714,
+    "samples_ms": [
+      34.985,
+      30.885,
+      30.475,
+      33.141,
+      35.714,
+      32.388,
+      33.218
+    ],
+    "median_stage_ms": {
+      "reduction": 28.813,
+      "semantic": 2.833,
+      "join": 1.36
+    },
+    "work": {
+      "Candidate Rows": 2048,
+      "Kernel Inputs": 252,
+      "Kernel Calls": 2,
+      "Cache Hits": 1774,
+      "Batch Size": 128
+    },
+    "retained_rows": [
+      3,
+      4096,
+      3
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 62,
+    "bits": "0111110",
+    "settings": {
+      "enable_batching": false,
+      "enable_deduplication": true,
+      "enable_result_cache": true,
+      "enable_relational_prefilter": true,
+      "reuse_kernel_plan": true,
+      "enable_join_reduction": true,
+      "enable_selective_fallback": false
+    },
+    "median_ms": 40.097,
+    "min_ms": 37.887,
+    "max_ms": 42.228,
+    "samples_ms": [
+      41.589,
+      37.887,
+      40.097,
+      38.591,
+      42.228,
+      38.937,
+      40.256
+    ],
+    "median_stage_ms": {
+      "reduction": 27.796,
+      "semantic": 10.603,
+      "join": 1.5
+    },
+    "work": {
+      "Candidate Rows": 2048,
+      "Kernel Inputs": 64,
+      "Kernel Calls": 64,
+      "Cache Hits": 1962,
+      "Batch Size": 1
+    },
+    "retained_rows": [
+      3,
+      4096,
+      3
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 63,
+    "bits": "1111110",
+    "settings": {
+      "enable_batching": true,
+      "enable_deduplication": true,
+      "enable_result_cache": true,
+      "enable_relational_prefilter": true,
+      "reuse_kernel_plan": true,
+      "enable_join_reduction": true,
+      "enable_selective_fallback": false
+    },
+    "median_ms": 31.369,
+    "min_ms": 29.648,
+    "max_ms": 34.873,
+    "samples_ms": [
+      32.455,
+      31.369,
+      29.648,
+      31.887,
+      34.873,
+      30.781,
+      31.16
+    ],
+    "median_stage_ms": {
+      "reduction": 27.572,
+      "semantic": 2.446,
+      "join": 1.397
+    },
+    "work": {
+      "Candidate Rows": 2048,
+      "Kernel Inputs": 64,
+      "Kernel Calls": 2,
+      "Cache Hits": 1774,
+      "Batch Size": 128
+    },
+    "retained_rows": [
+      3,
+      4096,
+      3
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 64,
+    "bits": "0000001",
+    "settings": {
+      "enable_batching": false,
+      "enable_deduplication": false,
+      "enable_result_cache": false,
+      "enable_relational_prefilter": false,
+      "reuse_kernel_plan": false,
+      "enable_join_reduction": false,
+      "enable_selective_fallback": true
+    },
+    "median_ms": 879.696,
+    "min_ms": 854.815,
+    "max_ms": 958.227,
+    "samples_ms": [
+      958.227,
+      857.412,
+      854.815,
+      873.962,
+      884.205,
+      886.294,
+      879.696
+    ],
+    "median_stage_ms": {
+      "reduction": 13.526,
+      "semantic": 862.832,
+      "join": 2.13
+    },
+    "work": {
+      "Candidate Rows": 8192,
+      "Kernel Inputs": 8108,
+      "Kernel Calls": 8108,
+      "Cache Hits": 0,
+      "Batch Size": 1
+    },
+    "retained_rows": [
+      5,
+      8192,
+      5
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 65,
+    "bits": "1000001",
+    "settings": {
+      "enable_batching": true,
+      "enable_deduplication": false,
+      "enable_result_cache": false,
+      "enable_relational_prefilter": false,
+      "reuse_kernel_plan": false,
+      "enable_join_reduction": false,
+      "enable_selective_fallback": true
+    },
+    "median_ms": 39.918,
+    "min_ms": 39.47,
+    "max_ms": 52.004,
+    "samples_ms": [
+      42.26,
+      39.918,
+      39.47,
+      52.004,
+      39.814,
+      39.812,
+      44.835
+    ],
+    "median_stage_ms": {
+      "reduction": 13.405,
+      "semantic": 25.368,
+      "join": 1.689
+    },
+    "work": {
+      "Candidate Rows": 8192,
+      "Kernel Inputs": 8108,
+      "Kernel Calls": 64,
+      "Cache Hits": 0,
+      "Batch Size": 128
+    },
+    "retained_rows": [
+      5,
+      8192,
+      5
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 66,
+    "bits": "0100001",
+    "settings": {
+      "enable_batching": false,
+      "enable_deduplication": true,
+      "enable_result_cache": false,
+      "enable_relational_prefilter": false,
+      "reuse_kernel_plan": false,
+      "enable_join_reduction": false,
+      "enable_selective_fallback": true
+    },
+    "median_ms": 930.537,
+    "min_ms": 892.792,
+    "max_ms": 1228.562,
+    "samples_ms": [
+      1042.007,
+      930.537,
+      1228.562,
+      892.792,
+      897.261,
+      1115.96,
+      905.947
+    ],
+    "median_stage_ms": {
+      "reduction": 13.372,
+      "semantic": 915.447,
+      "join": 1.933
+    },
+    "work": {
+      "Candidate Rows": 8192,
+      "Kernel Inputs": 8108,
+      "Kernel Calls": 8108,
+      "Cache Hits": 0,
+      "Batch Size": 1
+    },
+    "retained_rows": [
+      5,
+      8192,
+      5
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 67,
+    "bits": "1100001",
+    "settings": {
+      "enable_batching": true,
+      "enable_deduplication": true,
+      "enable_result_cache": false,
+      "enable_relational_prefilter": false,
+      "reuse_kernel_plan": false,
+      "enable_join_reduction": false,
+      "enable_selective_fallback": true
+    },
+    "median_ms": 31.929,
+    "min_ms": 30.08,
+    "max_ms": 41.227,
+    "samples_ms": [
+      31.763,
+      30.08,
+      31.929,
+      31.175,
+      41.227,
+      34.082,
+      32.449
+    ],
+    "median_stage_ms": {
+      "reduction": 13.341,
+      "semantic": 17.086,
+      "join": 1.64
+    },
+    "work": {
+      "Candidate Rows": 8192,
+      "Kernel Inputs": 2048,
+      "Kernel Calls": 64,
+      "Cache Hits": 0,
+      "Batch Size": 128
+    },
+    "retained_rows": [
+      5,
+      8192,
+      5
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 68,
+    "bits": "0010001",
+    "settings": {
+      "enable_batching": false,
+      "enable_deduplication": false,
+      "enable_result_cache": true,
+      "enable_relational_prefilter": false,
+      "reuse_kernel_plan": false,
+      "enable_join_reduction": false,
+      "enable_selective_fallback": true
+    },
+    "median_ms": 47.983,
+    "min_ms": 45.116,
+    "max_ms": 82.211,
+    "samples_ms": [
+      82.211,
+      46.49,
+      45.116,
+      61.746,
+      47.983,
+      45.732,
+      49.459
+    ],
+    "median_stage_ms": {
+      "reduction": 13.898,
+      "semantic": 32.14,
+      "join": 1.945
+    },
+    "work": {
+      "Candidate Rows": 8192,
+      "Kernel Inputs": 256,
+      "Kernel Calls": 256,
+      "Cache Hits": 7852,
+      "Batch Size": 1
+    },
+    "retained_rows": [
+      5,
+      8192,
+      5
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 69,
+    "bits": "1010001",
+    "settings": {
+      "enable_batching": true,
+      "enable_deduplication": false,
+      "enable_result_cache": true,
+      "enable_relational_prefilter": false,
+      "reuse_kernel_plan": false,
+      "enable_join_reduction": false,
+      "enable_selective_fallback": true
+    },
+    "median_ms": 20.771,
+    "min_ms": 19.839,
+    "max_ms": 22.543,
+    "samples_ms": [
+      20.627,
+      21.483,
+      19.839,
+      22.543,
+      21.788,
+      20.771,
+      20.627
+    ],
+    "median_stage_ms": {
+      "reduction": 13.393,
+      "semantic": 5.974,
+      "join": 1.47
+    },
+    "work": {
+      "Candidate Rows": 8192,
+      "Kernel Inputs": 1014,
+      "Kernel Calls": 8,
+      "Cache Hits": 7094,
+      "Batch Size": 128
+    },
+    "retained_rows": [
+      5,
+      8192,
+      5
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 70,
+    "bits": "0110001",
+    "settings": {
+      "enable_batching": false,
+      "enable_deduplication": true,
+      "enable_result_cache": true,
+      "enable_relational_prefilter": false,
+      "reuse_kernel_plan": false,
+      "enable_join_reduction": false,
+      "enable_selective_fallback": true
+    },
+    "median_ms": 50.078,
+    "min_ms": 47.063,
+    "max_ms": 50.696,
+    "samples_ms": [
+      47.063,
+      48.479,
+      50.222,
+      50.696,
+      50.078,
+      50.569,
+      47.29
+    ],
+    "median_stage_ms": {
+      "reduction": 13.231,
+      "semantic": 34.411,
+      "join": 1.645
+    },
+    "work": {
+      "Candidate Rows": 8192,
+      "Kernel Inputs": 256,
+      "Kernel Calls": 256,
+      "Cache Hits": 7852,
+      "Batch Size": 1
+    },
+    "retained_rows": [
+      5,
+      8192,
+      5
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 71,
+    "bits": "1110001",
+    "settings": {
+      "enable_batching": true,
+      "enable_deduplication": true,
+      "enable_result_cache": true,
+      "enable_relational_prefilter": false,
+      "reuse_kernel_plan": false,
+      "enable_join_reduction": false,
+      "enable_selective_fallback": true
+    },
+    "median_ms": 20.577,
+    "min_ms": 19.621,
+    "max_ms": 22.633,
+    "samples_ms": [
+      19.669,
+      21.286,
+      19.73,
+      19.621,
+      22.472,
+      20.577,
+      22.633
+    ],
+    "median_stage_ms": {
+      "reduction": 13.516,
+      "semantic": 5.392,
+      "join": 1.623
+    },
+    "work": {
+      "Candidate Rows": 8192,
+      "Kernel Inputs": 256,
+      "Kernel Calls": 8,
+      "Cache Hits": 7094,
+      "Batch Size": 128
+    },
+    "retained_rows": [
+      5,
+      8192,
+      5
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 72,
+    "bits": "0001001",
+    "settings": {
+      "enable_batching": false,
+      "enable_deduplication": false,
+      "enable_result_cache": false,
+      "enable_relational_prefilter": true,
+      "reuse_kernel_plan": false,
+      "enable_join_reduction": false,
+      "enable_selective_fallback": true
+    },
+    "median_ms": 453.326,
+    "min_ms": 433.739,
+    "max_ms": 465.242,
+    "samples_ms": [
+      437.055,
+      465.242,
+      453.326,
+      455.964,
+      454.124,
+      435.156,
+      433.739
+    ],
+    "median_stage_ms": {
+      "reduction": 13.258,
+      "semantic": 437.521,
+      "join": 1.999
+    },
+    "work": {
+      "Candidate Rows": 4096,
+      "Kernel Inputs": 4052,
+      "Kernel Calls": 4052,
+      "Cache Hits": 0,
+      "Batch Size": 1
+    },
+    "retained_rows": [
+      5,
+      8192,
+      5
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 73,
+    "bits": "1001001",
+    "settings": {
+      "enable_batching": true,
+      "enable_deduplication": false,
+      "enable_result_cache": false,
+      "enable_relational_prefilter": true,
+      "reuse_kernel_plan": false,
+      "enable_join_reduction": false,
+      "enable_selective_fallback": true
+    },
+    "median_ms": 29.105,
+    "min_ms": 27.317,
+    "max_ms": 35.047,
+    "samples_ms": [
+      29.105,
+      28.404,
+      35.047,
+      27.418,
+      31.376,
+      30.391,
+      27.317
+    ],
+    "median_stage_ms": {
+      "reduction": 13.726,
+      "semantic": 13.769,
+      "join": 1.691
+    },
+    "work": {
+      "Candidate Rows": 4096,
+      "Kernel Inputs": 4052,
+      "Kernel Calls": 32,
+      "Cache Hits": 0,
+      "Batch Size": 128
+    },
+    "retained_rows": [
+      5,
+      8192,
+      5
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 74,
+    "bits": "0101001",
+    "settings": {
+      "enable_batching": false,
+      "enable_deduplication": true,
+      "enable_result_cache": false,
+      "enable_relational_prefilter": true,
+      "reuse_kernel_plan": false,
+      "enable_join_reduction": false,
+      "enable_selective_fallback": true
+    },
+    "median_ms": 460.913,
+    "min_ms": 448.529,
+    "max_ms": 474.18,
+    "samples_ms": [
+      468.705,
+      448.529,
+      450.947,
+      466.051,
+      474.18,
+      460.913,
+      450.927
+    ],
+    "median_stage_ms": {
+      "reduction": 13.158,
+      "semantic": 445.41,
+      "join": 1.899
+    },
+    "work": {
+      "Candidate Rows": 4096,
+      "Kernel Inputs": 4052,
+      "Kernel Calls": 4052,
+      "Cache Hits": 0,
+      "Batch Size": 1
+    },
+    "retained_rows": [
+      5,
+      8192,
+      5
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 75,
+    "bits": "1101001",
+    "settings": {
+      "enable_batching": true,
+      "enable_deduplication": true,
+      "enable_result_cache": false,
+      "enable_relational_prefilter": true,
+      "reuse_kernel_plan": false,
+      "enable_join_reduction": false,
+      "enable_selective_fallback": true
+    },
+    "median_ms": 25.603,
+    "min_ms": 22.941,
+    "max_ms": 25.867,
+    "samples_ms": [
+      25.685,
+      25.77,
+      23.02,
+      25.603,
+      25.867,
+      24.967,
+      22.941
+    ],
+    "median_stage_ms": {
+      "reduction": 13.501,
+      "semantic": 9.38,
+      "join": 1.675
+    },
+    "work": {
+      "Candidate Rows": 4096,
+      "Kernel Inputs": 1024,
+      "Kernel Calls": 32,
+      "Cache Hits": 0,
+      "Batch Size": 128
+    },
+    "retained_rows": [
+      5,
+      8192,
+      5
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 76,
+    "bits": "0011001",
+    "settings": {
+      "enable_batching": false,
+      "enable_deduplication": false,
+      "enable_result_cache": true,
+      "enable_relational_prefilter": true,
+      "reuse_kernel_plan": false,
+      "enable_join_reduction": false,
+      "enable_selective_fallback": true
+    },
+    "median_ms": 32.243,
+    "min_ms": 29.532,
+    "max_ms": 33.006,
+    "samples_ms": [
+      33.006,
+      32.243,
+      29.672,
+      32.62,
+      32.595,
+      30.485,
+      29.532
+    ],
+    "median_stage_ms": {
+      "reduction": 13.677,
+      "semantic": 16.596,
+      "join": 1.548
+    },
+    "work": {
+      "Candidate Rows": 4096,
+      "Kernel Inputs": 128,
+      "Kernel Calls": 128,
+      "Cache Hits": 3924,
+      "Batch Size": 1
+    },
+    "retained_rows": [
+      5,
+      8192,
+      5
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 77,
+    "bits": "1011001",
+    "settings": {
+      "enable_batching": true,
+      "enable_deduplication": false,
+      "enable_result_cache": true,
+      "enable_relational_prefilter": true,
+      "reuse_kernel_plan": false,
+      "enable_join_reduction": false,
+      "enable_selective_fallback": true
+    },
+    "median_ms": 18.449,
+    "min_ms": 17.794,
+    "max_ms": 19.951,
+    "samples_ms": [
+      18.917,
+      19.951,
+      18.0,
+      18.95,
+      18.234,
+      17.794,
+      18.449
+    ],
+    "median_stage_ms": {
+      "reduction": 13.177,
+      "semantic": 3.828,
+      "join": 1.401
+    },
+    "work": {
+      "Candidate Rows": 4096,
+      "Kernel Inputs": 504,
+      "Kernel Calls": 4,
+      "Cache Hits": 3548,
+      "Batch Size": 128
+    },
+    "retained_rows": [
+      5,
+      8192,
+      5
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 78,
+    "bits": "0111001",
+    "settings": {
+      "enable_batching": false,
+      "enable_deduplication": true,
+      "enable_result_cache": true,
+      "enable_relational_prefilter": true,
+      "reuse_kernel_plan": false,
+      "enable_join_reduction": false,
+      "enable_selective_fallback": true
+    },
+    "median_ms": 33.158,
+    "min_ms": 31.142,
+    "max_ms": 46.227,
+    "samples_ms": [
+      46.227,
+      31.647,
+      40.253,
+      31.358,
+      31.142,
+      33.158,
+      36.366
+    ],
+    "median_stage_ms": {
+      "reduction": 12.761,
+      "semantic": 18.305,
+      "join": 2.17
+    },
+    "work": {
+      "Candidate Rows": 4096,
+      "Kernel Inputs": 128,
+      "Kernel Calls": 128,
+      "Cache Hits": 3924,
+      "Batch Size": 1
+    },
+    "retained_rows": [
+      5,
+      8192,
+      5
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 79,
+    "bits": "1111001",
+    "settings": {
+      "enable_batching": true,
+      "enable_deduplication": true,
+      "enable_result_cache": true,
+      "enable_relational_prefilter": true,
+      "reuse_kernel_plan": false,
+      "enable_join_reduction": false,
+      "enable_selective_fallback": true
+    },
+    "median_ms": 18.971,
+    "min_ms": 17.027,
+    "max_ms": 30.959,
+    "samples_ms": [
+      30.959,
+      18.971,
+      23.936,
+      17.814,
+      17.798,
+      17.027,
+      22.321
+    ],
+    "median_stage_ms": {
+      "reduction": 13.74,
+      "semantic": 3.717,
+      "join": 1.514
+    },
+    "work": {
+      "Candidate Rows": 4096,
+      "Kernel Inputs": 128,
+      "Kernel Calls": 4,
+      "Cache Hits": 3548,
+      "Batch Size": 128
+    },
+    "retained_rows": [
+      5,
+      8192,
+      5
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 80,
+    "bits": "0000101",
+    "settings": {
+      "enable_batching": false,
+      "enable_deduplication": false,
+      "enable_result_cache": false,
+      "enable_relational_prefilter": false,
+      "reuse_kernel_plan": true,
+      "enable_join_reduction": false,
+      "enable_selective_fallback": true
+    },
+    "median_ms": 844.884,
+    "min_ms": 802.24,
+    "max_ms": 898.28,
+    "samples_ms": [
+      802.24,
+      854.871,
+      839.794,
+      893.029,
+      844.884,
+      898.28,
+      840.39
+    ],
+    "median_stage_ms": {
+      "reduction": 13.959,
+      "semantic": 828.99,
+      "join": 2.108
+    },
+    "work": {
+      "Candidate Rows": 8192,
+      "Kernel Inputs": 8108,
+      "Kernel Calls": 8108,
+      "Cache Hits": 0,
+      "Batch Size": 1
+    },
+    "retained_rows": [
+      5,
+      8192,
+      5
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 81,
+    "bits": "1000101",
+    "settings": {
+      "enable_batching": true,
+      "enable_deduplication": false,
+      "enable_result_cache": false,
+      "enable_relational_prefilter": false,
+      "reuse_kernel_plan": true,
+      "enable_join_reduction": false,
+      "enable_selective_fallback": true
+    },
+    "median_ms": 40.966,
+    "min_ms": 38.578,
+    "max_ms": 47.792,
+    "samples_ms": [
+      41.448,
+      47.792,
+      38.578,
+      39.407,
+      40.966,
+      39.347,
+      45.279
+    ],
+    "median_stage_ms": {
+      "reduction": 13.784,
+      "semantic": 24.871,
+      "join": 1.797
+    },
+    "work": {
+      "Candidate Rows": 8192,
+      "Kernel Inputs": 8108,
+      "Kernel Calls": 64,
+      "Cache Hits": 0,
+      "Batch Size": 128
+    },
+    "retained_rows": [
+      5,
+      8192,
+      5
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 82,
+    "bits": "0100101",
+    "settings": {
+      "enable_batching": false,
+      "enable_deduplication": true,
+      "enable_result_cache": false,
+      "enable_relational_prefilter": false,
+      "reuse_kernel_plan": true,
+      "enable_join_reduction": false,
+      "enable_selective_fallback": true
+    },
+    "median_ms": 898.257,
+    "min_ms": 837.816,
+    "max_ms": 1077.915,
+    "samples_ms": [
+      863.439,
+      926.062,
+      1077.915,
+      963.198,
+      862.838,
+      837.816,
+      898.257
+    ],
+    "median_stage_ms": {
+      "reduction": 13.023,
+      "semantic": 881.966,
+      "join": 2.263
+    },
+    "work": {
+      "Candidate Rows": 8192,
+      "Kernel Inputs": 8108,
+      "Kernel Calls": 8108,
+      "Cache Hits": 0,
+      "Batch Size": 1
+    },
+    "retained_rows": [
+      5,
+      8192,
+      5
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 83,
+    "bits": "1100101",
+    "settings": {
+      "enable_batching": true,
+      "enable_deduplication": true,
+      "enable_result_cache": false,
+      "enable_relational_prefilter": false,
+      "reuse_kernel_plan": true,
+      "enable_join_reduction": false,
+      "enable_selective_fallback": true
+    },
+    "median_ms": 31.474,
+    "min_ms": 29.984,
+    "max_ms": 37.794,
+    "samples_ms": [
+      31.841,
+      30.891,
+      37.794,
+      34.618,
+      29.984,
+      31.021,
+      31.474
+    ],
+    "median_stage_ms": {
+      "reduction": 13.53,
+      "semantic": 16.45,
+      "join": 1.619
+    },
+    "work": {
+      "Candidate Rows": 8192,
+      "Kernel Inputs": 2048,
+      "Kernel Calls": 64,
+      "Cache Hits": 0,
+      "Batch Size": 128
+    },
+    "retained_rows": [
+      5,
+      8192,
+      5
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 84,
+    "bits": "0010101",
+    "settings": {
+      "enable_batching": false,
+      "enable_deduplication": false,
+      "enable_result_cache": true,
+      "enable_relational_prefilter": false,
+      "reuse_kernel_plan": true,
+      "enable_join_reduction": false,
+      "enable_selective_fallback": true
+    },
+    "median_ms": 44.888,
+    "min_ms": 42.55,
+    "max_ms": 49.33,
+    "samples_ms": [
+      49.33,
+      43.692,
+      46.445,
+      42.55,
+      48.341,
+      44.389,
+      44.888
+    ],
+    "median_stage_ms": {
+      "reduction": 13.354,
+      "semantic": 29.994,
+      "join": 1.561
+    },
+    "work": {
+      "Candidate Rows": 8192,
+      "Kernel Inputs": 256,
+      "Kernel Calls": 256,
+      "Cache Hits": 7852,
+      "Batch Size": 1
+    },
+    "retained_rows": [
+      5,
+      8192,
+      5
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 85,
+    "bits": "1010101",
+    "settings": {
+      "enable_batching": true,
+      "enable_deduplication": false,
+      "enable_result_cache": true,
+      "enable_relational_prefilter": false,
+      "reuse_kernel_plan": true,
+      "enable_join_reduction": false,
+      "enable_selective_fallback": true
+    },
+    "median_ms": 21.892,
+    "min_ms": 20.15,
+    "max_ms": 27.734,
+    "samples_ms": [
+      20.15,
+      20.229,
+      21.892,
+      23.461,
+      27.734,
+      22.057,
+      21.094
+    ],
+    "median_stage_ms": {
+      "reduction": 13.902,
+      "semantic": 6.29,
+      "join": 1.616
+    },
+    "work": {
+      "Candidate Rows": 8192,
+      "Kernel Inputs": 1014,
+      "Kernel Calls": 8,
+      "Cache Hits": 7094,
+      "Batch Size": 128
+    },
+    "retained_rows": [
+      5,
+      8192,
+      5
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 86,
+    "bits": "0110101",
+    "settings": {
+      "enable_batching": false,
+      "enable_deduplication": true,
+      "enable_result_cache": true,
+      "enable_relational_prefilter": false,
+      "reuse_kernel_plan": true,
+      "enable_join_reduction": false,
+      "enable_selective_fallback": true
+    },
+    "median_ms": 48.492,
+    "min_ms": 45.543,
+    "max_ms": 70.373,
+    "samples_ms": [
+      55.878,
+      45.543,
+      70.373,
+      49.507,
+      48.178,
+      48.492,
+      47.676
+    ],
+    "median_stage_ms": {
+      "reduction": 13.773,
+      "semantic": 33.071,
+      "join": 1.877
+    },
+    "work": {
+      "Candidate Rows": 8192,
+      "Kernel Inputs": 256,
+      "Kernel Calls": 256,
+      "Cache Hits": 7852,
+      "Batch Size": 1
+    },
+    "retained_rows": [
+      5,
+      8192,
+      5
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 87,
+    "bits": "1110101",
+    "settings": {
+      "enable_batching": true,
+      "enable_deduplication": true,
+      "enable_result_cache": true,
+      "enable_relational_prefilter": false,
+      "reuse_kernel_plan": true,
+      "enable_join_reduction": false,
+      "enable_selective_fallback": true
+    },
+    "median_ms": 21.138,
+    "min_ms": 19.524,
+    "max_ms": 38.821,
+    "samples_ms": [
+      19.569,
+      19.524,
+      37.457,
+      21.138,
+      22.884,
+      38.821,
+      21.089
+    ],
+    "median_stage_ms": {
+      "reduction": 14.073,
+      "semantic": 6.237,
+      "join": 1.616
+    },
+    "work": {
+      "Candidate Rows": 8192,
+      "Kernel Inputs": 256,
+      "Kernel Calls": 8,
+      "Cache Hits": 7094,
+      "Batch Size": 128
+    },
+    "retained_rows": [
+      5,
+      8192,
+      5
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 88,
+    "bits": "0001101",
+    "settings": {
+      "enable_batching": false,
+      "enable_deduplication": false,
+      "enable_result_cache": false,
+      "enable_relational_prefilter": true,
+      "reuse_kernel_plan": true,
+      "enable_join_reduction": false,
+      "enable_selective_fallback": true
+    },
+    "median_ms": 444.332,
+    "min_ms": 416.375,
+    "max_ms": 597.0,
+    "samples_ms": [
+      444.332,
+      461.96,
+      416.375,
+      530.006,
+      437.858,
+      597.0,
+      421.423
+    ],
+    "median_stage_ms": {
+      "reduction": 13.412,
+      "semantic": 426.471,
+      "join": 1.974
+    },
+    "work": {
+      "Candidate Rows": 4096,
+      "Kernel Inputs": 4052,
+      "Kernel Calls": 4052,
+      "Cache Hits": 0,
+      "Batch Size": 1
+    },
+    "retained_rows": [
+      5,
+      8192,
+      5
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 89,
+    "bits": "1001101",
+    "settings": {
+      "enable_batching": true,
+      "enable_deduplication": false,
+      "enable_result_cache": false,
+      "enable_relational_prefilter": true,
+      "reuse_kernel_plan": true,
+      "enable_join_reduction": false,
+      "enable_selective_fallback": true
+    },
+    "median_ms": 29.138,
+    "min_ms": 28.434,
+    "max_ms": 31.822,
+    "samples_ms": [
+      31.822,
+      29.347,
+      28.965,
+      28.939,
+      29.138,
+      28.434,
+      31.396
+    ],
+    "median_stage_ms": {
+      "reduction": 13.766,
+      "semantic": 13.579,
+      "join": 1.708
+    },
+    "work": {
+      "Candidate Rows": 4096,
+      "Kernel Inputs": 4052,
+      "Kernel Calls": 32,
+      "Cache Hits": 0,
+      "Batch Size": 128
+    },
+    "retained_rows": [
+      5,
+      8192,
+      5
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 90,
+    "bits": "0101101",
+    "settings": {
+      "enable_batching": false,
+      "enable_deduplication": true,
+      "enable_result_cache": false,
+      "enable_relational_prefilter": true,
+      "reuse_kernel_plan": true,
+      "enable_join_reduction": false,
+      "enable_selective_fallback": true
+    },
+    "median_ms": 447.382,
+    "min_ms": 429.278,
+    "max_ms": 486.217,
+    "samples_ms": [
+      451.246,
+      429.278,
+      449.239,
+      447.382,
+      441.116,
+      486.217,
+      432.68
+    ],
+    "median_stage_ms": {
+      "reduction": 13.291,
+      "semantic": 430.647,
+      "join": 1.986
+    },
+    "work": {
+      "Candidate Rows": 4096,
+      "Kernel Inputs": 4052,
+      "Kernel Calls": 4052,
+      "Cache Hits": 0,
+      "Batch Size": 1
+    },
+    "retained_rows": [
+      5,
+      8192,
+      5
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 91,
+    "bits": "1101101",
+    "settings": {
+      "enable_batching": true,
+      "enable_deduplication": true,
+      "enable_result_cache": false,
+      "enable_relational_prefilter": true,
+      "reuse_kernel_plan": true,
+      "enable_join_reduction": false,
+      "enable_selective_fallback": true
+    },
+    "median_ms": 23.561,
+    "min_ms": 22.927,
+    "max_ms": 25.587,
+    "samples_ms": [
+      23.677,
+      22.927,
+      23.561,
+      24.99,
+      25.587,
+      22.927,
+      23.046
+    ],
+    "median_stage_ms": {
+      "reduction": 13.005,
+      "semantic": 8.997,
+      "join": 1.517
+    },
+    "work": {
+      "Candidate Rows": 4096,
+      "Kernel Inputs": 1024,
+      "Kernel Calls": 32,
+      "Cache Hits": 0,
+      "Batch Size": 128
+    },
+    "retained_rows": [
+      5,
+      8192,
+      5
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 92,
+    "bits": "0011101",
+    "settings": {
+      "enable_batching": false,
+      "enable_deduplication": false,
+      "enable_result_cache": true,
+      "enable_relational_prefilter": true,
+      "reuse_kernel_plan": true,
+      "enable_join_reduction": false,
+      "enable_selective_fallback": true
+    },
+    "median_ms": 31.464,
+    "min_ms": 30.241,
+    "max_ms": 34.359,
+    "samples_ms": [
+      30.741,
+      33.436,
+      30.765,
+      34.039,
+      31.464,
+      34.359,
+      30.241
+    ],
+    "median_stage_ms": {
+      "reduction": 13.732,
+      "semantic": 15.89,
+      "join": 1.842
+    },
+    "work": {
+      "Candidate Rows": 4096,
+      "Kernel Inputs": 128,
+      "Kernel Calls": 128,
+      "Cache Hits": 3924,
+      "Batch Size": 1
+    },
+    "retained_rows": [
+      5,
+      8192,
+      5
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 93,
+    "bits": "1011101",
+    "settings": {
+      "enable_batching": true,
+      "enable_deduplication": false,
+      "enable_result_cache": true,
+      "enable_relational_prefilter": true,
+      "reuse_kernel_plan": true,
+      "enable_join_reduction": false,
+      "enable_selective_fallback": true
+    },
+    "median_ms": 18.53,
+    "min_ms": 17.926,
+    "max_ms": 21.723,
+    "samples_ms": [
+      18.451,
+      18.53,
+      17.926,
+      21.723,
+      18.151,
+      18.894,
+      19.27
+    ],
+    "median_stage_ms": {
+      "reduction": 13.161,
+      "semantic": 3.904,
+      "join": 1.538
+    },
+    "work": {
+      "Candidate Rows": 4096,
+      "Kernel Inputs": 504,
+      "Kernel Calls": 4,
+      "Cache Hits": 3548,
+      "Batch Size": 128
+    },
+    "retained_rows": [
+      5,
+      8192,
+      5
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 94,
+    "bits": "0111101",
+    "settings": {
+      "enable_batching": false,
+      "enable_deduplication": true,
+      "enable_result_cache": true,
+      "enable_relational_prefilter": true,
+      "reuse_kernel_plan": true,
+      "enable_join_reduction": false,
+      "enable_selective_fallback": true
+    },
+    "median_ms": 31.215,
+    "min_ms": 30.668,
+    "max_ms": 33.815,
+    "samples_ms": [
+      33.126,
+      31.129,
+      33.815,
+      31.37,
+      30.668,
+      31.215,
+      31.212
+    ],
+    "median_stage_ms": {
+      "reduction": 13.196,
+      "semantic": 16.695,
+      "join": 1.479
+    },
+    "work": {
+      "Candidate Rows": 4096,
+      "Kernel Inputs": 128,
+      "Kernel Calls": 128,
+      "Cache Hits": 3924,
+      "Batch Size": 1
+    },
+    "retained_rows": [
+      5,
+      8192,
+      5
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 95,
+    "bits": "1111101",
+    "settings": {
+      "enable_batching": true,
+      "enable_deduplication": true,
+      "enable_result_cache": true,
+      "enable_relational_prefilter": true,
+      "reuse_kernel_plan": true,
+      "enable_join_reduction": false,
+      "enable_selective_fallback": true
+    },
+    "median_ms": 17.995,
+    "min_ms": 17.137,
+    "max_ms": 20.614,
+    "samples_ms": [
+      17.995,
+      20.614,
+      17.137,
+      17.977,
+      19.294,
+      17.453,
+      18.24
+    ],
+    "median_stage_ms": {
+      "reduction": 13.367,
+      "semantic": 3.346,
+      "join": 1.437
+    },
+    "work": {
+      "Candidate Rows": 4096,
+      "Kernel Inputs": 128,
+      "Kernel Calls": 4,
+      "Cache Hits": 3548,
+      "Batch Size": 128
+    },
+    "retained_rows": [
+      5,
+      8192,
+      5
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 96,
+    "bits": "0000011",
+    "settings": {
+      "enable_batching": false,
+      "enable_deduplication": false,
+      "enable_result_cache": false,
+      "enable_relational_prefilter": false,
+      "reuse_kernel_plan": false,
+      "enable_join_reduction": true,
+      "enable_selective_fallback": true
+    },
+    "median_ms": 463.931,
+    "min_ms": 448.557,
+    "max_ms": 657.493,
+    "samples_ms": [
+      463.931,
+      460.9,
+      636.17,
+      657.493,
+      477.134,
+      448.557,
+      449.156
+    ],
+    "median_stage_ms": {
+      "reduction": 27.601,
+      "semantic": 434.659,
+      "join": 1.744
+    },
+    "work": {
+      "Candidate Rows": 4096,
+      "Kernel Inputs": 4054,
+      "Kernel Calls": 4054,
+      "Cache Hits": 0,
+      "Batch Size": 1
+    },
+    "retained_rows": [
+      3,
+      4096,
+      3
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 97,
+    "bits": "1000011",
+    "settings": {
+      "enable_batching": true,
+      "enable_deduplication": false,
+      "enable_result_cache": false,
+      "enable_relational_prefilter": false,
+      "reuse_kernel_plan": false,
+      "enable_join_reduction": true,
+      "enable_selective_fallback": true
+    },
+    "median_ms": 42.162,
+    "min_ms": 39.749,
+    "max_ms": 44.107,
+    "samples_ms": [
+      44.055,
+      44.107,
+      41.72,
+      42.483,
+      42.162,
+      41.71,
+      39.749
+    ],
+    "median_stage_ms": {
+      "reduction": 27.334,
+      "semantic": 13.318,
+      "join": 1.54
+    },
+    "work": {
+      "Candidate Rows": 4096,
+      "Kernel Inputs": 4054,
+      "Kernel Calls": 32,
+      "Cache Hits": 0,
+      "Batch Size": 128
+    },
+    "retained_rows": [
+      3,
+      4096,
+      3
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 98,
+    "bits": "0100011",
+    "settings": {
+      "enable_batching": false,
+      "enable_deduplication": true,
+      "enable_result_cache": false,
+      "enable_relational_prefilter": false,
+      "reuse_kernel_plan": false,
+      "enable_join_reduction": true,
+      "enable_selective_fallback": true
+    },
+    "median_ms": 484.672,
+    "min_ms": 468.991,
+    "max_ms": 505.25,
+    "samples_ms": [
+      490.441,
+      487.149,
+      468.991,
+      471.966,
+      505.25,
+      484.672,
+      472.162
+    ],
+    "median_stage_ms": {
+      "reduction": 27.379,
+      "semantic": 452.918,
+      "join": 1.771
+    },
+    "work": {
+      "Candidate Rows": 4096,
+      "Kernel Inputs": 4054,
+      "Kernel Calls": 4054,
+      "Cache Hits": 0,
+      "Batch Size": 1
+    },
+    "retained_rows": [
+      3,
+      4096,
+      3
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 99,
+    "bits": "1100011",
+    "settings": {
+      "enable_batching": true,
+      "enable_deduplication": true,
+      "enable_result_cache": false,
+      "enable_relational_prefilter": false,
+      "reuse_kernel_plan": false,
+      "enable_join_reduction": true,
+      "enable_selective_fallback": true
+    },
+    "median_ms": 39.351,
+    "min_ms": 36.894,
+    "max_ms": 60.371,
+    "samples_ms": [
+      38.726,
+      43.732,
+      60.371,
+      38.594,
+      40.766,
+      39.351,
+      36.894
+    ],
+    "median_stage_ms": {
+      "reduction": 28.936,
+      "semantic": 9.646,
+      "join": 1.559
+    },
+    "work": {
+      "Candidate Rows": 4096,
+      "Kernel Inputs": 1024,
+      "Kernel Calls": 32,
+      "Cache Hits": 0,
+      "Batch Size": 128
+    },
+    "retained_rows": [
+      3,
+      4096,
+      3
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 100,
+    "bits": "0010011",
+    "settings": {
+      "enable_batching": false,
+      "enable_deduplication": false,
+      "enable_result_cache": true,
+      "enable_relational_prefilter": false,
+      "reuse_kernel_plan": false,
+      "enable_join_reduction": true,
+      "enable_selective_fallback": true
+    },
+    "median_ms": 45.833,
+    "min_ms": 44.063,
+    "max_ms": 49.254,
+    "samples_ms": [
+      45.833,
+      44.338,
+      44.389,
+      49.254,
+      47.691,
+      44.063,
+      46.231
+    ],
+    "median_stage_ms": {
+      "reduction": 28.107,
+      "semantic": 15.956,
+      "join": 1.636
+    },
+    "work": {
+      "Candidate Rows": 4096,
+      "Kernel Inputs": 128,
+      "Kernel Calls": 128,
+      "Cache Hits": 3926,
+      "Batch Size": 1
+    },
+    "retained_rows": [
+      3,
+      4096,
+      3
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 101,
+    "bits": "1010011",
+    "settings": {
+      "enable_batching": true,
+      "enable_deduplication": false,
+      "enable_result_cache": true,
+      "enable_relational_prefilter": false,
+      "reuse_kernel_plan": false,
+      "enable_join_reduction": true,
+      "enable_selective_fallback": true
+    },
+    "median_ms": 35.574,
+    "min_ms": 31.911,
+    "max_ms": 50.402,
+    "samples_ms": [
+      31.911,
+      32.035,
+      50.402,
+      35.574,
+      38.975,
+      32.191,
+      35.856
+    ],
+    "median_stage_ms": {
+      "reduction": 30.339,
+      "semantic": 3.9,
+      "join": 1.509
+    },
+    "work": {
+      "Candidate Rows": 4096,
+      "Kernel Inputs": 507,
+      "Kernel Calls": 4,
+      "Cache Hits": 3547,
+      "Batch Size": 128
+    },
+    "retained_rows": [
+      3,
+      4096,
+      3
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 102,
+    "bits": "0110011",
+    "settings": {
+      "enable_batching": false,
+      "enable_deduplication": true,
+      "enable_result_cache": true,
+      "enable_relational_prefilter": false,
+      "reuse_kernel_plan": false,
+      "enable_join_reduction": true,
+      "enable_selective_fallback": true
+    },
+    "median_ms": 46.896,
+    "min_ms": 45.26,
+    "max_ms": 48.891,
+    "samples_ms": [
+      46.896,
+      47.417,
+      46.939,
+      45.733,
+      45.26,
+      48.891,
+      46.419
+    ],
+    "median_stage_ms": {
+      "reduction": 27.372,
+      "semantic": 17.643,
+      "join": 1.652
+    },
+    "work": {
+      "Candidate Rows": 4096,
+      "Kernel Inputs": 128,
+      "Kernel Calls": 128,
+      "Cache Hits": 3926,
+      "Batch Size": 1
+    },
+    "retained_rows": [
+      3,
+      4096,
+      3
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 103,
+    "bits": "1110011",
+    "settings": {
+      "enable_batching": true,
+      "enable_deduplication": true,
+      "enable_result_cache": true,
+      "enable_relational_prefilter": false,
+      "reuse_kernel_plan": false,
+      "enable_join_reduction": true,
+      "enable_selective_fallback": true
+    },
+    "median_ms": 31.937,
+    "min_ms": 31.01,
+    "max_ms": 35.947,
+    "samples_ms": [
+      31.489,
+      34.801,
+      33.827,
+      31.937,
+      31.069,
+      35.947,
+      31.01
+    ],
+    "median_stage_ms": {
+      "reduction": 26.93,
+      "semantic": 3.382,
+      "join": 1.457
+    },
+    "work": {
+      "Candidate Rows": 4096,
+      "Kernel Inputs": 128,
+      "Kernel Calls": 4,
+      "Cache Hits": 3547,
+      "Batch Size": 128
+    },
+    "retained_rows": [
+      3,
+      4096,
+      3
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 104,
+    "bits": "0001011",
+    "settings": {
+      "enable_batching": false,
+      "enable_deduplication": false,
+      "enable_result_cache": false,
+      "enable_relational_prefilter": true,
+      "reuse_kernel_plan": false,
+      "enable_join_reduction": true,
+      "enable_selective_fallback": true
+    },
+    "median_ms": 255.494,
+    "min_ms": 239.694,
+    "max_ms": 360.23,
+    "samples_ms": [
+      284.824,
+      239.694,
+      289.616,
+      360.23,
+      244.119,
+      242.996,
+      255.494
+    ],
+    "median_stage_ms": {
+      "reduction": 28.79,
+      "semantic": 222.226,
+      "join": 1.96
+    },
+    "work": {
+      "Candidate Rows": 2048,
+      "Kernel Inputs": 2026,
+      "Kernel Calls": 2026,
+      "Cache Hits": 0,
+      "Batch Size": 1
+    },
+    "retained_rows": [
+      3,
+      4096,
+      3
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 105,
+    "bits": "1001011",
+    "settings": {
+      "enable_batching": true,
+      "enable_deduplication": false,
+      "enable_result_cache": false,
+      "enable_relational_prefilter": true,
+      "reuse_kernel_plan": false,
+      "enable_join_reduction": true,
+      "enable_selective_fallback": true
+    },
+    "median_ms": 37.238,
+    "min_ms": 35.699,
+    "max_ms": 41.824,
+    "samples_ms": [
+      35.827,
+      38.867,
+      41.824,
+      37.467,
+      35.699,
+      36.675,
+      37.238
+    ],
+    "median_stage_ms": {
+      "reduction": 27.726,
+      "semantic": 8.021,
+      "join": 1.502
+    },
+    "work": {
+      "Candidate Rows": 2048,
+      "Kernel Inputs": 2026,
+      "Kernel Calls": 16,
+      "Cache Hits": 0,
+      "Batch Size": 128
+    },
+    "retained_rows": [
+      3,
+      4096,
+      3
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 106,
+    "bits": "0101011",
+    "settings": {
+      "enable_batching": false,
+      "enable_deduplication": true,
+      "enable_result_cache": false,
+      "enable_relational_prefilter": true,
+      "reuse_kernel_plan": false,
+      "enable_join_reduction": true,
+      "enable_selective_fallback": true
+    },
+    "median_ms": 255.014,
+    "min_ms": 245.902,
+    "max_ms": 275.991,
+    "samples_ms": [
+      264.417,
+      246.575,
+      245.902,
+      269.418,
+      255.014,
+      246.449,
+      275.991
+    ],
+    "median_stage_ms": {
+      "reduction": 28.939,
+      "semantic": 224.345,
+      "join": 1.794
+    },
+    "work": {
+      "Candidate Rows": 2048,
+      "Kernel Inputs": 2026,
+      "Kernel Calls": 2026,
+      "Cache Hits": 0,
+      "Batch Size": 1
+    },
+    "retained_rows": [
+      3,
+      4096,
+      3
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 107,
+    "bits": "1101011",
+    "settings": {
+      "enable_batching": true,
+      "enable_deduplication": true,
+      "enable_result_cache": false,
+      "enable_relational_prefilter": true,
+      "reuse_kernel_plan": false,
+      "enable_join_reduction": true,
+      "enable_selective_fallback": true
+    },
+    "median_ms": 35.992,
+    "min_ms": 33.598,
+    "max_ms": 59.414,
+    "samples_ms": [
+      33.656,
+      35.992,
+      48.6,
+      59.414,
+      33.614,
+      33.598,
+      36.376
+    ],
+    "median_stage_ms": {
+      "reduction": 28.438,
+      "semantic": 5.733,
+      "join": 1.596
+    },
+    "work": {
+      "Candidate Rows": 2048,
+      "Kernel Inputs": 512,
+      "Kernel Calls": 16,
+      "Cache Hits": 0,
+      "Batch Size": 128
+    },
+    "retained_rows": [
+      3,
+      4096,
+      3
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 108,
+    "bits": "0011011",
+    "settings": {
+      "enable_batching": false,
+      "enable_deduplication": false,
+      "enable_result_cache": true,
+      "enable_relational_prefilter": true,
+      "reuse_kernel_plan": false,
+      "enable_join_reduction": true,
+      "enable_selective_fallback": true
+    },
+    "median_ms": 40.892,
+    "min_ms": 37.187,
+    "max_ms": 46.203,
+    "samples_ms": [
+      40.892,
+      37.187,
+      37.328,
+      38.127,
+      41.885,
+      42.589,
+      46.203
+    ],
+    "median_stage_ms": {
+      "reduction": 30.126,
+      "semantic": 9.328,
+      "join": 1.492
+    },
+    "work": {
+      "Candidate Rows": 2048,
+      "Kernel Inputs": 64,
+      "Kernel Calls": 64,
+      "Cache Hits": 1962,
+      "Batch Size": 1
+    },
+    "retained_rows": [
+      3,
+      4096,
+      3
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 109,
+    "bits": "1011011",
+    "settings": {
+      "enable_batching": true,
+      "enable_deduplication": false,
+      "enable_result_cache": true,
+      "enable_relational_prefilter": true,
+      "reuse_kernel_plan": false,
+      "enable_join_reduction": true,
+      "enable_selective_fallback": true
+    },
+    "median_ms": 31.503,
+    "min_ms": 30.77,
+    "max_ms": 41.898,
+    "samples_ms": [
+      31.503,
+      31.238,
+      41.898,
+      31.38,
+      30.77,
+      33.979,
+      35.306
+    ],
+    "median_stage_ms": {
+      "reduction": 27.365,
+      "semantic": 2.938,
+      "join": 1.439
+    },
+    "work": {
+      "Candidate Rows": 2048,
+      "Kernel Inputs": 252,
+      "Kernel Calls": 2,
+      "Cache Hits": 1774,
+      "Batch Size": 128
+    },
+    "retained_rows": [
+      3,
+      4096,
+      3
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 110,
+    "bits": "0111011",
+    "settings": {
+      "enable_batching": false,
+      "enable_deduplication": true,
+      "enable_result_cache": true,
+      "enable_relational_prefilter": true,
+      "reuse_kernel_plan": false,
+      "enable_join_reduction": true,
+      "enable_selective_fallback": true
+    },
+    "median_ms": 39.233,
+    "min_ms": 38.747,
+    "max_ms": 42.988,
+    "samples_ms": [
+      40.811,
+      38.747,
+      40.916,
+      39.233,
+      42.988,
+      39.142,
+      39.003
+    ],
+    "median_stage_ms": {
+      "reduction": 27.989,
+      "semantic": 10.168,
+      "join": 1.562
+    },
+    "work": {
+      "Candidate Rows": 2048,
+      "Kernel Inputs": 64,
+      "Kernel Calls": 64,
+      "Cache Hits": 1962,
+      "Batch Size": 1
+    },
+    "retained_rows": [
+      3,
+      4096,
+      3
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 111,
+    "bits": "1111011",
+    "settings": {
+      "enable_batching": true,
+      "enable_deduplication": true,
+      "enable_result_cache": true,
+      "enable_relational_prefilter": true,
+      "reuse_kernel_plan": false,
+      "enable_join_reduction": true,
+      "enable_selective_fallback": true
+    },
+    "median_ms": 33.257,
+    "min_ms": 30.03,
+    "max_ms": 79.637,
+    "samples_ms": [
+      79.637,
+      30.402,
+      33.257,
+      30.03,
+      33.372,
+      31.537,
+      34.896
+    ],
+    "median_stage_ms": {
+      "reduction": 28.573,
+      "semantic": 2.564,
+      "join": 1.492
+    },
+    "work": {
+      "Candidate Rows": 2048,
+      "Kernel Inputs": 64,
+      "Kernel Calls": 2,
+      "Cache Hits": 1774,
+      "Batch Size": 128
+    },
+    "retained_rows": [
+      3,
+      4096,
+      3
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 112,
+    "bits": "0000111",
+    "settings": {
+      "enable_batching": false,
+      "enable_deduplication": false,
+      "enable_result_cache": false,
+      "enable_relational_prefilter": false,
+      "reuse_kernel_plan": true,
+      "enable_join_reduction": true,
+      "enable_selective_fallback": true
+    },
+    "median_ms": 439.211,
+    "min_ms": 428.462,
+    "max_ms": 525.323,
+    "samples_ms": [
+      462.266,
+      428.462,
+      434.54,
+      439.211,
+      433.945,
+      525.323,
+      450.174
+    ],
+    "median_stage_ms": {
+      "reduction": 27.043,
+      "semantic": 411.006,
+      "join": 1.81
+    },
+    "work": {
+      "Candidate Rows": 4096,
+      "Kernel Inputs": 4054,
+      "Kernel Calls": 4054,
+      "Cache Hits": 0,
+      "Batch Size": 1
+    },
+    "retained_rows": [
+      3,
+      4096,
+      3
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 113,
+    "bits": "1000111",
+    "settings": {
+      "enable_batching": true,
+      "enable_deduplication": false,
+      "enable_result_cache": false,
+      "enable_relational_prefilter": false,
+      "reuse_kernel_plan": true,
+      "enable_join_reduction": true,
+      "enable_selective_fallback": true
+    },
+    "median_ms": 44.247,
+    "min_ms": 41.828,
+    "max_ms": 52.486,
+    "samples_ms": [
+      41.828,
+      47.194,
+      43.055,
+      52.486,
+      44.247,
+      42.039,
+      45.952
+    ],
+    "median_stage_ms": {
+      "reduction": 29.366,
+      "semantic": 13.813,
+      "join": 1.71
+    },
+    "work": {
+      "Candidate Rows": 4096,
+      "Kernel Inputs": 4054,
+      "Kernel Calls": 32,
+      "Cache Hits": 0,
+      "Batch Size": 128
+    },
+    "retained_rows": [
+      3,
+      4096,
+      3
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 114,
+    "bits": "0100111",
+    "settings": {
+      "enable_batching": false,
+      "enable_deduplication": true,
+      "enable_result_cache": false,
+      "enable_relational_prefilter": false,
+      "reuse_kernel_plan": true,
+      "enable_join_reduction": true,
+      "enable_selective_fallback": true
+    },
+    "median_ms": 453.471,
+    "min_ms": 441.445,
+    "max_ms": 465.726,
+    "samples_ms": [
+      457.678,
+      465.726,
+      446.052,
+      453.471,
+      459.319,
+      448.922,
+      441.445
+    ],
+    "median_stage_ms": {
+      "reduction": 27.674,
+      "semantic": 424.508,
+      "join": 1.808
+    },
+    "work": {
+      "Candidate Rows": 4096,
+      "Kernel Inputs": 4054,
+      "Kernel Calls": 4054,
+      "Cache Hits": 0,
+      "Batch Size": 1
+    },
+    "retained_rows": [
+      3,
+      4096,
+      3
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 115,
+    "bits": "1100111",
+    "settings": {
+      "enable_batching": true,
+      "enable_deduplication": true,
+      "enable_result_cache": false,
+      "enable_relational_prefilter": false,
+      "reuse_kernel_plan": true,
+      "enable_join_reduction": true,
+      "enable_selective_fallback": true
+    },
+    "median_ms": 38.221,
+    "min_ms": 36.737,
+    "max_ms": 40.756,
+    "samples_ms": [
+      38.423,
+      38.221,
+      40.756,
+      36.737,
+      39.024,
+      37.609,
+      37.445
+    ],
+    "median_stage_ms": {
+      "reduction": 27.559,
+      "semantic": 9.084,
+      "join": 1.4
+    },
+    "work": {
+      "Candidate Rows": 4096,
+      "Kernel Inputs": 1024,
+      "Kernel Calls": 32,
+      "Cache Hits": 0,
+      "Batch Size": 128
+    },
+    "retained_rows": [
+      3,
+      4096,
+      3
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 116,
+    "bits": "0010111",
+    "settings": {
+      "enable_batching": false,
+      "enable_deduplication": false,
+      "enable_result_cache": true,
+      "enable_relational_prefilter": false,
+      "reuse_kernel_plan": true,
+      "enable_join_reduction": true,
+      "enable_selective_fallback": true
+    },
+    "median_ms": 43.967,
+    "min_ms": 43.047,
+    "max_ms": 201.754,
+    "samples_ms": [
+      43.081,
+      44.722,
+      201.754,
+      43.379,
+      43.047,
+      44.54,
+      43.967
+    ],
+    "median_stage_ms": {
+      "reduction": 27.344,
+      "semantic": 15.177,
+      "join": 1.446
+    },
+    "work": {
+      "Candidate Rows": 4096,
+      "Kernel Inputs": 128,
+      "Kernel Calls": 128,
+      "Cache Hits": 3926,
+      "Batch Size": 1
+    },
+    "retained_rows": [
+      3,
+      4096,
+      3
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 117,
+    "bits": "1010111",
+    "settings": {
+      "enable_batching": true,
+      "enable_deduplication": false,
+      "enable_result_cache": true,
+      "enable_relational_prefilter": false,
+      "reuse_kernel_plan": true,
+      "enable_join_reduction": true,
+      "enable_selective_fallback": true
+    },
+    "median_ms": 33.158,
+    "min_ms": 32.14,
+    "max_ms": 37.479,
+    "samples_ms": [
+      32.604,
+      34.783,
+      34.869,
+      33.158,
+      37.479,
+      32.257,
+      32.14
+    ],
+    "median_stage_ms": {
+      "reduction": 27.643,
+      "semantic": 3.848,
+      "join": 1.424
+    },
+    "work": {
+      "Candidate Rows": 4096,
+      "Kernel Inputs": 507,
+      "Kernel Calls": 4,
+      "Cache Hits": 3547,
+      "Batch Size": 128
+    },
+    "retained_rows": [
+      3,
+      4096,
+      3
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 118,
+    "bits": "0110111",
+    "settings": {
+      "enable_batching": false,
+      "enable_deduplication": true,
+      "enable_result_cache": true,
+      "enable_relational_prefilter": false,
+      "reuse_kernel_plan": true,
+      "enable_join_reduction": true,
+      "enable_selective_fallback": true
+    },
+    "median_ms": 47.342,
+    "min_ms": 43.781,
+    "max_ms": 51.874,
+    "samples_ms": [
+      43.781,
+      47.897,
+      51.874,
+      49.291,
+      47.342,
+      45.498,
+      45.346
+    ],
+    "median_stage_ms": {
+      "reduction": 28.304,
+      "semantic": 17.29,
+      "join": 1.719
+    },
+    "work": {
+      "Candidate Rows": 4096,
+      "Kernel Inputs": 128,
+      "Kernel Calls": 128,
+      "Cache Hits": 3926,
+      "Batch Size": 1
+    },
+    "retained_rows": [
+      3,
+      4096,
+      3
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 119,
+    "bits": "1110111",
+    "settings": {
+      "enable_batching": true,
+      "enable_deduplication": true,
+      "enable_result_cache": true,
+      "enable_relational_prefilter": false,
+      "reuse_kernel_plan": true,
+      "enable_join_reduction": true,
+      "enable_selective_fallback": true
+    },
+    "median_ms": 33.611,
+    "min_ms": 32.597,
+    "max_ms": 41.787,
+    "samples_ms": [
+      33.401,
+      32.597,
+      41.787,
+      33.611,
+      36.328,
+      33.059,
+      34.107
+    ],
+    "median_stage_ms": {
+      "reduction": 28.846,
+      "semantic": 3.531,
+      "join": 1.346
+    },
+    "work": {
+      "Candidate Rows": 4096,
+      "Kernel Inputs": 128,
+      "Kernel Calls": 4,
+      "Cache Hits": 3547,
+      "Batch Size": 128
+    },
+    "retained_rows": [
+      3,
+      4096,
+      3
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 120,
+    "bits": "0001111",
+    "settings": {
+      "enable_batching": false,
+      "enable_deduplication": false,
+      "enable_result_cache": false,
+      "enable_relational_prefilter": true,
+      "reuse_kernel_plan": true,
+      "enable_join_reduction": true,
+      "enable_selective_fallback": true
+    },
+    "median_ms": 231.806,
+    "min_ms": 225.406,
+    "max_ms": 251.668,
+    "samples_ms": [
+      251.668,
+      237.437,
+      231.806,
+      229.912,
+      235.899,
+      226.039,
+      225.406
+    ],
+    "median_stage_ms": {
+      "reduction": 26.703,
+      "semantic": 203.443,
+      "join": 1.884
+    },
+    "work": {
+      "Candidate Rows": 2048,
+      "Kernel Inputs": 2026,
+      "Kernel Calls": 2026,
+      "Cache Hits": 0,
+      "Batch Size": 1
+    },
+    "retained_rows": [
+      3,
+      4096,
+      3
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 121,
+    "bits": "1001111",
+    "settings": {
+      "enable_batching": true,
+      "enable_deduplication": false,
+      "enable_result_cache": false,
+      "enable_relational_prefilter": true,
+      "reuse_kernel_plan": true,
+      "enable_join_reduction": true,
+      "enable_selective_fallback": true
+    },
+    "median_ms": 36.177,
+    "min_ms": 33.835,
+    "max_ms": 38.222,
+    "samples_ms": [
+      33.835,
+      36.177,
+      34.773,
+      35.814,
+      38.222,
+      38.163,
+      37.27
+    ],
+    "median_stage_ms": {
+      "reduction": 27.819,
+      "semantic": 7.007,
+      "join": 1.465
+    },
+    "work": {
+      "Candidate Rows": 2048,
+      "Kernel Inputs": 2026,
+      "Kernel Calls": 16,
+      "Cache Hits": 0,
+      "Batch Size": 128
+    },
+    "retained_rows": [
+      3,
+      4096,
+      3
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 122,
+    "bits": "0101111",
+    "settings": {
+      "enable_batching": false,
+      "enable_deduplication": true,
+      "enable_result_cache": false,
+      "enable_relational_prefilter": true,
+      "reuse_kernel_plan": true,
+      "enable_join_reduction": true,
+      "enable_selective_fallback": true
+    },
+    "median_ms": 248.726,
+    "min_ms": 234.463,
+    "max_ms": 256.928,
+    "samples_ms": [
+      252.678,
+      256.521,
+      234.463,
+      256.928,
+      248.726,
+      242.766,
+      241.178
+    ],
+    "median_stage_ms": {
+      "reduction": 27.183,
+      "semantic": 218.64,
+      "join": 1.666
+    },
+    "work": {
+      "Candidate Rows": 2048,
+      "Kernel Inputs": 2026,
+      "Kernel Calls": 2026,
+      "Cache Hits": 0,
+      "Batch Size": 1
+    },
+    "retained_rows": [
+      3,
+      4096,
+      3
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 123,
+    "bits": "1101111",
+    "settings": {
+      "enable_batching": true,
+      "enable_deduplication": true,
+      "enable_result_cache": false,
+      "enable_relational_prefilter": true,
+      "reuse_kernel_plan": true,
+      "enable_join_reduction": true,
+      "enable_selective_fallback": true
+    },
+    "median_ms": 35.227,
+    "min_ms": 34.002,
+    "max_ms": 42.535,
+    "samples_ms": [
+      34.949,
+      35.227,
+      34.002,
+      37.229,
+      42.535,
+      37.674,
+      34.014
+    ],
+    "median_stage_ms": {
+      "reduction": 27.872,
+      "semantic": 5.714,
+      "join": 1.656
+    },
+    "work": {
+      "Candidate Rows": 2048,
+      "Kernel Inputs": 512,
+      "Kernel Calls": 16,
+      "Cache Hits": 0,
+      "Batch Size": 128
+    },
+    "retained_rows": [
+      3,
+      4096,
+      3
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 124,
+    "bits": "0011111",
+    "settings": {
+      "enable_batching": false,
+      "enable_deduplication": false,
+      "enable_result_cache": true,
+      "enable_relational_prefilter": true,
+      "reuse_kernel_plan": true,
+      "enable_join_reduction": true,
+      "enable_selective_fallback": true
+    },
+    "median_ms": 38.553,
+    "min_ms": 36.397,
+    "max_ms": 42.386,
+    "samples_ms": [
+      42.386,
+      37.937,
+      41.586,
+      38.553,
+      36.397,
+      39.784,
+      36.64
+    ],
+    "median_stage_ms": {
+      "reduction": 28.241,
+      "semantic": 8.773,
+      "join": 1.637
+    },
+    "work": {
+      "Candidate Rows": 2048,
+      "Kernel Inputs": 64,
+      "Kernel Calls": 64,
+      "Cache Hits": 1962,
+      "Batch Size": 1
+    },
+    "retained_rows": [
+      3,
+      4096,
+      3
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 125,
+    "bits": "1011111",
+    "settings": {
+      "enable_batching": true,
+      "enable_deduplication": false,
+      "enable_result_cache": true,
+      "enable_relational_prefilter": true,
+      "reuse_kernel_plan": true,
+      "enable_join_reduction": true,
+      "enable_selective_fallback": true
+    },
+    "median_ms": 31.399,
+    "min_ms": 30.387,
+    "max_ms": 60.01,
+    "samples_ms": [
+      31.118,
+      33.602,
+      32.906,
+      31.399,
+      31.062,
+      60.01,
+      30.387
+    ],
+    "median_stage_ms": {
+      "reduction": 27.167,
+      "semantic": 2.578,
+      "join": 1.395
+    },
+    "work": {
+      "Candidate Rows": 2048,
+      "Kernel Inputs": 252,
+      "Kernel Calls": 2,
+      "Cache Hits": 1774,
+      "Batch Size": 128
+    },
+    "retained_rows": [
+      3,
+      4096,
+      3
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 126,
+    "bits": "0111111",
+    "settings": {
+      "enable_batching": false,
+      "enable_deduplication": true,
+      "enable_result_cache": true,
+      "enable_relational_prefilter": true,
+      "reuse_kernel_plan": true,
+      "enable_join_reduction": true,
+      "enable_selective_fallback": true
+    },
+    "median_ms": 39.307,
+    "min_ms": 37.238,
+    "max_ms": 42.814,
+    "samples_ms": [
+      37.851,
+      39.307,
+      37.238,
+      42.814,
+      40.393,
+      37.693,
+      40.457
+    ],
+    "median_stage_ms": {
+      "reduction": 28.135,
+      "semantic": 9.562,
+      "join": 1.422
+    },
+    "work": {
+      "Candidate Rows": 2048,
+      "Kernel Inputs": 64,
+      "Kernel Calls": 64,
+      "Cache Hits": 1962,
+      "Batch Size": 1
+    },
+    "retained_rows": [
+      3,
+      4096,
+      3
+    ],
+    "result_rows": 1326
+  },
+  {
+    "mask": 127,
+    "bits": "1111111",
+    "settings": {
+      "enable_batching": true,
+      "enable_deduplication": true,
+      "enable_result_cache": true,
+      "enable_relational_prefilter": true,
+      "reuse_kernel_plan": true,
+      "enable_join_reduction": true,
+      "enable_selective_fallback": true
+    },
+    "median_ms": 31.753,
+    "min_ms": 29.513,
+    "max_ms": 37.137,
+    "samples_ms": [
+      32.787,
+      31.753,
+      29.513,
+      30.347,
+      31.048,
+      34.657,
+      37.137
+    ],
+    "median_stage_ms": {
+      "reduction": 27.355,
+      "semantic": 2.708,
+      "join": 1.55
+    },
+    "work": {
+      "Candidate Rows": 2048,
+      "Kernel Inputs": 64,
+      "Kernel Calls": 2,
+      "Cache Hits": 1774,
+      "Batch Size": 128
+    },
+    "retained_rows": [
+      3,
+      4096,
+      3
+    ],
+    "result_rows": 1326
+  }
+]

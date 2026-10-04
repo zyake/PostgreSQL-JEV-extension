@@ -1,0 +1,193 @@
+{
+  "case": {
+    "name": "kernel_unique_10pct",
+    "suite": "kernel",
+    "duplicates": 1,
+    "interleaved": false,
+    "select_every": 10
+  },
+  "data": {
+    "rows": 8192,
+    "candidates": 820,
+    "heap_bytes": 2080768,
+    "avg_input_bytes": 201.9,
+    "nonnull_candidates": 812,
+    "global_unique_pairs": 812
+  },
+  "validation": {
+    "native": {
+      "rows": 203,
+      "sha256": "e121a2701459cfcf61fe9dfad714d3ddf8f2cc815d14a1c6e11939af2a704c58"
+    },
+    "scalar": {
+      "rows": 203,
+      "sha256": "e121a2701459cfcf61fe9dfad714d3ddf8f2cc815d14a1c6e11939af2a704c58"
+    },
+    "batch_1": {
+      "rows": 203,
+      "sha256": "e121a2701459cfcf61fe9dfad714d3ddf8f2cc815d14a1c6e11939af2a704c58"
+    },
+    "batch_16": {
+      "rows": 203,
+      "sha256": "e121a2701459cfcf61fe9dfad714d3ddf8f2cc815d14a1c6e11939af2a704c58"
+    },
+    "batch_128": {
+      "rows": 203,
+      "sha256": "e121a2701459cfcf61fe9dfad714d3ddf8f2cc815d14a1c6e11939af2a704c58"
+    },
+    "batch_512": {
+      "rows": 203,
+      "sha256": "e121a2701459cfcf61fe9dfad714d3ddf8f2cc815d14a1c6e11939af2a704c58"
+    }
+  },
+  "results": [
+    {
+      "mode": "native",
+      "median_ms": 0.49,
+      "min_ms": 0.433,
+      "max_ms": 0.551,
+      "samples_ms": [
+        0.433,
+        0.478,
+        0.49,
+        0.495,
+        0.551
+      ],
+      "median_planning_ms": 0.028
+    },
+    {
+      "mode": "scalar",
+      "median_ms": 42.346,
+      "min_ms": 42.165,
+      "max_ms": 43.157,
+      "samples_ms": [
+        42.546,
+        43.157,
+        42.346,
+        42.329,
+        42.165
+      ],
+      "median_planning_ms": 0.012
+    },
+    {
+      "mode": "batch_1",
+      "median_ms": 42.699,
+      "min_ms": 42.463,
+      "max_ms": 43.334,
+      "samples_ms": [
+        42.463,
+        42.699,
+        43.334,
+        42.65,
+        42.876
+      ],
+      "median_planning_ms": 0.024,
+      "counters": {
+        "Rows Read": 8192,
+        "Candidate Rows": 820,
+        "Unique Inputs": 812,
+        "Reused Inputs": 0,
+        "Kernel Calls": 812,
+        "Provider Calls": 812,
+        "Batches": 820,
+        "Peak Buffered Rows": 1,
+        "Peak Buffered Bytes": 1073,
+        "Cache Hits": 0,
+        "Cache Entries": 0,
+        "Cache Used Bytes": 0,
+        "Cache Allocated Bytes": 0,
+        "Cache Admission Skips": 0
+      }
+    },
+    {
+      "mode": "batch_16",
+      "median_ms": 5.187,
+      "min_ms": 5.078,
+      "max_ms": 5.371,
+      "samples_ms": [
+        5.089,
+        5.187,
+        5.371,
+        5.078,
+        5.212
+      ],
+      "median_planning_ms": 0.039,
+      "counters": {
+        "Rows Read": 8192,
+        "Candidate Rows": 820,
+        "Unique Inputs": 812,
+        "Reused Inputs": 0,
+        "Kernel Calls": 52,
+        "Provider Calls": 52,
+        "Batches": 52,
+        "Peak Buffered Rows": 16,
+        "Peak Buffered Bytes": 11732,
+        "Cache Hits": 0,
+        "Cache Entries": 0,
+        "Cache Used Bytes": 0,
+        "Cache Allocated Bytes": 0,
+        "Cache Admission Skips": 0
+      }
+    },
+    {
+      "mode": "batch_128",
+      "median_ms": 2.78,
+      "min_ms": 2.727,
+      "max_ms": 3.435,
+      "samples_ms": [
+        2.78,
+        2.727,
+        2.739,
+        3.15,
+        3.435
+      ],
+      "median_planning_ms": 0.039,
+      "counters": {
+        "Rows Read": 8192,
+        "Candidate Rows": 820,
+        "Unique Inputs": 812,
+        "Reused Inputs": 0,
+        "Kernel Calls": 7,
+        "Provider Calls": 7,
+        "Batches": 7,
+        "Peak Buffered Rows": 128,
+        "Peak Buffered Bytes": 93403,
+        "Cache Hits": 0,
+        "Cache Entries": 0,
+        "Cache Used Bytes": 0,
+        "Cache Allocated Bytes": 0,
+        "Cache Admission Skips": 0
+      }
+    },
+    {
+      "mode": "batch_512",
+      "median_ms": 2.553,
+      "min_ms": 2.444,
+      "max_ms": 2.615,
+      "samples_ms": [
+        2.615,
+        2.553,
+        2.577,
+        2.463,
+        2.444
+      ],
+      "median_planning_ms": 0.029,
+      "counters": {
+        "Rows Read": 8192,
+        "Candidate Rows": 820,
+        "Unique Inputs": 812,
+        "Reused Inputs": 0,
+        "Kernel Calls": 2,
+        "Provider Calls": 2,
+        "Batches": 2,
+        "Peak Buffered Rows": 512,
+        "Peak Buffered Bytes": 371503,
+        "Cache Hits": 0,
+        "Cache Entries": 0,
+        "Cache Used Bytes": 0,
+        "Cache Allocated Bytes": 0,
+        "Cache Admission Skips": 0
+      }
+    }
+  ]
+}

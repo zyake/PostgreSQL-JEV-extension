@@ -1,0 +1,444 @@
+[
+  {
+    "case": "batching",
+    "switch": "jev.enable_batching",
+    "methodology": "EXPLAIN Execution Time",
+    "workload": {
+      "rows": 8192,
+      "candidates": 8192,
+      "heap_bytes": 2080768,
+      "avg_input_bytes": 201.9,
+      "nonnull_candidates": 8108,
+      "global_unique_pairs": 8108
+    },
+    "validation": {
+      "rows": 2027,
+      "sha256": "77a2237c3e61bbad13d3d36fab99428a31946babf819fd645e3ce3dde938f0ed",
+      "bags_equal": true
+    },
+    "results": [
+      {
+        "enabled": false,
+        "median_ms": 415.674,
+        "min_ms": 413.028,
+        "max_ms": 417.19,
+        "samples_ms": [
+          414.803,
+          415.674,
+          413.028,
+          416.57,
+          417.19,
+          415.355,
+          415.801
+        ],
+        "work": {
+          "Candidate Rows": 8192,
+          "Kernel Inputs": 8108,
+          "Kernel Calls": 8108,
+          "Cache Hits": 0,
+          "Batch Size": 1
+        }
+      },
+      {
+        "enabled": true,
+        "median_ms": 21.571,
+        "min_ms": 21.378,
+        "max_ms": 22.028,
+        "samples_ms": [
+          22.028,
+          21.571,
+          21.566,
+          21.378,
+          21.756,
+          21.593,
+          21.467
+        ],
+        "work": {
+          "Candidate Rows": 8192,
+          "Kernel Inputs": 8108,
+          "Kernel Calls": 64,
+          "Cache Hits": 0,
+          "Batch Size": 128
+        }
+      }
+    ],
+    "off_over_on": 19.270038477585643
+  },
+  {
+    "case": "deduplication",
+    "switch": "jev.enable_deduplication",
+    "methodology": "EXPLAIN Execution Time",
+    "workload": {
+      "rows": 8192,
+      "candidates": 8192,
+      "heap_bytes": 1998848,
+      "avg_input_bytes": 200.0,
+      "nonnull_candidates": 8108,
+      "global_unique_pairs": 1024
+    },
+    "validation": {
+      "rows": 2024,
+      "sha256": "4b26f09fd6f0779314ba70472e703ded0ea211105411952655870d98186c3e97",
+      "bags_equal": true
+    },
+    "results": [
+      {
+        "enabled": false,
+        "median_ms": 15.561,
+        "min_ms": 15.438,
+        "max_ms": 15.661,
+        "samples_ms": [
+          15.438,
+          15.548,
+          15.561,
+          15.521,
+          15.606,
+          15.636,
+          15.661
+        ],
+        "work": {
+          "Candidate Rows": 8192,
+          "Kernel Inputs": 8108,
+          "Kernel Calls": 64,
+          "Cache Hits": 0,
+          "Batch Size": 128
+        }
+      },
+      {
+        "enabled": true,
+        "median_ms": 7.573,
+        "min_ms": 7.49,
+        "max_ms": 7.864,
+        "samples_ms": [
+          7.864,
+          7.532,
+          7.812,
+          7.573,
+          7.49,
+          7.66,
+          7.557
+        ],
+        "work": {
+          "Candidate Rows": 8192,
+          "Kernel Inputs": 1064,
+          "Kernel Calls": 64,
+          "Cache Hits": 0,
+          "Batch Size": 128
+        }
+      }
+    ],
+    "off_over_on": 2.054799947180774
+  },
+  {
+    "case": "result_cache",
+    "switch": "jev.enable_result_cache",
+    "methodology": "EXPLAIN Execution Time",
+    "workload": {
+      "rows": 8192,
+      "candidates": 8192,
+      "heap_bytes": 2015232,
+      "avg_input_bytes": 200.0,
+      "nonnull_candidates": 8108,
+      "global_unique_pairs": 1024
+    },
+    "validation": {
+      "rows": 2024,
+      "sha256": "4b26f09fd6f0779314ba70472e703ded0ea211105411952655870d98186c3e97",
+      "bags_equal": true
+    },
+    "results": [
+      {
+        "enabled": false,
+        "median_ms": 21.518,
+        "min_ms": 21.378,
+        "max_ms": 22.022,
+        "samples_ms": [
+          21.711,
+          21.483,
+          21.637,
+          21.518,
+          21.378,
+          21.394,
+          22.022
+        ],
+        "work": {
+          "Candidate Rows": 8192,
+          "Kernel Inputs": 8108,
+          "Kernel Calls": 64,
+          "Cache Hits": 0,
+          "Batch Size": 128
+        }
+      },
+      {
+        "enabled": true,
+        "median_ms": 5.954,
+        "min_ms": 5.901,
+        "max_ms": 6.069,
+        "samples_ms": [
+          5.954,
+          5.901,
+          5.966,
+          5.918,
+          6.069,
+          5.918,
+          5.974
+        ],
+        "work": {
+          "Candidate Rows": 8192,
+          "Kernel Inputs": 1024,
+          "Kernel Calls": 16,
+          "Cache Hits": 7084,
+          "Batch Size": 128
+        }
+      }
+    ],
+    "off_over_on": 3.614040980853208
+  },
+  {
+    "case": "relational_prefilter",
+    "switch": "jev.enable_relational_prefilter",
+    "methodology": "EXPLAIN Execution Time",
+    "workload": {
+      "rows": 8192,
+      "candidates": 820,
+      "heap_bytes": 2080768,
+      "avg_input_bytes": 201.9,
+      "nonnull_candidates": 812,
+      "global_unique_pairs": 812
+    },
+    "validation": {
+      "rows": 203,
+      "sha256": "e121a2701459cfcf61fe9dfad714d3ddf8f2cc815d14a1c6e11939af2a704c58",
+      "bags_equal": true
+    },
+    "results": [
+      {
+        "enabled": false,
+        "median_ms": 21.261,
+        "min_ms": 21.033,
+        "max_ms": 21.367,
+        "samples_ms": [
+          21.033,
+          21.367,
+          21.364,
+          21.356,
+          21.072,
+          21.261,
+          21.196
+        ],
+        "work": {
+          "Candidate Rows": 8192,
+          "Kernel Inputs": 8108,
+          "Kernel Calls": 64,
+          "Cache Hits": 0,
+          "Batch Size": 128
+        }
+      },
+      {
+        "enabled": true,
+        "median_ms": 2.69,
+        "min_ms": 2.652,
+        "max_ms": 2.827,
+        "samples_ms": [
+          2.676,
+          2.71,
+          2.69,
+          2.827,
+          2.714,
+          2.668,
+          2.652
+        ],
+        "work": {
+          "Candidate Rows": 820,
+          "Kernel Inputs": 812,
+          "Kernel Calls": 7,
+          "Cache Hits": 0,
+          "Batch Size": 128
+        }
+      }
+    ],
+    "off_over_on": 7.903717472118959
+  },
+  {
+    "case": "kernel_plan_reuse",
+    "switch": "jev.reuse_kernel_plan",
+    "methodology": "EXPLAIN Execution Time",
+    "workload": {
+      "rows": 8192,
+      "candidates": 8192,
+      "heap_bytes": 2080768,
+      "avg_input_bytes": 201.9,
+      "nonnull_candidates": 8108,
+      "global_unique_pairs": 8108
+    },
+    "validation": {
+      "rows": 2027,
+      "sha256": "77a2237c3e61bbad13d3d36fab99428a31946babf819fd645e3ce3dde938f0ed",
+      "bags_equal": true
+    },
+    "results": [
+      {
+        "enabled": false,
+        "median_ms": 21.684,
+        "min_ms": 21.554,
+        "max_ms": 21.857,
+        "samples_ms": [
+          21.811,
+          21.785,
+          21.857,
+          21.635,
+          21.634,
+          21.684,
+          21.554
+        ],
+        "work": {
+          "Candidate Rows": 8192,
+          "Kernel Inputs": 8108,
+          "Kernel Calls": 64,
+          "Cache Hits": 0,
+          "Batch Size": 128
+        }
+      },
+      {
+        "enabled": true,
+        "median_ms": 21.276,
+        "min_ms": 21.19,
+        "max_ms": 21.438,
+        "samples_ms": [
+          21.276,
+          21.287,
+          21.214,
+          21.245,
+          21.438,
+          21.432,
+          21.19
+        ],
+        "work": {
+          "Candidate Rows": 8192,
+          "Kernel Inputs": 8108,
+          "Kernel Calls": 64,
+          "Cache Hits": 0,
+          "Batch Size": 128
+        }
+      }
+    ],
+    "off_over_on": 1.0191765369430346
+  },
+  {
+    "case": "selective_fallback",
+    "switch": "jev.enable_selective_fallback",
+    "methodology": "EXPLAIN Execution Time",
+    "workload": {
+      "rows": 8192,
+      "synthetic_confidence": true
+    },
+    "validation": {
+      "rows": 8192,
+      "sha256": "9e1a755b92a601826c523e7dbf5da227f1c836a42e4c6c2cd9e683967ef88283",
+      "bags_equal": true
+    },
+    "results": [
+      {
+        "enabled": false,
+        "median_ms": 32.677,
+        "min_ms": 31.482,
+        "max_ms": 194.652,
+        "samples_ms": [
+          190.642,
+          194.652,
+          33.768,
+          31.863,
+          31.482,
+          32.637,
+          32.677
+        ],
+        "work": {
+          "primary_inputs": 8192,
+          "expected_fallback_inputs": 8192
+        }
+      },
+      {
+        "enabled": true,
+        "median_ms": 22.153,
+        "min_ms": 21.677,
+        "max_ms": 121.437,
+        "samples_ms": [
+          121.437,
+          22.524,
+          22.153,
+          22.529,
+          21.677,
+          21.878,
+          21.934
+        ],
+        "work": {
+          "primary_inputs": 8192,
+          "expected_fallback_inputs": 819
+        }
+      }
+    ],
+    "off_over_on": 1.4750598113122377
+  },
+  {
+    "case": "join_reduction",
+    "switch": "jev.enable_join_reduction",
+    "methodology": "Server elapsed time for copying/reduction/inference/final join",
+    "workload": {
+      "semantic_source_rows": 8192
+    },
+    "validation": {
+      "rows": 404,
+      "bag_md5": "2413b15bc6702d1955449203b6495ad7",
+      "bags_equal": true
+    },
+    "results": [
+      {
+        "enabled": false,
+        "median_ms": 35.933,
+        "min_ms": 35.31,
+        "max_ms": 36.26,
+        "samples_ms": [
+          36.133,
+          36.26,
+          35.31,
+          36.031,
+          35.752,
+          35.754,
+          35.933
+        ],
+        "work": {
+          "retained_rows": [
+            1638,
+            8192,
+            1638
+          ],
+          "provider_inputs": 8108
+        }
+      },
+      {
+        "enabled": true,
+        "median_ms": 17.255,
+        "min_ms": 16.527,
+        "max_ms": 17.6,
+        "samples_ms": [
+          17.004,
+          17.6,
+          17.518,
+          17.255,
+          17.343,
+          16.527,
+          16.699
+        ],
+        "work": {
+          "retained_rows": [
+            1638,
+            819,
+            819
+          ],
+          "provider_inputs": 811
+        }
+      }
+    ],
+    "off_over_on": 2.082468849608809
+  }
+]

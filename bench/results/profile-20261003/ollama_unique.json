@@ -1,0 +1,2569 @@
+{
+  "case": {
+    "name": "ollama_unique",
+    "suite": "ollama",
+    "duplicates": 1,
+    "select_every": 1
+  },
+  "data": {
+    "rows": 128,
+    "candidates": 128,
+    "heap_bytes": 24576,
+    "avg_input_bytes": 98.1,
+    "nonnull_candidates": 124,
+    "global_unique_pairs": 124
+  },
+  "validation": [
+    {
+      "mode": "scalar",
+      "profiling": false,
+      "output_rows": 62,
+      "sha256": "8a4e49f87f3b8d4bc22c60c21ce762eb14378658bacb5359637ca1740eb5021c"
+    },
+    {
+      "mode": "scalar",
+      "profiling": true,
+      "output_rows": 62,
+      "sha256": "8a4e49f87f3b8d4bc22c60c21ce762eb14378658bacb5359637ca1740eb5021c"
+    },
+    {
+      "mode": "batch_128",
+      "profiling": false,
+      "output_rows": 62,
+      "sha256": "8a4e49f87f3b8d4bc22c60c21ce762eb14378658bacb5359637ca1740eb5021c"
+    },
+    {
+      "mode": "batch_128",
+      "profiling": true,
+      "output_rows": 62,
+      "sha256": "8a4e49f87f3b8d4bc22c60c21ce762eb14378658bacb5359637ca1740eb5021c"
+    }
+  ],
+  "records": [
+    {
+      "case": "ollama_unique",
+      "mode": "batch_128",
+      "profiling": false,
+      "detailed": false,
+      "execution_ms": 350.29,
+      "planning_ms": 0.033,
+      "functions": [],
+      "adapter": {
+        "http": {},
+        "enabled": false,
+        "cprofile": {
+          "timer": "wall_clock",
+          "enabled": false,
+          "top_self_time_functions": []
+        },
+        "detailed": false,
+        "input_pairs": 0,
+        "http_wall_ms": 0,
+        "timing_notes": {
+          "server": "Ollama-reported durations overlap HTTP time; total_duration is not pure GPU execution time.",
+          "http_wall_ms": "Inclusive production _request time: request encoding, connection, server wait, transfer and JSON decoding.",
+          "process_cpu_ms": "Database backend process CPU; excludes Ollama server CPU/GPU work and overlaps nested CPU measurements.",
+          "wrapper_bookkeeping_wall_ms": "Outer evaluation wrapper bookkeeping estimate only; excludes SQL/PLPython boundary, inner timing hooks and cProfile overhead.",
+          "adapter_local_residual_wall_ms": "Adapter wall minus inclusive HTTP wall; includes vector validation, cosine calculation, other local work and instrumentation."
+        },
+        "normalization": {
+          "calls": 0,
+          "errors": 0,
+          "wall_ms": 0.0,
+          "components": 0,
+          "process_cpu_ms": 0.0
+        },
+        "provider_calls": 0,
+        "adapter_wall_ms": 0.0,
+        "provider_errors": 0,
+        "adapter_source_sha256": "cebf9fceeb21464acb2bd1bb7b3c0620e4c78c0375323573a873d21d221670dc",
+        "adapter_process_cpu_ms": 0.0,
+        "wrapper_bookkeeping_wall_ms": 0.0,
+        "adapter_local_residual_wall_ms": 0.0,
+        "other_adapter_residual_wall_ms": 0.0
+      },
+      "plan": {
+        "Plan": {
+          "Node Type": "Custom Scan",
+          "Custom Plan Provider": "JEVSemanticScan",
+          "Parallel Aware": false,
+          "Async Capable": false,
+          "Relation Name": "bench_items",
+          "Alias": "bench_items",
+          "Startup Cost": 0.0,
+          "Total Cost": 36.28,
+          "Plan Rows": 43,
+          "Plan Width": 4,
+          "Actual Rows": 62,
+          "Actual Loops": 1,
+          "Filter": "(active AND jev.semantic_match('bench-similar'::text, left_text, right_text))",
+          "Rows Removed by Filter": 66,
+          "Semantic Evaluation": "batched",
+          "Batch Size": 128,
+          "Batch Memory Target": 1024,
+          "Rows Read": 128,
+          "Candidate Rows": 128,
+          "Unique Inputs": 124,
+          "Reused Inputs": 0,
+          "Provider Calls": 1,
+          "Batches": 1,
+          "Peak Buffered Rows": 128,
+          "Peak Buffered Bytes": 51937,
+          "Kernel Time": 350.227,
+          "Shared Hit Blocks": 11,
+          "Shared Read Blocks": 0,
+          "Shared Dirtied Blocks": 0,
+          "Shared Written Blocks": 0,
+          "Local Hit Blocks": 0,
+          "Local Read Blocks": 0,
+          "Local Dirtied Blocks": 0,
+          "Local Written Blocks": 0,
+          "Temp Read Blocks": 0,
+          "Temp Written Blocks": 0
+        },
+        "Planning": {
+          "Shared Hit Blocks": 10,
+          "Shared Read Blocks": 0,
+          "Shared Dirtied Blocks": 0,
+          "Shared Written Blocks": 0,
+          "Local Hit Blocks": 0,
+          "Local Read Blocks": 0,
+          "Local Dirtied Blocks": 0,
+          "Local Written Blocks": 0,
+          "Temp Read Blocks": 0,
+          "Temp Written Blocks": 0
+        },
+        "Planning Time": 0.033,
+        "Triggers": [],
+        "Execution Time": 350.29
+      },
+      "repeat": 1
+    },
+    {
+      "case": "ollama_unique",
+      "mode": "scalar",
+      "profiling": true,
+      "detailed": false,
+      "execution_ms": 2097.504,
+      "planning_ms": 0.016,
+      "functions": [
+        {
+          "schemaname": "jev",
+          "funcname": "evaluate_batch",
+          "calls": 124,
+          "total_time": 2095.608591,
+          "self_time": 18.155382
+        },
+        {
+          "schemaname": "jev",
+          "funcname": "semantic_match",
+          "calls": 124,
+          "total_time": 2097.026742,
+          "self_time": 1.418151
+        },
+        {
+          "schemaname": "pg_temp_0",
+          "funcname": "profile_ollama_provider",
+          "calls": 124,
+          "total_time": 2077.453209,
+          "self_time": 2077.453209
+        }
+      ],
+      "adapter": {
+        "http": {
+          "/api/tags": {
+            "calls": 248,
+            "errors": 0,
+            "server": {
+              "load_duration_ns": {
+                "sum": null,
+                "samples": 0,
+                "invalid_samples": 0
+              },
+              "prompt_eval_count": {
+                "sum": null,
+                "samples": 0,
+                "invalid_samples": 0
+              },
+              "total_duration_ns": {
+                "sum": null,
+                "samples": 0,
+                "invalid_samples": 0
+              }
+            },
+            "wall_ms": 120.48483965918422,
+            "input_texts": 0,
+            "process_cpu_ms": 38.43500000000866
+          },
+          "/api/embed": {
+            "calls": 124,
+            "errors": 0,
+            "server": {
+              "load_duration_ns": {
+                "sum": 956427916,
+                "samples": 124,
+                "invalid_samples": 0
+              },
+              "prompt_eval_count": {
+                "sum": 2976,
+                "samples": 124,
+                "invalid_samples": 0
+              },
+              "total_duration_ns": {
+                "sum": 1861426750,
+                "samples": 124,
+                "invalid_samples": 0
+              }
+            },
+            "wall_ms": 1914.0640443074517,
+            "input_texts": 248,
+            "process_cpu_ms": 35.5819999999909
+          }
+        },
+        "enabled": true,
+        "cprofile": {
+          "timer": "wall_clock",
+          "enabled": false,
+          "top_self_time_functions": []
+        },
+        "detailed": false,
+        "input_pairs": 124,
+        "http_wall_ms": 2034.548883966636,
+        "timing_notes": {
+          "server": "Ollama-reported durations overlap HTTP time; total_duration is not pure GPU execution time.",
+          "http_wall_ms": "Inclusive production _request time: request encoding, connection, server wait, transfer and JSON decoding.",
+          "process_cpu_ms": "Database backend process CPU; excludes Ollama server CPU/GPU work and overlaps nested CPU measurements.",
+          "wrapper_bookkeeping_wall_ms": "Outer evaluation wrapper bookkeeping estimate only; excludes SQL/PLPython boundary, inner timing hooks and cProfile overhead.",
+          "adapter_local_residual_wall_ms": "Adapter wall minus inclusive HTTP wall; includes vector validation, cosine calculation, other local work and instrumentation."
+        },
+        "normalization": {
+          "calls": 248,
+          "errors": 0,
+          "wall_ms": 24.854168761521578,
+          "components": 95232,
+          "process_cpu_ms": 24.960000000003646
+        },
+        "provider_calls": 124,
+        "adapter_wall_ms": 2074.404196930118,
+        "provider_errors": 0,
+        "adapter_source_sha256": "cebf9fceeb21464acb2bd1bb7b3c0620e4c78c0375323573a873d21d221670dc",
+        "adapter_process_cpu_ms": 113.63700000000065,
+        "wrapper_bookkeeping_wall_ms": 0.45571813825517893,
+        "adapter_local_residual_wall_ms": 39.85531296348199,
+        "other_adapter_residual_wall_ms": 15.001144201960415
+      },
+      "plan": {
+        "Plan": {
+          "Node Type": "Seq Scan",
+          "Parallel Aware": false,
+          "Async Capable": false,
+          "Relation Name": "bench_items",
+          "Alias": "bench_items",
+          "Startup Cost": 0.0,
+          "Total Cost": 36.28,
+          "Plan Rows": 43,
+          "Plan Width": 4,
+          "Actual Rows": 62,
+          "Actual Loops": 1,
+          "Filter": "(active AND jev.semantic_match('bench-similar'::text, left_text, right_text))",
+          "Rows Removed by Filter": 66,
+          "Shared Hit Blocks": 995,
+          "Shared Read Blocks": 0,
+          "Shared Dirtied Blocks": 0,
+          "Shared Written Blocks": 0,
+          "Local Hit Blocks": 0,
+          "Local Read Blocks": 0,
+          "Local Dirtied Blocks": 0,
+          "Local Written Blocks": 0,
+          "Temp Read Blocks": 0,
+          "Temp Written Blocks": 0
+        },
+        "Planning": {
+          "Shared Hit Blocks": 0,
+          "Shared Read Blocks": 0,
+          "Shared Dirtied Blocks": 0,
+          "Shared Written Blocks": 0,
+          "Local Hit Blocks": 0,
+          "Local Read Blocks": 0,
+          "Local Dirtied Blocks": 0,
+          "Local Written Blocks": 0,
+          "Temp Read Blocks": 0,
+          "Temp Written Blocks": 0
+        },
+        "Planning Time": 0.016,
+        "Triggers": [],
+        "Execution Time": 2097.504
+      },
+      "repeat": 1
+    },
+    {
+      "case": "ollama_unique",
+      "mode": "batch_128",
+      "profiling": true,
+      "detailed": false,
+      "execution_ms": 408.244,
+      "planning_ms": 0.032,
+      "functions": [
+        {
+          "schemaname": "jev",
+          "funcname": "evaluate_batch",
+          "calls": 1,
+          "total_time": 408.148125,
+          "self_time": 0.38
+        },
+        {
+          "schemaname": "pg_temp_0",
+          "funcname": "profile_ollama_provider",
+          "calls": 1,
+          "total_time": 407.768125,
+          "self_time": 407.768125
+        }
+      ],
+      "adapter": {
+        "http": {
+          "/api/tags": {
+            "calls": 2,
+            "errors": 0,
+            "server": {
+              "load_duration_ns": {
+                "sum": null,
+                "samples": 0,
+                "invalid_samples": 0
+              },
+              "prompt_eval_count": {
+                "sum": null,
+                "samples": 0,
+                "invalid_samples": 0
+              },
+              "total_duration_ns": {
+                "sum": null,
+                "samples": 0,
+                "invalid_samples": 0
+              }
+            },
+            "wall_ms": 1.618624955881387,
+            "input_texts": 0,
+            "process_cpu_ms": 0.6280000000007391
+          },
+          "/api/embed": {
+            "calls": 1,
+            "errors": 0,
+            "server": {
+              "load_duration_ns": {
+                "sum": 7503584,
+                "samples": 1,
+                "invalid_samples": 0
+              },
+              "prompt_eval_count": {
+                "sum": 2238,
+                "samples": 1,
+                "invalid_samples": 0
+              },
+              "total_duration_ns": {
+                "sum": 380654500,
+                "samples": 1,
+                "invalid_samples": 0
+              }
+            },
+            "wall_ms": 389.6442080149427,
+            "input_texts": 125,
+            "process_cpu_ms": 4.760000000000986
+          }
+        },
+        "enabled": true,
+        "cprofile": {
+          "timer": "wall_clock",
+          "enabled": false,
+          "top_self_time_functions": []
+        },
+        "detailed": false,
+        "input_pairs": 124,
+        "http_wall_ms": 391.2628329708241,
+        "timing_notes": {
+          "server": "Ollama-reported durations overlap HTTP time; total_duration is not pure GPU execution time.",
+          "http_wall_ms": "Inclusive production _request time: request encoding, connection, server wait, transfer and JSON decoding.",
+          "process_cpu_ms": "Database backend process CPU; excludes Ollama server CPU/GPU work and overlaps nested CPU measurements.",
+          "wrapper_bookkeeping_wall_ms": "Outer evaluation wrapper bookkeeping estimate only; excludes SQL/PLPython boundary, inner timing hooks and cProfile overhead.",
+          "adapter_local_residual_wall_ms": "Adapter wall minus inclusive HTTP wall; includes vector validation, cosine calculation, other local work and instrumentation."
+        },
+        "normalization": {
+          "calls": 125,
+          "errors": 0,
+          "wall_ms": 12.394626217428595,
+          "components": 48000,
+          "process_cpu_ms": 12.384000000000839
+        },
+        "provider_calls": 1,
+        "adapter_wall_ms": 407.6256660046056,
+        "provider_errors": 0,
+        "adapter_source_sha256": "cebf9fceeb21464acb2bd1bb7b3c0620e4c78c0375323573a873d21d221670dc",
+        "adapter_process_cpu_ms": 21.66000000000068,
+        "wrapper_bookkeeping_wall_ms": 0.005250971298664808,
+        "adapter_local_residual_wall_ms": 16.3628330337815,
+        "other_adapter_residual_wall_ms": 3.968206816352904
+      },
+      "plan": {
+        "Plan": {
+          "Node Type": "Custom Scan",
+          "Custom Plan Provider": "JEVSemanticScan",
+          "Parallel Aware": false,
+          "Async Capable": false,
+          "Relation Name": "bench_items",
+          "Alias": "bench_items",
+          "Startup Cost": 0.0,
+          "Total Cost": 36.28,
+          "Plan Rows": 43,
+          "Plan Width": 4,
+          "Actual Rows": 62,
+          "Actual Loops": 1,
+          "Filter": "(active AND jev.semantic_match('bench-similar'::text, left_text, right_text))",
+          "Rows Removed by Filter": 66,
+          "Semantic Evaluation": "batched",
+          "Batch Size": 128,
+          "Batch Memory Target": 1024,
+          "Rows Read": 128,
+          "Candidate Rows": 128,
+          "Unique Inputs": 124,
+          "Reused Inputs": 0,
+          "Provider Calls": 1,
+          "Batches": 1,
+          "Peak Buffered Rows": 128,
+          "Peak Buffered Bytes": 51937,
+          "Kernel Time": 408.185,
+          "Shared Hit Blocks": 11,
+          "Shared Read Blocks": 0,
+          "Shared Dirtied Blocks": 0,
+          "Shared Written Blocks": 0,
+          "Local Hit Blocks": 0,
+          "Local Read Blocks": 0,
+          "Local Dirtied Blocks": 0,
+          "Local Written Blocks": 0,
+          "Temp Read Blocks": 0,
+          "Temp Written Blocks": 0
+        },
+        "Planning": {
+          "Shared Hit Blocks": 10,
+          "Shared Read Blocks": 0,
+          "Shared Dirtied Blocks": 0,
+          "Shared Written Blocks": 0,
+          "Local Hit Blocks": 0,
+          "Local Read Blocks": 0,
+          "Local Dirtied Blocks": 0,
+          "Local Written Blocks": 0,
+          "Temp Read Blocks": 0,
+          "Temp Written Blocks": 0
+        },
+        "Planning Time": 0.032,
+        "Triggers": [],
+        "Execution Time": 408.244
+      },
+      "repeat": 1
+    },
+    {
+      "case": "ollama_unique",
+      "mode": "scalar",
+      "profiling": false,
+      "detailed": false,
+      "execution_ms": 2080.598,
+      "planning_ms": 0.017,
+      "functions": [],
+      "adapter": {
+        "http": {},
+        "enabled": false,
+        "cprofile": {
+          "timer": "wall_clock",
+          "enabled": false,
+          "top_self_time_functions": []
+        },
+        "detailed": false,
+        "input_pairs": 0,
+        "http_wall_ms": 0,
+        "timing_notes": {
+          "server": "Ollama-reported durations overlap HTTP time; total_duration is not pure GPU execution time.",
+          "http_wall_ms": "Inclusive production _request time: request encoding, connection, server wait, transfer and JSON decoding.",
+          "process_cpu_ms": "Database backend process CPU; excludes Ollama server CPU/GPU work and overlaps nested CPU measurements.",
+          "wrapper_bookkeeping_wall_ms": "Outer evaluation wrapper bookkeeping estimate only; excludes SQL/PLPython boundary, inner timing hooks and cProfile overhead.",
+          "adapter_local_residual_wall_ms": "Adapter wall minus inclusive HTTP wall; includes vector validation, cosine calculation, other local work and instrumentation."
+        },
+        "normalization": {
+          "calls": 0,
+          "errors": 0,
+          "wall_ms": 0.0,
+          "components": 0,
+          "process_cpu_ms": 0.0
+        },
+        "provider_calls": 0,
+        "adapter_wall_ms": 0.0,
+        "provider_errors": 0,
+        "adapter_source_sha256": "cebf9fceeb21464acb2bd1bb7b3c0620e4c78c0375323573a873d21d221670dc",
+        "adapter_process_cpu_ms": 0.0,
+        "wrapper_bookkeeping_wall_ms": 0.0,
+        "adapter_local_residual_wall_ms": 0.0,
+        "other_adapter_residual_wall_ms": 0.0
+      },
+      "plan": {
+        "Plan": {
+          "Node Type": "Seq Scan",
+          "Parallel Aware": false,
+          "Async Capable": false,
+          "Relation Name": "bench_items",
+          "Alias": "bench_items",
+          "Startup Cost": 0.0,
+          "Total Cost": 36.28,
+          "Plan Rows": 43,
+          "Plan Width": 4,
+          "Actual Rows": 62,
+          "Actual Loops": 1,
+          "Filter": "(active AND jev.semantic_match('bench-similar'::text, left_text, right_text))",
+          "Rows Removed by Filter": 66,
+          "Shared Hit Blocks": 995,
+          "Shared Read Blocks": 0,
+          "Shared Dirtied Blocks": 0,
+          "Shared Written Blocks": 0,
+          "Local Hit Blocks": 0,
+          "Local Read Blocks": 0,
+          "Local Dirtied Blocks": 0,
+          "Local Written Blocks": 0,
+          "Temp Read Blocks": 0,
+          "Temp Written Blocks": 0
+        },
+        "Planning": {
+          "Shared Hit Blocks": 0,
+          "Shared Read Blocks": 0,
+          "Shared Dirtied Blocks": 0,
+          "Shared Written Blocks": 0,
+          "Local Hit Blocks": 0,
+          "Local Read Blocks": 0,
+          "Local Dirtied Blocks": 0,
+          "Local Written Blocks": 0,
+          "Temp Read Blocks": 0,
+          "Temp Written Blocks": 0
+        },
+        "Planning Time": 0.017,
+        "Triggers": [],
+        "Execution Time": 2080.598
+      },
+      "repeat": 1
+    },
+    {
+      "case": "ollama_unique",
+      "mode": "scalar",
+      "profiling": false,
+      "detailed": false,
+      "execution_ms": 2266.397,
+      "planning_ms": 0.013,
+      "functions": [],
+      "adapter": {
+        "http": {},
+        "enabled": false,
+        "cprofile": {
+          "timer": "wall_clock",
+          "enabled": false,
+          "top_self_time_functions": []
+        },
+        "detailed": false,
+        "input_pairs": 0,
+        "http_wall_ms": 0,
+        "timing_notes": {
+          "server": "Ollama-reported durations overlap HTTP time; total_duration is not pure GPU execution time.",
+          "http_wall_ms": "Inclusive production _request time: request encoding, connection, server wait, transfer and JSON decoding.",
+          "process_cpu_ms": "Database backend process CPU; excludes Ollama server CPU/GPU work and overlaps nested CPU measurements.",
+          "wrapper_bookkeeping_wall_ms": "Outer evaluation wrapper bookkeeping estimate only; excludes SQL/PLPython boundary, inner timing hooks and cProfile overhead.",
+          "adapter_local_residual_wall_ms": "Adapter wall minus inclusive HTTP wall; includes vector validation, cosine calculation, other local work and instrumentation."
+        },
+        "normalization": {
+          "calls": 0,
+          "errors": 0,
+          "wall_ms": 0.0,
+          "components": 0,
+          "process_cpu_ms": 0.0
+        },
+        "provider_calls": 0,
+        "adapter_wall_ms": 0.0,
+        "provider_errors": 0,
+        "adapter_source_sha256": "cebf9fceeb21464acb2bd1bb7b3c0620e4c78c0375323573a873d21d221670dc",
+        "adapter_process_cpu_ms": 0.0,
+        "wrapper_bookkeeping_wall_ms": 0.0,
+        "adapter_local_residual_wall_ms": 0.0,
+        "other_adapter_residual_wall_ms": 0.0
+      },
+      "plan": {
+        "Plan": {
+          "Node Type": "Seq Scan",
+          "Parallel Aware": false,
+          "Async Capable": false,
+          "Relation Name": "bench_items",
+          "Alias": "bench_items",
+          "Startup Cost": 0.0,
+          "Total Cost": 36.28,
+          "Plan Rows": 43,
+          "Plan Width": 4,
+          "Actual Rows": 62,
+          "Actual Loops": 1,
+          "Filter": "(active AND jev.semantic_match('bench-similar'::text, left_text, right_text))",
+          "Rows Removed by Filter": 66,
+          "Shared Hit Blocks": 995,
+          "Shared Read Blocks": 0,
+          "Shared Dirtied Blocks": 0,
+          "Shared Written Blocks": 0,
+          "Local Hit Blocks": 0,
+          "Local Read Blocks": 0,
+          "Local Dirtied Blocks": 0,
+          "Local Written Blocks": 0,
+          "Temp Read Blocks": 0,
+          "Temp Written Blocks": 0
+        },
+        "Planning": {
+          "Shared Hit Blocks": 0,
+          "Shared Read Blocks": 0,
+          "Shared Dirtied Blocks": 0,
+          "Shared Written Blocks": 0,
+          "Local Hit Blocks": 0,
+          "Local Read Blocks": 0,
+          "Local Dirtied Blocks": 0,
+          "Local Written Blocks": 0,
+          "Temp Read Blocks": 0,
+          "Temp Written Blocks": 0
+        },
+        "Planning Time": 0.013,
+        "Triggers": [],
+        "Execution Time": 2266.397
+      },
+      "repeat": 2
+    },
+    {
+      "case": "ollama_unique",
+      "mode": "scalar",
+      "profiling": true,
+      "detailed": false,
+      "execution_ms": 2178.545,
+      "planning_ms": 0.013,
+      "functions": [
+        {
+          "schemaname": "jev",
+          "funcname": "evaluate_batch",
+          "calls": 124,
+          "total_time": 2176.554832,
+          "self_time": 19.274831
+        },
+        {
+          "schemaname": "jev",
+          "funcname": "semantic_match",
+          "calls": 124,
+          "total_time": 2178.058963,
+          "self_time": 1.504131
+        },
+        {
+          "schemaname": "pg_temp_0",
+          "funcname": "profile_ollama_provider",
+          "calls": 124,
+          "total_time": 2157.280001,
+          "self_time": 2157.280001
+        }
+      ],
+      "adapter": {
+        "http": {
+          "/api/tags": {
+            "calls": 248,
+            "errors": 0,
+            "server": {
+              "load_duration_ns": {
+                "sum": null,
+                "samples": 0,
+                "invalid_samples": 0
+              },
+              "prompt_eval_count": {
+                "sum": null,
+                "samples": 0,
+                "invalid_samples": 0
+              },
+              "total_duration_ns": {
+                "sum": null,
+                "samples": 0,
+                "invalid_samples": 0
+              }
+            },
+            "wall_ms": 127.86120601231232,
+            "input_texts": 0,
+            "process_cpu_ms": 41.61900000001317
+          },
+          "/api/embed": {
+            "calls": 124,
+            "errors": 0,
+            "server": {
+              "load_duration_ns": {
+                "sum": 990638880,
+                "samples": 124,
+                "invalid_samples": 0
+              },
+              "prompt_eval_count": {
+                "sum": 2976,
+                "samples": 124,
+                "invalid_samples": 0
+              },
+              "total_duration_ns": {
+                "sum": 1927028464,
+                "samples": 124,
+                "invalid_samples": 0
+              }
+            },
+            "wall_ms": 1983.8004930061288,
+            "input_texts": 248,
+            "process_cpu_ms": 37.633000000003136
+          }
+        },
+        "enabled": true,
+        "cprofile": {
+          "timer": "wall_clock",
+          "enabled": false,
+          "top_self_time_functions": []
+        },
+        "detailed": false,
+        "input_pairs": 124,
+        "http_wall_ms": 2111.661699018441,
+        "timing_notes": {
+          "server": "Ollama-reported durations overlap HTTP time; total_duration is not pure GPU execution time.",
+          "http_wall_ms": "Inclusive production _request time: request encoding, connection, server wait, transfer and JSON decoding.",
+          "process_cpu_ms": "Database backend process CPU; excludes Ollama server CPU/GPU work and overlaps nested CPU measurements.",
+          "wrapper_bookkeeping_wall_ms": "Outer evaluation wrapper bookkeeping estimate only; excludes SQL/PLPython boundary, inner timing hooks and cProfile overhead.",
+          "adapter_local_residual_wall_ms": "Adapter wall minus inclusive HTTP wall; includes vector validation, cosine calculation, other local work and instrumentation."
+        },
+        "normalization": {
+          "calls": 248,
+          "errors": 0,
+          "wall_ms": 26.317958545405418,
+          "components": 95232,
+          "process_cpu_ms": 26.191000000007847
+        },
+        "provider_calls": 124,
+        "adapter_wall_ms": 2153.9967950666323,
+        "provider_errors": 0,
+        "adapter_source_sha256": "cebf9fceeb21464acb2bd1bb7b3c0620e4c78c0375323573a873d21d221670dc",
+        "adapter_process_cpu_ms": 120.99200000000465,
+        "wrapper_bookkeeping_wall_ms": 0.5217911675572395,
+        "adapter_local_residual_wall_ms": 42.33509604819119,
+        "other_adapter_residual_wall_ms": 16.017137502785772
+      },
+      "plan": {
+        "Plan": {
+          "Node Type": "Seq Scan",
+          "Parallel Aware": false,
+          "Async Capable": false,
+          "Relation Name": "bench_items",
+          "Alias": "bench_items",
+          "Startup Cost": 0.0,
+          "Total Cost": 36.28,
+          "Plan Rows": 43,
+          "Plan Width": 4,
+          "Actual Rows": 62,
+          "Actual Loops": 1,
+          "Filter": "(active AND jev.semantic_match('bench-similar'::text, left_text, right_text))",
+          "Rows Removed by Filter": 66,
+          "Shared Hit Blocks": 995,
+          "Shared Read Blocks": 0,
+          "Shared Dirtied Blocks": 0,
+          "Shared Written Blocks": 0,
+          "Local Hit Blocks": 0,
+          "Local Read Blocks": 0,
+          "Local Dirtied Blocks": 0,
+          "Local Written Blocks": 0,
+          "Temp Read Blocks": 0,
+          "Temp Written Blocks": 0
+        },
+        "Planning": {
+          "Shared Hit Blocks": 0,
+          "Shared Read Blocks": 0,
+          "Shared Dirtied Blocks": 0,
+          "Shared Written Blocks": 0,
+          "Local Hit Blocks": 0,
+          "Local Read Blocks": 0,
+          "Local Dirtied Blocks": 0,
+          "Local Written Blocks": 0,
+          "Temp Read Blocks": 0,
+          "Temp Written Blocks": 0
+        },
+        "Planning Time": 0.013,
+        "Triggers": [],
+        "Execution Time": 2178.545
+      },
+      "repeat": 2
+    },
+    {
+      "case": "ollama_unique",
+      "mode": "batch_128",
+      "profiling": false,
+      "detailed": false,
+      "execution_ms": 361.725,
+      "planning_ms": 0.027,
+      "functions": [],
+      "adapter": {
+        "http": {},
+        "enabled": false,
+        "cprofile": {
+          "timer": "wall_clock",
+          "enabled": false,
+          "top_self_time_functions": []
+        },
+        "detailed": false,
+        "input_pairs": 0,
+        "http_wall_ms": 0,
+        "timing_notes": {
+          "server": "Ollama-reported durations overlap HTTP time; total_duration is not pure GPU execution time.",
+          "http_wall_ms": "Inclusive production _request time: request encoding, connection, server wait, transfer and JSON decoding.",
+          "process_cpu_ms": "Database backend process CPU; excludes Ollama server CPU/GPU work and overlaps nested CPU measurements.",
+          "wrapper_bookkeeping_wall_ms": "Outer evaluation wrapper bookkeeping estimate only; excludes SQL/PLPython boundary, inner timing hooks and cProfile overhead.",
+          "adapter_local_residual_wall_ms": "Adapter wall minus inclusive HTTP wall; includes vector validation, cosine calculation, other local work and instrumentation."
+        },
+        "normalization": {
+          "calls": 0,
+          "errors": 0,
+          "wall_ms": 0.0,
+          "components": 0,
+          "process_cpu_ms": 0.0
+        },
+        "provider_calls": 0,
+        "adapter_wall_ms": 0.0,
+        "provider_errors": 0,
+        "adapter_source_sha256": "cebf9fceeb21464acb2bd1bb7b3c0620e4c78c0375323573a873d21d221670dc",
+        "adapter_process_cpu_ms": 0.0,
+        "wrapper_bookkeeping_wall_ms": 0.0,
+        "adapter_local_residual_wall_ms": 0.0,
+        "other_adapter_residual_wall_ms": 0.0
+      },
+      "plan": {
+        "Plan": {
+          "Node Type": "Custom Scan",
+          "Custom Plan Provider": "JEVSemanticScan",
+          "Parallel Aware": false,
+          "Async Capable": false,
+          "Relation Name": "bench_items",
+          "Alias": "bench_items",
+          "Startup Cost": 0.0,
+          "Total Cost": 36.28,
+          "Plan Rows": 43,
+          "Plan Width": 4,
+          "Actual Rows": 62,
+          "Actual Loops": 1,
+          "Filter": "(active AND jev.semantic_match('bench-similar'::text, left_text, right_text))",
+          "Rows Removed by Filter": 66,
+          "Semantic Evaluation": "batched",
+          "Batch Size": 128,
+          "Batch Memory Target": 1024,
+          "Rows Read": 128,
+          "Candidate Rows": 128,
+          "Unique Inputs": 124,
+          "Reused Inputs": 0,
+          "Provider Calls": 1,
+          "Batches": 1,
+          "Peak Buffered Rows": 128,
+          "Peak Buffered Bytes": 51937,
+          "Kernel Time": 361.627,
+          "Shared Hit Blocks": 11,
+          "Shared Read Blocks": 0,
+          "Shared Dirtied Blocks": 0,
+          "Shared Written Blocks": 0,
+          "Local Hit Blocks": 0,
+          "Local Read Blocks": 0,
+          "Local Dirtied Blocks": 0,
+          "Local Written Blocks": 0,
+          "Temp Read Blocks": 0,
+          "Temp Written Blocks": 0
+        },
+        "Planning": {
+          "Shared Hit Blocks": 10,
+          "Shared Read Blocks": 0,
+          "Shared Dirtied Blocks": 0,
+          "Shared Written Blocks": 0,
+          "Local Hit Blocks": 0,
+          "Local Read Blocks": 0,
+          "Local Dirtied Blocks": 0,
+          "Local Written Blocks": 0,
+          "Temp Read Blocks": 0,
+          "Temp Written Blocks": 0
+        },
+        "Planning Time": 0.027,
+        "Triggers": [],
+        "Execution Time": 361.725
+      },
+      "repeat": 2
+    },
+    {
+      "case": "ollama_unique",
+      "mode": "batch_128",
+      "profiling": true,
+      "detailed": false,
+      "execution_ms": 509.448,
+      "planning_ms": 0.065,
+      "functions": [
+        {
+          "schemaname": "jev",
+          "funcname": "evaluate_batch",
+          "calls": 1,
+          "total_time": 509.309416,
+          "self_time": 0.515249
+        },
+        {
+          "schemaname": "pg_temp_0",
+          "funcname": "profile_ollama_provider",
+          "calls": 1,
+          "total_time": 508.794167,
+          "self_time": 508.794167
+        }
+      ],
+      "adapter": {
+        "http": {
+          "/api/tags": {
+            "calls": 2,
+            "errors": 0,
+            "server": {
+              "load_duration_ns": {
+                "sum": null,
+                "samples": 0,
+                "invalid_samples": 0
+              },
+              "prompt_eval_count": {
+                "sum": null,
+                "samples": 0,
+                "invalid_samples": 0
+              },
+              "total_duration_ns": {
+                "sum": null,
+                "samples": 0,
+                "invalid_samples": 0
+              }
+            },
+            "wall_ms": 3.4877920406870544,
+            "input_texts": 0,
+            "process_cpu_ms": 1.2659999999993232
+          },
+          "/api/embed": {
+            "calls": 1,
+            "errors": 0,
+            "server": {
+              "load_duration_ns": {
+                "sum": 12713750,
+                "samples": 1,
+                "invalid_samples": 0
+              },
+              "prompt_eval_count": {
+                "sum": 2238,
+                "samples": 1,
+                "invalid_samples": 0
+              },
+              "total_duration_ns": {
+                "sum": 470695250,
+                "samples": 1,
+                "invalid_samples": 0
+              }
+            },
+            "wall_ms": 484.06491696368903,
+            "input_texts": 125,
+            "process_cpu_ms": 7.140999999998954
+          }
+        },
+        "enabled": true,
+        "cprofile": {
+          "timer": "wall_clock",
+          "enabled": false,
+          "top_self_time_functions": []
+        },
+        "detailed": false,
+        "input_pairs": 124,
+        "http_wall_ms": 487.5527090043761,
+        "timing_notes": {
+          "server": "Ollama-reported durations overlap HTTP time; total_duration is not pure GPU execution time.",
+          "http_wall_ms": "Inclusive production _request time: request encoding, connection, server wait, transfer and JSON decoding.",
+          "process_cpu_ms": "Database backend process CPU; excludes Ollama server CPU/GPU work and overlaps nested CPU measurements.",
+          "wrapper_bookkeeping_wall_ms": "Outer evaluation wrapper bookkeeping estimate only; excludes SQL/PLPython boundary, inner timing hooks and cProfile overhead.",
+          "adapter_local_residual_wall_ms": "Adapter wall minus inclusive HTTP wall; includes vector validation, cosine calculation, other local work and instrumentation."
+        },
+        "normalization": {
+          "calls": 125,
+          "errors": 0,
+          "wall_ms": 15.29736677184701,
+          "components": 48000,
+          "process_cpu_ms": 15.166000000002455
+        },
+        "provider_calls": 1,
+        "adapter_wall_ms": 508.5021669510752,
+        "provider_errors": 0,
+        "adapter_source_sha256": "cebf9fceeb21464acb2bd1bb7b3c0620e4c78c0375323573a873d21d221670dc",
+        "adapter_process_cpu_ms": 28.95500000000162,
+        "wrapper_bookkeeping_wall_ms": 0.023791042622178793,
+        "adapter_local_residual_wall_ms": 20.949457946699113,
+        "other_adapter_residual_wall_ms": 5.652091174852103
+      },
+      "plan": {
+        "Plan": {
+          "Node Type": "Custom Scan",
+          "Custom Plan Provider": "JEVSemanticScan",
+          "Parallel Aware": false,
+          "Async Capable": false,
+          "Relation Name": "bench_items",
+          "Alias": "bench_items",
+          "Startup Cost": 0.0,
+          "Total Cost": 36.28,
+          "Plan Rows": 43,
+          "Plan Width": 4,
+          "Actual Rows": 62,
+          "Actual Loops": 1,
+          "Filter": "(active AND jev.semantic_match('bench-similar'::text, left_text, right_text))",
+          "Rows Removed by Filter": 66,
+          "Semantic Evaluation": "batched",
+          "Batch Size": 128,
+          "Batch Memory Target": 1024,
+          "Rows Read": 128,
+          "Candidate Rows": 128,
+          "Unique Inputs": 124,
+          "Reused Inputs": 0,
+          "Provider Calls": 1,
+          "Batches": 1,
+          "Peak Buffered Rows": 128,
+          "Peak Buffered Bytes": 51937,
+          "Kernel Time": 509.371,
+          "Shared Hit Blocks": 11,
+          "Shared Read Blocks": 0,
+          "Shared Dirtied Blocks": 0,
+          "Shared Written Blocks": 0,
+          "Local Hit Blocks": 0,
+          "Local Read Blocks": 0,
+          "Local Dirtied Blocks": 0,
+          "Local Written Blocks": 0,
+          "Temp Read Blocks": 0,
+          "Temp Written Blocks": 0
+        },
+        "Planning": {
+          "Shared Hit Blocks": 10,
+          "Shared Read Blocks": 0,
+          "Shared Dirtied Blocks": 0,
+          "Shared Written Blocks": 0,
+          "Local Hit Blocks": 0,
+          "Local Read Blocks": 0,
+          "Local Dirtied Blocks": 0,
+          "Local Written Blocks": 0,
+          "Temp Read Blocks": 0,
+          "Temp Written Blocks": 0
+        },
+        "Planning Time": 0.065,
+        "Triggers": [],
+        "Execution Time": 509.448
+      },
+      "repeat": 2
+    },
+    {
+      "case": "ollama_unique",
+      "mode": "scalar",
+      "profiling": false,
+      "detailed": false,
+      "execution_ms": 2133.777,
+      "planning_ms": 0.018,
+      "functions": [],
+      "adapter": {
+        "http": {},
+        "enabled": false,
+        "cprofile": {
+          "timer": "wall_clock",
+          "enabled": false,
+          "top_self_time_functions": []
+        },
+        "detailed": false,
+        "input_pairs": 0,
+        "http_wall_ms": 0,
+        "timing_notes": {
+          "server": "Ollama-reported durations overlap HTTP time; total_duration is not pure GPU execution time.",
+          "http_wall_ms": "Inclusive production _request time: request encoding, connection, server wait, transfer and JSON decoding.",
+          "process_cpu_ms": "Database backend process CPU; excludes Ollama server CPU/GPU work and overlaps nested CPU measurements.",
+          "wrapper_bookkeeping_wall_ms": "Outer evaluation wrapper bookkeeping estimate only; excludes SQL/PLPython boundary, inner timing hooks and cProfile overhead.",
+          "adapter_local_residual_wall_ms": "Adapter wall minus inclusive HTTP wall; includes vector validation, cosine calculation, other local work and instrumentation."
+        },
+        "normalization": {
+          "calls": 0,
+          "errors": 0,
+          "wall_ms": 0.0,
+          "components": 0,
+          "process_cpu_ms": 0.0
+        },
+        "provider_calls": 0,
+        "adapter_wall_ms": 0.0,
+        "provider_errors": 0,
+        "adapter_source_sha256": "cebf9fceeb21464acb2bd1bb7b3c0620e4c78c0375323573a873d21d221670dc",
+        "adapter_process_cpu_ms": 0.0,
+        "wrapper_bookkeeping_wall_ms": 0.0,
+        "adapter_local_residual_wall_ms": 0.0,
+        "other_adapter_residual_wall_ms": 0.0
+      },
+      "plan": {
+        "Plan": {
+          "Node Type": "Seq Scan",
+          "Parallel Aware": false,
+          "Async Capable": false,
+          "Relation Name": "bench_items",
+          "Alias": "bench_items",
+          "Startup Cost": 0.0,
+          "Total Cost": 36.28,
+          "Plan Rows": 43,
+          "Plan Width": 4,
+          "Actual Rows": 62,
+          "Actual Loops": 1,
+          "Filter": "(active AND jev.semantic_match('bench-similar'::text, left_text, right_text))",
+          "Rows Removed by Filter": 66,
+          "Shared Hit Blocks": 995,
+          "Shared Read Blocks": 0,
+          "Shared Dirtied Blocks": 0,
+          "Shared Written Blocks": 0,
+          "Local Hit Blocks": 0,
+          "Local Read Blocks": 0,
+          "Local Dirtied Blocks": 0,
+          "Local Written Blocks": 0,
+          "Temp Read Blocks": 0,
+          "Temp Written Blocks": 0
+        },
+        "Planning": {
+          "Shared Hit Blocks": 0,
+          "Shared Read Blocks": 0,
+          "Shared Dirtied Blocks": 0,
+          "Shared Written Blocks": 0,
+          "Local Hit Blocks": 0,
+          "Local Read Blocks": 0,
+          "Local Dirtied Blocks": 0,
+          "Local Written Blocks": 0,
+          "Temp Read Blocks": 0,
+          "Temp Written Blocks": 0
+        },
+        "Planning Time": 0.018,
+        "Triggers": [],
+        "Execution Time": 2133.777
+      },
+      "repeat": 3
+    },
+    {
+      "case": "ollama_unique",
+      "mode": "batch_128",
+      "profiling": true,
+      "detailed": false,
+      "execution_ms": 354.13,
+      "planning_ms": 0.034,
+      "functions": [
+        {
+          "schemaname": "jev",
+          "funcname": "evaluate_batch",
+          "calls": 1,
+          "total_time": 354.02525,
+          "self_time": 0.620584
+        },
+        {
+          "schemaname": "pg_temp_0",
+          "funcname": "profile_ollama_provider",
+          "calls": 1,
+          "total_time": 353.404666,
+          "self_time": 353.404666
+        }
+      ],
+      "adapter": {
+        "http": {
+          "/api/tags": {
+            "calls": 2,
+            "errors": 0,
+            "server": {
+              "load_duration_ns": {
+                "sum": null,
+                "samples": 0,
+                "invalid_samples": 0
+              },
+              "prompt_eval_count": {
+                "sum": null,
+                "samples": 0,
+                "invalid_samples": 0
+              },
+              "total_duration_ns": {
+                "sum": null,
+                "samples": 0,
+                "invalid_samples": 0
+              }
+            },
+            "wall_ms": 1.9405829370953143,
+            "input_texts": 0,
+            "process_cpu_ms": 0.6819999999994053
+          },
+          "/api/embed": {
+            "calls": 1,
+            "errors": 0,
+            "server": {
+              "load_duration_ns": {
+                "sum": 8253834,
+                "samples": 1,
+                "invalid_samples": 0
+              },
+              "prompt_eval_count": {
+                "sum": 2238,
+                "samples": 1,
+                "invalid_samples": 0
+              },
+              "total_duration_ns": {
+                "sum": 308792292,
+                "samples": 1,
+                "invalid_samples": 0
+              }
+            },
+            "wall_ms": 323.5992499976419,
+            "input_texts": 125,
+            "process_cpu_ms": 7.948999999999984
+          }
+        },
+        "enabled": true,
+        "cprofile": {
+          "timer": "wall_clock",
+          "enabled": false,
+          "top_self_time_functions": []
+        },
+        "detailed": false,
+        "input_pairs": 124,
+        "http_wall_ms": 325.5398329347372,
+        "timing_notes": {
+          "server": "Ollama-reported durations overlap HTTP time; total_duration is not pure GPU execution time.",
+          "http_wall_ms": "Inclusive production _request time: request encoding, connection, server wait, transfer and JSON decoding.",
+          "process_cpu_ms": "Database backend process CPU; excludes Ollama server CPU/GPU work and overlaps nested CPU measurements.",
+          "wrapper_bookkeeping_wall_ms": "Outer evaluation wrapper bookkeeping estimate only; excludes SQL/PLPython boundary, inner timing hooks and cProfile overhead.",
+          "adapter_local_residual_wall_ms": "Adapter wall minus inclusive HTTP wall; includes vector validation, cosine calculation, other local work and instrumentation."
+        },
+        "normalization": {
+          "calls": 125,
+          "errors": 0,
+          "wall_ms": 20.921955932863057,
+          "components": 48000,
+          "process_cpu_ms": 20.692000000016364
+        },
+        "provider_calls": 1,
+        "adapter_wall_ms": 353.1870839651674,
+        "provider_errors": 0,
+        "adapter_source_sha256": "cebf9fceeb21464acb2bd1bb7b3c0620e4c78c0375323573a873d21d221670dc",
+        "adapter_process_cpu_ms": 35.85099999999919,
+        "wrapper_bookkeeping_wall_ms": 0.009541050530970097,
+        "adapter_local_residual_wall_ms": 27.647251030430198,
+        "other_adapter_residual_wall_ms": 6.725295097567141
+      },
+      "plan": {
+        "Plan": {
+          "Node Type": "Custom Scan",
+          "Custom Plan Provider": "JEVSemanticScan",
+          "Parallel Aware": false,
+          "Async Capable": false,
+          "Relation Name": "bench_items",
+          "Alias": "bench_items",
+          "Startup Cost": 0.0,
+          "Total Cost": 36.28,
+          "Plan Rows": 43,
+          "Plan Width": 4,
+          "Actual Rows": 62,
+          "Actual Loops": 1,
+          "Filter": "(active AND jev.semantic_match('bench-similar'::text, left_text, right_text))",
+          "Rows Removed by Filter": 66,
+          "Semantic Evaluation": "batched",
+          "Batch Size": 128,
+          "Batch Memory Target": 1024,
+          "Rows Read": 128,
+          "Candidate Rows": 128,
+          "Unique Inputs": 124,
+          "Reused Inputs": 0,
+          "Provider Calls": 1,
+          "Batches": 1,
+          "Peak Buffered Rows": 128,
+          "Peak Buffered Bytes": 51937,
+          "Kernel Time": 354.071,
+          "Shared Hit Blocks": 11,
+          "Shared Read Blocks": 0,
+          "Shared Dirtied Blocks": 0,
+          "Shared Written Blocks": 0,
+          "Local Hit Blocks": 0,
+          "Local Read Blocks": 0,
+          "Local Dirtied Blocks": 0,
+          "Local Written Blocks": 0,
+          "Temp Read Blocks": 0,
+          "Temp Written Blocks": 0
+        },
+        "Planning": {
+          "Shared Hit Blocks": 10,
+          "Shared Read Blocks": 0,
+          "Shared Dirtied Blocks": 0,
+          "Shared Written Blocks": 0,
+          "Local Hit Blocks": 0,
+          "Local Read Blocks": 0,
+          "Local Dirtied Blocks": 0,
+          "Local Written Blocks": 0,
+          "Temp Read Blocks": 0,
+          "Temp Written Blocks": 0
+        },
+        "Planning Time": 0.034,
+        "Triggers": [],
+        "Execution Time": 354.13
+      },
+      "repeat": 3
+    },
+    {
+      "case": "ollama_unique",
+      "mode": "scalar",
+      "profiling": true,
+      "detailed": false,
+      "execution_ms": 2090.201,
+      "planning_ms": 0.024,
+      "functions": [
+        {
+          "schemaname": "jev",
+          "funcname": "evaluate_batch",
+          "calls": 124,
+          "total_time": 2088.353419,
+          "self_time": 17.808501
+        },
+        {
+          "schemaname": "jev",
+          "funcname": "semantic_match",
+          "calls": 124,
+          "total_time": 2089.742672,
+          "self_time": 1.389253
+        },
+        {
+          "schemaname": "pg_temp_0",
+          "funcname": "profile_ollama_provider",
+          "calls": 124,
+          "total_time": 2070.544918,
+          "self_time": 2070.544918
+        }
+      ],
+      "adapter": {
+        "http": {
+          "/api/tags": {
+            "calls": 248,
+            "errors": 0,
+            "server": {
+              "load_duration_ns": {
+                "sum": null,
+                "samples": 0,
+                "invalid_samples": 0
+              },
+              "prompt_eval_count": {
+                "sum": null,
+                "samples": 0,
+                "invalid_samples": 0
+              },
+              "total_duration_ns": {
+                "sum": null,
+                "samples": 0,
+                "invalid_samples": 0
+              }
+            },
+            "wall_ms": 117.77708388399333,
+            "input_texts": 0,
+            "process_cpu_ms": 38.1849999999897
+          },
+          "/api/embed": {
+            "calls": 124,
+            "errors": 0,
+            "server": {
+              "load_duration_ns": {
+                "sum": 954997247,
+                "samples": 124,
+                "invalid_samples": 0
+              },
+              "prompt_eval_count": {
+                "sum": 2976,
+                "samples": 124,
+                "invalid_samples": 0
+              },
+              "total_duration_ns": {
+                "sum": 1858156913,
+                "samples": 124,
+                "invalid_samples": 0
+              }
+            },
+            "wall_ms": 1910.0190789904445,
+            "input_texts": 248,
+            "process_cpu_ms": 34.83199999999975
+          }
+        },
+        "enabled": true,
+        "cprofile": {
+          "timer": "wall_clock",
+          "enabled": false,
+          "top_self_time_functions": []
+        },
+        "detailed": false,
+        "input_pairs": 124,
+        "http_wall_ms": 2027.7961628744379,
+        "timing_notes": {
+          "server": "Ollama-reported durations overlap HTTP time; total_duration is not pure GPU execution time.",
+          "http_wall_ms": "Inclusive production _request time: request encoding, connection, server wait, transfer and JSON decoding.",
+          "process_cpu_ms": "Database backend process CPU; excludes Ollama server CPU/GPU work and overlaps nested CPU measurements.",
+          "wrapper_bookkeeping_wall_ms": "Outer evaluation wrapper bookkeeping estimate only; excludes SQL/PLPython boundary, inner timing hooks and cProfile overhead.",
+          "adapter_local_residual_wall_ms": "Adapter wall minus inclusive HTTP wall; includes vector validation, cosine calculation, other local work and instrumentation."
+        },
+        "normalization": {
+          "calls": 248,
+          "errors": 0,
+          "wall_ms": 24.88941728370264,
+          "components": 95232,
+          "process_cpu_ms": 25.04400000000473
+        },
+        "provider_calls": 124,
+        "adapter_wall_ms": 2067.574290034827,
+        "provider_errors": 0,
+        "adapter_source_sha256": "cebf9fceeb21464acb2bd1bb7b3c0620e4c78c0375323573a873d21d221670dc",
+        "adapter_process_cpu_ms": 112.5820000000104,
+        "wrapper_bookkeeping_wall_ms": 0.4592963377945125,
+        "adapter_local_residual_wall_ms": 39.778127160388976,
+        "other_adapter_residual_wall_ms": 14.888709876686335
+      },
+      "plan": {
+        "Plan": {
+          "Node Type": "Seq Scan",
+          "Parallel Aware": false,
+          "Async Capable": false,
+          "Relation Name": "bench_items",
+          "Alias": "bench_items",
+          "Startup Cost": 0.0,
+          "Total Cost": 36.28,
+          "Plan Rows": 43,
+          "Plan Width": 4,
+          "Actual Rows": 62,
+          "Actual Loops": 1,
+          "Filter": "(active AND jev.semantic_match('bench-similar'::text, left_text, right_text))",
+          "Rows Removed by Filter": 66,
+          "Shared Hit Blocks": 995,
+          "Shared Read Blocks": 0,
+          "Shared Dirtied Blocks": 0,
+          "Shared Written Blocks": 0,
+          "Local Hit Blocks": 0,
+          "Local Read Blocks": 0,
+          "Local Dirtied Blocks": 0,
+          "Local Written Blocks": 0,
+          "Temp Read Blocks": 0,
+          "Temp Written Blocks": 0
+        },
+        "Planning": {
+          "Shared Hit Blocks": 0,
+          "Shared Read Blocks": 0,
+          "Shared Dirtied Blocks": 0,
+          "Shared Written Blocks": 0,
+          "Local Hit Blocks": 0,
+          "Local Read Blocks": 0,
+          "Local Dirtied Blocks": 0,
+          "Local Written Blocks": 0,
+          "Temp Read Blocks": 0,
+          "Temp Written Blocks": 0
+        },
+        "Planning Time": 0.024,
+        "Triggers": [],
+        "Execution Time": 2090.201
+      },
+      "repeat": 3
+    },
+    {
+      "case": "ollama_unique",
+      "mode": "batch_128",
+      "profiling": false,
+      "detailed": false,
+      "execution_ms": 356.653,
+      "planning_ms": 0.032,
+      "functions": [],
+      "adapter": {
+        "http": {},
+        "enabled": false,
+        "cprofile": {
+          "timer": "wall_clock",
+          "enabled": false,
+          "top_self_time_functions": []
+        },
+        "detailed": false,
+        "input_pairs": 0,
+        "http_wall_ms": 0,
+        "timing_notes": {
+          "server": "Ollama-reported durations overlap HTTP time; total_duration is not pure GPU execution time.",
+          "http_wall_ms": "Inclusive production _request time: request encoding, connection, server wait, transfer and JSON decoding.",
+          "process_cpu_ms": "Database backend process CPU; excludes Ollama server CPU/GPU work and overlaps nested CPU measurements.",
+          "wrapper_bookkeeping_wall_ms": "Outer evaluation wrapper bookkeeping estimate only; excludes SQL/PLPython boundary, inner timing hooks and cProfile overhead.",
+          "adapter_local_residual_wall_ms": "Adapter wall minus inclusive HTTP wall; includes vector validation, cosine calculation, other local work and instrumentation."
+        },
+        "normalization": {
+          "calls": 0,
+          "errors": 0,
+          "wall_ms": 0.0,
+          "components": 0,
+          "process_cpu_ms": 0.0
+        },
+        "provider_calls": 0,
+        "adapter_wall_ms": 0.0,
+        "provider_errors": 0,
+        "adapter_source_sha256": "cebf9fceeb21464acb2bd1bb7b3c0620e4c78c0375323573a873d21d221670dc",
+        "adapter_process_cpu_ms": 0.0,
+        "wrapper_bookkeeping_wall_ms": 0.0,
+        "adapter_local_residual_wall_ms": 0.0,
+        "other_adapter_residual_wall_ms": 0.0
+      },
+      "plan": {
+        "Plan": {
+          "Node Type": "Custom Scan",
+          "Custom Plan Provider": "JEVSemanticScan",
+          "Parallel Aware": false,
+          "Async Capable": false,
+          "Relation Name": "bench_items",
+          "Alias": "bench_items",
+          "Startup Cost": 0.0,
+          "Total Cost": 36.28,
+          "Plan Rows": 43,
+          "Plan Width": 4,
+          "Actual Rows": 62,
+          "Actual Loops": 1,
+          "Filter": "(active AND jev.semantic_match('bench-similar'::text, left_text, right_text))",
+          "Rows Removed by Filter": 66,
+          "Semantic Evaluation": "batched",
+          "Batch Size": 128,
+          "Batch Memory Target": 1024,
+          "Rows Read": 128,
+          "Candidate Rows": 128,
+          "Unique Inputs": 124,
+          "Reused Inputs": 0,
+          "Provider Calls": 1,
+          "Batches": 1,
+          "Peak Buffered Rows": 128,
+          "Peak Buffered Bytes": 51937,
+          "Kernel Time": 356.592,
+          "Shared Hit Blocks": 11,
+          "Shared Read Blocks": 0,
+          "Shared Dirtied Blocks": 0,
+          "Shared Written Blocks": 0,
+          "Local Hit Blocks": 0,
+          "Local Read Blocks": 0,
+          "Local Dirtied Blocks": 0,
+          "Local Written Blocks": 0,
+          "Temp Read Blocks": 0,
+          "Temp Written Blocks": 0
+        },
+        "Planning": {
+          "Shared Hit Blocks": 10,
+          "Shared Read Blocks": 0,
+          "Shared Dirtied Blocks": 0,
+          "Shared Written Blocks": 0,
+          "Local Hit Blocks": 0,
+          "Local Read Blocks": 0,
+          "Local Dirtied Blocks": 0,
+          "Local Written Blocks": 0,
+          "Temp Read Blocks": 0,
+          "Temp Written Blocks": 0
+        },
+        "Planning Time": 0.032,
+        "Triggers": [],
+        "Execution Time": 356.653
+      },
+      "repeat": 3
+    },
+    {
+      "case": "ollama_unique",
+      "mode": "batch_128",
+      "profiling": false,
+      "detailed": false,
+      "execution_ms": 338.411,
+      "planning_ms": 0.045,
+      "functions": [],
+      "adapter": {
+        "http": {},
+        "enabled": false,
+        "cprofile": {
+          "timer": "wall_clock",
+          "enabled": false,
+          "top_self_time_functions": []
+        },
+        "detailed": false,
+        "input_pairs": 0,
+        "http_wall_ms": 0,
+        "timing_notes": {
+          "server": "Ollama-reported durations overlap HTTP time; total_duration is not pure GPU execution time.",
+          "http_wall_ms": "Inclusive production _request time: request encoding, connection, server wait, transfer and JSON decoding.",
+          "process_cpu_ms": "Database backend process CPU; excludes Ollama server CPU/GPU work and overlaps nested CPU measurements.",
+          "wrapper_bookkeeping_wall_ms": "Outer evaluation wrapper bookkeeping estimate only; excludes SQL/PLPython boundary, inner timing hooks and cProfile overhead.",
+          "adapter_local_residual_wall_ms": "Adapter wall minus inclusive HTTP wall; includes vector validation, cosine calculation, other local work and instrumentation."
+        },
+        "normalization": {
+          "calls": 0,
+          "errors": 0,
+          "wall_ms": 0.0,
+          "components": 0,
+          "process_cpu_ms": 0.0
+        },
+        "provider_calls": 0,
+        "adapter_wall_ms": 0.0,
+        "provider_errors": 0,
+        "adapter_source_sha256": "cebf9fceeb21464acb2bd1bb7b3c0620e4c78c0375323573a873d21d221670dc",
+        "adapter_process_cpu_ms": 0.0,
+        "wrapper_bookkeeping_wall_ms": 0.0,
+        "adapter_local_residual_wall_ms": 0.0,
+        "other_adapter_residual_wall_ms": 0.0
+      },
+      "plan": {
+        "Plan": {
+          "Node Type": "Custom Scan",
+          "Custom Plan Provider": "JEVSemanticScan",
+          "Parallel Aware": false,
+          "Async Capable": false,
+          "Relation Name": "bench_items",
+          "Alias": "bench_items",
+          "Startup Cost": 0.0,
+          "Total Cost": 36.28,
+          "Plan Rows": 43,
+          "Plan Width": 4,
+          "Actual Rows": 62,
+          "Actual Loops": 1,
+          "Filter": "(active AND jev.semantic_match('bench-similar'::text, left_text, right_text))",
+          "Rows Removed by Filter": 66,
+          "Semantic Evaluation": "batched",
+          "Batch Size": 128,
+          "Batch Memory Target": 1024,
+          "Rows Read": 128,
+          "Candidate Rows": 128,
+          "Unique Inputs": 124,
+          "Reused Inputs": 0,
+          "Provider Calls": 1,
+          "Batches": 1,
+          "Peak Buffered Rows": 128,
+          "Peak Buffered Bytes": 51937,
+          "Kernel Time": 338.327,
+          "Shared Hit Blocks": 11,
+          "Shared Read Blocks": 0,
+          "Shared Dirtied Blocks": 0,
+          "Shared Written Blocks": 0,
+          "Local Hit Blocks": 0,
+          "Local Read Blocks": 0,
+          "Local Dirtied Blocks": 0,
+          "Local Written Blocks": 0,
+          "Temp Read Blocks": 0,
+          "Temp Written Blocks": 0
+        },
+        "Planning": {
+          "Shared Hit Blocks": 10,
+          "Shared Read Blocks": 0,
+          "Shared Dirtied Blocks": 0,
+          "Shared Written Blocks": 0,
+          "Local Hit Blocks": 0,
+          "Local Read Blocks": 0,
+          "Local Dirtied Blocks": 0,
+          "Local Written Blocks": 0,
+          "Temp Read Blocks": 0,
+          "Temp Written Blocks": 0
+        },
+        "Planning Time": 0.045,
+        "Triggers": [],
+        "Execution Time": 338.411
+      },
+      "repeat": 4
+    },
+    {
+      "case": "ollama_unique",
+      "mode": "scalar",
+      "profiling": true,
+      "detailed": false,
+      "execution_ms": 2114.786,
+      "planning_ms": 0.02,
+      "functions": [
+        {
+          "schemaname": "jev",
+          "funcname": "evaluate_batch",
+          "calls": 124,
+          "total_time": 2112.845206,
+          "self_time": 18.663287
+        },
+        {
+          "schemaname": "jev",
+          "funcname": "semantic_match",
+          "calls": 124,
+          "total_time": 2114.307662,
+          "self_time": 1.462456
+        },
+        {
+          "schemaname": "pg_temp_0",
+          "funcname": "profile_ollama_provider",
+          "calls": 124,
+          "total_time": 2094.181919,
+          "self_time": 2094.181919
+        }
+      ],
+      "adapter": {
+        "http": {
+          "/api/tags": {
+            "calls": 248,
+            "errors": 0,
+            "server": {
+              "load_duration_ns": {
+                "sum": null,
+                "samples": 0,
+                "invalid_samples": 0
+              },
+              "prompt_eval_count": {
+                "sum": null,
+                "samples": 0,
+                "invalid_samples": 0
+              },
+              "total_duration_ns": {
+                "sum": null,
+                "samples": 0,
+                "invalid_samples": 0
+              }
+            },
+            "wall_ms": 122.23395286127925,
+            "input_texts": 0,
+            "process_cpu_ms": 39.62700000000474
+          },
+          "/api/embed": {
+            "calls": 124,
+            "errors": 0,
+            "server": {
+              "load_duration_ns": {
+                "sum": 959152328,
+                "samples": 124,
+                "invalid_samples": 0
+              },
+              "prompt_eval_count": {
+                "sum": 2976,
+                "samples": 124,
+                "invalid_samples": 0
+              },
+              "total_duration_ns": {
+                "sum": 1874648917,
+                "samples": 124,
+                "invalid_samples": 0
+              }
+            },
+            "wall_ms": 1928.4624961437657,
+            "input_texts": 248,
+            "process_cpu_ms": 36.214999999995
+          }
+        },
+        "enabled": true,
+        "cprofile": {
+          "timer": "wall_clock",
+          "enabled": false,
+          "top_self_time_functions": []
+        },
+        "detailed": false,
+        "input_pairs": 124,
+        "http_wall_ms": 2050.696449005045,
+        "timing_notes": {
+          "server": "Ollama-reported durations overlap HTTP time; total_duration is not pure GPU execution time.",
+          "http_wall_ms": "Inclusive production _request time: request encoding, connection, server wait, transfer and JSON decoding.",
+          "process_cpu_ms": "Database backend process CPU; excludes Ollama server CPU/GPU work and overlaps nested CPU measurements.",
+          "wrapper_bookkeeping_wall_ms": "Outer evaluation wrapper bookkeeping estimate only; excludes SQL/PLPython boundary, inner timing hooks and cProfile overhead.",
+          "adapter_local_residual_wall_ms": "Adapter wall minus inclusive HTTP wall; includes vector validation, cosine calculation, other local work and instrumentation."
+        },
+        "normalization": {
+          "calls": 248,
+          "errors": 0,
+          "wall_ms": 25.165755359921604,
+          "components": 95232,
+          "process_cpu_ms": 25.28799999998199
+        },
+        "provider_calls": 124,
+        "adapter_wall_ms": 2091.0966258961707,
+        "provider_errors": 0,
+        "adapter_source_sha256": "cebf9fceeb21464acb2bd1bb7b3c0620e4c78c0375323573a873d21d221670dc",
+        "adapter_process_cpu_ms": 115.98900000000434,
+        "wrapper_bookkeeping_wall_ms": 0.4649599432013929,
+        "adapter_local_residual_wall_ms": 40.40017689112574,
+        "other_adapter_residual_wall_ms": 15.234421531204134
+      },
+      "plan": {
+        "Plan": {
+          "Node Type": "Seq Scan",
+          "Parallel Aware": false,
+          "Async Capable": false,
+          "Relation Name": "bench_items",
+          "Alias": "bench_items",
+          "Startup Cost": 0.0,
+          "Total Cost": 36.28,
+          "Plan Rows": 43,
+          "Plan Width": 4,
+          "Actual Rows": 62,
+          "Actual Loops": 1,
+          "Filter": "(active AND jev.semantic_match('bench-similar'::text, left_text, right_text))",
+          "Rows Removed by Filter": 66,
+          "Shared Hit Blocks": 995,
+          "Shared Read Blocks": 0,
+          "Shared Dirtied Blocks": 0,
+          "Shared Written Blocks": 0,
+          "Local Hit Blocks": 0,
+          "Local Read Blocks": 0,
+          "Local Dirtied Blocks": 0,
+          "Local Written Blocks": 0,
+          "Temp Read Blocks": 0,
+          "Temp Written Blocks": 0
+        },
+        "Planning": {
+          "Shared Hit Blocks": 0,
+          "Shared Read Blocks": 0,
+          "Shared Dirtied Blocks": 0,
+          "Shared Written Blocks": 0,
+          "Local Hit Blocks": 0,
+          "Local Read Blocks": 0,
+          "Local Dirtied Blocks": 0,
+          "Local Written Blocks": 0,
+          "Temp Read Blocks": 0,
+          "Temp Written Blocks": 0
+        },
+        "Planning Time": 0.02,
+        "Triggers": [],
+        "Execution Time": 2114.786
+      },
+      "repeat": 4
+    },
+    {
+      "case": "ollama_unique",
+      "mode": "batch_128",
+      "profiling": true,
+      "detailed": false,
+      "execution_ms": 327.736,
+      "planning_ms": 0.034,
+      "functions": [
+        {
+          "schemaname": "jev",
+          "funcname": "evaluate_batch",
+          "calls": 1,
+          "total_time": 327.631041,
+          "self_time": 0.458708
+        },
+        {
+          "schemaname": "pg_temp_0",
+          "funcname": "profile_ollama_provider",
+          "calls": 1,
+          "total_time": 327.172333,
+          "self_time": 327.172333
+        }
+      ],
+      "adapter": {
+        "http": {
+          "/api/tags": {
+            "calls": 2,
+            "errors": 0,
+            "server": {
+              "load_duration_ns": {
+                "sum": null,
+                "samples": 0,
+                "invalid_samples": 0
+              },
+              "prompt_eval_count": {
+                "sum": null,
+                "samples": 0,
+                "invalid_samples": 0
+              },
+              "total_duration_ns": {
+                "sum": null,
+                "samples": 0,
+                "invalid_samples": 0
+              }
+            },
+            "wall_ms": 1.8912499654106796,
+            "input_texts": 0,
+            "process_cpu_ms": 0.7780000000003895
+          },
+          "/api/embed": {
+            "calls": 1,
+            "errors": 0,
+            "server": {
+              "load_duration_ns": {
+                "sum": 8473209,
+                "samples": 1,
+                "invalid_samples": 0
+              },
+              "prompt_eval_count": {
+                "sum": 2238,
+                "samples": 1,
+                "invalid_samples": 0
+              },
+              "total_duration_ns": {
+                "sum": 293245292,
+                "samples": 1,
+                "invalid_samples": 0
+              }
+            },
+            "wall_ms": 303.18858299870044,
+            "input_texts": 125,
+            "process_cpu_ms": 5.597999999999104
+          }
+        },
+        "enabled": true,
+        "cprofile": {
+          "timer": "wall_clock",
+          "enabled": false,
+          "top_self_time_functions": []
+        },
+        "detailed": false,
+        "input_pairs": 124,
+        "http_wall_ms": 305.0798329641111,
+        "timing_notes": {
+          "server": "Ollama-reported durations overlap HTTP time; total_duration is not pure GPU execution time.",
+          "http_wall_ms": "Inclusive production _request time: request encoding, connection, server wait, transfer and JSON decoding.",
+          "process_cpu_ms": "Database backend process CPU; excludes Ollama server CPU/GPU work and overlaps nested CPU measurements.",
+          "wrapper_bookkeeping_wall_ms": "Outer evaluation wrapper bookkeeping estimate only; excludes SQL/PLPython boundary, inner timing hooks and cProfile overhead.",
+          "adapter_local_residual_wall_ms": "Adapter wall minus inclusive HTTP wall; includes vector validation, cosine calculation, other local work and instrumentation."
+        },
+        "normalization": {
+          "calls": 125,
+          "errors": 0,
+          "wall_ms": 15.511998848523945,
+          "components": 48000,
+          "process_cpu_ms": 15.517000000007997
+        },
+        "provider_calls": 1,
+        "adapter_wall_ms": 326.96312497137114,
+        "provider_errors": 0,
+        "adapter_source_sha256": "cebf9fceeb21464acb2bd1bb7b3c0620e4c78c0375323573a873d21d221670dc",
+        "adapter_process_cpu_ms": 28.16100000000077,
+        "wrapper_bookkeeping_wall_ms": 0.006665999535471201,
+        "adapter_local_residual_wall_ms": 21.883292007260025,
+        "other_adapter_residual_wall_ms": 6.37129315873608
+      },
+      "plan": {
+        "Plan": {
+          "Node Type": "Custom Scan",
+          "Custom Plan Provider": "JEVSemanticScan",
+          "Parallel Aware": false,
+          "Async Capable": false,
+          "Relation Name": "bench_items",
+          "Alias": "bench_items",
+          "Startup Cost": 0.0,
+          "Total Cost": 36.28,
+          "Plan Rows": 43,
+          "Plan Width": 4,
+          "Actual Rows": 62,
+          "Actual Loops": 1,
+          "Filter": "(active AND jev.semantic_match('bench-similar'::text, left_text, right_text))",
+          "Rows Removed by Filter": 66,
+          "Semantic Evaluation": "batched",
+          "Batch Size": 128,
+          "Batch Memory Target": 1024,
+          "Rows Read": 128,
+          "Candidate Rows": 128,
+          "Unique Inputs": 124,
+          "Reused Inputs": 0,
+          "Provider Calls": 1,
+          "Batches": 1,
+          "Peak Buffered Rows": 128,
+          "Peak Buffered Bytes": 51937,
+          "Kernel Time": 327.678,
+          "Shared Hit Blocks": 11,
+          "Shared Read Blocks": 0,
+          "Shared Dirtied Blocks": 0,
+          "Shared Written Blocks": 0,
+          "Local Hit Blocks": 0,
+          "Local Read Blocks": 0,
+          "Local Dirtied Blocks": 0,
+          "Local Written Blocks": 0,
+          "Temp Read Blocks": 0,
+          "Temp Written Blocks": 0
+        },
+        "Planning": {
+          "Shared Hit Blocks": 10,
+          "Shared Read Blocks": 0,
+          "Shared Dirtied Blocks": 0,
+          "Shared Written Blocks": 0,
+          "Local Hit Blocks": 0,
+          "Local Read Blocks": 0,
+          "Local Dirtied Blocks": 0,
+          "Local Written Blocks": 0,
+          "Temp Read Blocks": 0,
+          "Temp Written Blocks": 0
+        },
+        "Planning Time": 0.034,
+        "Triggers": [],
+        "Execution Time": 327.736
+      },
+      "repeat": 4
+    },
+    {
+      "case": "ollama_unique",
+      "mode": "scalar",
+      "profiling": false,
+      "detailed": false,
+      "execution_ms": 2128.173,
+      "planning_ms": 0.017,
+      "functions": [],
+      "adapter": {
+        "http": {},
+        "enabled": false,
+        "cprofile": {
+          "timer": "wall_clock",
+          "enabled": false,
+          "top_self_time_functions": []
+        },
+        "detailed": false,
+        "input_pairs": 0,
+        "http_wall_ms": 0,
+        "timing_notes": {
+          "server": "Ollama-reported durations overlap HTTP time; total_duration is not pure GPU execution time.",
+          "http_wall_ms": "Inclusive production _request time: request encoding, connection, server wait, transfer and JSON decoding.",
+          "process_cpu_ms": "Database backend process CPU; excludes Ollama server CPU/GPU work and overlaps nested CPU measurements.",
+          "wrapper_bookkeeping_wall_ms": "Outer evaluation wrapper bookkeeping estimate only; excludes SQL/PLPython boundary, inner timing hooks and cProfile overhead.",
+          "adapter_local_residual_wall_ms": "Adapter wall minus inclusive HTTP wall; includes vector validation, cosine calculation, other local work and instrumentation."
+        },
+        "normalization": {
+          "calls": 0,
+          "errors": 0,
+          "wall_ms": 0.0,
+          "components": 0,
+          "process_cpu_ms": 0.0
+        },
+        "provider_calls": 0,
+        "adapter_wall_ms": 0.0,
+        "provider_errors": 0,
+        "adapter_source_sha256": "cebf9fceeb21464acb2bd1bb7b3c0620e4c78c0375323573a873d21d221670dc",
+        "adapter_process_cpu_ms": 0.0,
+        "wrapper_bookkeeping_wall_ms": 0.0,
+        "adapter_local_residual_wall_ms": 0.0,
+        "other_adapter_residual_wall_ms": 0.0
+      },
+      "plan": {
+        "Plan": {
+          "Node Type": "Seq Scan",
+          "Parallel Aware": false,
+          "Async Capable": false,
+          "Relation Name": "bench_items",
+          "Alias": "bench_items",
+          "Startup Cost": 0.0,
+          "Total Cost": 36.28,
+          "Plan Rows": 43,
+          "Plan Width": 4,
+          "Actual Rows": 62,
+          "Actual Loops": 1,
+          "Filter": "(active AND jev.semantic_match('bench-similar'::text, left_text, right_text))",
+          "Rows Removed by Filter": 66,
+          "Shared Hit Blocks": 995,
+          "Shared Read Blocks": 0,
+          "Shared Dirtied Blocks": 0,
+          "Shared Written Blocks": 0,
+          "Local Hit Blocks": 0,
+          "Local Read Blocks": 0,
+          "Local Dirtied Blocks": 0,
+          "Local Written Blocks": 0,
+          "Temp Read Blocks": 0,
+          "Temp Written Blocks": 0
+        },
+        "Planning": {
+          "Shared Hit Blocks": 0,
+          "Shared Read Blocks": 0,
+          "Shared Dirtied Blocks": 0,
+          "Shared Written Blocks": 0,
+          "Local Hit Blocks": 0,
+          "Local Read Blocks": 0,
+          "Local Dirtied Blocks": 0,
+          "Local Written Blocks": 0,
+          "Temp Read Blocks": 0,
+          "Temp Written Blocks": 0
+        },
+        "Planning Time": 0.017,
+        "Triggers": [],
+        "Execution Time": 2128.173
+      },
+      "repeat": 4
+    },
+    {
+      "case": "ollama_unique",
+      "mode": "batch_128",
+      "profiling": false,
+      "detailed": false,
+      "execution_ms": 335.38,
+      "planning_ms": 0.028,
+      "functions": [],
+      "adapter": {
+        "http": {},
+        "enabled": false,
+        "cprofile": {
+          "timer": "wall_clock",
+          "enabled": false,
+          "top_self_time_functions": []
+        },
+        "detailed": false,
+        "input_pairs": 0,
+        "http_wall_ms": 0,
+        "timing_notes": {
+          "server": "Ollama-reported durations overlap HTTP time; total_duration is not pure GPU execution time.",
+          "http_wall_ms": "Inclusive production _request time: request encoding, connection, server wait, transfer and JSON decoding.",
+          "process_cpu_ms": "Database backend process CPU; excludes Ollama server CPU/GPU work and overlaps nested CPU measurements.",
+          "wrapper_bookkeeping_wall_ms": "Outer evaluation wrapper bookkeeping estimate only; excludes SQL/PLPython boundary, inner timing hooks and cProfile overhead.",
+          "adapter_local_residual_wall_ms": "Adapter wall minus inclusive HTTP wall; includes vector validation, cosine calculation, other local work and instrumentation."
+        },
+        "normalization": {
+          "calls": 0,
+          "errors": 0,
+          "wall_ms": 0.0,
+          "components": 0,
+          "process_cpu_ms": 0.0
+        },
+        "provider_calls": 0,
+        "adapter_wall_ms": 0.0,
+        "provider_errors": 0,
+        "adapter_source_sha256": "cebf9fceeb21464acb2bd1bb7b3c0620e4c78c0375323573a873d21d221670dc",
+        "adapter_process_cpu_ms": 0.0,
+        "wrapper_bookkeeping_wall_ms": 0.0,
+        "adapter_local_residual_wall_ms": 0.0,
+        "other_adapter_residual_wall_ms": 0.0
+      },
+      "plan": {
+        "Plan": {
+          "Node Type": "Custom Scan",
+          "Custom Plan Provider": "JEVSemanticScan",
+          "Parallel Aware": false,
+          "Async Capable": false,
+          "Relation Name": "bench_items",
+          "Alias": "bench_items",
+          "Startup Cost": 0.0,
+          "Total Cost": 36.28,
+          "Plan Rows": 43,
+          "Plan Width": 4,
+          "Actual Rows": 62,
+          "Actual Loops": 1,
+          "Filter": "(active AND jev.semantic_match('bench-similar'::text, left_text, right_text))",
+          "Rows Removed by Filter": 66,
+          "Semantic Evaluation": "batched",
+          "Batch Size": 128,
+          "Batch Memory Target": 1024,
+          "Rows Read": 128,
+          "Candidate Rows": 128,
+          "Unique Inputs": 124,
+          "Reused Inputs": 0,
+          "Provider Calls": 1,
+          "Batches": 1,
+          "Peak Buffered Rows": 128,
+          "Peak Buffered Bytes": 51937,
+          "Kernel Time": 335.321,
+          "Shared Hit Blocks": 11,
+          "Shared Read Blocks": 0,
+          "Shared Dirtied Blocks": 0,
+          "Shared Written Blocks": 0,
+          "Local Hit Blocks": 0,
+          "Local Read Blocks": 0,
+          "Local Dirtied Blocks": 0,
+          "Local Written Blocks": 0,
+          "Temp Read Blocks": 0,
+          "Temp Written Blocks": 0
+        },
+        "Planning": {
+          "Shared Hit Blocks": 10,
+          "Shared Read Blocks": 0,
+          "Shared Dirtied Blocks": 0,
+          "Shared Written Blocks": 0,
+          "Local Hit Blocks": 0,
+          "Local Read Blocks": 0,
+          "Local Dirtied Blocks": 0,
+          "Local Written Blocks": 0,
+          "Temp Read Blocks": 0,
+          "Temp Written Blocks": 0
+        },
+        "Planning Time": 0.028,
+        "Triggers": [],
+        "Execution Time": 335.38
+      },
+      "repeat": 5
+    },
+    {
+      "case": "ollama_unique",
+      "mode": "batch_128",
+      "profiling": true,
+      "detailed": false,
+      "execution_ms": 440.745,
+      "planning_ms": 0.042,
+      "functions": [
+        {
+          "schemaname": "jev",
+          "funcname": "evaluate_batch",
+          "calls": 1,
+          "total_time": 440.634584,
+          "self_time": 0.408084
+        },
+        {
+          "schemaname": "pg_temp_0",
+          "funcname": "profile_ollama_provider",
+          "calls": 1,
+          "total_time": 440.2265,
+          "self_time": 440.2265
+        }
+      ],
+      "adapter": {
+        "http": {
+          "/api/tags": {
+            "calls": 2,
+            "errors": 0,
+            "server": {
+              "load_duration_ns": {
+                "sum": null,
+                "samples": 0,
+                "invalid_samples": 0
+              },
+              "prompt_eval_count": {
+                "sum": null,
+                "samples": 0,
+                "invalid_samples": 0
+              },
+              "total_duration_ns": {
+                "sum": null,
+                "samples": 0,
+                "invalid_samples": 0
+              }
+            },
+            "wall_ms": 2.146459009964019,
+            "input_texts": 0,
+            "process_cpu_ms": 0.7970000000003807
+          },
+          "/api/embed": {
+            "calls": 1,
+            "errors": 0,
+            "server": {
+              "load_duration_ns": {
+                "sum": 9383458,
+                "samples": 1,
+                "invalid_samples": 0
+              },
+              "prompt_eval_count": {
+                "sum": 2238,
+                "samples": 1,
+                "invalid_samples": 0
+              },
+              "total_duration_ns": {
+                "sum": 412995000,
+                "samples": 1,
+                "invalid_samples": 0
+              }
+            },
+            "wall_ms": 421.9671660102904,
+            "input_texts": 125,
+            "process_cpu_ms": 5.182000000001352
+          }
+        },
+        "enabled": true,
+        "cprofile": {
+          "timer": "wall_clock",
+          "enabled": false,
+          "top_self_time_functions": []
+        },
+        "detailed": false,
+        "input_pairs": 124,
+        "http_wall_ms": 424.1136250202544,
+        "timing_notes": {
+          "server": "Ollama-reported durations overlap HTTP time; total_duration is not pure GPU execution time.",
+          "http_wall_ms": "Inclusive production _request time: request encoding, connection, server wait, transfer and JSON decoding.",
+          "process_cpu_ms": "Database backend process CPU; excludes Ollama server CPU/GPU work and overlaps nested CPU measurements.",
+          "wrapper_bookkeeping_wall_ms": "Outer evaluation wrapper bookkeeping estimate only; excludes SQL/PLPython boundary, inner timing hooks and cProfile overhead.",
+          "adapter_local_residual_wall_ms": "Adapter wall minus inclusive HTTP wall; includes vector validation, cosine calculation, other local work and instrumentation."
+        },
+        "normalization": {
+          "calls": 125,
+          "errors": 0,
+          "wall_ms": 11.967080878093839,
+          "components": 48000,
+          "process_cpu_ms": 11.97400000000215
+        },
+        "provider_calls": 1,
+        "adapter_wall_ms": 440.0681249680929,
+        "provider_errors": 0,
+        "adapter_source_sha256": "cebf9fceeb21464acb2bd1bb7b3c0620e4c78c0375323573a873d21d221670dc",
+        "adapter_process_cpu_ms": 21.85700000000068,
+        "wrapper_bookkeeping_wall_ms": 0.011374999303370714,
+        "adapter_local_residual_wall_ms": 15.954499947838485,
+        "other_adapter_residual_wall_ms": 3.9874190697446465
+      },
+      "plan": {
+        "Plan": {
+          "Node Type": "Custom Scan",
+          "Custom Plan Provider": "JEVSemanticScan",
+          "Parallel Aware": false,
+          "Async Capable": false,
+          "Relation Name": "bench_items",
+          "Alias": "bench_items",
+          "Startup Cost": 0.0,
+          "Total Cost": 36.28,
+          "Plan Rows": 43,
+          "Plan Width": 4,
+          "Actual Rows": 62,
+          "Actual Loops": 1,
+          "Filter": "(active AND jev.semantic_match('bench-similar'::text, left_text, right_text))",
+          "Rows Removed by Filter": 66,
+          "Semantic Evaluation": "batched",
+          "Batch Size": 128,
+          "Batch Memory Target": 1024,
+          "Rows Read": 128,
+          "Candidate Rows": 128,
+          "Unique Inputs": 124,
+          "Reused Inputs": 0,
+          "Provider Calls": 1,
+          "Batches": 1,
+          "Peak Buffered Rows": 128,
+          "Peak Buffered Bytes": 51937,
+          "Kernel Time": 440.681,
+          "Shared Hit Blocks": 11,
+          "Shared Read Blocks": 0,
+          "Shared Dirtied Blocks": 0,
+          "Shared Written Blocks": 0,
+          "Local Hit Blocks": 0,
+          "Local Read Blocks": 0,
+          "Local Dirtied Blocks": 0,
+          "Local Written Blocks": 0,
+          "Temp Read Blocks": 0,
+          "Temp Written Blocks": 0
+        },
+        "Planning": {
+          "Shared Hit Blocks": 10,
+          "Shared Read Blocks": 0,
+          "Shared Dirtied Blocks": 0,
+          "Shared Written Blocks": 0,
+          "Local Hit Blocks": 0,
+          "Local Read Blocks": 0,
+          "Local Dirtied Blocks": 0,
+          "Local Written Blocks": 0,
+          "Temp Read Blocks": 0,
+          "Temp Written Blocks": 0
+        },
+        "Planning Time": 0.042,
+        "Triggers": [],
+        "Execution Time": 440.745
+      },
+      "repeat": 5
+    },
+    {
+      "case": "ollama_unique",
+      "mode": "scalar",
+      "profiling": false,
+      "detailed": false,
+      "execution_ms": 2064.126,
+      "planning_ms": 0.013,
+      "functions": [],
+      "adapter": {
+        "http": {},
+        "enabled": false,
+        "cprofile": {
+          "timer": "wall_clock",
+          "enabled": false,
+          "top_self_time_functions": []
+        },
+        "detailed": false,
+        "input_pairs": 0,
+        "http_wall_ms": 0,
+        "timing_notes": {
+          "server": "Ollama-reported durations overlap HTTP time; total_duration is not pure GPU execution time.",
+          "http_wall_ms": "Inclusive production _request time: request encoding, connection, server wait, transfer and JSON decoding.",
+          "process_cpu_ms": "Database backend process CPU; excludes Ollama server CPU/GPU work and overlaps nested CPU measurements.",
+          "wrapper_bookkeeping_wall_ms": "Outer evaluation wrapper bookkeeping estimate only; excludes SQL/PLPython boundary, inner timing hooks and cProfile overhead.",
+          "adapter_local_residual_wall_ms": "Adapter wall minus inclusive HTTP wall; includes vector validation, cosine calculation, other local work and instrumentation."
+        },
+        "normalization": {
+          "calls": 0,
+          "errors": 0,
+          "wall_ms": 0.0,
+          "components": 0,
+          "process_cpu_ms": 0.0
+        },
+        "provider_calls": 0,
+        "adapter_wall_ms": 0.0,
+        "provider_errors": 0,
+        "adapter_source_sha256": "cebf9fceeb21464acb2bd1bb7b3c0620e4c78c0375323573a873d21d221670dc",
+        "adapter_process_cpu_ms": 0.0,
+        "wrapper_bookkeeping_wall_ms": 0.0,
+        "adapter_local_residual_wall_ms": 0.0,
+        "other_adapter_residual_wall_ms": 0.0
+      },
+      "plan": {
+        "Plan": {
+          "Node Type": "Seq Scan",
+          "Parallel Aware": false,
+          "Async Capable": false,
+          "Relation Name": "bench_items",
+          "Alias": "bench_items",
+          "Startup Cost": 0.0,
+          "Total Cost": 36.28,
+          "Plan Rows": 43,
+          "Plan Width": 4,
+          "Actual Rows": 62,
+          "Actual Loops": 1,
+          "Filter": "(active AND jev.semantic_match('bench-similar'::text, left_text, right_text))",
+          "Rows Removed by Filter": 66,
+          "Shared Hit Blocks": 995,
+          "Shared Read Blocks": 0,
+          "Shared Dirtied Blocks": 0,
+          "Shared Written Blocks": 0,
+          "Local Hit Blocks": 0,
+          "Local Read Blocks": 0,
+          "Local Dirtied Blocks": 0,
+          "Local Written Blocks": 0,
+          "Temp Read Blocks": 0,
+          "Temp Written Blocks": 0
+        },
+        "Planning": {
+          "Shared Hit Blocks": 0,
+          "Shared Read Blocks": 0,
+          "Shared Dirtied Blocks": 0,
+          "Shared Written Blocks": 0,
+          "Local Hit Blocks": 0,
+          "Local Read Blocks": 0,
+          "Local Dirtied Blocks": 0,
+          "Local Written Blocks": 0,
+          "Temp Read Blocks": 0,
+          "Temp Written Blocks": 0
+        },
+        "Planning Time": 0.013,
+        "Triggers": [],
+        "Execution Time": 2064.126
+      },
+      "repeat": 5
+    },
+    {
+      "case": "ollama_unique",
+      "mode": "scalar",
+      "profiling": true,
+      "detailed": false,
+      "execution_ms": 2066.352,
+      "planning_ms": 0.011,
+      "functions": [
+        {
+          "schemaname": "jev",
+          "funcname": "evaluate_batch",
+          "calls": 124,
+          "total_time": 2064.551988,
+          "self_time": 17.407082
+        },
+        {
+          "schemaname": "jev",
+          "funcname": "semantic_match",
+          "calls": 124,
+          "total_time": 2065.916493,
+          "self_time": 1.364505
+        },
+        {
+          "schemaname": "pg_temp_0",
+          "funcname": "profile_ollama_provider",
+          "calls": 124,
+          "total_time": 2047.144906,
+          "self_time": 2047.144906
+        }
+      ],
+      "adapter": {
+        "http": {
+          "/api/tags": {
+            "calls": 248,
+            "errors": 0,
+            "server": {
+              "load_duration_ns": {
+                "sum": null,
+                "samples": 0,
+                "invalid_samples": 0
+              },
+              "prompt_eval_count": {
+                "sum": null,
+                "samples": 0,
+                "invalid_samples": 0
+              },
+              "total_duration_ns": {
+                "sum": null,
+                "samples": 0,
+                "invalid_samples": 0
+              }
+            },
+            "wall_ms": 115.91521027730778,
+            "input_texts": 0,
+            "process_cpu_ms": 37.32200000001029
+          },
+          "/api/embed": {
+            "calls": 124,
+            "errors": 0,
+            "server": {
+              "load_duration_ns": {
+                "sum": 946769961,
+                "samples": 124,
+                "invalid_samples": 0
+              },
+              "prompt_eval_count": {
+                "sum": 2976,
+                "samples": 124,
+                "invalid_samples": 0
+              },
+              "total_duration_ns": {
+                "sum": 1837124165,
+                "samples": 124,
+                "invalid_samples": 0
+              }
+            },
+            "wall_ms": 1888.761957990937,
+            "input_texts": 248,
+            "process_cpu_ms": 34.34899999999885
+          }
+        },
+        "enabled": true,
+        "cprofile": {
+          "timer": "wall_clock",
+          "enabled": false,
+          "top_self_time_functions": []
+        },
+        "detailed": false,
+        "input_pairs": 124,
+        "http_wall_ms": 2004.6771682682447,
+        "timing_notes": {
+          "server": "Ollama-reported durations overlap HTTP time; total_duration is not pure GPU execution time.",
+          "http_wall_ms": "Inclusive production _request time: request encoding, connection, server wait, transfer and JSON decoding.",
+          "process_cpu_ms": "Database backend process CPU; excludes Ollama server CPU/GPU work and overlaps nested CPU measurements.",
+          "wrapper_bookkeeping_wall_ms": "Outer evaluation wrapper bookkeeping estimate only; excludes SQL/PLPython boundary, inner timing hooks and cProfile overhead.",
+          "adapter_local_residual_wall_ms": "Adapter wall minus inclusive HTTP wall; includes vector validation, cosine calculation, other local work and instrumentation."
+        },
+        "normalization": {
+          "calls": 248,
+          "errors": 0,
+          "wall_ms": 24.74041166715324,
+          "components": 95232,
+          "process_cpu_ms": 24.839999999990425
+        },
+        "provider_calls": 124,
+        "adapter_wall_ms": 2044.224543380551,
+        "provider_errors": 0,
+        "adapter_source_sha256": "cebf9fceeb21464acb2bd1bb7b3c0620e4c78c0375323573a873d21d221670dc",
+        "adapter_process_cpu_ms": 110.93800000000975,
+        "wrapper_bookkeeping_wall_ms": 0.4534585168585181,
+        "adapter_local_residual_wall_ms": 39.54737511230633,
+        "other_adapter_residual_wall_ms": 14.806963445153087
+      },
+      "plan": {
+        "Plan": {
+          "Node Type": "Seq Scan",
+          "Parallel Aware": false,
+          "Async Capable": false,
+          "Relation Name": "bench_items",
+          "Alias": "bench_items",
+          "Startup Cost": 0.0,
+          "Total Cost": 36.28,
+          "Plan Rows": 43,
+          "Plan Width": 4,
+          "Actual Rows": 62,
+          "Actual Loops": 1,
+          "Filter": "(active AND jev.semantic_match('bench-similar'::text, left_text, right_text))",
+          "Rows Removed by Filter": 66,
+          "Shared Hit Blocks": 995,
+          "Shared Read Blocks": 0,
+          "Shared Dirtied Blocks": 0,
+          "Shared Written Blocks": 0,
+          "Local Hit Blocks": 0,
+          "Local Read Blocks": 0,
+          "Local Dirtied Blocks": 0,
+          "Local Written Blocks": 0,
+          "Temp Read Blocks": 0,
+          "Temp Written Blocks": 0
+        },
+        "Planning": {
+          "Shared Hit Blocks": 0,
+          "Shared Read Blocks": 0,
+          "Shared Dirtied Blocks": 0,
+          "Shared Written Blocks": 0,
+          "Local Hit Blocks": 0,
+          "Local Read Blocks": 0,
+          "Local Dirtied Blocks": 0,
+          "Local Written Blocks": 0,
+          "Temp Read Blocks": 0,
+          "Temp Written Blocks": 0
+        },
+        "Planning Time": 0.011,
+        "Triggers": [],
+        "Execution Time": 2066.352
+      },
+      "repeat": 5
+    }
+  ]
+}

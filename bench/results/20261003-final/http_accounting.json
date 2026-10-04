@@ -1,0 +1,7 @@
+{
+  "provider_calls_expected_across_live_warmups_and_trials": 2324,
+  "embedding_http_requests_observed": 2325,
+  "embedding_http_requests_expected_including_model_warmup": 2325,
+  "tag_http_requests_observed": 4649,
+  "tag_http_requests_expected_including_startup": 4649
+}

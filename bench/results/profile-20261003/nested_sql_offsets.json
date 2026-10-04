@@ -1,0 +1,12 @@
+[
+  {
+    "mode": "scalar",
+    "start_byte": 495,
+    "end_byte": 376491
+  },
+  {
+    "mode": "batch_128",
+    "start_byte": 376491,
+    "end_byte": 399709
+  }
+]

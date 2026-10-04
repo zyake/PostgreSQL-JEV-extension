@@ -1,0 +1,498 @@
+PG_CONFIG="pg_config" sh test/run.sh
+BEGIN
+CREATE EXTENSION
+INSERT 0 1
+INSERT 0 1
+ALTER EXTENSION
+DO
+CREATE TABLE
+INSERT 0 3
+DO
+ROLLBACK
+CREATE EXTENSION
+
+Running kernel assertions
+BEGIN
+CREATE FUNCTION
+DO
+DO
+CREATE FUNCTION
+INSERT 0 1
+INSERT 0 1
+DO
+DO
+CREATE FUNCTION
+INSERT 0 1
+INSERT 0 1
+DO
+UPDATE 1
+UPDATE 1
+DO
+DO
+ expect_error 
+--------------
+ 
+(1 row)
+
+ expect_error 
+--------------
+ 
+(1 row)
+
+ expect_error 
+--------------
+ 
+(1 row)
+
+ expect_error 
+--------------
+ 
+(1 row)
+
+ expect_error 
+--------------
+ 
+(1 row)
+
+ expect_error 
+--------------
+ 
+(1 row)
+
+ expect_error 
+--------------
+ 
+(1 row)
+
+CREATE FUNCTION
+INSERT 0 1
+INSERT 0 1
+DO
+UPDATE 1
+DO
+UPDATE 1
+ expect_error 
+--------------
+ 
+(1 row)
+
+CREATE FUNCTION
+UPDATE 1
+ expect_error 
+--------------
+ 
+(1 row)
+
+CREATE FUNCTION
+INSERT 0 1
+INSERT 0 1
+DO
+DROP FUNCTION
+DO
+UPDATE 1
+DO
+CREATE ROLE
+GRANT
+GRANT
+REVOKE
+SET
+DO
+RESET
+GRANT
+ALTER TABLE
+CREATE POLICY
+SET
+DO
+RESET
+ROLLBACK
+kernel assertions passed
+
+Running planner assertions
+LOAD
+BEGIN
+DO
+CREATE FUNCTION
+CREATE FUNCTION
+CREATE TABLE
+INSERT 0 10
+ANALYZE
+SET
+SET
+DO
+SELECT 6
+SELECT 2
+SELECT 3
+SET
+SET
+DO
+SELECT 6
+SELECT 2
+SELECT 3
+DO
+DO
+SET
+PREPARE
+DO
+DEALLOCATE
+CREATE FUNCTION
+DO
+CREATE ROLE
+GRANT
+GRANT
+REVOKE
+SET
+DO
+RESET
+GRANT
+CREATE ROLE
+GRANT
+GRANT
+ALTER TABLE
+CREATE POLICY
+SET
+DO
+RESET
+ROLLBACK
+planner assertions passed
+
+Running batching assertions
+LOAD
+BEGIN
+SET
+SET
+SET
+SET
+SET
+CREATE FUNCTION
+CREATE FUNCTION
+CREATE FUNCTION
+INSERT 0 2
+INSERT 0 2
+CREATE TABLE
+INSERT 0 12
+ANALYZE
+DO
+CREATE TABLE
+INSERT 0 12
+DO
+CREATE TABLE
+INSERT 0 10
+SET
+SELECT 4
+SET
+SELECT 4
+DO
+CREATE TABLE
+INSERT 0 9
+DO
+CREATE TABLE
+ALTER TABLE
+ALTER TABLE
+INSERT 0 8
+SET
+DO
+SET
+SET
+PREPARE
+DO
+DEALLOCATE
+DO
+PREPARE
+DO
+DEALLOCATE
+CREATE ROLE
+GRANT
+GRANT
+REVOKE
+SET
+DO
+RESET
+GRANT
+REVOKE
+SET
+DO
+RESET
+GRANT
+CREATE FUNCTION
+INSERT 0 1
+INSERT 0 1
+DO
+ROLLBACK
+batched CustomScan assertions passed
+
+Running cache assertions
+LOAD
+BEGIN
+SET
+SET
+SET
+SET
+SET
+CREATE FUNCTION
+CREATE TABLE
+INSERT 0 12
+DO
+SET
+SELECT 7
+DO
+SET
+SELECT 7
+DO
+SET
+SET
+CREATE TABLE
+INSERT 0 3
+DO
+CREATE TABLE
+INSERT 0 40
+INSERT 0 1
+DO
+CREATE FUNCTION
+INSERT 0 1
+INSERT 0 1
+SET
+SET
+PREPARE
+DO
+UPDATE 1
+DO
+CREATE ROLE
+GRANT
+GRANT
+REVOKE
+GRANT
+SET
+DO
+RESET
+REVOKE
+SET
+DO
+RESET
+DEALLOCATE
+CREATE TABLE
+INSERT 0 6
+GRANT
+GRANT
+SET
+DO
+DO
+ROLLBACK
+bounded scan-result cache assertions passed
+
+Running cascade assertions
+BEGIN
+SET
+CREATE FUNCTION
+CREATE FUNCTION
+CREATE FUNCTION
+INSERT 0 2
+INSERT 0 1
+INSERT 0 1
+DO
+DO
+INSERT 0 1
+DO
+ cascade_expect_error 
+----------------------
+ 
+(1 row)
+
+ cascade_expect_error 
+----------------------
+ 
+(1 row)
+
+ cascade_expect_error 
+----------------------
+ 
+(1 row)
+
+ cascade_expect_error 
+----------------------
+ 
+(1 row)
+
+DO
+CREATE FUNCTION
+DO
+LOAD
+SET
+CREATE TABLE
+INSERT 0 8
+SELECT 4
+SET
+SET
+SET
+SET
+SET
+DO
+SELECT 4
+DO
+SET
+CREATE ROLE
+GRANT
+REVOKE
+REVOKE
+GRANT
+SET
+DO
+RESET
+GRANT
+SET
+DO
+RESET
+REVOKE
+SET
+DO
+RESET
+GRANT
+ALTER TABLE
+CREATE POLICY
+SET
+DO
+RESET
+ROLLBACK
+cascade assertions passed
+
+Running relation assertions
+BEGIN
+CREATE TABLE
+INSERT 0 5
+CREATE FUNCTION
+DO
+CREATE TABLE
+INSERT 0 1
+DO
+CREATE TABLE
+DO
+ relation_expect_error 
+-----------------------
+ 
+(1 row)
+
+ relation_expect_error 
+-----------------------
+ 
+(1 row)
+
+ relation_expect_error 
+-----------------------
+ 
+(1 row)
+
+ relation_expect_error 
+-----------------------
+ 
+(1 row)
+
+CREATE TABLE
+ relation_expect_error 
+-----------------------
+ 
+(1 row)
+
+CREATE ROLE
+GRANT
+GRANT
+ALTER TABLE
+CREATE POLICY
+CREATE VIEW
+GRANT
+CREATE FUNCTION
+INSERT 0 1
+INSERT 0 1
+SET
+DO
+RESET
+REVOKE
+SET
+ relation_expect_error 
+-----------------------
+ 
+(1 row)
+
+RESET
+GRANT
+REVOKE
+SET
+ relation_expect_error 
+-----------------------
+ 
+(1 row)
+
+RESET
+ROLLBACK
+
+Running reduction assertions
+BEGIN
+CREATE TABLE
+INSERT 0 6
+CREATE TABLE
+INSERT 0 10
+CREATE TABLE
+INSERT 0 6
+SELECT 7
+SELECT 3
+SELECT 5
+SELECT 3
+DO
+SELECT 14
+SELECT 14
+DO
+CREATE FUNCTION
+INSERT 0 1
+INSERT 0 1
+SELECT 5
+SELECT 5
+DO
+SELECT 9
+SELECT 9
+DO
+SELECT 0
+SELECT 0
+SELECT 0
+SELECT 0
+DO
+ROLLBACK
+explicit relational reduction assertions passed
+
+Running costing assertions
+LOAD
+BEGIN
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+DO
+CREATE FUNCTION
+CREATE FUNCTION
+CREATE TABLE
+INSERT 0 4096
+ANALYZE
+CREATE FUNCTION
+INSERT 0 1
+INSERT 0 1
+DO
+SET
+DO
+SET
+SET
+SELECT 2593
+SET
+SELECT 2593
+DO
+ROLLBACK
+..........s.
+----------------------------------------------------------------------
+Ran 12 tests in 0.779s
+
+OK (skipped=1)
+NOTICE:  drop cascades to function jev.ollama_embedding_provider(text[],text[],jsonb,jsonb)
+DROP EXTENSION
+CREATE EXTENSION
+DROP EXTENSION
+
+All JEV tests passed (PostgreSQL 17.10 (Homebrew)).

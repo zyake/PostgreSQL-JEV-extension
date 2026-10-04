@@ -1,0 +1,33 @@
+{
+  "started_utc": "2026-10-04T03:40:53.655012+00:00",
+  "platform": "macOS-27.0-arm64-arm-64bit-Mach-O",
+  "postgres": "PostgreSQL 17.10 (Homebrew)",
+  "seed": 20261004,
+  "rows": 8192,
+  "repeats": 5,
+  "duplicates": 1,
+  "modes": [
+    "scalar",
+    "auto",
+    "forced"
+  ],
+  "cases": [
+    "full_scan",
+    "selective_index",
+    "limit_one"
+  ],
+  "batch_size": 128,
+  "result_cache_kb": 0,
+  "batch_call_cost": 100,
+  "batch_input_cost": 10,
+  "methodology": "Warm validation; randomized paired mode order; exact provider only; no cache across buffers",
+  "source_sha256": {
+    "src/jev_planner.c": "13630f178d226f6de1303ff08d2e8be098f00a945ab70e363a03c77862461bda",
+    "sql/jev--0.2.0.sql": "94d948b13bf4179ba304d99acdf3eecc2bc98304987820322e62bc38fba30ea2",
+    "bench/run.py": "2f7cb3fa09537901d9b068d5cf0ccc5167da6f52406ec27d527baab3866365c0",
+    "bench/cost_compare.py": "40f0d82b7577813474fcefb8a8a58a8490a48b858544be4d45b0588e78b22127"
+  },
+  "library_sha256": "aefcda2b1436c579170a5774dc6721c817cb67d01d17515878f0b78e8b03b778",
+  "completed_utc": "2026-10-04T03:40:57.457927+00:00",
+  "source_and_build_unchanged": true
+}

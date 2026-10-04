@@ -1,0 +1,51 @@
+{
+  "started_utc": "2026-10-03T12:35:19.440819+00:00",
+  "platform": "macOS-27.0-arm64-arm-64bit-Mach-O",
+  "postgres": "PostgreSQL 17.10 (Homebrew)",
+  "seed": 20261003,
+  "settings": {
+    "jit": "off",
+    "max_parallel_workers_per_gather": 0,
+    "synchronize_seqscans": "off",
+    "shared_buffers": "128MB",
+    "batch_memory_kb": 1024,
+    "fsync": "off"
+  },
+  "arguments": {
+    "suite": "all",
+    "kernel_rows": 8192,
+    "live_rows": 128,
+    "repeats": 5,
+    "live_repeats": 3,
+    "pg_config": "pg_config",
+    "models": "/private/tmp/jev-ollama-models",
+    "model": "all-minilm:22m",
+    "ollama_port": 11439,
+    "output": "bench/results/20261003-final"
+  },
+  "source_sha256": {
+    "src/jev_planner.c": "b10af2977cdbd0b19b7c0d002cc7e8eb4e12703fad05a5e65d6749e976b51048",
+    "sql/jev--0.1.0.sql": "8ce680a03ce9557db4f6df04d566d05c50af14abd3b7ea251a228393eb5c9f5a",
+    "providers/ollama_provider.py": "cebf9fceeb21464acb2bd1bb7b3c0620e4c78c0375323573a873d21d221670dc",
+    "bench/run.py": "65c0aa7e2ee61c3313c66163bce67196f41005c1ed8ee762f99c967214a5bb04"
+  },
+  "installed_library_sha256": "6ce5c4346a187926280474336a02af59281866178f5f47baabe9ab4f2bdbfc94",
+  "ollama": {
+    "config": {
+      "endpoint": "http://127.0.0.1:11439",
+      "model": "all-minilm:22m",
+      "model_digest": "1b226e2802dbb772b5fc32a58f103ca1804ef7501331012de126ab22f67475ef",
+      "expected_dimensions": 384
+    },
+    "version": {
+      "version": "0.22.0"
+    },
+    "warmup": {
+      "model": "all-minilm:22m",
+      "total_duration": 635695333,
+      "load_duration": 619930583,
+      "prompt_eval_count": 7
+    }
+  },
+  "finished_utc": "2026-10-03T12:36:26.972554+00:00"
+}

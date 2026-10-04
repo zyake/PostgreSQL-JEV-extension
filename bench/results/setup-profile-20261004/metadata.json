@@ -1,0 +1,53 @@
+{
+  "started_utc": "2026-10-04T06:30:45.756396+00:00",
+  "platform": "macOS-27.0-arm64-arm-64bit-Mach-O",
+  "postgres": "PostgreSQL 17.10 (Homebrew)",
+  "rows": 8192,
+  "repeats": 7,
+  "statement_repeats": 3,
+  "seed": 20261004,
+  "batch_size": 128,
+  "result_cache_kb": 0,
+  "external_model": false,
+  "library_sha256": "bd6253110435e4a8575a1aa923d585c2fb8394f5ff1921b49e8219cad97771ff",
+  "installed_sql_sha256": "94d948b13bf4179ba304d99acdf3eecc2bc98304987820322e62bc38fba30ea2",
+  "source_sha256": {
+    "jev.control": "7b87f872fa6f8c60fca119fe141fe1dbbb7585b272beca4a7f46d2e0c5d793df",
+    "src/jev_planner.c": "8fecc026bc3040080eca5e04c52e0373a0afd5340ccc860e59e3b903e18d9da4",
+    "sql/jev--0.2.0.sql": "94d948b13bf4179ba304d99acdf3eecc2bc98304987820322e62bc38fba30ea2",
+    "bench/run.py": "2f7cb3fa09537901d9b068d5cf0ccc5167da6f52406ec27d527baab3866365c0",
+    "bench/profile_run.py": "beb3de9935c3df3178574a620e37d4f1718f523fb718bba74e048d909876baab",
+    "bench/profile_adapter.py": "3afee10db2575c7d14ad4627eea969d2c3abef614742ab38b15bd282dfdc7825",
+    "bench/setup_profile.py": "7875b2515a6ccc3ab37d3303e7881ed7027b7a98dc80bdae69e16bf6bfa5cb71"
+  },
+  "methodology": "Unique input pairs; full result-bag validation; randomized normal/function-profile trials; separate nested-SQL planning/execution diagnostic and optional native samples. pg_stat_statements is preloaded but tracking disabled in normal/function-profile trials.",
+  "stack_sampling": [
+    {
+      "mode": "scalar",
+      "status": 0,
+      "backend_pid": 2374,
+      "repeated_queries": 11,
+      "elapsed_seconds": 5.8596531670191325,
+      "file": "stack_scalar.txt"
+    },
+    {
+      "mode": "batch_128",
+      "status": 0,
+      "backend_pid": 2374,
+      "repeated_queries": 182,
+      "elapsed_seconds": 5.376792584022041,
+      "file": "stack_batch_128.txt"
+    }
+  ],
+  "final_source_sha256": {
+    "jev.control": "7b87f872fa6f8c60fca119fe141fe1dbbb7585b272beca4a7f46d2e0c5d793df",
+    "src/jev_planner.c": "8fecc026bc3040080eca5e04c52e0373a0afd5340ccc860e59e3b903e18d9da4",
+    "sql/jev--0.2.0.sql": "94d948b13bf4179ba304d99acdf3eecc2bc98304987820322e62bc38fba30ea2",
+    "bench/run.py": "2f7cb3fa09537901d9b068d5cf0ccc5167da6f52406ec27d527baab3866365c0",
+    "bench/profile_run.py": "beb3de9935c3df3178574a620e37d4f1718f523fb718bba74e048d909876baab",
+    "bench/profile_adapter.py": "3afee10db2575c7d14ad4627eea969d2c3abef614742ab38b15bd282dfdc7825",
+    "bench/setup_profile.py": "7875b2515a6ccc3ab37d3303e7881ed7027b7a98dc80bdae69e16bf6bfa5cb71"
+  },
+  "source_and_build_unchanged": true,
+  "finished_utc": "2026-10-04T06:31:08.337702+00:00"
+}

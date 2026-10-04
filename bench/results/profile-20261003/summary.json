@@ -1,0 +1,370 @@
+[
+  {
+    "case": "kernel_unique",
+    "mode": "scalar",
+    "data": {
+      "rows": 8192,
+      "candidates": 8192,
+      "heap_bytes": 2080768,
+      "avg_input_bytes": 201.9,
+      "nonnull_candidates": 8108,
+      "global_unique_pairs": 8108
+    },
+    "normal_median_ms": 363.705,
+    "normal_range_ms": [
+      363.192,
+      366.368
+    ],
+    "profiled_median_ms": 366.968,
+    "profiled_mean_ms": 366.3226,
+    "profiled_range_ms": [
+      364.318,
+      367.275
+    ],
+    "phase_means_ms": {
+      "kernel_sql": 301.0016366,
+      "other_postgres": 3.493000600000016,
+      "provider": 36.1211576,
+      "scalar_wrapper": 25.7068052
+    },
+    "function_self_means_ms": {
+      "evaluate_batch": 301.0016366,
+      "exact_provider": 36.1211576,
+      "semantic_match": 25.7068052,
+      "unattributed_execution": 3.493000600000016
+    },
+    "function_calls": {
+      "exact_provider": 8108,
+      "evaluate_batch": 8108,
+      "semantic_match": 8108
+    }
+  },
+  {
+    "case": "kernel_unique",
+    "mode": "batch_128",
+    "data": {
+      "rows": 8192,
+      "candidates": 8192,
+      "heap_bytes": 2080768,
+      "avg_input_bytes": 201.9,
+      "nonnull_candidates": 8108,
+      "global_unique_pairs": 8108
+    },
+    "normal_median_ms": 21.136,
+    "normal_range_ms": [
+      20.817,
+      21.258
+    ],
+    "profiled_median_ms": 20.9,
+    "profiled_mean_ms": 21.0746,
+    "profiled_range_ms": [
+      20.761,
+      21.653
+    ],
+    "phase_means_ms": {
+      "kernel_sql": 14.599356799999995,
+      "other_postgres": 4.117916400000004,
+      "provider": 2.357326799999999,
+      "scalar_wrapper": 0
+    },
+    "function_self_means_ms": {
+      "evaluate_batch": 14.599356799999995,
+      "exact_provider": 2.357326799999999,
+      "unattributed_execution": 4.117916400000004
+    },
+    "function_calls": {
+      "exact_provider": 64,
+      "evaluate_batch": 64
+    }
+  },
+  {
+    "case": "kernel_duplicates",
+    "mode": "scalar",
+    "data": {
+      "rows": 8192,
+      "candidates": 8192,
+      "heap_bytes": 1998848,
+      "avg_input_bytes": 200.0,
+      "nonnull_candidates": 8108,
+      "global_unique_pairs": 1024
+    },
+    "normal_median_ms": 380.866,
+    "normal_range_ms": [
+      362.678,
+      422.499
+    ],
+    "profiled_median_ms": 412.543,
+    "profiled_mean_ms": 405.3214,
+    "profiled_range_ms": [
+      366.563,
+      437.358
+    ],
+    "phase_means_ms": {
+      "kernel_sql": 333.0636246,
+      "other_postgres": 3.7702314000000117,
+      "provider": 40.0647098,
+      "scalar_wrapper": 28.4228342
+    },
+    "function_self_means_ms": {
+      "evaluate_batch": 333.0636246,
+      "exact_provider": 40.0647098,
+      "semantic_match": 28.4228342,
+      "unattributed_execution": 3.7702314000000117
+    },
+    "function_calls": {
+      "exact_provider": 8108,
+      "evaluate_batch": 8108,
+      "semantic_match": 8108
+    }
+  },
+  {
+    "case": "kernel_duplicates",
+    "mode": "batch_128",
+    "data": {
+      "rows": 8192,
+      "candidates": 8192,
+      "heap_bytes": 1998848,
+      "avg_input_bytes": 200.0,
+      "nonnull_candidates": 8108,
+      "global_unique_pairs": 1024
+    },
+    "normal_median_ms": 14.212,
+    "normal_range_ms": [
+      13.815,
+      17.611
+    ],
+    "profiled_median_ms": 14.419,
+    "profiled_mean_ms": 14.5394,
+    "profiled_range_ms": [
+      13.884,
+      15.422
+    ],
+    "phase_means_ms": {
+      "kernel_sql": 9.858063399999999,
+      "other_postgres": 4.050168800000002,
+      "provider": 0.6311677999999994,
+      "scalar_wrapper": 0
+    },
+    "function_self_means_ms": {
+      "evaluate_batch": 9.858063399999999,
+      "exact_provider": 0.6311677999999994,
+      "unattributed_execution": 4.050168800000002
+    },
+    "function_calls": {
+      "exact_provider": 64,
+      "evaluate_batch": 64
+    }
+  },
+  {
+    "case": "ollama_unique",
+    "mode": "scalar",
+    "data": {
+      "rows": 128,
+      "candidates": 128,
+      "heap_bytes": 24576,
+      "avg_input_bytes": 98.1,
+      "nonnull_candidates": 124,
+      "global_unique_pairs": 124
+    },
+    "normal_median_ms": 2128.173,
+    "normal_range_ms": [
+      2064.126,
+      2266.397
+    ],
+    "profiled_median_ms": 2097.504,
+    "profiled_mean_ms": 2109.4776,
+    "profiled_range_ms": [
+      2066.352,
+      2178.545
+    ],
+    "phase_means_ms": {
+      "adapter_local": 40.383217635098845,
+      "embedding_http": 1925.0216140877455,
+      "other_postgres": 23.218309738340213,
+      "tag_http": 120.85445853881538
+    },
+    "function_self_means_ms": {
+      "evaluate_batch": 18.2618166,
+      "profile_ollama_provider": 2089.3209906,
+      "semantic_match": 1.4276992,
+      "unattributed_execution": 0.46709359999995287
+    },
+    "function_calls": {
+      "evaluate_batch": 124,
+      "semantic_match": 124,
+      "profile_ollama_provider": 124
+    },
+    "counts": {
+      "provider_calls": 124,
+      "pairs": 124,
+      "embedding_requests": 124,
+      "tag_requests": 248,
+      "embedded_texts": 248,
+      "prompt_tokens": 2976
+    },
+    "adapter_cpu_mean_ms": 114.82760000000596,
+    "normalization_mean_ms": 25.193542323540896,
+    "server_means_ms": {
+      "total_duration": 1871.6770418,
+      "load_duration": 961.5972664
+    }
+  },
+  {
+    "case": "ollama_unique",
+    "mode": "batch_128",
+    "data": {
+      "rows": 128,
+      "candidates": 128,
+      "heap_bytes": 24576,
+      "avg_input_bytes": 98.1,
+      "nonnull_candidates": 124,
+      "global_unique_pairs": 124
+    },
+    "normal_median_ms": 350.29,
+    "normal_range_ms": [
+      335.38,
+      361.725
+    ],
+    "profiled_median_ms": 408.244,
+    "profiled_mean_ms": 408.0606,
+    "profiled_range_ms": [
+      327.736,
+      509.448
+    ],
+    "phase_means_ms": {
+      "adapter_local": 20.559466793201864,
+      "embedding_http": 384.4928247970529,
+      "other_postgres": 0.7913666279375547,
+      "tag_http": 2.216941781807691
+    },
+    "function_self_means_ms": {
+      "evaluate_batch": 0.476525,
+      "profile_ollama_provider": 407.4731582,
+      "unattributed_execution": 0.11091680000000678
+    },
+    "function_calls": {
+      "evaluate_batch": 1,
+      "profile_ollama_provider": 1
+    },
+    "counts": {
+      "provider_calls": 1,
+      "pairs": 124,
+      "embedding_requests": 1,
+      "tag_requests": 2,
+      "embedded_texts": 125,
+      "prompt_tokens": 2238
+    },
+    "adapter_cpu_mean_ms": 27.296800000000587,
+    "normalization_mean_ms": 15.218605729751289,
+    "server_means_ms": {
+      "total_duration": 373.2764668,
+      "load_duration": 9.265566999999999
+    }
+  },
+  {
+    "case": "ollama_duplicates",
+    "mode": "scalar",
+    "data": {
+      "rows": 128,
+      "candidates": 128,
+      "heap_bytes": 24576,
+      "avg_input_bytes": 97.7,
+      "nonnull_candidates": 124,
+      "global_unique_pairs": 32
+    },
+    "normal_median_ms": 2175.016,
+    "normal_range_ms": [
+      2151.03,
+      2375.175
+    ],
+    "profiled_median_ms": 2205.932,
+    "profiled_mean_ms": 2330.6248,
+    "profiled_range_ms": [
+      2098.45,
+      2734.302
+    ],
+    "phase_means_ms": {
+      "adapter_local": 44.98687263112515,
+      "embedding_http": 2117.981857515406,
+      "other_postgres": 26.933236209801542,
+      "tag_http": 140.7228336436674
+    },
+    "function_self_means_ms": {
+      "evaluate_batch": 21.189111,
+      "profile_ollama_provider": 2307.2309483999998,
+      "semantic_match": 1.6743808,
+      "unattributed_execution": 0.5303597999999511
+    },
+    "function_calls": {
+      "evaluate_batch": 124,
+      "semantic_match": 124,
+      "profile_ollama_provider": 124
+    },
+    "counts": {
+      "provider_calls": 124,
+      "pairs": 124,
+      "embedding_requests": 124,
+      "tag_requests": 248,
+      "embedded_texts": 248,
+      "prompt_tokens": 2974
+    },
+    "adapter_cpu_mean_ms": 132.39520000000127,
+    "normalization_mean_ms": 27.4667666410096,
+    "server_means_ms": {
+      "total_duration": 2055.884167,
+      "load_duration": 1042.8335922
+    }
+  },
+  {
+    "case": "ollama_duplicates",
+    "mode": "batch_128",
+    "data": {
+      "rows": 128,
+      "candidates": 128,
+      "heap_bytes": 24576,
+      "avg_input_bytes": 97.7,
+      "nonnull_candidates": 124,
+      "global_unique_pairs": 32
+    },
+    "normal_median_ms": 103.657,
+    "normal_range_ms": [
+      89.081,
+      134.393
+    ],
+    "profiled_median_ms": 101.577,
+    "profiled_mean_ms": 104.3868,
+    "profiled_range_ms": [
+      85.254,
+      127.322
+    ],
+    "phase_means_ms": {
+      "adapter_local": 7.010483369231224,
+      "embedding_http": 95.10326680028811,
+      "other_postgres": 0.5494414093188936,
+      "tag_http": 1.7236084211617708
+    },
+    "function_self_means_ms": {
+      "evaluate_batch": 0.3583168,
+      "profile_ollama_provider": 103.9259834,
+      "unattributed_execution": 0.1024997999999954
+    },
+    "function_calls": {
+      "evaluate_batch": 1,
+      "profile_ollama_provider": 1
+    },
+    "counts": {
+      "provider_calls": 1,
+      "pairs": 32,
+      "embedding_requests": 1,
+      "tag_requests": 2,
+      "embedded_texts": 33,
+      "prompt_tokens": 582
+    },
+    "adapter_cpu_mean_ms": 9.31299999999986,
+    "normalization_mean_ms": 5.281458795070648,
+    "server_means_ms": {
+      "total_duration": 91.8021584,
+      "load_duration": 8.2935002
+    }
+  }
+]

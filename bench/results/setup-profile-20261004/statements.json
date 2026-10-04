@@ -1,0 +1,1190 @@
+[
+  {
+    "mode": "batch_128",
+    "repeat": 1,
+    "execution_ms": 22.37,
+    "functions": [
+      {
+        "schemaname": "jev",
+        "funcname": "exact_provider",
+        "calls": 64,
+        "total_time": 2.4075440000000015,
+        "self_time": 2.4075440000000015
+      },
+      {
+        "schemaname": "jev",
+        "funcname": "evaluate_batch",
+        "calls": 64,
+        "total_time": 18.25799600000005,
+        "self_time": 15.850451999999962
+      }
+    ],
+    "statements": [
+      {
+        "rows": 2027,
+        "calls": 1,
+        "plans": 1,
+        "query": "EXPLAIN (ANALYZE, FORMAT JSON, TIMING OFF, BUFFERS ON) SELECT id FROM ONLY bench_items WHERE active AND jev.semantic_match($1, left_text, right_text);",
+        "queryid": 4382235940663869441,
+        "toplevel": false,
+        "total_exec_time": 22.361833,
+        "total_plan_time": 0.068
+      },
+      {
+        "rows": 8108,
+        "calls": 64,
+        "plans": 6,
+        "query": "SELECT ordinal, decision FROM jev.evaluate_batch($1, $2, $3)",
+        "queryid": -3293719269545287768,
+        "toplevel": false,
+        "total_exec_time": 18.914669000000004,
+        "total_plan_time": 0.025082999999999998
+      },
+      {
+        "rows": 8108,
+        "calls": 64,
+        "plans": 0,
+        "query": "SELECT c.ordinal, c.row_id,\n           (predictions[p.ordinal::integer]).decision,\n           (predictions[p.ordinal::integer]).confidence\n      FROM unnest(candidates) WITH ORDINALITY AS c(row_id, left_text, right_text, ordinal)\n      LEFT JOIN unnest(unique_lefts, unique_rights) WITH ORDINALITY AS p(left_text, right_text, ordinal)\n        ON c.left_text COLLATE pg_catalog.\"C\" = p.left_text COLLATE pg_catalog.\"C\"\n       AND c.right_text COLLATE pg_catalog.\"C\" = p.right_text COLLATE pg_catalog.\"C\"\n     ORDER BY c.ordinal",
+        "queryid": 9170150621611257417,
+        "toplevel": false,
+        "total_exec_time": 6.023800000000001,
+        "total_plan_time": 0
+      },
+      {
+        "rows": 64,
+        "calls": 64,
+        "plans": 0,
+        "query": "SELECT coalesce(array_agg(p.left_text ORDER BY p.left_text COLLATE pg_catalog.\"C\",\n                                                    p.right_text COLLATE pg_catalog.\"C\"), ARRAY[]::text[]),\n           coalesce(array_agg(p.right_text ORDER BY p.left_text COLLATE pg_catalog.\"C\",\n                                                     p.right_text COLLATE pg_catalog.\"C\"), ARRAY[]::text[])\n                                             FROM (\n          SELECT DISTINCT c.left_text COLLATE pg_catalog.\"C\" AS left_text,\n                          c.right_text COLLATE pg_catalog.\"C\" AS right_text\n            FROM unnest(candidates) AS c\n           WHERE c.left_text IS NOT NULL AND c.right_text IS NOT NULL\n      ) AS p",
+        "queryid": 378389086359440530,
+        "toplevel": false,
+        "total_exec_time": 3.3976710000000017,
+        "total_plan_time": 0
+      },
+      {
+        "rows": 64,
+        "calls": 64,
+        "plans": 64,
+        "query": "SELECT jev.exact_provider($1::text[], $2::text[], $3::jsonb, $4::jsonb)",
+        "queryid": -416263692730387022,
+        "toplevel": false,
+        "total_exec_time": 0.03700700000000002,
+        "total_plan_time": 2.6806670000000006
+      },
+      {
+        "rows": 64,
+        "calls": 64,
+        "plans": 0,
+        "query": "ARRAY(\n        SELECT ROW(\n            p.left_text COLLATE pg_catalog.\"C\" = p.right_text COLLATE pg_catalog.\"C\",\n            CASE WHEN p.left_text IS NULL OR p.right_text IS NULL\n                 THEN NULL::double precision ELSE 1::double precision END\n        )::jev.prediction\n        FROM unnest(left_texts, right_texts) WITH ORDINALITY\n            AS p(left_text, right_text, ordinal)\n        ORDER BY p.ordinal\n    )",
+        "queryid": 5868113838560528546,
+        "toplevel": false,
+        "total_exec_time": 2.0013309999999995,
+        "total_plan_time": 0
+      },
+      {
+        "rows": 2,
+        "calls": 2,
+        "plans": 2,
+        "query": "SELECT coalesce(jsonb_agg(to_jsonb(s) ORDER BY funcid), $1::jsonb)\nFROM (SELECT funcid, schemaname, funcname, calls, total_time, self_time\n      FROM pg_stat_xact_user_functions\n      WHERE schemaname = $2 OR schemaname LIKE $3) AS s",
+        "queryid": -2063455715729080795,
+        "toplevel": true,
+        "total_exec_time": 0.750208,
+        "total_plan_time": 0.307751
+      },
+      {
+        "rows": 64,
+        "calls": 64,
+        "plans": 0,
+        "query": "SELECT p.*, n.nspname                              FROM pg_catalog.pg_proc AS p\n          JOIN pg_catalog.pg_namespace AS n ON n.oid = p.pronamespace\n         WHERE p.oid = provider_oids[stage]",
+        "queryid": -1179094105647090034,
+        "toplevel": false,
+        "total_exec_time": 0.2720019999999999,
+        "total_plan_time": 0
+      },
+      {
+        "rows": 64,
+        "calls": 64,
+        "plans": 0,
+        "query": "SELECT ARRAY[m.provider::oid, f.provider::oid], ARRAY[m.name, f.name],\n           ARRAY[m.config, f.config], p.definition,\n           p.fallback_model_name, p.min_confidence, m.score_kind, f.score_kind\n                                                                                                                                                                                                      FROM jev.predicates AS p\n      JOIN jev.models AS m ON m.name = p.model_name\n      LEFT JOIN jev.models AS f ON f.name = p.fallback_model_name\n     WHERE p.name = predicate_name COLLATE pg_catalog.\"C\"",
+        "queryid": 8857326144649084951,
+        "toplevel": false,
+        "total_exec_time": 0.21850699999999992,
+        "total_plan_time": 0
+      },
+      {
+        "rows": 1,
+        "calls": 1,
+        "plans": 0,
+        "query": "SELECT pg_stat_statements_reset()",
+        "queryid": 740693261604905015,
+        "toplevel": true,
+        "total_exec_time": 0.095,
+        "total_plan_time": 0
+      },
+      {
+        "rows": 0,
+        "calls": 0,
+        "plans": 1,
+        "query": "SELECT coalesce(jsonb_agg(to_jsonb(s) ORDER BY total_plan_time + total_exec_time DESC), $1::jsonb)\nFROM (SELECT queryid, toplevel, query, calls, plans, total_plan_time, total_exec_time, rows\n      FROM pg_stat_statements WHERE calls > $2 OR plans > $3) AS s",
+        "queryid": 8126991371037004029,
+        "toplevel": true,
+        "total_exec_time": 0,
+        "total_plan_time": 0.072542
+      }
+    ],
+    "plan": {
+      "Plan": {
+        "Node Type": "Custom Scan",
+        "Custom Plan Provider": "JEVSemanticScan",
+        "Parallel Aware": false,
+        "Async Capable": false,
+        "Relation Name": "bench_items",
+        "Alias": "bench_items",
+        "Startup Cost": 10.62,
+        "Total Cost": 679.6,
+        "Plan Rows": 2731,
+        "Plan Width": 4,
+        "Actual Rows": 2027,
+        "Actual Loops": 1,
+        "Filter": "(active AND jev.semantic_match('exact'::text, left_text, right_text))",
+        "Rows Removed by Filter": 6165,
+        "Semantic Evaluation": "batched",
+        "Batch Size Selection": "fixed",
+        "Batch Size": 128,
+        "Batch Memory Target": 1024,
+        "Result Cache Limit": 0,
+        "Cost Model": "batch-v1",
+        "Estimate Assumptions": "PostgreSQL estimates (including default semantic selectivity); configured costs; no NULL or reuse discount",
+        "Estimated Candidate Rows": 8192.0,
+        "Estimated Semantic Selectivity": 0.333333,
+        "Estimated Batch Rows": 128,
+        "Estimated Kernel Calls": 64,
+        "Estimated Buffered Row Bytes": 757,
+        "Estimated Batch Work Cost": 343.68,
+        "Scalar Seq Scan Total Cost": 2383.92,
+        "Planned Batch Size": 128,
+        "Planned Batch Size Limit": 128,
+        "Planned Batch Memory": 1024,
+        "Batch Call Cost": 100.0,
+        "Batch Input Cost": 10.0,
+        "Forced Custom Path": true,
+        "Rows Read": 8192,
+        "Candidate Rows": 8192,
+        "Evaluated Match Rows": 2027,
+        "Observed Match Fraction": 0.247437,
+        "Unique Inputs": 8108,
+        "Reused Inputs": 0,
+        "Provider Calls": 64,
+        "Provider Calls Meaning": "legacy alias for Kernel Calls",
+        "Kernel Calls": 64,
+        "Cache Hits": 0,
+        "Cache Entries": 0,
+        "Cache Used Bytes": 0,
+        "Cache Allocated Bytes": 0,
+        "Cache Admission Skips": 0,
+        "Batches": 64,
+        "Peak Buffered Rows": 128,
+        "Peak Buffered Bytes": 93300,
+        "Kernel Time": 19.453,
+        "Shared Hit Blocks": 766,
+        "Shared Read Blocks": 0,
+        "Shared Dirtied Blocks": 0,
+        "Shared Written Blocks": 0,
+        "Local Hit Blocks": 0,
+        "Local Read Blocks": 0,
+        "Local Dirtied Blocks": 0,
+        "Local Written Blocks": 0,
+        "Temp Read Blocks": 0,
+        "Temp Written Blocks": 0
+      },
+      "Planning": {
+        "Shared Hit Blocks": 10,
+        "Shared Read Blocks": 0,
+        "Shared Dirtied Blocks": 0,
+        "Shared Written Blocks": 0,
+        "Local Hit Blocks": 0,
+        "Local Read Blocks": 0,
+        "Local Dirtied Blocks": 0,
+        "Local Written Blocks": 0,
+        "Temp Read Blocks": 0,
+        "Temp Written Blocks": 0
+      },
+      "Planning Time": 0.068,
+      "Triggers": [],
+      "Execution Time": 22.37
+    }
+  },
+  {
+    "mode": "scalar",
+    "repeat": 1,
+    "execution_ms": 476.549,
+    "functions": [
+      {
+        "schemaname": "jev",
+        "funcname": "exact_provider",
+        "calls": 8108,
+        "total_time": 42.663901,
+        "self_time": 42.663901
+      },
+      {
+        "schemaname": "jev",
+        "funcname": "evaluate_batch",
+        "calls": 8108,
+        "total_time": 440.9772899999999,
+        "self_time": 398.31338900000003
+      },
+      {
+        "schemaname": "jev",
+        "funcname": "semantic_match",
+        "calls": 8108,
+        "total_time": 472.32913800000006,
+        "self_time": 31.351848
+      }
+    ],
+    "statements": [
+      {
+        "rows": 2027,
+        "calls": 1,
+        "plans": 1,
+        "query": "EXPLAIN (ANALYZE, FORMAT JSON, TIMING OFF, BUFFERS ON) SELECT id FROM ONLY bench_items WHERE active AND jev.semantic_match($1, left_text, right_text);",
+        "queryid": 4382235940663869441,
+        "toplevel": false,
+        "total_exec_time": 476.545792,
+        "total_plan_time": 0.011708
+      },
+      {
+        "rows": 8108,
+        "calls": 8108,
+        "plans": 0,
+        "query": "SELECT r.decision                    FROM jev.evaluate_batch(\n          predicate_name,\n          ARRAY[ROW(NULL::text, left_text, right_text)::jev.candidate],\n          1\n      ) AS r",
+        "queryid": 8459378751126196508,
+        "toplevel": false,
+        "total_exec_time": 451.7518610000002,
+        "total_plan_time": 0
+      },
+      {
+        "rows": 8108,
+        "calls": 8108,
+        "plans": 8108,
+        "query": "SELECT jev.exact_provider($1::text[], $2::text[], $3::jsonb, $4::jsonb)",
+        "queryid": -416263692730387022,
+        "toplevel": false,
+        "total_exec_time": 1.999426999999948,
+        "total_plan_time": 64.13870100000018
+      },
+      {
+        "rows": 8108,
+        "calls": 8108,
+        "plans": 0,
+        "query": "SELECT c.ordinal, c.row_id,\n           (predictions[p.ordinal::integer]).decision,\n           (predictions[p.ordinal::integer]).confidence\n      FROM unnest(candidates) WITH ORDINALITY AS c(row_id, left_text, right_text, ordinal)\n      LEFT JOIN unnest(unique_lefts, unique_rights) WITH ORDINALITY AS p(left_text, right_text, ordinal)\n        ON c.left_text COLLATE pg_catalog.\"C\" = p.left_text COLLATE pg_catalog.\"C\"\n       AND c.right_text COLLATE pg_catalog.\"C\" = p.right_text COLLATE pg_catalog.\"C\"\n     ORDER BY c.ordinal",
+        "queryid": 9170150621611257417,
+        "toplevel": false,
+        "total_exec_time": 33.93388199999947,
+        "total_plan_time": 0
+      },
+      {
+        "rows": 8108,
+        "calls": 8108,
+        "plans": 0,
+        "query": "SELECT p.*, n.nspname                              FROM pg_catalog.pg_proc AS p\n          JOIN pg_catalog.pg_namespace AS n ON n.oid = p.pronamespace\n         WHERE p.oid = provider_oids[stage]",
+        "queryid": -1179094105647090034,
+        "toplevel": false,
+        "total_exec_time": 33.10491299999917,
+        "total_plan_time": 0
+      },
+      {
+        "rows": 8108,
+        "calls": 8108,
+        "plans": 0,
+        "query": "SELECT ARRAY[m.provider::oid, f.provider::oid], ARRAY[m.name, f.name],\n           ARRAY[m.config, f.config], p.definition,\n           p.fallback_model_name, p.min_confidence, m.score_kind, f.score_kind\n                                                                                                                                                                                                      FROM jev.predicates AS p\n      JOIN jev.models AS m ON m.name = p.model_name\n      LEFT JOIN jev.models AS f ON f.name = p.fallback_model_name\n     WHERE p.name = predicate_name COLLATE pg_catalog.\"C\"",
+        "queryid": 8857326144649084951,
+        "toplevel": false,
+        "total_exec_time": 25.35107399999979,
+        "total_plan_time": 0
+      },
+      {
+        "rows": 8108,
+        "calls": 8108,
+        "plans": 0,
+        "query": "SELECT coalesce(array_agg(p.left_text ORDER BY p.left_text COLLATE pg_catalog.\"C\",\n                                                    p.right_text COLLATE pg_catalog.\"C\"), ARRAY[]::text[]),\n           coalesce(array_agg(p.right_text ORDER BY p.left_text COLLATE pg_catalog.\"C\",\n                                                     p.right_text COLLATE pg_catalog.\"C\"), ARRAY[]::text[])\n                                             FROM (\n          SELECT DISTINCT c.left_text COLLATE pg_catalog.\"C\" AS left_text,\n                          c.right_text COLLATE pg_catalog.\"C\" AS right_text\n            FROM unnest(candidates) AS c\n           WHERE c.left_text IS NOT NULL AND c.right_text IS NOT NULL\n      ) AS p",
+        "queryid": 378389086359440530,
+        "toplevel": false,
+        "total_exec_time": 22.456015000000594,
+        "total_plan_time": 0
+      },
+      {
+        "rows": 8108,
+        "calls": 8108,
+        "plans": 0,
+        "query": "ARRAY(\n        SELECT ROW(\n            p.left_text COLLATE pg_catalog.\"C\" = p.right_text COLLATE pg_catalog.\"C\",\n            CASE WHEN p.left_text IS NULL OR p.right_text IS NULL\n                 THEN NULL::double precision ELSE 1::double precision END\n        )::jev.prediction\n        FROM unnest(left_texts, right_texts) WITH ORDINALITY\n            AS p(left_text, right_text, ordinal)\n        ORDER BY p.ordinal\n    )",
+        "queryid": 5868113838560528546,
+        "toplevel": false,
+        "total_exec_time": 14.759131000000204,
+        "total_plan_time": 0
+      },
+      {
+        "rows": 2,
+        "calls": 2,
+        "plans": 2,
+        "query": "SELECT coalesce(jsonb_agg(to_jsonb(s) ORDER BY funcid), $1::jsonb)\nFROM (SELECT funcid, schemaname, funcname, calls, total_time, self_time\n      FROM pg_stat_xact_user_functions\n      WHERE schemaname = $2 OR schemaname LIKE $3) AS s",
+        "queryid": -2063455715729080795,
+        "toplevel": true,
+        "total_exec_time": 0.469083,
+        "total_plan_time": 0.250667
+      },
+      {
+        "rows": 1,
+        "calls": 1,
+        "plans": 0,
+        "query": "SELECT pg_stat_statements_reset()",
+        "queryid": 740693261604905015,
+        "toplevel": true,
+        "total_exec_time": 0.078959,
+        "total_plan_time": 0
+      },
+      {
+        "rows": 0,
+        "calls": 0,
+        "plans": 1,
+        "query": "SELECT coalesce(jsonb_agg(to_jsonb(s) ORDER BY total_plan_time + total_exec_time DESC), $1::jsonb)\nFROM (SELECT queryid, toplevel, query, calls, plans, total_plan_time, total_exec_time, rows\n      FROM pg_stat_statements WHERE calls > $2 OR plans > $3) AS s",
+        "queryid": 8126991371037004029,
+        "toplevel": true,
+        "total_exec_time": 0,
+        "total_plan_time": 0.050458
+      }
+    ],
+    "plan": {
+      "Plan": {
+        "Node Type": "Seq Scan",
+        "Parallel Aware": false,
+        "Async Capable": false,
+        "Relation Name": "bench_items",
+        "Alias": "bench_items",
+        "Startup Cost": 0.0,
+        "Total Cost": 2383.92,
+        "Plan Rows": 2731,
+        "Plan Width": 4,
+        "Actual Rows": 2027,
+        "Actual Loops": 1,
+        "Filter": "(active AND jev.semantic_match('exact'::text, left_text, right_text))",
+        "Rows Removed by Filter": 6165,
+        "Shared Hit Blocks": 65118,
+        "Shared Read Blocks": 0,
+        "Shared Dirtied Blocks": 0,
+        "Shared Written Blocks": 0,
+        "Local Hit Blocks": 0,
+        "Local Read Blocks": 0,
+        "Local Dirtied Blocks": 0,
+        "Local Written Blocks": 0,
+        "Temp Read Blocks": 0,
+        "Temp Written Blocks": 0
+      },
+      "Planning": {
+        "Shared Hit Blocks": 0,
+        "Shared Read Blocks": 0,
+        "Shared Dirtied Blocks": 0,
+        "Shared Written Blocks": 0,
+        "Local Hit Blocks": 0,
+        "Local Read Blocks": 0,
+        "Local Dirtied Blocks": 0,
+        "Local Written Blocks": 0,
+        "Temp Read Blocks": 0,
+        "Temp Written Blocks": 0
+      },
+      "Planning Time": 0.012,
+      "Triggers": [],
+      "Execution Time": 476.549
+    }
+  },
+  {
+    "mode": "batch_128",
+    "repeat": 2,
+    "execution_ms": 22.209,
+    "functions": [
+      {
+        "schemaname": "jev",
+        "funcname": "exact_provider",
+        "calls": 64,
+        "total_time": 2.464874,
+        "self_time": 2.464874
+      },
+      {
+        "schemaname": "jev",
+        "funcname": "evaluate_batch",
+        "calls": 64,
+        "total_time": 18.146918,
+        "self_time": 15.682044
+      }
+    ],
+    "statements": [
+      {
+        "rows": 2027,
+        "calls": 1,
+        "plans": 1,
+        "query": "EXPLAIN (ANALYZE, FORMAT JSON, TIMING OFF, BUFFERS ON) SELECT id FROM ONLY bench_items WHERE active AND jev.semantic_match($1, left_text, right_text);",
+        "queryid": 4382235940663869441,
+        "toplevel": false,
+        "total_exec_time": 22.202167,
+        "total_plan_time": 0.040792
+      },
+      {
+        "rows": 8108,
+        "calls": 64,
+        "plans": 6,
+        "query": "SELECT ordinal, decision FROM jev.evaluate_batch($1, $2, $3)",
+        "queryid": -3293719269545287768,
+        "toplevel": false,
+        "total_exec_time": 18.871250000000003,
+        "total_plan_time": 0.022
+      },
+      {
+        "rows": 8108,
+        "calls": 64,
+        "plans": 0,
+        "query": "SELECT c.ordinal, c.row_id,\n           (predictions[p.ordinal::integer]).decision,\n           (predictions[p.ordinal::integer]).confidence\n      FROM unnest(candidates) WITH ORDINALITY AS c(row_id, left_text, right_text, ordinal)\n      LEFT JOIN unnest(unique_lefts, unique_rights) WITH ORDINALITY AS p(left_text, right_text, ordinal)\n        ON c.left_text COLLATE pg_catalog.\"C\" = p.left_text COLLATE pg_catalog.\"C\"\n       AND c.right_text COLLATE pg_catalog.\"C\" = p.right_text COLLATE pg_catalog.\"C\"\n     ORDER BY c.ordinal",
+        "queryid": 9170150621611257417,
+        "toplevel": false,
+        "total_exec_time": 6.039123999999999,
+        "total_plan_time": 0
+      },
+      {
+        "rows": 64,
+        "calls": 64,
+        "plans": 0,
+        "query": "SELECT coalesce(array_agg(p.left_text ORDER BY p.left_text COLLATE pg_catalog.\"C\",\n                                                    p.right_text COLLATE pg_catalog.\"C\"), ARRAY[]::text[]),\n           coalesce(array_agg(p.right_text ORDER BY p.left_text COLLATE pg_catalog.\"C\",\n                                                     p.right_text COLLATE pg_catalog.\"C\"), ARRAY[]::text[])\n                                             FROM (\n          SELECT DISTINCT c.left_text COLLATE pg_catalog.\"C\" AS left_text,\n                          c.right_text COLLATE pg_catalog.\"C\" AS right_text\n            FROM unnest(candidates) AS c\n           WHERE c.left_text IS NOT NULL AND c.right_text IS NOT NULL\n      ) AS p",
+        "queryid": 378389086359440530,
+        "toplevel": false,
+        "total_exec_time": 3.3802089999999994,
+        "total_plan_time": 0
+      },
+      {
+        "rows": 64,
+        "calls": 64,
+        "plans": 64,
+        "query": "SELECT jev.exact_provider($1::text[], $2::text[], $3::jsonb, $4::jsonb)",
+        "queryid": -416263692730387022,
+        "toplevel": false,
+        "total_exec_time": 0.03579200000000002,
+        "total_plan_time": 2.728833
+      },
+      {
+        "rows": 64,
+        "calls": 64,
+        "plans": 0,
+        "query": "ARRAY(\n        SELECT ROW(\n            p.left_text COLLATE pg_catalog.\"C\" = p.right_text COLLATE pg_catalog.\"C\",\n            CASE WHEN p.left_text IS NULL OR p.right_text IS NULL\n                 THEN NULL::double precision ELSE 1::double precision END\n        )::jev.prediction\n        FROM unnest(left_texts, right_texts) WITH ORDINALITY\n            AS p(left_text, right_text, ordinal)\n        ORDER BY p.ordinal\n    )",
+        "queryid": 5868113838560528546,
+        "toplevel": false,
+        "total_exec_time": 2.028959,
+        "total_plan_time": 0
+      },
+      {
+        "rows": 2,
+        "calls": 2,
+        "plans": 2,
+        "query": "SELECT coalesce(jsonb_agg(to_jsonb(s) ORDER BY funcid), $1::jsonb)\nFROM (SELECT funcid, schemaname, funcname, calls, total_time, self_time\n      FROM pg_stat_xact_user_functions\n      WHERE schemaname = $2 OR schemaname LIKE $3) AS s",
+        "queryid": -2063455715729080795,
+        "toplevel": true,
+        "total_exec_time": 0.441835,
+        "total_plan_time": 0.24154199999999998
+      },
+      {
+        "rows": 64,
+        "calls": 64,
+        "plans": 0,
+        "query": "SELECT p.*, n.nspname                              FROM pg_catalog.pg_proc AS p\n          JOIN pg_catalog.pg_namespace AS n ON n.oid = p.pronamespace\n         WHERE p.oid = provider_oids[stage]",
+        "queryid": -1179094105647090034,
+        "toplevel": false,
+        "total_exec_time": 0.266585,
+        "total_plan_time": 0
+      },
+      {
+        "rows": 64,
+        "calls": 64,
+        "plans": 0,
+        "query": "SELECT ARRAY[m.provider::oid, f.provider::oid], ARRAY[m.name, f.name],\n           ARRAY[m.config, f.config], p.definition,\n           p.fallback_model_name, p.min_confidence, m.score_kind, f.score_kind\n                                                                                                                                                                                                      FROM jev.predicates AS p\n      JOIN jev.models AS m ON m.name = p.model_name\n      LEFT JOIN jev.models AS f ON f.name = p.fallback_model_name\n     WHERE p.name = predicate_name COLLATE pg_catalog.\"C\"",
+        "queryid": 8857326144649084951,
+        "toplevel": false,
+        "total_exec_time": 0.20354299999999997,
+        "total_plan_time": 0
+      },
+      {
+        "rows": 1,
+        "calls": 1,
+        "plans": 0,
+        "query": "SELECT pg_stat_statements_reset()",
+        "queryid": 740693261604905015,
+        "toplevel": true,
+        "total_exec_time": 0.095876,
+        "total_plan_time": 0
+      },
+      {
+        "rows": 0,
+        "calls": 0,
+        "plans": 1,
+        "query": "SELECT coalesce(jsonb_agg(to_jsonb(s) ORDER BY total_plan_time + total_exec_time DESC), $1::jsonb)\nFROM (SELECT queryid, toplevel, query, calls, plans, total_plan_time, total_exec_time, rows\n      FROM pg_stat_statements WHERE calls > $2 OR plans > $3) AS s",
+        "queryid": 8126991371037004029,
+        "toplevel": true,
+        "total_exec_time": 0,
+        "total_plan_time": 0.036709
+      }
+    ],
+    "plan": {
+      "Plan": {
+        "Node Type": "Custom Scan",
+        "Custom Plan Provider": "JEVSemanticScan",
+        "Parallel Aware": false,
+        "Async Capable": false,
+        "Relation Name": "bench_items",
+        "Alias": "bench_items",
+        "Startup Cost": 10.62,
+        "Total Cost": 679.6,
+        "Plan Rows": 2731,
+        "Plan Width": 4,
+        "Actual Rows": 2027,
+        "Actual Loops": 1,
+        "Filter": "(active AND jev.semantic_match('exact'::text, left_text, right_text))",
+        "Rows Removed by Filter": 6165,
+        "Semantic Evaluation": "batched",
+        "Batch Size Selection": "fixed",
+        "Batch Size": 128,
+        "Batch Memory Target": 1024,
+        "Result Cache Limit": 0,
+        "Cost Model": "batch-v1",
+        "Estimate Assumptions": "PostgreSQL estimates (including default semantic selectivity); configured costs; no NULL or reuse discount",
+        "Estimated Candidate Rows": 8192.0,
+        "Estimated Semantic Selectivity": 0.333333,
+        "Estimated Batch Rows": 128,
+        "Estimated Kernel Calls": 64,
+        "Estimated Buffered Row Bytes": 757,
+        "Estimated Batch Work Cost": 343.68,
+        "Scalar Seq Scan Total Cost": 2383.92,
+        "Planned Batch Size": 128,
+        "Planned Batch Size Limit": 128,
+        "Planned Batch Memory": 1024,
+        "Batch Call Cost": 100.0,
+        "Batch Input Cost": 10.0,
+        "Forced Custom Path": true,
+        "Rows Read": 8192,
+        "Candidate Rows": 8192,
+        "Evaluated Match Rows": 2027,
+        "Observed Match Fraction": 0.247437,
+        "Unique Inputs": 8108,
+        "Reused Inputs": 0,
+        "Provider Calls": 64,
+        "Provider Calls Meaning": "legacy alias for Kernel Calls",
+        "Kernel Calls": 64,
+        "Cache Hits": 0,
+        "Cache Entries": 0,
+        "Cache Used Bytes": 0,
+        "Cache Allocated Bytes": 0,
+        "Cache Admission Skips": 0,
+        "Batches": 64,
+        "Peak Buffered Rows": 128,
+        "Peak Buffered Bytes": 93300,
+        "Kernel Time": 19.281,
+        "Shared Hit Blocks": 766,
+        "Shared Read Blocks": 0,
+        "Shared Dirtied Blocks": 0,
+        "Shared Written Blocks": 0,
+        "Local Hit Blocks": 0,
+        "Local Read Blocks": 0,
+        "Local Dirtied Blocks": 0,
+        "Local Written Blocks": 0,
+        "Temp Read Blocks": 0,
+        "Temp Written Blocks": 0
+      },
+      "Planning": {
+        "Shared Hit Blocks": 10,
+        "Shared Read Blocks": 0,
+        "Shared Dirtied Blocks": 0,
+        "Shared Written Blocks": 0,
+        "Local Hit Blocks": 0,
+        "Local Read Blocks": 0,
+        "Local Dirtied Blocks": 0,
+        "Local Written Blocks": 0,
+        "Temp Read Blocks": 0,
+        "Temp Written Blocks": 0
+      },
+      "Planning Time": 0.041,
+      "Triggers": [],
+      "Execution Time": 22.209
+    }
+  },
+  {
+    "mode": "scalar",
+    "repeat": 2,
+    "execution_ms": 432.544,
+    "functions": [
+      {
+        "schemaname": "jev",
+        "funcname": "exact_provider",
+        "calls": 8108,
+        "total_time": 39.294371999999996,
+        "self_time": 39.294371999999996
+      },
+      {
+        "schemaname": "jev",
+        "funcname": "evaluate_batch",
+        "calls": 8108,
+        "total_time": 400.544995,
+        "self_time": 361.25062299999996
+      },
+      {
+        "schemaname": "jev",
+        "funcname": "semantic_match",
+        "calls": 8108,
+        "total_time": 429.017521,
+        "self_time": 28.472526
+      }
+    ],
+    "statements": [
+      {
+        "rows": 2027,
+        "calls": 1,
+        "plans": 1,
+        "query": "EXPLAIN (ANALYZE, FORMAT JSON, TIMING OFF, BUFFERS ON) SELECT id FROM ONLY bench_items WHERE active AND jev.semantic_match($1, left_text, right_text);",
+        "queryid": 4382235940663869441,
+        "toplevel": false,
+        "total_exec_time": 432.540376,
+        "total_plan_time": 0.009542
+      },
+      {
+        "rows": 8108,
+        "calls": 8108,
+        "plans": 0,
+        "query": "SELECT r.decision                    FROM jev.evaluate_batch(\n          predicate_name,\n          ARRAY[ROW(NULL::text, left_text, right_text)::jev.candidate],\n          1\n      ) AS r",
+        "queryid": 8459378751126196508,
+        "toplevel": false,
+        "total_exec_time": 410.29513499999877,
+        "total_plan_time": 0
+      },
+      {
+        "rows": 8108,
+        "calls": 8108,
+        "plans": 8108,
+        "query": "SELECT jev.exact_provider($1::text[], $2::text[], $3::jsonb, $4::jsonb)",
+        "queryid": -416263692730387022,
+        "toplevel": false,
+        "total_exec_time": 1.814890999999919,
+        "total_plan_time": 58.62861899999957
+      },
+      {
+        "rows": 8108,
+        "calls": 8108,
+        "plans": 0,
+        "query": "SELECT c.ordinal, c.row_id,\n           (predictions[p.ordinal::integer]).decision,\n           (predictions[p.ordinal::integer]).confidence\n      FROM unnest(candidates) WITH ORDINALITY AS c(row_id, left_text, right_text, ordinal)\n      LEFT JOIN unnest(unique_lefts, unique_rights) WITH ORDINALITY AS p(left_text, right_text, ordinal)\n        ON c.left_text COLLATE pg_catalog.\"C\" = p.left_text COLLATE pg_catalog.\"C\"\n       AND c.right_text COLLATE pg_catalog.\"C\" = p.right_text COLLATE pg_catalog.\"C\"\n     ORDER BY c.ordinal",
+        "queryid": 9170150621611257417,
+        "toplevel": false,
+        "total_exec_time": 31.03273299999989,
+        "total_plan_time": 0
+      },
+      {
+        "rows": 8108,
+        "calls": 8108,
+        "plans": 0,
+        "query": "SELECT p.*, n.nspname                              FROM pg_catalog.pg_proc AS p\n          JOIN pg_catalog.pg_namespace AS n ON n.oid = p.pronamespace\n         WHERE p.oid = provider_oids[stage]",
+        "queryid": -1179094105647090034,
+        "toplevel": false,
+        "total_exec_time": 30.013598999998816,
+        "total_plan_time": 0
+      },
+      {
+        "rows": 8108,
+        "calls": 8108,
+        "plans": 0,
+        "query": "SELECT ARRAY[m.provider::oid, f.provider::oid], ARRAY[m.name, f.name],\n           ARRAY[m.config, f.config], p.definition,\n           p.fallback_model_name, p.min_confidence, m.score_kind, f.score_kind\n                                                                                                                                                                                                      FROM jev.predicates AS p\n      JOIN jev.models AS m ON m.name = p.model_name\n      LEFT JOIN jev.models AS f ON f.name = p.fallback_model_name\n     WHERE p.name = predicate_name COLLATE pg_catalog.\"C\"",
+        "queryid": 8857326144649084951,
+        "toplevel": false,
+        "total_exec_time": 23.021364999998717,
+        "total_plan_time": 0
+      },
+      {
+        "rows": 8108,
+        "calls": 8108,
+        "plans": 0,
+        "query": "SELECT coalesce(array_agg(p.left_text ORDER BY p.left_text COLLATE pg_catalog.\"C\",\n                                                    p.right_text COLLATE pg_catalog.\"C\"), ARRAY[]::text[]),\n           coalesce(array_agg(p.right_text ORDER BY p.left_text COLLATE pg_catalog.\"C\",\n                                                     p.right_text COLLATE pg_catalog.\"C\"), ARRAY[]::text[])\n                                             FROM (\n          SELECT DISTINCT c.left_text COLLATE pg_catalog.\"C\" AS left_text,\n                          c.right_text COLLATE pg_catalog.\"C\" AS right_text\n            FROM unnest(candidates) AS c\n           WHERE c.left_text IS NOT NULL AND c.right_text IS NOT NULL\n      ) AS p",
+        "queryid": 378389086359440530,
+        "toplevel": false,
+        "total_exec_time": 20.657439000000906,
+        "total_plan_time": 0
+      },
+      {
+        "rows": 8108,
+        "calls": 8108,
+        "plans": 0,
+        "query": "ARRAY(\n        SELECT ROW(\n            p.left_text COLLATE pg_catalog.\"C\" = p.right_text COLLATE pg_catalog.\"C\",\n            CASE WHEN p.left_text IS NULL OR p.right_text IS NULL\n                 THEN NULL::double precision ELSE 1::double precision END\n        )::jev.prediction\n        FROM unnest(left_texts, right_texts) WITH ORDINALITY\n            AS p(left_text, right_text, ordinal)\n        ORDER BY p.ordinal\n    )",
+        "queryid": 5868113838560528546,
+        "toplevel": false,
+        "total_exec_time": 13.64619100000021,
+        "total_plan_time": 0
+      },
+      {
+        "rows": 2,
+        "calls": 2,
+        "plans": 2,
+        "query": "SELECT coalesce(jsonb_agg(to_jsonb(s) ORDER BY funcid), $1::jsonb)\nFROM (SELECT funcid, schemaname, funcname, calls, total_time, self_time\n      FROM pg_stat_xact_user_functions\n      WHERE schemaname = $2 OR schemaname LIKE $3) AS s",
+        "queryid": -2063455715729080795,
+        "toplevel": true,
+        "total_exec_time": 0.475708,
+        "total_plan_time": 0.227209
+      },
+      {
+        "rows": 1,
+        "calls": 1,
+        "plans": 0,
+        "query": "SELECT pg_stat_statements_reset()",
+        "queryid": 740693261604905015,
+        "toplevel": true,
+        "total_exec_time": 0.096709,
+        "total_plan_time": 0
+      },
+      {
+        "rows": 0,
+        "calls": 0,
+        "plans": 1,
+        "query": "SELECT coalesce(jsonb_agg(to_jsonb(s) ORDER BY total_plan_time + total_exec_time DESC), $1::jsonb)\nFROM (SELECT queryid, toplevel, query, calls, plans, total_plan_time, total_exec_time, rows\n      FROM pg_stat_statements WHERE calls > $2 OR plans > $3) AS s",
+        "queryid": 8126991371037004029,
+        "toplevel": true,
+        "total_exec_time": 0,
+        "total_plan_time": 0.056333
+      }
+    ],
+    "plan": {
+      "Plan": {
+        "Node Type": "Seq Scan",
+        "Parallel Aware": false,
+        "Async Capable": false,
+        "Relation Name": "bench_items",
+        "Alias": "bench_items",
+        "Startup Cost": 0.0,
+        "Total Cost": 2383.92,
+        "Plan Rows": 2731,
+        "Plan Width": 4,
+        "Actual Rows": 2027,
+        "Actual Loops": 1,
+        "Filter": "(active AND jev.semantic_match('exact'::text, left_text, right_text))",
+        "Rows Removed by Filter": 6165,
+        "Shared Hit Blocks": 65118,
+        "Shared Read Blocks": 0,
+        "Shared Dirtied Blocks": 0,
+        "Shared Written Blocks": 0,
+        "Local Hit Blocks": 0,
+        "Local Read Blocks": 0,
+        "Local Dirtied Blocks": 0,
+        "Local Written Blocks": 0,
+        "Temp Read Blocks": 0,
+        "Temp Written Blocks": 0
+      },
+      "Planning": {
+        "Shared Hit Blocks": 0,
+        "Shared Read Blocks": 0,
+        "Shared Dirtied Blocks": 0,
+        "Shared Written Blocks": 0,
+        "Local Hit Blocks": 0,
+        "Local Read Blocks": 0,
+        "Local Dirtied Blocks": 0,
+        "Local Written Blocks": 0,
+        "Temp Read Blocks": 0,
+        "Temp Written Blocks": 0
+      },
+      "Planning Time": 0.01,
+      "Triggers": [],
+      "Execution Time": 432.544
+    }
+  },
+  {
+    "mode": "batch_128",
+    "repeat": 3,
+    "execution_ms": 22.149,
+    "functions": [
+      {
+        "schemaname": "jev",
+        "funcname": "exact_provider",
+        "calls": 64,
+        "total_time": 2.4291650000000047,
+        "self_time": 2.4291650000000047
+      },
+      {
+        "schemaname": "jev",
+        "funcname": "evaluate_batch",
+        "calls": 64,
+        "total_time": 18.198958000000005,
+        "self_time": 15.769792999999993
+      }
+    ],
+    "statements": [
+      {
+        "rows": 2027,
+        "calls": 1,
+        "plans": 1,
+        "query": "EXPLAIN (ANALYZE, FORMAT JSON, TIMING OFF, BUFFERS ON) SELECT id FROM ONLY bench_items WHERE active AND jev.semantic_match($1, left_text, right_text);",
+        "queryid": 4382235940663869441,
+        "toplevel": false,
+        "total_exec_time": 22.142583000000002,
+        "total_plan_time": 0.034792
+      },
+      {
+        "rows": 8108,
+        "calls": 64,
+        "plans": 6,
+        "query": "SELECT ordinal, decision FROM jev.evaluate_batch($1, $2, $3)",
+        "queryid": -3293719269545287768,
+        "toplevel": false,
+        "total_exec_time": 18.929377999999993,
+        "total_plan_time": 0.030208000000000002
+      },
+      {
+        "rows": 8108,
+        "calls": 64,
+        "plans": 0,
+        "query": "SELECT c.ordinal, c.row_id,\n           (predictions[p.ordinal::integer]).decision,\n           (predictions[p.ordinal::integer]).confidence\n      FROM unnest(candidates) WITH ORDINALITY AS c(row_id, left_text, right_text, ordinal)\n      LEFT JOIN unnest(unique_lefts, unique_rights) WITH ORDINALITY AS p(left_text, right_text, ordinal)\n        ON c.left_text COLLATE pg_catalog.\"C\" = p.left_text COLLATE pg_catalog.\"C\"\n       AND c.right_text COLLATE pg_catalog.\"C\" = p.right_text COLLATE pg_catalog.\"C\"\n     ORDER BY c.ordinal",
+        "queryid": 9170150621611257417,
+        "toplevel": false,
+        "total_exec_time": 6.168175999999999,
+        "total_plan_time": 0
+      },
+      {
+        "rows": 64,
+        "calls": 64,
+        "plans": 0,
+        "query": "SELECT coalesce(array_agg(p.left_text ORDER BY p.left_text COLLATE pg_catalog.\"C\",\n                                                    p.right_text COLLATE pg_catalog.\"C\"), ARRAY[]::text[]),\n           coalesce(array_agg(p.right_text ORDER BY p.left_text COLLATE pg_catalog.\"C\",\n                                                     p.right_text COLLATE pg_catalog.\"C\"), ARRAY[]::text[])\n                                             FROM (\n          SELECT DISTINCT c.left_text COLLATE pg_catalog.\"C\" AS left_text,\n                          c.right_text COLLATE pg_catalog.\"C\" AS right_text\n            FROM unnest(candidates) AS c\n           WHERE c.left_text IS NOT NULL AND c.right_text IS NOT NULL\n      ) AS p",
+        "queryid": 378389086359440530,
+        "toplevel": false,
+        "total_exec_time": 3.411879999999999,
+        "total_plan_time": 0
+      },
+      {
+        "rows": 64,
+        "calls": 64,
+        "plans": 64,
+        "query": "SELECT jev.exact_provider($1::text[], $2::text[], $3::jsonb, $4::jsonb)",
+        "queryid": -416263692730387022,
+        "toplevel": false,
+        "total_exec_time": 0.03745800000000002,
+        "total_plan_time": 2.701416000000001
+      },
+      {
+        "rows": 64,
+        "calls": 64,
+        "plans": 0,
+        "query": "ARRAY(\n        SELECT ROW(\n            p.left_text COLLATE pg_catalog.\"C\" = p.right_text COLLATE pg_catalog.\"C\",\n            CASE WHEN p.left_text IS NULL OR p.right_text IS NULL\n                 THEN NULL::double precision ELSE 1::double precision END\n        )::jev.prediction\n        FROM unnest(left_texts, right_texts) WITH ORDINALITY\n            AS p(left_text, right_text, ordinal)\n        ORDER BY p.ordinal\n    )",
+        "queryid": 5868113838560528546,
+        "toplevel": false,
+        "total_exec_time": 2.028505,
+        "total_plan_time": 0
+      },
+      {
+        "rows": 2,
+        "calls": 2,
+        "plans": 2,
+        "query": "SELECT coalesce(jsonb_agg(to_jsonb(s) ORDER BY funcid), $1::jsonb)\nFROM (SELECT funcid, schemaname, funcname, calls, total_time, self_time\n      FROM pg_stat_xact_user_functions\n      WHERE schemaname = $2 OR schemaname LIKE $3) AS s",
+        "queryid": -2063455715729080795,
+        "toplevel": true,
+        "total_exec_time": 0.427334,
+        "total_plan_time": 0.216083
+      },
+      {
+        "rows": 64,
+        "calls": 64,
+        "plans": 0,
+        "query": "SELECT p.*, n.nspname                              FROM pg_catalog.pg_proc AS p\n          JOIN pg_catalog.pg_namespace AS n ON n.oid = p.pronamespace\n         WHERE p.oid = provider_oids[stage]",
+        "queryid": -1179094105647090034,
+        "toplevel": false,
+        "total_exec_time": 0.279,
+        "total_plan_time": 0
+      },
+      {
+        "rows": 64,
+        "calls": 64,
+        "plans": 0,
+        "query": "SELECT ARRAY[m.provider::oid, f.provider::oid], ARRAY[m.name, f.name],\n           ARRAY[m.config, f.config], p.definition,\n           p.fallback_model_name, p.min_confidence, m.score_kind, f.score_kind\n                                                                                                                                                                                                      FROM jev.predicates AS p\n      JOIN jev.models AS m ON m.name = p.model_name\n      LEFT JOIN jev.models AS f ON f.name = p.fallback_model_name\n     WHERE p.name = predicate_name COLLATE pg_catalog.\"C\"",
+        "queryid": 8857326144649084951,
+        "toplevel": false,
+        "total_exec_time": 0.20691799999999996,
+        "total_plan_time": 0
+      },
+      {
+        "rows": 1,
+        "calls": 1,
+        "plans": 0,
+        "query": "SELECT pg_stat_statements_reset()",
+        "queryid": 740693261604905015,
+        "toplevel": true,
+        "total_exec_time": 0.098124,
+        "total_plan_time": 0
+      },
+      {
+        "rows": 0,
+        "calls": 0,
+        "plans": 1,
+        "query": "SELECT coalesce(jsonb_agg(to_jsonb(s) ORDER BY total_plan_time + total_exec_time DESC), $1::jsonb)\nFROM (SELECT queryid, toplevel, query, calls, plans, total_plan_time, total_exec_time, rows\n      FROM pg_stat_statements WHERE calls > $2 OR plans > $3) AS s",
+        "queryid": 8126991371037004029,
+        "toplevel": true,
+        "total_exec_time": 0,
+        "total_plan_time": 0.041917
+      }
+    ],
+    "plan": {
+      "Plan": {
+        "Node Type": "Custom Scan",
+        "Custom Plan Provider": "JEVSemanticScan",
+        "Parallel Aware": false,
+        "Async Capable": false,
+        "Relation Name": "bench_items",
+        "Alias": "bench_items",
+        "Startup Cost": 10.62,
+        "Total Cost": 679.6,
+        "Plan Rows": 2731,
+        "Plan Width": 4,
+        "Actual Rows": 2027,
+        "Actual Loops": 1,
+        "Filter": "(active AND jev.semantic_match('exact'::text, left_text, right_text))",
+        "Rows Removed by Filter": 6165,
+        "Semantic Evaluation": "batched",
+        "Batch Size Selection": "fixed",
+        "Batch Size": 128,
+        "Batch Memory Target": 1024,
+        "Result Cache Limit": 0,
+        "Cost Model": "batch-v1",
+        "Estimate Assumptions": "PostgreSQL estimates (including default semantic selectivity); configured costs; no NULL or reuse discount",
+        "Estimated Candidate Rows": 8192.0,
+        "Estimated Semantic Selectivity": 0.333333,
+        "Estimated Batch Rows": 128,
+        "Estimated Kernel Calls": 64,
+        "Estimated Buffered Row Bytes": 757,
+        "Estimated Batch Work Cost": 343.68,
+        "Scalar Seq Scan Total Cost": 2383.92,
+        "Planned Batch Size": 128,
+        "Planned Batch Size Limit": 128,
+        "Planned Batch Memory": 1024,
+        "Batch Call Cost": 100.0,
+        "Batch Input Cost": 10.0,
+        "Forced Custom Path": true,
+        "Rows Read": 8192,
+        "Candidate Rows": 8192,
+        "Evaluated Match Rows": 2027,
+        "Observed Match Fraction": 0.247437,
+        "Unique Inputs": 8108,
+        "Reused Inputs": 0,
+        "Provider Calls": 64,
+        "Provider Calls Meaning": "legacy alias for Kernel Calls",
+        "Kernel Calls": 64,
+        "Cache Hits": 0,
+        "Cache Entries": 0,
+        "Cache Used Bytes": 0,
+        "Cache Allocated Bytes": 0,
+        "Cache Admission Skips": 0,
+        "Batches": 64,
+        "Peak Buffered Rows": 128,
+        "Peak Buffered Bytes": 93300,
+        "Kernel Time": 19.339,
+        "Shared Hit Blocks": 766,
+        "Shared Read Blocks": 0,
+        "Shared Dirtied Blocks": 0,
+        "Shared Written Blocks": 0,
+        "Local Hit Blocks": 0,
+        "Local Read Blocks": 0,
+        "Local Dirtied Blocks": 0,
+        "Local Written Blocks": 0,
+        "Temp Read Blocks": 0,
+        "Temp Written Blocks": 0
+      },
+      "Planning": {
+        "Shared Hit Blocks": 10,
+        "Shared Read Blocks": 0,
+        "Shared Dirtied Blocks": 0,
+        "Shared Written Blocks": 0,
+        "Local Hit Blocks": 0,
+        "Local Read Blocks": 0,
+        "Local Dirtied Blocks": 0,
+        "Local Written Blocks": 0,
+        "Temp Read Blocks": 0,
+        "Temp Written Blocks": 0
+      },
+      "Planning Time": 0.035,
+      "Triggers": [],
+      "Execution Time": 22.149
+    }
+  },
+  {
+    "mode": "scalar",
+    "repeat": 3,
+    "execution_ms": 440.245,
+    "functions": [
+      {
+        "schemaname": "jev",
+        "funcname": "exact_provider",
+        "calls": 8108,
+        "total_time": 39.741332,
+        "self_time": 39.741332
+      },
+      {
+        "schemaname": "jev",
+        "funcname": "evaluate_batch",
+        "calls": 8108,
+        "total_time": 407.56434199999995,
+        "self_time": 367.82301000000007
+      },
+      {
+        "schemaname": "jev",
+        "funcname": "semantic_match",
+        "calls": 8108,
+        "total_time": 436.49880400000006,
+        "self_time": 28.934462
+      }
+    ],
+    "statements": [
+      {
+        "rows": 2027,
+        "calls": 1,
+        "plans": 1,
+        "query": "EXPLAIN (ANALYZE, FORMAT JSON, TIMING OFF, BUFFERS ON) SELECT id FROM ONLY bench_items WHERE active AND jev.semantic_match($1, left_text, right_text);",
+        "queryid": 4382235940663869441,
+        "toplevel": false,
+        "total_exec_time": 440.241625,
+        "total_plan_time": 0.009042
+      },
+      {
+        "rows": 8108,
+        "calls": 8108,
+        "plans": 0,
+        "query": "SELECT r.decision                    FROM jev.evaluate_batch(\n          predicate_name,\n          ARRAY[ROW(NULL::text, left_text, right_text)::jev.candidate],\n          1\n      ) AS r",
+        "queryid": 8459378751126196508,
+        "toplevel": false,
+        "total_exec_time": 417.4813300000006,
+        "total_plan_time": 0
+      },
+      {
+        "rows": 8108,
+        "calls": 8108,
+        "plans": 8108,
+        "query": "SELECT jev.exact_provider($1::text[], $2::text[], $3::jsonb, $4::jsonb)",
+        "queryid": -416263692730387022,
+        "toplevel": false,
+        "total_exec_time": 1.8597849999999176,
+        "total_plan_time": 59.65448199999949
+      },
+      {
+        "rows": 8108,
+        "calls": 8108,
+        "plans": 0,
+        "query": "SELECT c.ordinal, c.row_id,\n           (predictions[p.ordinal::integer]).decision,\n           (predictions[p.ordinal::integer]).confidence\n      FROM unnest(candidates) WITH ORDINALITY AS c(row_id, left_text, right_text, ordinal)\n      LEFT JOIN unnest(unique_lefts, unique_rights) WITH ORDINALITY AS p(left_text, right_text, ordinal)\n        ON c.left_text COLLATE pg_catalog.\"C\" = p.left_text COLLATE pg_catalog.\"C\"\n       AND c.right_text COLLATE pg_catalog.\"C\" = p.right_text COLLATE pg_catalog.\"C\"\n     ORDER BY c.ordinal",
+        "queryid": 9170150621611257417,
+        "toplevel": false,
+        "total_exec_time": 31.40220899999974,
+        "total_plan_time": 0
+      },
+      {
+        "rows": 8108,
+        "calls": 8108,
+        "plans": 0,
+        "query": "SELECT p.*, n.nspname                              FROM pg_catalog.pg_proc AS p\n          JOIN pg_catalog.pg_namespace AS n ON n.oid = p.pronamespace\n         WHERE p.oid = provider_oids[stage]",
+        "queryid": -1179094105647090034,
+        "toplevel": false,
+        "total_exec_time": 30.319522999998473,
+        "total_plan_time": 0
+      },
+      {
+        "rows": 8108,
+        "calls": 8108,
+        "plans": 0,
+        "query": "SELECT ARRAY[m.provider::oid, f.provider::oid], ARRAY[m.name, f.name],\n           ARRAY[m.config, f.config], p.definition,\n           p.fallback_model_name, p.min_confidence, m.score_kind, f.score_kind\n                                                                                                                                                                                                      FROM jev.predicates AS p\n      JOIN jev.models AS m ON m.name = p.model_name\n      LEFT JOIN jev.models AS f ON f.name = p.fallback_model_name\n     WHERE p.name = predicate_name COLLATE pg_catalog.\"C\"",
+        "queryid": 8857326144649084951,
+        "toplevel": false,
+        "total_exec_time": 23.42856399999862,
+        "total_plan_time": 0
+      },
+      {
+        "rows": 8108,
+        "calls": 8108,
+        "plans": 0,
+        "query": "SELECT coalesce(array_agg(p.left_text ORDER BY p.left_text COLLATE pg_catalog.\"C\",\n                                                    p.right_text COLLATE pg_catalog.\"C\"), ARRAY[]::text[]),\n           coalesce(array_agg(p.right_text ORDER BY p.left_text COLLATE pg_catalog.\"C\",\n                                                     p.right_text COLLATE pg_catalog.\"C\"), ARRAY[]::text[])\n                                             FROM (\n          SELECT DISTINCT c.left_text COLLATE pg_catalog.\"C\" AS left_text,\n                          c.right_text COLLATE pg_catalog.\"C\" AS right_text\n            FROM unnest(candidates) AS c\n           WHERE c.left_text IS NOT NULL AND c.right_text IS NOT NULL\n      ) AS p",
+        "queryid": 378389086359440530,
+        "toplevel": false,
+        "total_exec_time": 20.983712000001066,
+        "total_plan_time": 0
+      },
+      {
+        "rows": 8108,
+        "calls": 8108,
+        "plans": 0,
+        "query": "ARRAY(\n        SELECT ROW(\n            p.left_text COLLATE pg_catalog.\"C\" = p.right_text COLLATE pg_catalog.\"C\",\n            CASE WHEN p.left_text IS NULL OR p.right_text IS NULL\n                 THEN NULL::double precision ELSE 1::double precision END\n        )::jev.prediction\n        FROM unnest(left_texts, right_texts) WITH ORDINALITY\n            AS p(left_text, right_text, ordinal)\n        ORDER BY p.ordinal\n    )",
+        "queryid": 5868113838560528546,
+        "toplevel": false,
+        "total_exec_time": 13.734951000000141,
+        "total_plan_time": 0
+      },
+      {
+        "rows": 2,
+        "calls": 2,
+        "plans": 2,
+        "query": "SELECT coalesce(jsonb_agg(to_jsonb(s) ORDER BY funcid), $1::jsonb)\nFROM (SELECT funcid, schemaname, funcname, calls, total_time, self_time\n      FROM pg_stat_xact_user_functions\n      WHERE schemaname = $2 OR schemaname LIKE $3) AS s",
+        "queryid": -2063455715729080795,
+        "toplevel": true,
+        "total_exec_time": 0.460166,
+        "total_plan_time": 0.25658400000000003
+      },
+      {
+        "rows": 1,
+        "calls": 1,
+        "plans": 0,
+        "query": "SELECT pg_stat_statements_reset()",
+        "queryid": 740693261604905015,
+        "toplevel": true,
+        "total_exec_time": 0.06162499999999999,
+        "total_plan_time": 0
+      },
+      {
+        "rows": 0,
+        "calls": 0,
+        "plans": 1,
+        "query": "SELECT coalesce(jsonb_agg(to_jsonb(s) ORDER BY total_plan_time + total_exec_time DESC), $1::jsonb)\nFROM (SELECT queryid, toplevel, query, calls, plans, total_plan_time, total_exec_time, rows\n      FROM pg_stat_statements WHERE calls > $2 OR plans > $3) AS s",
+        "queryid": 8126991371037004029,
+        "toplevel": true,
+        "total_exec_time": 0,
+        "total_plan_time": 0.054458
+      }
+    ],
+    "plan": {
+      "Plan": {
+        "Node Type": "Seq Scan",
+        "Parallel Aware": false,
+        "Async Capable": false,
+        "Relation Name": "bench_items",
+        "Alias": "bench_items",
+        "Startup Cost": 0.0,
+        "Total Cost": 2383.92,
+        "Plan Rows": 2731,
+        "Plan Width": 4,
+        "Actual Rows": 2027,
+        "Actual Loops": 1,
+        "Filter": "(active AND jev.semantic_match('exact'::text, left_text, right_text))",
+        "Rows Removed by Filter": 6165,
+        "Shared Hit Blocks": 65118,
+        "Shared Read Blocks": 0,
+        "Shared Dirtied Blocks": 0,
+        "Shared Written Blocks": 0,
+        "Local Hit Blocks": 0,
+        "Local Read Blocks": 0,
+        "Local Dirtied Blocks": 0,
+        "Local Written Blocks": 0,
+        "Temp Read Blocks": 0,
+        "Temp Written Blocks": 0
+      },
+      "Planning": {
+        "Shared Hit Blocks": 0,
+        "Shared Read Blocks": 0,
+        "Shared Dirtied Blocks": 0,
+        "Shared Written Blocks": 0,
+        "Local Hit Blocks": 0,
+        "Local Read Blocks": 0,
+        "Local Dirtied Blocks": 0,
+        "Local Written Blocks": 0,
+        "Temp Read Blocks": 0,
+        "Temp Written Blocks": 0
+      },
+      "Planning Time": 0.009,
+      "Triggers": [],
+      "Execution Time": 440.245
+    }
+  }
+]

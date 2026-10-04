@@ -1,0 +1,550 @@
+{
+  "timing_scope": "Separate instrumented diagnostics. Statement planning and execution times include nested work; categories are not additive. An IMMUTABLE provider can run during planning of its dispatch statement.",
+  "units": "milliseconds, except calls/plans/rows",
+  "modes": [
+    {
+      "mode": "batch_128",
+      "diagnostics": 3,
+      "execution_mean_ms": 22.24266666666667,
+      "execution_median_ms": 22.209,
+      "categories": [
+        {
+          "category": "parent_query",
+          "label": "Parent query (includes nested statements)",
+          "mean_per_diagnostic": {
+            "calls": 1.0,
+            "plans": 1.0,
+            "total_plan_time": 0.04786133333333333,
+            "total_exec_time": 22.235527666666666,
+            "rows": 2027.0,
+            "plan_plus_exec_ms": 22.283389
+          }
+        },
+        {
+          "category": "C_kernel_sql",
+          "label": "C scan kernel SQL (includes kernel)",
+          "mean_per_diagnostic": {
+            "calls": 64.0,
+            "plans": 6.0,
+            "total_plan_time": 0.025763666666666667,
+            "total_exec_time": 18.905099,
+            "rows": 8108.0,
+            "plan_plus_exec_ms": 18.930862666666666
+          }
+        },
+        {
+          "category": "restoration",
+          "label": "Duplicate/NULL restoration and ordering",
+          "mean_per_diagnostic": {
+            "calls": 64.0,
+            "plans": 0.0,
+            "total_plan_time": 0.0,
+            "total_exec_time": 6.0770333333333335,
+            "rows": 8108.0,
+            "plan_plus_exec_ms": 6.0770333333333335
+          }
+        },
+        {
+          "category": "dedup",
+          "label": "Pair deduplication and input arrays",
+          "mean_per_diagnostic": {
+            "calls": 64.0,
+            "plans": 0.0,
+            "total_plan_time": 0.0,
+            "total_exec_time": 3.396586666666667,
+            "rows": 64.0,
+            "plan_plus_exec_ms": 3.396586666666667
+          }
+        },
+        {
+          "category": "provider_dispatch",
+          "label": "Dynamic provider dispatch (includes provider)",
+          "mean_per_diagnostic": {
+            "calls": 64.0,
+            "plans": 64.0,
+            "total_plan_time": 2.703638666666667,
+            "total_exec_time": 0.03675233333333335,
+            "rows": 64.0,
+            "plan_plus_exec_ms": 2.7403910000000002
+          }
+        },
+        {
+          "category": "provider_body",
+          "label": "Exact-provider array construction",
+          "mean_per_diagnostic": {
+            "calls": 64.0,
+            "plans": 0.0,
+            "total_plan_time": 0.0,
+            "total_exec_time": 2.019598333333333,
+            "rows": 64.0,
+            "plan_plus_exec_ms": 2.019598333333333
+          }
+        },
+        {
+          "category": "instrumentation",
+          "label": "Profiling reads/resets (outside measured query)",
+          "mean_per_diagnostic": {
+            "calls": 3.0,
+            "plans": 3.0,
+            "total_plan_time": 0.30551466666666666,
+            "total_exec_time": 0.6361256666666666,
+            "rows": 3.0,
+            "plan_plus_exec_ms": 0.9416403333333332
+          }
+        },
+        {
+          "category": "provider_catalog",
+          "label": "Provider catalog lookup",
+          "mean_per_diagnostic": {
+            "calls": 64.0,
+            "plans": 0.0,
+            "total_plan_time": 0.0,
+            "total_exec_time": 0.27252899999999997,
+            "rows": 64.0,
+            "plan_plus_exec_ms": 0.27252899999999997
+          }
+        },
+        {
+          "category": "metadata",
+          "label": "Predicate/model metadata lookup",
+          "mean_per_diagnostic": {
+            "calls": 64.0,
+            "plans": 0.0,
+            "total_plan_time": 0.0,
+            "total_exec_time": 0.20965599999999995,
+            "rows": 64.0,
+            "plan_plus_exec_ms": 0.20965599999999995
+          }
+        }
+      ],
+      "queries": [
+        {
+          "queryid": 4382235940663869441,
+          "toplevel": false,
+          "query": "EXPLAIN (ANALYZE, FORMAT JSON, TIMING OFF, BUFFERS ON) SELECT id FROM ONLY bench_items WHERE active AND jev.semantic_match($1, left_text, right_text);",
+          "category": "parent_query",
+          "mean_per_diagnostic": {
+            "calls": 1.0,
+            "plans": 1.0,
+            "total_plan_time": 0.04786133333333333,
+            "total_exec_time": 22.235527666666666,
+            "rows": 2027.0,
+            "plan_plus_exec_ms": 22.283389
+          }
+        },
+        {
+          "queryid": -3293719269545287768,
+          "toplevel": false,
+          "query": "SELECT ordinal, decision FROM jev.evaluate_batch($1, $2, $3)",
+          "category": "C_kernel_sql",
+          "mean_per_diagnostic": {
+            "calls": 64.0,
+            "plans": 6.0,
+            "total_plan_time": 0.025763666666666667,
+            "total_exec_time": 18.905099,
+            "rows": 8108.0,
+            "plan_plus_exec_ms": 18.930862666666666
+          }
+        },
+        {
+          "queryid": 9170150621611257417,
+          "toplevel": false,
+          "query": "SELECT c.ordinal, c.row_id,\n           (predictions[p.ordinal::integer]).decision,\n           (predictions[p.ordinal::integer]).confidence\n      FROM unnest(candidates) WITH ORDINALITY AS c(row_id, left_text, right_text, ordinal)\n      LEFT JOIN unnest(unique_lefts, unique_rights) WITH ORDINALITY AS p(left_text, right_text, ordinal)\n        ON c.left_text COLLATE pg_catalog.\"C\" = p.left_text COLLATE pg_catalog.\"C\"\n       AND c.right_text COLLATE pg_catalog.\"C\" = p.right_text COLLATE pg_catalog.\"C\"\n     ORDER BY c.ordinal",
+          "category": "restoration",
+          "mean_per_diagnostic": {
+            "calls": 64.0,
+            "plans": 0.0,
+            "total_plan_time": 0.0,
+            "total_exec_time": 6.0770333333333335,
+            "rows": 8108.0,
+            "plan_plus_exec_ms": 6.0770333333333335
+          }
+        },
+        {
+          "queryid": 378389086359440530,
+          "toplevel": false,
+          "query": "SELECT coalesce(array_agg(p.left_text ORDER BY p.left_text COLLATE pg_catalog.\"C\",\n                                                    p.right_text COLLATE pg_catalog.\"C\"), ARRAY[]::text[]),\n           coalesce(array_agg(p.right_text ORDER BY p.left_text COLLATE pg_catalog.\"C\",\n                                                     p.right_text COLLATE pg_catalog.\"C\"), ARRAY[]::text[])\n                                             FROM (\n          SELECT DISTINCT c.left_text COLLATE pg_catalog.\"C\" AS left_text,\n                          c.right_text COLLATE pg_catalog.\"C\" AS right_text\n            FROM unnest(candidates) AS c\n           WHERE c.left_text IS NOT NULL AND c.right_text IS NOT NULL\n      ) AS p",
+          "category": "dedup",
+          "mean_per_diagnostic": {
+            "calls": 64.0,
+            "plans": 0.0,
+            "total_plan_time": 0.0,
+            "total_exec_time": 3.396586666666667,
+            "rows": 64.0,
+            "plan_plus_exec_ms": 3.396586666666667
+          }
+        },
+        {
+          "queryid": -416263692730387022,
+          "toplevel": false,
+          "query": "SELECT jev.exact_provider($1::text[], $2::text[], $3::jsonb, $4::jsonb)",
+          "category": "provider_dispatch",
+          "mean_per_diagnostic": {
+            "calls": 64.0,
+            "plans": 64.0,
+            "total_plan_time": 2.703638666666667,
+            "total_exec_time": 0.03675233333333335,
+            "rows": 64.0,
+            "plan_plus_exec_ms": 2.7403910000000002
+          }
+        },
+        {
+          "queryid": 5868113838560528546,
+          "toplevel": false,
+          "query": "ARRAY(\n        SELECT ROW(\n            p.left_text COLLATE pg_catalog.\"C\" = p.right_text COLLATE pg_catalog.\"C\",\n            CASE WHEN p.left_text IS NULL OR p.right_text IS NULL\n                 THEN NULL::double precision ELSE 1::double precision END\n        )::jev.prediction\n        FROM unnest(left_texts, right_texts) WITH ORDINALITY\n            AS p(left_text, right_text, ordinal)\n        ORDER BY p.ordinal\n    )",
+          "category": "provider_body",
+          "mean_per_diagnostic": {
+            "calls": 64.0,
+            "plans": 0.0,
+            "total_plan_time": 0.0,
+            "total_exec_time": 2.019598333333333,
+            "rows": 64.0,
+            "plan_plus_exec_ms": 2.019598333333333
+          }
+        },
+        {
+          "queryid": -2063455715729080795,
+          "toplevel": true,
+          "query": "SELECT coalesce(jsonb_agg(to_jsonb(s) ORDER BY funcid), $1::jsonb)\nFROM (SELECT funcid, schemaname, funcname, calls, total_time, self_time\n      FROM pg_stat_xact_user_functions\n      WHERE schemaname = $2 OR schemaname LIKE $3) AS s",
+          "category": "instrumentation",
+          "mean_per_diagnostic": {
+            "calls": 2.0,
+            "plans": 2.0,
+            "total_plan_time": 0.2551253333333333,
+            "total_exec_time": 0.5397923333333333,
+            "rows": 2.0,
+            "plan_plus_exec_ms": 0.7949176666666666
+          }
+        },
+        {
+          "queryid": -1179094105647090034,
+          "toplevel": false,
+          "query": "SELECT p.*, n.nspname                              FROM pg_catalog.pg_proc AS p\n          JOIN pg_catalog.pg_namespace AS n ON n.oid = p.pronamespace\n         WHERE p.oid = provider_oids[stage]",
+          "category": "provider_catalog",
+          "mean_per_diagnostic": {
+            "calls": 64.0,
+            "plans": 0.0,
+            "total_plan_time": 0.0,
+            "total_exec_time": 0.27252899999999997,
+            "rows": 64.0,
+            "plan_plus_exec_ms": 0.27252899999999997
+          }
+        },
+        {
+          "queryid": 8857326144649084951,
+          "toplevel": false,
+          "query": "SELECT ARRAY[m.provider::oid, f.provider::oid], ARRAY[m.name, f.name],\n           ARRAY[m.config, f.config], p.definition,\n           p.fallback_model_name, p.min_confidence, m.score_kind, f.score_kind\n                                                                                                                                                                                                      FROM jev.predicates AS p\n      JOIN jev.models AS m ON m.name = p.model_name\n      LEFT JOIN jev.models AS f ON f.name = p.fallback_model_name\n     WHERE p.name = predicate_name COLLATE pg_catalog.\"C\"",
+          "category": "metadata",
+          "mean_per_diagnostic": {
+            "calls": 64.0,
+            "plans": 0.0,
+            "total_plan_time": 0.0,
+            "total_exec_time": 0.20965599999999995,
+            "rows": 64.0,
+            "plan_plus_exec_ms": 0.20965599999999995
+          }
+        },
+        {
+          "queryid": 740693261604905015,
+          "toplevel": true,
+          "query": "SELECT pg_stat_statements_reset()",
+          "category": "instrumentation",
+          "mean_per_diagnostic": {
+            "calls": 1.0,
+            "plans": 0.0,
+            "total_plan_time": 0.0,
+            "total_exec_time": 0.09633333333333334,
+            "rows": 1.0,
+            "plan_plus_exec_ms": 0.09633333333333334
+          }
+        },
+        {
+          "queryid": 8126991371037004029,
+          "toplevel": true,
+          "query": "SELECT coalesce(jsonb_agg(to_jsonb(s) ORDER BY total_plan_time + total_exec_time DESC), $1::jsonb)\nFROM (SELECT queryid, toplevel, query, calls, plans, total_plan_time, total_exec_time, rows\n      FROM pg_stat_statements WHERE calls > $2 OR plans > $3) AS s",
+          "category": "instrumentation",
+          "mean_per_diagnostic": {
+            "calls": 0.0,
+            "plans": 1.0,
+            "total_plan_time": 0.050389333333333335,
+            "total_exec_time": 0.0,
+            "rows": 0.0,
+            "plan_plus_exec_ms": 0.050389333333333335
+          }
+        }
+      ]
+    },
+    {
+      "mode": "scalar",
+      "diagnostics": 3,
+      "execution_mean_ms": 449.77933333333334,
+      "execution_median_ms": 440.245,
+      "categories": [
+        {
+          "category": "parent_query",
+          "label": "Parent query (includes nested statements)",
+          "mean_per_diagnostic": {
+            "calls": 1.0,
+            "plans": 1.0,
+            "total_plan_time": 0.010097333333333333,
+            "total_exec_time": 449.775931,
+            "rows": 2027.0,
+            "plan_plus_exec_ms": 449.7860283333333
+          }
+        },
+        {
+          "category": "scalar_wrapper_sql",
+          "label": "Scalar wrapper SQL (includes kernel)",
+          "mean_per_diagnostic": {
+            "calls": 8108.0,
+            "plans": 0.0,
+            "total_plan_time": 0.0,
+            "total_exec_time": 426.50944199999986,
+            "rows": 8108.0,
+            "plan_plus_exec_ms": 426.50944199999986
+          }
+        },
+        {
+          "category": "provider_dispatch",
+          "label": "Dynamic provider dispatch (includes provider)",
+          "mean_per_diagnostic": {
+            "calls": 8108.0,
+            "plans": 8108.0,
+            "total_plan_time": 60.80726733333308,
+            "total_exec_time": 1.8913676666665948,
+            "rows": 8108.0,
+            "plan_plus_exec_ms": 62.698634999999676
+          }
+        },
+        {
+          "category": "restoration",
+          "label": "Duplicate/NULL restoration and ordering",
+          "mean_per_diagnostic": {
+            "calls": 8108.0,
+            "plans": 0.0,
+            "total_plan_time": 0.0,
+            "total_exec_time": 32.12294133333303,
+            "rows": 8108.0,
+            "plan_plus_exec_ms": 32.12294133333303
+          }
+        },
+        {
+          "category": "provider_catalog",
+          "label": "Provider catalog lookup",
+          "mean_per_diagnostic": {
+            "calls": 8108.0,
+            "plans": 0.0,
+            "total_plan_time": 0.0,
+            "total_exec_time": 31.146011666665487,
+            "rows": 8108.0,
+            "plan_plus_exec_ms": 31.146011666665487
+          }
+        },
+        {
+          "category": "metadata",
+          "label": "Predicate/model metadata lookup",
+          "mean_per_diagnostic": {
+            "calls": 8108.0,
+            "plans": 0.0,
+            "total_plan_time": 0.0,
+            "total_exec_time": 23.93366766666571,
+            "rows": 8108.0,
+            "plan_plus_exec_ms": 23.93366766666571
+          }
+        },
+        {
+          "category": "dedup",
+          "label": "Pair deduplication and input arrays",
+          "mean_per_diagnostic": {
+            "calls": 8108.0,
+            "plans": 0.0,
+            "total_plan_time": 0.0,
+            "total_exec_time": 21.365722000000854,
+            "rows": 8108.0,
+            "plan_plus_exec_ms": 21.365722000000854
+          }
+        },
+        {
+          "category": "provider_body",
+          "label": "Exact-provider array construction",
+          "mean_per_diagnostic": {
+            "calls": 8108.0,
+            "plans": 0.0,
+            "total_plan_time": 0.0,
+            "total_exec_time": 14.046757666666851,
+            "rows": 8108.0,
+            "plan_plus_exec_ms": 14.046757666666851
+          }
+        },
+        {
+          "category": "instrumentation",
+          "label": "Profiling reads/resets (outside measured query)",
+          "mean_per_diagnostic": {
+            "calls": 3.0,
+            "plans": 3.0,
+            "total_plan_time": 0.2985696666666667,
+            "total_exec_time": 0.5474166666666667,
+            "rows": 3.0,
+            "plan_plus_exec_ms": 0.8459863333333333
+          }
+        }
+      ],
+      "queries": [
+        {
+          "queryid": 4382235940663869441,
+          "toplevel": false,
+          "query": "EXPLAIN (ANALYZE, FORMAT JSON, TIMING OFF, BUFFERS ON) SELECT id FROM ONLY bench_items WHERE active AND jev.semantic_match($1, left_text, right_text);",
+          "category": "parent_query",
+          "mean_per_diagnostic": {
+            "calls": 1.0,
+            "plans": 1.0,
+            "total_plan_time": 0.010097333333333333,
+            "total_exec_time": 449.775931,
+            "rows": 2027.0,
+            "plan_plus_exec_ms": 449.7860283333333
+          }
+        },
+        {
+          "queryid": 8459378751126196508,
+          "toplevel": false,
+          "query": "SELECT r.decision                    FROM jev.evaluate_batch(\n          predicate_name,\n          ARRAY[ROW(NULL::text, left_text, right_text)::jev.candidate],\n          1\n      ) AS r",
+          "category": "scalar_wrapper_sql",
+          "mean_per_diagnostic": {
+            "calls": 8108.0,
+            "plans": 0.0,
+            "total_plan_time": 0.0,
+            "total_exec_time": 426.50944199999986,
+            "rows": 8108.0,
+            "plan_plus_exec_ms": 426.50944199999986
+          }
+        },
+        {
+          "queryid": -416263692730387022,
+          "toplevel": false,
+          "query": "SELECT jev.exact_provider($1::text[], $2::text[], $3::jsonb, $4::jsonb)",
+          "category": "provider_dispatch",
+          "mean_per_diagnostic": {
+            "calls": 8108.0,
+            "plans": 8108.0,
+            "total_plan_time": 60.80726733333308,
+            "total_exec_time": 1.8913676666665948,
+            "rows": 8108.0,
+            "plan_plus_exec_ms": 62.698634999999676
+          }
+        },
+        {
+          "queryid": 9170150621611257417,
+          "toplevel": false,
+          "query": "SELECT c.ordinal, c.row_id,\n           (predictions[p.ordinal::integer]).decision,\n           (predictions[p.ordinal::integer]).confidence\n      FROM unnest(candidates) WITH ORDINALITY AS c(row_id, left_text, right_text, ordinal)\n      LEFT JOIN unnest(unique_lefts, unique_rights) WITH ORDINALITY AS p(left_text, right_text, ordinal)\n        ON c.left_text COLLATE pg_catalog.\"C\" = p.left_text COLLATE pg_catalog.\"C\"\n       AND c.right_text COLLATE pg_catalog.\"C\" = p.right_text COLLATE pg_catalog.\"C\"\n     ORDER BY c.ordinal",
+          "category": "restoration",
+          "mean_per_diagnostic": {
+            "calls": 8108.0,
+            "plans": 0.0,
+            "total_plan_time": 0.0,
+            "total_exec_time": 32.12294133333303,
+            "rows": 8108.0,
+            "plan_plus_exec_ms": 32.12294133333303
+          }
+        },
+        {
+          "queryid": -1179094105647090034,
+          "toplevel": false,
+          "query": "SELECT p.*, n.nspname                              FROM pg_catalog.pg_proc AS p\n          JOIN pg_catalog.pg_namespace AS n ON n.oid = p.pronamespace\n         WHERE p.oid = provider_oids[stage]",
+          "category": "provider_catalog",
+          "mean_per_diagnostic": {
+            "calls": 8108.0,
+            "plans": 0.0,
+            "total_plan_time": 0.0,
+            "total_exec_time": 31.146011666665487,
+            "rows": 8108.0,
+            "plan_plus_exec_ms": 31.146011666665487
+          }
+        },
+        {
+          "queryid": 8857326144649084951,
+          "toplevel": false,
+          "query": "SELECT ARRAY[m.provider::oid, f.provider::oid], ARRAY[m.name, f.name],\n           ARRAY[m.config, f.config], p.definition,\n           p.fallback_model_name, p.min_confidence, m.score_kind, f.score_kind\n                                                                                                                                                                                                      FROM jev.predicates AS p\n      JOIN jev.models AS m ON m.name = p.model_name\n      LEFT JOIN jev.models AS f ON f.name = p.fallback_model_name\n     WHERE p.name = predicate_name COLLATE pg_catalog.\"C\"",
+          "category": "metadata",
+          "mean_per_diagnostic": {
+            "calls": 8108.0,
+            "plans": 0.0,
+            "total_plan_time": 0.0,
+            "total_exec_time": 23.93366766666571,
+            "rows": 8108.0,
+            "plan_plus_exec_ms": 23.93366766666571
+          }
+        },
+        {
+          "queryid": 378389086359440530,
+          "toplevel": false,
+          "query": "SELECT coalesce(array_agg(p.left_text ORDER BY p.left_text COLLATE pg_catalog.\"C\",\n                                                    p.right_text COLLATE pg_catalog.\"C\"), ARRAY[]::text[]),\n           coalesce(array_agg(p.right_text ORDER BY p.left_text COLLATE pg_catalog.\"C\",\n                                                     p.right_text COLLATE pg_catalog.\"C\"), ARRAY[]::text[])\n                                             FROM (\n          SELECT DISTINCT c.left_text COLLATE pg_catalog.\"C\" AS left_text,\n                          c.right_text COLLATE pg_catalog.\"C\" AS right_text\n            FROM unnest(candidates) AS c\n           WHERE c.left_text IS NOT NULL AND c.right_text IS NOT NULL\n      ) AS p",
+          "category": "dedup",
+          "mean_per_diagnostic": {
+            "calls": 8108.0,
+            "plans": 0.0,
+            "total_plan_time": 0.0,
+            "total_exec_time": 21.365722000000854,
+            "rows": 8108.0,
+            "plan_plus_exec_ms": 21.365722000000854
+          }
+        },
+        {
+          "queryid": 5868113838560528546,
+          "toplevel": false,
+          "query": "ARRAY(\n        SELECT ROW(\n            p.left_text COLLATE pg_catalog.\"C\" = p.right_text COLLATE pg_catalog.\"C\",\n            CASE WHEN p.left_text IS NULL OR p.right_text IS NULL\n                 THEN NULL::double precision ELSE 1::double precision END\n        )::jev.prediction\n        FROM unnest(left_texts, right_texts) WITH ORDINALITY\n            AS p(left_text, right_text, ordinal)\n        ORDER BY p.ordinal\n    )",
+          "category": "provider_body",
+          "mean_per_diagnostic": {
+            "calls": 8108.0,
+            "plans": 0.0,
+            "total_plan_time": 0.0,
+            "total_exec_time": 14.046757666666851,
+            "rows": 8108.0,
+            "plan_plus_exec_ms": 14.046757666666851
+          }
+        },
+        {
+          "queryid": -2063455715729080795,
+          "toplevel": true,
+          "query": "SELECT coalesce(jsonb_agg(to_jsonb(s) ORDER BY funcid), $1::jsonb)\nFROM (SELECT funcid, schemaname, funcname, calls, total_time, self_time\n      FROM pg_stat_xact_user_functions\n      WHERE schemaname = $2 OR schemaname LIKE $3) AS s",
+          "category": "instrumentation",
+          "mean_per_diagnostic": {
+            "calls": 2.0,
+            "plans": 2.0,
+            "total_plan_time": 0.24482,
+            "total_exec_time": 0.46831900000000004,
+            "rows": 2.0,
+            "plan_plus_exec_ms": 0.7131390000000001
+          }
+        },
+        {
+          "queryid": 740693261604905015,
+          "toplevel": true,
+          "query": "SELECT pg_stat_statements_reset()",
+          "category": "instrumentation",
+          "mean_per_diagnostic": {
+            "calls": 1.0,
+            "plans": 0.0,
+            "total_plan_time": 0.0,
+            "total_exec_time": 0.07909766666666666,
+            "rows": 1.0,
+            "plan_plus_exec_ms": 0.07909766666666666
+          }
+        },
+        {
+          "queryid": 8126991371037004029,
+          "toplevel": true,
+          "query": "SELECT coalesce(jsonb_agg(to_jsonb(s) ORDER BY total_plan_time + total_exec_time DESC), $1::jsonb)\nFROM (SELECT queryid, toplevel, query, calls, plans, total_plan_time, total_exec_time, rows\n      FROM pg_stat_statements WHERE calls > $2 OR plans > $3) AS s",
+          "category": "instrumentation",
+          "mean_per_diagnostic": {
+            "calls": 0.0,
+            "plans": 1.0,
+            "total_plan_time": 0.05374966666666667,
+            "total_exec_time": 0.0,
+            "rows": 0.0,
+            "plan_plus_exec_ms": 0.05374966666666667
+          }
+        }
+      ]
+    }
+  ]
+}

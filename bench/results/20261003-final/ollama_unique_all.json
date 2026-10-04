@@ -1,0 +1,114 @@
+{
+  "case": {
+    "name": "ollama_unique_all",
+    "suite": "ollama",
+    "duplicates": 1,
+    "select_every": 1
+  },
+  "data": {
+    "rows": 128,
+    "candidates": 128,
+    "heap_bytes": 24576,
+    "avg_input_bytes": 98.1,
+    "nonnull_candidates": 124,
+    "global_unique_pairs": 124
+  },
+  "validation": {
+    "scalar": {
+      "rows": 62,
+      "sha256": "8a4e49f87f3b8d4bc22c60c21ce762eb14378658bacb5359637ca1740eb5021c"
+    },
+    "batch_1": {
+      "rows": 62,
+      "sha256": "8a4e49f87f3b8d4bc22c60c21ce762eb14378658bacb5359637ca1740eb5021c"
+    },
+    "batch_16": {
+      "rows": 62,
+      "sha256": "8a4e49f87f3b8d4bc22c60c21ce762eb14378658bacb5359637ca1740eb5021c"
+    },
+    "batch_128": {
+      "rows": 62,
+      "sha256": "8a4e49f87f3b8d4bc22c60c21ce762eb14378658bacb5359637ca1740eb5021c"
+    }
+  },
+  "results": [
+    {
+      "mode": "scalar",
+      "median_ms": 2571.78,
+      "min_ms": 2346.964,
+      "max_ms": 3058.5,
+      "samples_ms": [
+        2571.78,
+        2346.964,
+        3058.5
+      ],
+      "median_planning_ms": 0.033
+    },
+    {
+      "mode": "batch_1",
+      "median_ms": 2546.578,
+      "min_ms": 2185.886,
+      "max_ms": 2809.77,
+      "samples_ms": [
+        2546.578,
+        2185.886,
+        2809.77
+      ],
+      "median_planning_ms": 0.121,
+      "counters": {
+        "Rows Read": 128,
+        "Candidate Rows": 128,
+        "Unique Inputs": 124,
+        "Reused Inputs": 0,
+        "Provider Calls": 124,
+        "Batches": 128,
+        "Peak Buffered Rows": 1,
+        "Peak Buffered Bytes": 422
+      }
+    },
+    {
+      "mode": "batch_16",
+      "median_ms": 505.325,
+      "min_ms": 467.935,
+      "max_ms": 508.187,
+      "samples_ms": [
+        467.935,
+        508.187,
+        505.325
+      ],
+      "median_planning_ms": 0.048,
+      "counters": {
+        "Rows Read": 128,
+        "Candidate Rows": 128,
+        "Unique Inputs": 124,
+        "Reused Inputs": 0,
+        "Provider Calls": 8,
+        "Batches": 8,
+        "Peak Buffered Rows": 16,
+        "Peak Buffered Bytes": 6668
+      }
+    },
+    {
+      "mode": "batch_128",
+      "median_ms": 388.617,
+      "min_ms": 364.236,
+      "max_ms": 408.67,
+      "samples_ms": [
+        364.236,
+        388.617,
+        408.67
+      ],
+      "median_planning_ms": 0.087,
+      "counters": {
+        "Rows Read": 128,
+        "Candidate Rows": 128,
+        "Unique Inputs": 124,
+        "Reused Inputs": 0,
+        "Provider Calls": 1,
+        "Batches": 1,
+        "Peak Buffered Rows": 128,
+        "Peak Buffered Bytes": 51937
+      }
+    }
+  ]
+}

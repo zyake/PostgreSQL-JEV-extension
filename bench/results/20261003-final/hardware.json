@@ -1,0 +1,10 @@
+{
+  "machine": "MacBook Air",
+  "chip": "Apple M5",
+  "cpu_cores": 10,
+  "performance_cores": 4,
+  "efficiency_cores": 6,
+  "memory_gb": 32,
+  "source": "system_profiler SPHardwareDataType",
+  "ollama_backend": "Metal, verified in ollama.log"
+}

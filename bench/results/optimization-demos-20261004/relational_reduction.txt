@@ -1,0 +1,6 @@
+A|6|3
+B|10|5
+C|6|3
+5|4|3
+shop|offer|stock|boots|boots|8
+(NULL)|offer|(NULL)|coat|coat|1

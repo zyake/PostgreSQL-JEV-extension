@@ -1,0 +1,80 @@
+[
+  {
+    "case": "kernel_unique",
+    "mode": "scalar",
+    "data": {
+      "rows": 8192,
+      "candidates": 8192,
+      "heap_bytes": 2080768,
+      "avg_input_bytes": 201.9,
+      "nonnull_candidates": 8108,
+      "global_unique_pairs": 8108
+    },
+    "normal_median_ms": 424.1,
+    "normal_range_ms": [
+      422.26,
+      483.529
+    ],
+    "profiled_median_ms": 435.066,
+    "profiled_mean_ms": 448.75114285714284,
+    "profiled_range_ms": [
+      421.973,
+      534.787
+    ],
+    "phase_means_ms": {
+      "kernel_sql": 376.251508,
+      "other_postgres": 3.9153109999999822,
+      "provider": 39.66139928571429,
+      "scalar_wrapper": 28.92292457142857
+    },
+    "function_self_means_ms": {
+      "evaluate_batch": 376.251508,
+      "exact_provider": 39.66139928571429,
+      "semantic_match": 28.92292457142857,
+      "unattributed_execution": 3.9153109999999822
+    },
+    "function_calls": {
+      "exact_provider": 8108,
+      "evaluate_batch": 8108,
+      "semantic_match": 8108
+    }
+  },
+  {
+    "case": "kernel_unique",
+    "mode": "batch_128",
+    "data": {
+      "rows": 8192,
+      "candidates": 8192,
+      "heap_bytes": 2080768,
+      "avg_input_bytes": 201.9,
+      "nonnull_candidates": 8108,
+      "global_unique_pairs": 8108
+    },
+    "normal_median_ms": 21.609,
+    "normal_range_ms": [
+      21.218,
+      40.418
+    ],
+    "profiled_median_ms": 21.951,
+    "profiled_mean_ms": 26.997857142857143,
+    "profiled_range_ms": [
+      21.4,
+      41.465
+    ],
+    "phase_means_ms": {
+      "kernel_sql": 19.293381285714283,
+      "other_postgres": 4.7071021428571465,
+      "provider": 2.997373714285714,
+      "scalar_wrapper": 0
+    },
+    "function_self_means_ms": {
+      "evaluate_batch": 19.293381285714283,
+      "exact_provider": 2.997373714285714,
+      "unattributed_execution": 4.7071021428571465
+    },
+    "function_calls": {
+      "exact_provider": 64,
+      "evaluate_batch": 64
+    }
+  }
+]

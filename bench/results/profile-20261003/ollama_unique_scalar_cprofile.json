@@ -1,0 +1,338 @@
+{
+  "case": "ollama_unique",
+  "mode": "scalar",
+  "profiling": true,
+  "detailed": true,
+  "execution_ms": 2217.475,
+  "planning_ms": 0.013,
+  "functions": [
+    {
+      "schemaname": "jev",
+      "funcname": "evaluate_batch",
+      "calls": 124,
+      "total_time": 2215.649714,
+      "self_time": 17.525763
+    },
+    {
+      "schemaname": "jev",
+      "funcname": "semantic_match",
+      "calls": 124,
+      "total_time": 2217.045667,
+      "self_time": 1.395953
+    },
+    {
+      "schemaname": "pg_temp_0",
+      "funcname": "profile_ollama_provider",
+      "calls": 124,
+      "total_time": 2198.123951,
+      "self_time": 2198.123951
+    }
+  ],
+  "adapter": {
+    "http": {
+      "/api/tags": {
+        "calls": 248,
+        "errors": 0,
+        "server": {
+          "load_duration_ns": {
+            "sum": null,
+            "samples": 0,
+            "invalid_samples": 0
+          },
+          "prompt_eval_count": {
+            "sum": null,
+            "samples": 0,
+            "invalid_samples": 0
+          },
+          "total_duration_ns": {
+            "sum": null,
+            "samples": 0,
+            "invalid_samples": 0
+          }
+        },
+        "wall_ms": 140.30112233012915,
+        "input_texts": 0,
+        "process_cpu_ms": 64.87000000000442
+      },
+      "/api/embed": {
+        "calls": 124,
+        "errors": 0,
+        "server": {
+          "load_duration_ns": {
+            "sum": 945293449,
+            "samples": 124,
+            "invalid_samples": 0
+          },
+          "prompt_eval_count": {
+            "sum": 2976,
+            "samples": 124,
+            "invalid_samples": 0
+          },
+          "total_duration_ns": {
+            "sum": 1874486126,
+            "samples": 124,
+            "invalid_samples": 0
+          }
+        },
+        "wall_ms": 1939.8129916517064,
+        "input_texts": 248,
+        "process_cpu_ms": 48.804999999982
+      }
+    },
+    "enabled": true,
+    "cprofile": {
+      "timer": "wall_clock",
+      "enabled": true,
+      "top_self_time_functions": [
+        {
+          "file": "~",
+          "line": 0,
+          "calls": 496,
+          "function": "<method 'recv_into' of '_socket.socket' objects>",
+          "self_wall_ms": 1962.697439,
+          "primitive_calls": 496,
+          "cumulative_wall_ms": 1962.697439
+        },
+        {
+          "file": "jev_production_ollama_adapter",
+          "line": 38,
+          "calls": 95480,
+          "function": "_number",
+          "self_wall_ms": 32.792382,
+          "primitive_calls": 95480,
+          "cumulative_wall_ms": 52.366424
+        },
+        {
+          "file": "jev_production_ollama_adapter",
+          "line": 194,
+          "calls": 248,
+          "function": "_normalize_vector",
+          "self_wall_ms": 31.146569000000003,
+          "primitive_calls": 248,
+          "cumulative_wall_ms": 83.538584
+        },
+        {
+          "file": "~",
+          "line": 0,
+          "calls": 372,
+          "function": "<method 'connect' of '_socket.socket' objects>",
+          "self_wall_ms": 21.113375,
+          "primitive_calls": 372,
+          "cumulative_wall_ms": 21.113375
+        },
+        {
+          "file": "~",
+          "line": 0,
+          "calls": 200632,
+          "function": "<built-in method builtins.isinstance>",
+          "self_wall_ms": 15.474027000000001,
+          "primitive_calls": 200632,
+          "cumulative_wall_ms": 15.474027000000001
+        },
+        {
+          "file": "/opt/homebrew/Cellar/python@3.12/3.12.13_4/Frameworks/Python.framework/Versions/3.12/lib/python3.12/json/decoder.py",
+          "line": 344,
+          "calls": 620,
+          "function": "raw_decode",
+          "self_wall_ms": 10.807058000000001,
+          "primitive_calls": 620,
+          "cumulative_wall_ms": 10.807058000000001
+        },
+        {
+          "file": "jev_production_ollama_adapter",
+          "line": 120,
+          "calls": 372,
+          "function": "_request",
+          "self_wall_ms": 7.254994000000001,
+          "primitive_calls": 372,
+          "cumulative_wall_ms": 2079.272254
+        },
+        {
+          "file": "~",
+          "line": 0,
+          "calls": 96100,
+          "function": "<built-in method math.isfinite>",
+          "self_wall_ms": 5.561909,
+          "primitive_calls": 96100,
+          "cumulative_wall_ms": 5.561909
+        },
+        {
+          "file": "~",
+          "line": 0,
+          "calls": 124,
+          "function": "<built-in method math.fsum>",
+          "self_wall_ms": 4.4556960000000005,
+          "primitive_calls": 124,
+          "cumulative_wall_ms": 7.623333000000001
+        },
+        {
+          "file": "/opt/homebrew/Cellar/python@3.12/3.12.13_4/Frameworks/Python.framework/Versions/3.12/lib/python3.12/email/feedparser.py",
+          "line": 216,
+          "calls": 744,
+          "function": "_parsegen",
+          "self_wall_ms": 3.193249,
+          "primitive_calls": 744,
+          "cumulative_wall_ms": 20.746781000000002
+        },
+        {
+          "file": "jev_production_ollama_adapter",
+          "line": 257,
+          "calls": 47740,
+          "function": "<genexpr>",
+          "self_wall_ms": 3.167637,
+          "primitive_calls": 47740,
+          "cumulative_wall_ms": 3.167637
+        },
+        {
+          "file": "jev_production_ollama_adapter",
+          "line": 205,
+          "calls": 124,
+          "function": "evaluate",
+          "self_wall_ms": 3.1536660000000003,
+          "primitive_calls": 124,
+          "cumulative_wall_ms": 2190.4320390000003
+        },
+        {
+          "file": "jev_profile_instrumentation",
+          "line": 23,
+          "calls": 372,
+          "function": "_profile_request",
+          "self_wall_ms": 3.090934,
+          "primitive_calls": 372,
+          "cumulative_wall_ms": 2083.943447
+        },
+        {
+          "file": "/opt/homebrew/Cellar/python@3.12/3.12.13_4/Frameworks/Python.framework/Versions/3.12/lib/python3.12/socket.py",
+          "line": 221,
+          "calls": 372,
+          "function": "__init__",
+          "self_wall_ms": 2.9721640000000003,
+          "primitive_calls": 372,
+          "cumulative_wall_ms": 2.9721640000000003
+        },
+        {
+          "file": "~",
+          "line": 0,
+          "calls": 372,
+          "function": "<method 'sendall' of '_socket.socket' objects>",
+          "self_wall_ms": 2.958385,
+          "primitive_calls": 372,
+          "cumulative_wall_ms": 2.958385
+        },
+        {
+          "file": "/opt/homebrew/Cellar/python@3.12/3.12.13_4/Frameworks/Python.framework/Versions/3.12/lib/python3.12/email/feedparser.py",
+          "line": 469,
+          "calls": 372,
+          "function": "_parse_headers",
+          "self_wall_ms": 2.4908620000000004,
+          "primitive_calls": 372,
+          "cumulative_wall_ms": 6.5884920000000005
+        },
+        {
+          "file": "/opt/homebrew/Cellar/python@3.12/3.12.13_4/Frameworks/Python.framework/Versions/3.12/lib/python3.12/http/client.py",
+          "line": 329,
+          "calls": 372,
+          "function": "begin",
+          "self_wall_ms": 2.294286,
+          "primitive_calls": 372,
+          "cumulative_wall_ms": 2007.9234710000003
+        },
+        {
+          "file": "/opt/homebrew/Cellar/python@3.12/3.12.13_4/Frameworks/Python.framework/Versions/3.12/lib/python3.12/email/message.py",
+          "line": 504,
+          "calls": 2604,
+          "function": "get",
+          "self_wall_ms": 2.1747620000000003,
+          "primitive_calls": 2604,
+          "cumulative_wall_ms": 6.137119000000001
+        },
+        {
+          "file": "~",
+          "line": 0,
+          "calls": 372,
+          "function": "<built-in method _socket.getaddrinfo>",
+          "self_wall_ms": 2.0071950000000003,
+          "primitive_calls": 372,
+          "cumulative_wall_ms": 3.234071
+        },
+        {
+          "file": "~",
+          "line": 0,
+          "calls": 14756,
+          "function": "<method 'lower' of 'str' objects>",
+          "self_wall_ms": 1.9430740000000002,
+          "primitive_calls": 14756,
+          "cumulative_wall_ms": 1.9430740000000002
+        }
+      ]
+    },
+    "detailed": true,
+    "input_pairs": 124,
+    "http_wall_ms": 2080.1141139818355,
+    "timing_notes": {
+      "server": "Ollama-reported durations overlap HTTP time; total_duration is not pure GPU execution time.",
+      "http_wall_ms": "Inclusive production _request time: request encoding, connection, server wait, transfer and JSON decoding.",
+      "process_cpu_ms": "Database backend process CPU; excludes Ollama server CPU/GPU work and overlaps nested CPU measurements.",
+      "wrapper_bookkeeping_wall_ms": "Outer evaluation wrapper bookkeeping estimate only; excludes SQL/PLPython boundary, inner timing hooks and cProfile overhead.",
+      "adapter_local_residual_wall_ms": "Adapter wall minus inclusive HTTP wall; includes vector validation, cosine calculation, other local work and instrumentation."
+    },
+    "normalization": {
+      "calls": 248,
+      "errors": 0,
+      "wall_ms": 83.88667309191078,
+      "components": 95232,
+      "process_cpu_ms": 83.9530000000206
+    },
+    "provider_calls": 124,
+    "adapter_wall_ms": 2191.9916273327544,
+    "provider_errors": 0,
+    "adapter_source_sha256": "cebf9fceeb21464acb2bd1bb7b3c0620e4c78c0375323573a873d21d221670dc",
+    "adapter_process_cpu_ms": 224.84299999999638,
+    "wrapper_bookkeeping_wall_ms": 3.657125518657267,
+    "adapter_local_residual_wall_ms": 111.87751335091889,
+    "other_adapter_residual_wall_ms": 27.99084025900811
+  },
+  "plan": {
+    "Plan": {
+      "Node Type": "Seq Scan",
+      "Parallel Aware": false,
+      "Async Capable": false,
+      "Relation Name": "bench_items",
+      "Alias": "bench_items",
+      "Startup Cost": 0.0,
+      "Total Cost": 36.28,
+      "Plan Rows": 43,
+      "Plan Width": 4,
+      "Actual Rows": 62,
+      "Actual Loops": 1,
+      "Filter": "(active AND jev.semantic_match('bench-similar'::text, left_text, right_text))",
+      "Rows Removed by Filter": 66,
+      "Shared Hit Blocks": 995,
+      "Shared Read Blocks": 0,
+      "Shared Dirtied Blocks": 0,
+      "Shared Written Blocks": 0,
+      "Local Hit Blocks": 0,
+      "Local Read Blocks": 0,
+      "Local Dirtied Blocks": 0,
+      "Local Written Blocks": 0,
+      "Temp Read Blocks": 0,
+      "Temp Written Blocks": 0
+    },
+    "Planning": {
+      "Shared Hit Blocks": 0,
+      "Shared Read Blocks": 0,
+      "Shared Dirtied Blocks": 0,
+      "Shared Written Blocks": 0,
+      "Local Hit Blocks": 0,
+      "Local Read Blocks": 0,
+      "Local Dirtied Blocks": 0,
+      "Local Written Blocks": 0,
+      "Temp Read Blocks": 0,
+      "Temp Written Blocks": 0
+    },
+    "Planning Time": 0.013,
+    "Triggers": [],
+    "Execution Time": 2217.475
+  },
+  "repeat": null
+}

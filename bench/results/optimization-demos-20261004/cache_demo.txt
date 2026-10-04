@@ -1,0 +1,44 @@
+Custom Scan (JEVSemanticScan) on jev_cache_demo (actual rows=256 loops=1)
+  Filter: jev.semantic_match('exact'::text, left_text, right_text)
+  Semantic Evaluation: batched
+  Batch Size: 8
+  Batch Memory Target: 1024 kB
+  Result Cache Limit: 0 kB
+  Rows Read: 256
+  Candidate Rows: 256
+  Unique Inputs: 256
+  Reused Inputs: 0
+  Provider Calls: 32
+  Provider Calls Meaning: legacy alias for Kernel Calls
+  Kernel Calls: 32
+  Cache Hits: 0
+  Cache Entries: 0
+  Cache Used Bytes: 0
+  Cache Allocated Bytes: 0
+  Cache Admission Skips: 0
+  Batches: 32
+  Peak Buffered Rows: 8
+  Peak Buffered Bytes: 992
+  Kernel Time: 6.557 ms
+Custom Scan (JEVSemanticScan) on jev_cache_demo (actual rows=256 loops=1)
+  Filter: jev.semantic_match('exact'::text, left_text, right_text)
+  Semantic Evaluation: batched
+  Batch Size: 8
+  Batch Memory Target: 1024 kB
+  Result Cache Limit: 4096 kB
+  Rows Read: 256
+  Candidate Rows: 256
+  Unique Inputs: 32
+  Reused Inputs: 224
+  Provider Calls: 4
+  Provider Calls Meaning: legacy alias for Kernel Calls
+  Kernel Calls: 4
+  Cache Hits: 224
+  Cache Entries: 32
+  Cache Used Bytes: 263088
+  Cache Allocated Bytes: 4194304
+  Cache Admission Skips: 0
+  Batches: 32
+  Peak Buffered Rows: 8
+  Peak Buffered Bytes: 992
+  Kernel Time: 0.306 ms

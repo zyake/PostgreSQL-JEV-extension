@@ -1,0 +1,169 @@
+{
+  "case": {
+    "name": "kernel_interleaved_all",
+    "suite": "kernel",
+    "duplicates": 8,
+    "interleaved": true,
+    "select_every": 1
+  },
+  "data": {
+    "rows": 8192,
+    "candidates": 8192,
+    "heap_bytes": 2015232,
+    "avg_input_bytes": 200.0,
+    "nonnull_candidates": 8108,
+    "global_unique_pairs": 1024
+  },
+  "validation": {
+    "native": {
+      "rows": 2024,
+      "sha256": "4b26f09fd6f0779314ba70472e703ded0ea211105411952655870d98186c3e97"
+    },
+    "scalar": {
+      "rows": 2024,
+      "sha256": "4b26f09fd6f0779314ba70472e703ded0ea211105411952655870d98186c3e97"
+    },
+    "batch_1": {
+      "rows": 2024,
+      "sha256": "4b26f09fd6f0779314ba70472e703ded0ea211105411952655870d98186c3e97"
+    },
+    "batch_16": {
+      "rows": 2024,
+      "sha256": "4b26f09fd6f0779314ba70472e703ded0ea211105411952655870d98186c3e97"
+    },
+    "batch_128": {
+      "rows": 2024,
+      "sha256": "4b26f09fd6f0779314ba70472e703ded0ea211105411952655870d98186c3e97"
+    },
+    "batch_512": {
+      "rows": 2024,
+      "sha256": "4b26f09fd6f0779314ba70472e703ded0ea211105411952655870d98186c3e97"
+    }
+  },
+  "results": [
+    {
+      "mode": "native",
+      "median_ms": 0.632,
+      "min_ms": 0.591,
+      "max_ms": 0.672,
+      "samples_ms": [
+        0.672,
+        0.591,
+        0.645,
+        0.632,
+        0.599
+      ],
+      "median_planning_ms": 0.024
+    },
+    {
+      "mode": "scalar",
+      "median_ms": 372.913,
+      "min_ms": 364.047,
+      "max_ms": 393.448,
+      "samples_ms": [
+        364.047,
+        372.913,
+        367.194,
+        377.333,
+        393.448
+      ],
+      "median_planning_ms": 0.013
+    },
+    {
+      "mode": "batch_1",
+      "median_ms": 426.747,
+      "min_ms": 418.673,
+      "max_ms": 441.137,
+      "samples_ms": [
+        423.346,
+        426.747,
+        418.673,
+        441.137,
+        436.528
+      ],
+      "median_planning_ms": 0.044,
+      "counters": {
+        "Rows Read": 8192,
+        "Candidate Rows": 8192,
+        "Unique Inputs": 8108,
+        "Reused Inputs": 0,
+        "Provider Calls": 8108,
+        "Batches": 8192,
+        "Peak Buffered Rows": 1,
+        "Peak Buffered Bytes": 1073
+      }
+    },
+    {
+      "mode": "batch_16",
+      "median_ms": 45.734,
+      "min_ms": 44.252,
+      "max_ms": 48.592,
+      "samples_ms": [
+        44.252,
+        44.762,
+        45.734,
+        48.592,
+        47.155
+      ],
+      "median_planning_ms": 0.035,
+      "counters": {
+        "Rows Read": 8192,
+        "Candidate Rows": 8192,
+        "Unique Inputs": 8108,
+        "Reused Inputs": 0,
+        "Provider Calls": 512,
+        "Batches": 512,
+        "Peak Buffered Rows": 16,
+        "Peak Buffered Bytes": 11732
+      }
+    },
+    {
+      "mode": "batch_128",
+      "median_ms": 22.131,
+      "min_ms": 21.768,
+      "max_ms": 22.727,
+      "samples_ms": [
+        21.768,
+        21.964,
+        22.727,
+        22.134,
+        22.131
+      ],
+      "median_planning_ms": 0.055,
+      "counters": {
+        "Rows Read": 8192,
+        "Candidate Rows": 8192,
+        "Unique Inputs": 8108,
+        "Reused Inputs": 0,
+        "Provider Calls": 64,
+        "Batches": 64,
+        "Peak Buffered Rows": 128,
+        "Peak Buffered Bytes": 92573
+      }
+    },
+    {
+      "mode": "batch_512",
+      "median_ms": 19.498,
+      "min_ms": 19.047,
+      "max_ms": 19.622,
+      "samples_ms": [
+        19.622,
+        19.047,
+        19.498,
+        19.385,
+        19.577
+      ],
+      "median_planning_ms": 0.044,
+      "counters": {
+        "Rows Read": 8192,
+        "Candidate Rows": 8192,
+        "Unique Inputs": 8108,
+        "Reused Inputs": 0,
+        "Provider Calls": 16,
+        "Batches": 16,
+        "Peak Buffered Rows": 512,
+        "Peak Buffered Bytes": 368952
+      }
+    }
+  ]
+}

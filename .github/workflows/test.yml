@@ -1,0 +1,20 @@
+name: PostgreSQL 17
+on: [push, pull_request]
+jobs:
+  build-and-test:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install PostgreSQL 17 development files
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y postgresql-common
+          sudo /usr/share/postgresql-common/pgdg/apt.postgresql.org.sh -y
+          sudo apt-get update
+          sudo apt-get install -y postgresql-17 postgresql-server-dev-17 postgresql-plpython3-17
+      - name: Build
+        run: make PG_CONFIG=/usr/lib/postgresql/17/bin/pg_config
+      - name: Install
+        run: sudo make PG_CONFIG=/usr/lib/postgresql/17/bin/pg_config install
+      - name: Run isolated database tests
+        run: JEV_TEST_SQL_PROVIDER=1 make PG_CONFIG=/usr/lib/postgresql/17/bin/pg_config check-local

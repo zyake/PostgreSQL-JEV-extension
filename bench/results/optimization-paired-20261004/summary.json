@@ -1,0 +1,246 @@
+[
+  {
+    "case": "unique",
+    "data": {
+      "rows": 8192,
+      "candidates": 8192,
+      "heap_bytes": 2080768,
+      "avg_input_bytes": 201.9,
+      "nonnull_candidates": 8108,
+      "global_unique_pairs": 8108
+    },
+    "validation_rows": 2027,
+    "validation_sha256": "77a2237c3e61bbad13d3d36fab99428a31946babf819fd645e3ce3dde938f0ed",
+    "results": [
+      {
+        "cache_kb": 0,
+        "median_ms": 21.398,
+        "min_ms": 21.009,
+        "max_ms": 22.23,
+        "samples_ms": [
+          21.495,
+          22.23,
+          21.398,
+          21.062,
+          21.009,
+          21.503,
+          21.267
+        ],
+        "counters": {
+          "Unique Inputs": 8108,
+          "Kernel Calls": 64,
+          "Cache Hits": 0,
+          "Cache Entries": 0,
+          "Cache Admission Skips": 0,
+          "Cache Used Bytes": 0
+        }
+      },
+      {
+        "cache_kb": 4096,
+        "median_ms": 22.954,
+        "min_ms": 22.648,
+        "max_ms": 23.696,
+        "samples_ms": [
+          23.107,
+          23.696,
+          22.648,
+          22.954,
+          22.825,
+          22.941,
+          23.671
+        ],
+        "counters": {
+          "Unique Inputs": 8108,
+          "Kernel Calls": 64,
+          "Cache Hits": 0,
+          "Cache Entries": 8108,
+          "Cache Admission Skips": 0,
+          "Cache Used Bytes": 2110168
+        }
+      }
+    ]
+  },
+  {
+    "case": "nearby_repeats",
+    "data": {
+      "rows": 8192,
+      "candidates": 8192,
+      "heap_bytes": 1998848,
+      "avg_input_bytes": 200.0,
+      "nonnull_candidates": 8108,
+      "global_unique_pairs": 1024
+    },
+    "validation_rows": 2024,
+    "validation_sha256": "4b26f09fd6f0779314ba70472e703ded0ea211105411952655870d98186c3e97",
+    "results": [
+      {
+        "cache_kb": 0,
+        "median_ms": 8.549,
+        "min_ms": 7.692,
+        "max_ms": 13.135,
+        "samples_ms": [
+          13.135,
+          10.696,
+          9.382,
+          8.549,
+          7.933,
+          7.891,
+          7.692
+        ],
+        "counters": {
+          "Unique Inputs": 1064,
+          "Kernel Calls": 64,
+          "Cache Hits": 0,
+          "Cache Entries": 0,
+          "Cache Admission Skips": 0,
+          "Cache Used Bytes": 0
+        }
+      },
+      {
+        "cache_kb": 4096,
+        "median_ms": 9.213,
+        "min_ms": 7.535,
+        "max_ms": 13.484,
+        "samples_ms": [
+          13.484,
+          11.351,
+          9.546,
+          9.213,
+          7.818,
+          7.535,
+          7.675
+        ],
+        "counters": {
+          "Unique Inputs": 1024,
+          "Kernel Calls": 64,
+          "Cache Hits": 119,
+          "Cache Entries": 1024,
+          "Cache Admission Skips": 0,
+          "Cache Used Bytes": 495016
+        }
+      }
+    ]
+  },
+  {
+    "case": "interleaved_repeats",
+    "data": {
+      "rows": 8192,
+      "candidates": 8192,
+      "heap_bytes": 2015232,
+      "avg_input_bytes": 200.0,
+      "nonnull_candidates": 8108,
+      "global_unique_pairs": 1024
+    },
+    "validation_rows": 2024,
+    "validation_sha256": "4b26f09fd6f0779314ba70472e703ded0ea211105411952655870d98186c3e97",
+    "results": [
+      {
+        "cache_kb": 0,
+        "median_ms": 21.568,
+        "min_ms": 21.261,
+        "max_ms": 22.025,
+        "samples_ms": [
+          21.261,
+          21.568,
+          21.275,
+          21.799,
+          21.508,
+          22.025,
+          21.746
+        ],
+        "counters": {
+          "Unique Inputs": 8108,
+          "Kernel Calls": 64,
+          "Cache Hits": 0,
+          "Cache Entries": 0,
+          "Cache Admission Skips": 0,
+          "Cache Used Bytes": 0
+        }
+      },
+      {
+        "cache_kb": 4096,
+        "median_ms": 6.027,
+        "min_ms": 5.884,
+        "max_ms": 6.186,
+        "samples_ms": [
+          6.158,
+          6.014,
+          6.139,
+          5.884,
+          6.186,
+          5.906,
+          6.027
+        ],
+        "counters": {
+          "Unique Inputs": 1024,
+          "Kernel Calls": 16,
+          "Cache Hits": 7084,
+          "Cache Entries": 1024,
+          "Cache Admission Skips": 0,
+          "Cache Used Bytes": 495016
+        }
+      }
+    ]
+  },
+  {
+    "case": "unique_10pct",
+    "data": {
+      "rows": 8192,
+      "candidates": 820,
+      "heap_bytes": 2080768,
+      "avg_input_bytes": 201.9,
+      "nonnull_candidates": 812,
+      "global_unique_pairs": 812
+    },
+    "validation_rows": 203,
+    "validation_sha256": "e121a2701459cfcf61fe9dfad714d3ddf8f2cc815d14a1c6e11939af2a704c58",
+    "results": [
+      {
+        "cache_kb": 0,
+        "median_ms": 2.687,
+        "min_ms": 2.608,
+        "max_ms": 3.383,
+        "samples_ms": [
+          2.868,
+          2.648,
+          2.637,
+          2.608,
+          3.383,
+          2.687,
+          2.751
+        ],
+        "counters": {
+          "Unique Inputs": 812,
+          "Kernel Calls": 7,
+          "Cache Hits": 0,
+          "Cache Entries": 0,
+          "Cache Admission Skips": 0,
+          "Cache Used Bytes": 0
+        }
+      },
+      {
+        "cache_kb": 4096,
+        "median_ms": 2.874,
+        "min_ms": 2.776,
+        "max_ms": 2.955,
+        "samples_ms": [
+          2.848,
+          2.94,
+          2.776,
+          2.874,
+          2.894,
+          2.805,
+          2.955
+        ],
+        "counters": {
+          "Unique Inputs": 812,
+          "Kernel Calls": 7,
+          "Cache Hits": 0,
+          "Cache Entries": 812,
+          "Cache Admission Skips": 0,
+          "Cache Used Bytes": 447208
+        }
+      }
+    ]
+  }
+]

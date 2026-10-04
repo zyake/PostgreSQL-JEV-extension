@@ -1,0 +1,6 @@
+comment = 'Explicit semantic batch evaluator and optional batched custom scans'
+default_version = '0.4.0'
+module_pathname = '$libdir/jev'
+relocatable = false
+schema = 'jev'
+superuser = true

@@ -1,0 +1,72 @@
+{
+  "started_utc": "2026-10-03T12:57:06.609288+00:00",
+  "postgres": "PostgreSQL 17.10 (Homebrew)",
+  "seed": 20261004,
+  "arguments": {
+    "output": "bench/results/profile-20261003",
+    "kernel_rows": 8192,
+    "live_rows": 128,
+    "repeats": 5,
+    "no_sampling": false,
+    "pg_config": "pg_config",
+    "models": "/private/tmp/jev-ollama-models",
+    "model": "all-minilm:22m",
+    "ollama_port": 11439
+  },
+  "source_sha256": {
+    "src/jev_planner.c": "b10af2977cdbd0b19b7c0d002cc7e8eb4e12703fad05a5e65d6749e976b51048",
+    "sql/jev--0.1.0.sql": "8ce680a03ce9557db4f6df04d566d05c50af14abd3b7ea251a228393eb5c9f5a",
+    "providers/ollama_provider.py": "cebf9fceeb21464acb2bd1bb7b3c0620e4c78c0375323573a873d21d221670dc",
+    "bench/run.py": "65c0aa7e2ee61c3313c66163bce67196f41005c1ed8ee762f99c967214a5bb04",
+    "bench/profile_run.py": "c3862e2710623620b376b7f8f7f0a4da4f638503a45406d5ce9b440151cfc594",
+    "bench/profile_adapter.py": "3afee10db2575c7d14ad4627eea969d2c3abef614742ab38b15bd282dfdc7825"
+  },
+  "ollama": {
+    "config": {
+      "endpoint": "http://127.0.0.1:11439",
+      "model": "all-minilm:22m",
+      "model_digest": "1b226e2802dbb772b5fc32a58f103ca1804ef7501331012de126ab22f67475ef",
+      "expected_dimensions": 384
+    },
+    "version": {
+      "version": "0.22.0"
+    },
+    "warmup": {
+      "model": "all-minilm:22m",
+      "total_duration": 607209750,
+      "load_duration": 594056541,
+      "prompt_eval_count": 7
+    }
+  },
+  "stack_sampling": [
+    {
+      "mode": "scalar",
+      "status": 0,
+      "backend_pid": 94824,
+      "repeated_queries": 10,
+      "elapsed_seconds": 5.454816207988188,
+      "file": "stack_scalar.txt"
+    },
+    {
+      "mode": "batch_128",
+      "status": 0,
+      "backend_pid": 94824,
+      "repeated_queries": 207,
+      "elapsed_seconds": 5.2640517500112765,
+      "file": "stack_batch_128.txt"
+    }
+  ],
+  "nested_sql_diagnostic": [
+    {
+      "mode": "scalar",
+      "start_byte": 495,
+      "end_byte": 376491
+    },
+    {
+      "mode": "batch_128",
+      "start_byte": 376491,
+      "end_byte": 399709
+    }
+  ],
+  "finished_utc": "2026-10-03T12:58:33.171651+00:00"
+}

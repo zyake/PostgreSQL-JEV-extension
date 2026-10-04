@@ -1,0 +1,19 @@
+{
+  "started_utc": "2026-10-04T07:18:19.954093+00:00",
+  "postgres": "PostgreSQL 17.10 (Homebrew)",
+  "platform": "macOS-27.0-arm64-arm-64bit-Mach-O",
+  "rows": 8192,
+  "repeats": 7,
+  "seed": 20261005,
+  "providers": "deterministic equality; fallback primary has synthetic confidence, no network/model",
+  "methodology": "One switch changed at a time; warm full-result validation; randomized ON/OFF order each round. Scan/cascade EXPLAIN Execution Time; reduction server clock includes copies, passes, inference and final join, excludes transaction cleanup. Fixture creation excluded.",
+  "source_sha256": {
+    "src/jev_planner.c": "a1693942e0877cd29610bda4add3eef17823253943935554329c4128e99b5213",
+    "sql/jev--0.4.0.sql": "3d9d8ca66f128dc8745f933c848256d6f741695148691d38da1ce9d05d0f598f",
+    "bench/run.py": "2f7cb3fa09537901d9b068d5cf0ccc5167da6f52406ec27d527baab3866365c0",
+    "bench/switch_compare.py": "f0800c39f2b7299491d24b6374c75a1909f4cd5937153979d9469fb8ecc7fdf2"
+  },
+  "library_sha256": "c13943b704fd059857e0e377eedeabe6b3142776455d9cb26eee6754b733884b",
+  "completed_utc": "2026-10-04T07:18:27.044281+00:00",
+  "source_and_build_unchanged": true
+}

@@ -1,0 +1,614 @@
+[
+  {
+    "case": "full_scan",
+    "validation": {
+      "scalar": {
+        "rows": 8108,
+        "sha256": "0d99fa64fcf7f3110113ff305c933f7cd79bbead77af53806a692e2088e1c3cb"
+      },
+      "auto": {
+        "rows": 8108,
+        "sha256": "0d99fa64fcf7f3110113ff305c933f7cd79bbead77af53806a692e2088e1c3cb"
+      },
+      "forced": {
+        "rows": 8108,
+        "sha256": "0d99fa64fcf7f3110113ff305c933f7cd79bbead77af53806a692e2088e1c3cb"
+      }
+    },
+    "results": [
+      {
+        "mode": "scalar",
+        "chosen_path": [
+          "Seq Scan"
+        ],
+        "median_ms": 422.939,
+        "min_ms": 419.415,
+        "max_ms": 425.59,
+        "samples_ms": [
+          419.415,
+          424.242,
+          422.492,
+          422.939,
+          425.59
+        ],
+        "median_planning_ms": 0.024,
+        "representative_scan": [
+          {
+            "Node Type": "Seq Scan",
+            "Parallel Aware": false,
+            "Async Capable": false,
+            "Relation Name": "bench_items",
+            "Alias": "bench_items",
+            "Startup Cost": 0.0,
+            "Total Cost": 2189.92,
+            "Plan Rows": 2731,
+            "Plan Width": 4,
+            "Actual Rows": 8108,
+            "Actual Loops": 1,
+            "Filter": "jev.semantic_match('exact'::text, left_text, right_text)",
+            "Rows Removed by Filter": 84,
+            "Shared Hit Blocks": 64924,
+            "Shared Read Blocks": 0,
+            "Shared Dirtied Blocks": 0,
+            "Shared Written Blocks": 0,
+            "Local Hit Blocks": 0,
+            "Local Read Blocks": 0,
+            "Local Dirtied Blocks": 0,
+            "Local Written Blocks": 0,
+            "Temp Read Blocks": 0,
+            "Temp Written Blocks": 0
+          }
+        ]
+      },
+      {
+        "mode": "auto",
+        "chosen_path": [
+          "JEVSemanticScan"
+        ],
+        "median_ms": 18.027,
+        "min_ms": 17.399,
+        "max_ms": 18.31,
+        "samples_ms": [
+          17.719,
+          17.399,
+          18.027,
+          18.24,
+          18.31
+        ],
+        "median_planning_ms": 0.055,
+        "representative_scan": [
+          {
+            "Node Type": "Custom Scan",
+            "Custom Plan Provider": "JEVSemanticScan",
+            "Parallel Aware": false,
+            "Async Capable": false,
+            "Relation Name": "bench_items",
+            "Alias": "bench_items",
+            "Startup Cost": 7.59,
+            "Total Cost": 485.6,
+            "Plan Rows": 2731,
+            "Plan Width": 4,
+            "Actual Rows": 8108,
+            "Actual Loops": 1,
+            "Filter": "jev.semantic_match('exact'::text, left_text, right_text)",
+            "Rows Removed by Filter": 84,
+            "Semantic Evaluation": "batched",
+            "Batch Size": 128,
+            "Batch Memory Target": 1024,
+            "Result Cache Limit": 0,
+            "Cost Model": "batch-v1",
+            "Estimate Assumptions": "PostgreSQL estimates (including default semantic selectivity); configured costs; no NULL or reuse discount",
+            "Estimated Candidate Rows": 8192.0,
+            "Estimated Semantic Selectivity": 0.333333,
+            "Estimated Batch Rows": 128,
+            "Estimated Kernel Calls": 64,
+            "Estimated Buffered Row Bytes": 187,
+            "Estimated Batch Work Cost": 343.68,
+            "Scalar Seq Scan Total Cost": 2189.92,
+            "Planned Batch Size": 128,
+            "Planned Batch Memory": 1024,
+            "Batch Call Cost": 100.0,
+            "Batch Input Cost": 10.0,
+            "Forced Custom Path": false,
+            "Rows Read": 8192,
+            "Candidate Rows": 8192,
+            "Evaluated Match Rows": 8108,
+            "Observed Match Fraction": 0.989746,
+            "Unique Inputs": 8108,
+            "Reused Inputs": 0,
+            "Provider Calls": 64,
+            "Provider Calls Meaning": "legacy alias for Kernel Calls",
+            "Kernel Calls": 64,
+            "Cache Hits": 0,
+            "Cache Entries": 0,
+            "Cache Used Bytes": 0,
+            "Cache Allocated Bytes": 0,
+            "Cache Admission Skips": 0,
+            "Batches": 64,
+            "Peak Buffered Rows": 128,
+            "Peak Buffered Bytes": 21272,
+            "Kernel Time": 15.782,
+            "Shared Hit Blocks": 572,
+            "Shared Read Blocks": 0,
+            "Shared Dirtied Blocks": 0,
+            "Shared Written Blocks": 0,
+            "Local Hit Blocks": 0,
+            "Local Read Blocks": 0,
+            "Local Dirtied Blocks": 0,
+            "Local Written Blocks": 0,
+            "Temp Read Blocks": 0,
+            "Temp Written Blocks": 0
+          }
+        ]
+      },
+      {
+        "mode": "forced",
+        "chosen_path": [
+          "JEVSemanticScan"
+        ],
+        "median_ms": 17.489,
+        "min_ms": 17.398,
+        "max_ms": 17.528,
+        "samples_ms": [
+          17.528,
+          17.489,
+          17.398,
+          17.409,
+          17.501
+        ],
+        "median_planning_ms": 0.058,
+        "representative_scan": [
+          {
+            "Node Type": "Custom Scan",
+            "Custom Plan Provider": "JEVSemanticScan",
+            "Parallel Aware": false,
+            "Async Capable": false,
+            "Relation Name": "bench_items",
+            "Alias": "bench_items",
+            "Startup Cost": 7.59,
+            "Total Cost": 485.6,
+            "Plan Rows": 2731,
+            "Plan Width": 4,
+            "Actual Rows": 8108,
+            "Actual Loops": 1,
+            "Filter": "jev.semantic_match('exact'::text, left_text, right_text)",
+            "Rows Removed by Filter": 84,
+            "Semantic Evaluation": "batched",
+            "Batch Size": 128,
+            "Batch Memory Target": 1024,
+            "Result Cache Limit": 0,
+            "Cost Model": "batch-v1",
+            "Estimate Assumptions": "PostgreSQL estimates (including default semantic selectivity); configured costs; no NULL or reuse discount",
+            "Estimated Candidate Rows": 8192.0,
+            "Estimated Semantic Selectivity": 0.333333,
+            "Estimated Batch Rows": 128,
+            "Estimated Kernel Calls": 64,
+            "Estimated Buffered Row Bytes": 187,
+            "Estimated Batch Work Cost": 343.68,
+            "Scalar Seq Scan Total Cost": 2189.92,
+            "Planned Batch Size": 128,
+            "Planned Batch Memory": 1024,
+            "Batch Call Cost": 100.0,
+            "Batch Input Cost": 10.0,
+            "Forced Custom Path": true,
+            "Rows Read": 8192,
+            "Candidate Rows": 8192,
+            "Evaluated Match Rows": 8108,
+            "Observed Match Fraction": 0.989746,
+            "Unique Inputs": 8108,
+            "Reused Inputs": 0,
+            "Provider Calls": 64,
+            "Provider Calls Meaning": "legacy alias for Kernel Calls",
+            "Kernel Calls": 64,
+            "Cache Hits": 0,
+            "Cache Entries": 0,
+            "Cache Used Bytes": 0,
+            "Cache Allocated Bytes": 0,
+            "Cache Admission Skips": 0,
+            "Batches": 64,
+            "Peak Buffered Rows": 128,
+            "Peak Buffered Bytes": 21272,
+            "Kernel Time": 15.579,
+            "Shared Hit Blocks": 572,
+            "Shared Read Blocks": 0,
+            "Shared Dirtied Blocks": 0,
+            "Shared Written Blocks": 0,
+            "Local Hit Blocks": 0,
+            "Local Read Blocks": 0,
+            "Local Dirtied Blocks": 0,
+            "Local Written Blocks": 0,
+            "Temp Read Blocks": 0,
+            "Temp Written Blocks": 0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "case": "selective_index",
+    "validation": {
+      "scalar": {
+        "rows": 1,
+        "sha256": "22dc41a3fe745bb012edd2fbff979b803ac45a372841e52ba54992bdbc1e1446"
+      },
+      "auto": {
+        "rows": 1,
+        "sha256": "22dc41a3fe745bb012edd2fbff979b803ac45a372841e52ba54992bdbc1e1446"
+      },
+      "forced": {
+        "rows": 1,
+        "sha256": "22dc41a3fe745bb012edd2fbff979b803ac45a372841e52ba54992bdbc1e1446"
+      }
+    },
+    "results": [
+      {
+        "mode": "scalar",
+        "chosen_path": [
+          "Index Scan"
+        ],
+        "median_ms": 0.091,
+        "min_ms": 0.082,
+        "max_ms": 0.096,
+        "samples_ms": [
+          0.096,
+          0.091,
+          0.092,
+          0.087,
+          0.082
+        ],
+        "median_planning_ms": 0.01,
+        "representative_scan": [
+          {
+            "Node Type": "Index Scan",
+            "Parallel Aware": false,
+            "Async Capable": false,
+            "Scan Direction": "Forward",
+            "Index Name": "bench_items_id_idx",
+            "Relation Name": "bench_items",
+            "Alias": "bench_items",
+            "Startup Cost": 0.28,
+            "Total Cost": 8.55,
+            "Plan Rows": 1,
+            "Plan Width": 4,
+            "Actual Rows": 1,
+            "Actual Loops": 1,
+            "Index Cond": "(id = 1)",
+            "Rows Removed by Index Recheck": 0,
+            "Filter": "jev.semantic_match('exact'::text, left_text, right_text)",
+            "Rows Removed by Filter": 0,
+            "Shared Hit Blocks": 11,
+            "Shared Read Blocks": 0,
+            "Shared Dirtied Blocks": 0,
+            "Shared Written Blocks": 0,
+            "Local Hit Blocks": 0,
+            "Local Read Blocks": 0,
+            "Local Dirtied Blocks": 0,
+            "Local Written Blocks": 0,
+            "Temp Read Blocks": 0,
+            "Temp Written Blocks": 0
+          }
+        ]
+      },
+      {
+        "mode": "auto",
+        "chosen_path": [
+          "Index Scan"
+        ],
+        "median_ms": 0.088,
+        "min_ms": 0.082,
+        "max_ms": 0.103,
+        "samples_ms": [
+          0.088,
+          0.103,
+          0.093,
+          0.084,
+          0.082
+        ],
+        "median_planning_ms": 0.02,
+        "representative_scan": [
+          {
+            "Node Type": "Index Scan",
+            "Parallel Aware": false,
+            "Async Capable": false,
+            "Scan Direction": "Forward",
+            "Index Name": "bench_items_id_idx",
+            "Relation Name": "bench_items",
+            "Alias": "bench_items",
+            "Startup Cost": 0.28,
+            "Total Cost": 8.55,
+            "Plan Rows": 1,
+            "Plan Width": 4,
+            "Actual Rows": 1,
+            "Actual Loops": 1,
+            "Index Cond": "(id = 1)",
+            "Rows Removed by Index Recheck": 0,
+            "Filter": "jev.semantic_match('exact'::text, left_text, right_text)",
+            "Rows Removed by Filter": 0,
+            "Shared Hit Blocks": 11,
+            "Shared Read Blocks": 0,
+            "Shared Dirtied Blocks": 0,
+            "Shared Written Blocks": 0,
+            "Local Hit Blocks": 0,
+            "Local Read Blocks": 0,
+            "Local Dirtied Blocks": 0,
+            "Local Written Blocks": 0,
+            "Temp Read Blocks": 0,
+            "Temp Written Blocks": 0
+          }
+        ]
+      },
+      {
+        "mode": "forced",
+        "chosen_path": [
+          "JEVSemanticScan"
+        ],
+        "median_ms": 0.508,
+        "min_ms": 0.495,
+        "max_ms": 0.538,
+        "samples_ms": [
+          0.538,
+          0.519,
+          0.502,
+          0.508,
+          0.495
+        ],
+        "median_planning_ms": 0.025,
+        "representative_scan": [
+          {
+            "Node Type": "Custom Scan",
+            "Custom Plan Provider": "JEVSemanticScan",
+            "Parallel Aware": false,
+            "Async Capable": false,
+            "Relation Name": "bench_items",
+            "Alias": "bench_items",
+            "Startup Cost": 162.69,
+            "Total Cost": 162.69,
+            "Plan Rows": 1,
+            "Plan Width": 4,
+            "Actual Rows": 1,
+            "Actual Loops": 1,
+            "Filter": "((id = 1) AND jev.semantic_match('exact'::text, left_text, right_text))",
+            "Rows Removed by Filter": 8191,
+            "Semantic Evaluation": "batched",
+            "Batch Size": 128,
+            "Batch Memory Target": 1024,
+            "Result Cache Limit": 0,
+            "Cost Model": "batch-v1",
+            "Estimate Assumptions": "PostgreSQL estimates (including default semantic selectivity); configured costs; no NULL or reuse discount",
+            "Estimated Candidate Rows": 1.0,
+            "Estimated Semantic Selectivity": 0.333333,
+            "Estimated Batch Rows": 128,
+            "Estimated Kernel Calls": 1,
+            "Estimated Buffered Row Bytes": 187,
+            "Estimated Batch Work Cost": 0.29,
+            "Scalar Seq Scan Total Cost": 2210.4,
+            "Planned Batch Size": 128,
+            "Planned Batch Memory": 1024,
+            "Batch Call Cost": 100.0,
+            "Batch Input Cost": 10.0,
+            "Forced Custom Path": true,
+            "Rows Read": 8192,
+            "Candidate Rows": 1,
+            "Evaluated Match Rows": 1,
+            "Observed Match Fraction": 1.0,
+            "Unique Inputs": 1,
+            "Reused Inputs": 0,
+            "Provider Calls": 1,
+            "Provider Calls Meaning": "legacy alias for Kernel Calls",
+            "Kernel Calls": 1,
+            "Cache Hits": 0,
+            "Cache Entries": 0,
+            "Cache Used Bytes": 0,
+            "Cache Allocated Bytes": 0,
+            "Cache Admission Skips": 0,
+            "Batches": 1,
+            "Peak Buffered Rows": 1,
+            "Peak Buffered Bytes": 149,
+            "Kernel Time": 0.117,
+            "Shared Hit Blocks": 68,
+            "Shared Read Blocks": 0,
+            "Shared Dirtied Blocks": 0,
+            "Shared Written Blocks": 0,
+            "Local Hit Blocks": 0,
+            "Local Read Blocks": 0,
+            "Local Dirtied Blocks": 0,
+            "Local Written Blocks": 0,
+            "Temp Read Blocks": 0,
+            "Temp Written Blocks": 0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "case": "limit_one",
+    "validation": {
+      "scalar": {
+        "rows": 1,
+        "sha256": "22dc41a3fe745bb012edd2fbff979b803ac45a372841e52ba54992bdbc1e1446"
+      },
+      "auto": {
+        "rows": 1,
+        "sha256": "22dc41a3fe745bb012edd2fbff979b803ac45a372841e52ba54992bdbc1e1446"
+      },
+      "forced": {
+        "rows": 1,
+        "sha256": "22dc41a3fe745bb012edd2fbff979b803ac45a372841e52ba54992bdbc1e1446"
+      }
+    },
+    "results": [
+      {
+        "mode": "scalar",
+        "chosen_path": [
+          "Seq Scan"
+        ],
+        "median_ms": 0.084,
+        "min_ms": 0.08,
+        "max_ms": 0.092,
+        "samples_ms": [
+          0.092,
+          0.085,
+          0.082,
+          0.084,
+          0.08
+        ],
+        "median_planning_ms": 0.006,
+        "representative_scan": [
+          {
+            "Node Type": "Seq Scan",
+            "Parent Relationship": "Outer",
+            "Parallel Aware": false,
+            "Async Capable": false,
+            "Relation Name": "bench_items",
+            "Alias": "bench_items",
+            "Startup Cost": 0.0,
+            "Total Cost": 2189.92,
+            "Plan Rows": 2731,
+            "Plan Width": 4,
+            "Actual Rows": 1,
+            "Actual Loops": 1,
+            "Filter": "jev.semantic_match('exact'::text, left_text, right_text)",
+            "Rows Removed by Filter": 0,
+            "Shared Hit Blocks": 10,
+            "Shared Read Blocks": 0,
+            "Shared Dirtied Blocks": 0,
+            "Shared Written Blocks": 0,
+            "Local Hit Blocks": 0,
+            "Local Read Blocks": 0,
+            "Local Dirtied Blocks": 0,
+            "Local Written Blocks": 0,
+            "Temp Read Blocks": 0,
+            "Temp Written Blocks": 0
+          }
+        ]
+      },
+      {
+        "mode": "auto",
+        "chosen_path": [
+          "Seq Scan"
+        ],
+        "median_ms": 0.091,
+        "min_ms": 0.083,
+        "max_ms": 0.097,
+        "samples_ms": [
+          0.091,
+          0.084,
+          0.097,
+          0.083,
+          0.093
+        ],
+        "median_planning_ms": 0.018,
+        "representative_scan": [
+          {
+            "Node Type": "Seq Scan",
+            "Parent Relationship": "Outer",
+            "Parallel Aware": false,
+            "Async Capable": false,
+            "Relation Name": "bench_items",
+            "Alias": "bench_items",
+            "Startup Cost": 0.0,
+            "Total Cost": 2189.92,
+            "Plan Rows": 2731,
+            "Plan Width": 4,
+            "Actual Rows": 1,
+            "Actual Loops": 1,
+            "Filter": "jev.semantic_match('exact'::text, left_text, right_text)",
+            "Rows Removed by Filter": 0,
+            "Shared Hit Blocks": 10,
+            "Shared Read Blocks": 0,
+            "Shared Dirtied Blocks": 0,
+            "Shared Written Blocks": 0,
+            "Local Hit Blocks": 0,
+            "Local Read Blocks": 0,
+            "Local Dirtied Blocks": 0,
+            "Local Written Blocks": 0,
+            "Temp Read Blocks": 0,
+            "Temp Written Blocks": 0
+          }
+        ]
+      },
+      {
+        "mode": "forced",
+        "chosen_path": [
+          "JEVSemanticScan"
+        ],
+        "median_ms": 0.318,
+        "min_ms": 0.306,
+        "max_ms": 0.336,
+        "samples_ms": [
+          0.33,
+          0.312,
+          0.336,
+          0.318,
+          0.306
+        ],
+        "median_planning_ms": 0.018,
+        "representative_scan": [
+          {
+            "Node Type": "Custom Scan",
+            "Parent Relationship": "Outer",
+            "Custom Plan Provider": "JEVSemanticScan",
+            "Parallel Aware": false,
+            "Async Capable": false,
+            "Relation Name": "bench_items",
+            "Alias": "bench_items",
+            "Startup Cost": 7.59,
+            "Total Cost": 485.6,
+            "Plan Rows": 2731,
+            "Plan Width": 4,
+            "Actual Rows": 1,
+            "Actual Loops": 1,
+            "Filter": "jev.semantic_match('exact'::text, left_text, right_text)",
+            "Rows Removed by Filter": 0,
+            "Semantic Evaluation": "batched",
+            "Batch Size": 128,
+            "Batch Memory Target": 1024,
+            "Result Cache Limit": 0,
+            "Cost Model": "batch-v1",
+            "Estimate Assumptions": "PostgreSQL estimates (including default semantic selectivity); configured costs; no NULL or reuse discount",
+            "Estimated Candidate Rows": 8192.0,
+            "Estimated Semantic Selectivity": 0.333333,
+            "Estimated Batch Rows": 128,
+            "Estimated Kernel Calls": 64,
+            "Estimated Buffered Row Bytes": 187,
+            "Estimated Batch Work Cost": 343.68,
+            "Scalar Seq Scan Total Cost": 2189.92,
+            "Planned Batch Size": 128,
+            "Planned Batch Memory": 1024,
+            "Batch Call Cost": 100.0,
+            "Batch Input Cost": 10.0,
+            "Forced Custom Path": true,
+            "Rows Read": 128,
+            "Candidate Rows": 128,
+            "Evaluated Match Rows": 127,
+            "Observed Match Fraction": 0.992188,
+            "Unique Inputs": 127,
+            "Reused Inputs": 0,
+            "Provider Calls": 1,
+            "Provider Calls Meaning": "legacy alias for Kernel Calls",
+            "Kernel Calls": 1,
+            "Cache Hits": 0,
+            "Cache Entries": 0,
+            "Cache Used Bytes": 0,
+            "Cache Allocated Bytes": 0,
+            "Cache Admission Skips": 0,
+            "Batches": 1,
+            "Peak Buffered Rows": 128,
+            "Peak Buffered Bytes": 19866,
+            "Kernel Time": 0.299,
+            "Shared Hit Blocks": 10,
+            "Shared Read Blocks": 0,
+            "Shared Dirtied Blocks": 0,
+            "Shared Written Blocks": 0,
+            "Local Hit Blocks": 0,
+            "Local Read Blocks": 0,
+            "Local Dirtied Blocks": 0,
+            "Local Written Blocks": 0,
+            "Temp Read Blocks": 0,
+            "Temp Written Blocks": 0
+          }
+        ]
+      }
+    ]
+  }
+]

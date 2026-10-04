@@ -1,0 +1,36 @@
+{
+  "Plan": {
+    "Node Type": "Aggregate",
+    "Strategy": "Plain",
+    "Partial Mode": "Simple",
+    "Parallel Aware": false,
+    "Async Capable": false,
+    "Startup Cost": 2390.75,
+    "Total Cost": 2390.76,
+    "Plan Rows": 1,
+    "Plan Width": 8,
+    "Actual Rows": 1,
+    "Actual Loops": 1,
+    "Plans": [
+      {
+        "Node Type": "Seq Scan",
+        "Parent Relationship": "Outer",
+        "Parallel Aware": false,
+        "Async Capable": false,
+        "Relation Name": "bench_items",
+        "Alias": "bench_items",
+        "Startup Cost": 0.0,
+        "Total Cost": 2383.92,
+        "Plan Rows": 2731,
+        "Plan Width": 0,
+        "Actual Rows": 2027,
+        "Actual Loops": 1,
+        "Filter": "(active AND jev.semantic_match('exact'::text, left_text, right_text))",
+        "Rows Removed by Filter": 6165
+      }
+    ]
+  },
+  "Planning Time": 0.022,
+  "Triggers": [],
+  "Execution Time": 416.603
+}

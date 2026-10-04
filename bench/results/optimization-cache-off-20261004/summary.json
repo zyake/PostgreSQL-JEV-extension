@@ -1,0 +1,774 @@
+[
+  {
+    "case": {
+      "name": "kernel_unique_all",
+      "suite": "kernel",
+      "duplicates": 1,
+      "interleaved": false,
+      "select_every": 1
+    },
+    "data": {
+      "rows": 8192,
+      "candidates": 8192,
+      "heap_bytes": 2080768,
+      "avg_input_bytes": 201.9,
+      "nonnull_candidates": 8108,
+      "global_unique_pairs": 8108
+    },
+    "validation": {
+      "native": {
+        "rows": 2027,
+        "sha256": "77a2237c3e61bbad13d3d36fab99428a31946babf819fd645e3ce3dde938f0ed"
+      },
+      "scalar": {
+        "rows": 2027,
+        "sha256": "77a2237c3e61bbad13d3d36fab99428a31946babf819fd645e3ce3dde938f0ed"
+      },
+      "batch_1": {
+        "rows": 2027,
+        "sha256": "77a2237c3e61bbad13d3d36fab99428a31946babf819fd645e3ce3dde938f0ed"
+      },
+      "batch_16": {
+        "rows": 2027,
+        "sha256": "77a2237c3e61bbad13d3d36fab99428a31946babf819fd645e3ce3dde938f0ed"
+      },
+      "batch_128": {
+        "rows": 2027,
+        "sha256": "77a2237c3e61bbad13d3d36fab99428a31946babf819fd645e3ce3dde938f0ed"
+      },
+      "batch_512": {
+        "rows": 2027,
+        "sha256": "77a2237c3e61bbad13d3d36fab99428a31946babf819fd645e3ce3dde938f0ed"
+      }
+    },
+    "results": [
+      {
+        "mode": "native",
+        "median_ms": 0.636,
+        "min_ms": 0.598,
+        "max_ms": 0.717,
+        "samples_ms": [
+          0.625,
+          0.598,
+          0.672,
+          0.636,
+          0.717
+        ],
+        "median_planning_ms": 0.031
+      },
+      {
+        "mode": "scalar",
+        "median_ms": 414.766,
+        "min_ms": 413.588,
+        "max_ms": 423.2,
+        "samples_ms": [
+          413.588,
+          414.549,
+          414.766,
+          415.322,
+          423.2
+        ],
+        "median_planning_ms": 0.018
+      },
+      {
+        "mode": "batch_1",
+        "median_ms": 416.723,
+        "min_ms": 415.397,
+        "max_ms": 446.543,
+        "samples_ms": [
+          416.823,
+          416.468,
+          415.397,
+          446.543,
+          416.723
+        ],
+        "median_planning_ms": 0.043,
+        "counters": {
+          "Rows Read": 8192,
+          "Candidate Rows": 8192,
+          "Unique Inputs": 8108,
+          "Reused Inputs": 0,
+          "Kernel Calls": 8108,
+          "Provider Calls": 8108,
+          "Batches": 8192,
+          "Peak Buffered Rows": 1,
+          "Peak Buffered Bytes": 1073,
+          "Cache Hits": 0,
+          "Cache Entries": 0,
+          "Cache Used Bytes": 0,
+          "Cache Allocated Bytes": 0,
+          "Cache Admission Skips": 0
+        }
+      },
+      {
+        "mode": "batch_16",
+        "median_ms": 45.629,
+        "min_ms": 45.382,
+        "max_ms": 46.601,
+        "samples_ms": [
+          45.609,
+          45.629,
+          45.774,
+          45.382,
+          46.601
+        ],
+        "median_planning_ms": 0.068,
+        "counters": {
+          "Rows Read": 8192,
+          "Candidate Rows": 8192,
+          "Unique Inputs": 8108,
+          "Reused Inputs": 0,
+          "Kernel Calls": 512,
+          "Provider Calls": 512,
+          "Batches": 512,
+          "Peak Buffered Rows": 16,
+          "Peak Buffered Bytes": 11732,
+          "Cache Hits": 0,
+          "Cache Entries": 0,
+          "Cache Used Bytes": 0,
+          "Cache Allocated Bytes": 0,
+          "Cache Admission Skips": 0
+        }
+      },
+      {
+        "mode": "batch_128",
+        "median_ms": 21.433,
+        "min_ms": 21.26,
+        "max_ms": 22.433,
+        "samples_ms": [
+          22.016,
+          21.26,
+          21.433,
+          22.433,
+          21.401
+        ],
+        "median_planning_ms": 0.049,
+        "counters": {
+          "Rows Read": 8192,
+          "Candidate Rows": 8192,
+          "Unique Inputs": 8108,
+          "Reused Inputs": 0,
+          "Kernel Calls": 64,
+          "Provider Calls": 64,
+          "Batches": 64,
+          "Peak Buffered Rows": 128,
+          "Peak Buffered Bytes": 93300,
+          "Cache Hits": 0,
+          "Cache Entries": 0,
+          "Cache Used Bytes": 0,
+          "Cache Allocated Bytes": 0,
+          "Cache Admission Skips": 0
+        }
+      },
+      {
+        "mode": "batch_512",
+        "median_ms": 19.032,
+        "min_ms": 18.513,
+        "max_ms": 19.185,
+        "samples_ms": [
+          18.782,
+          18.513,
+          19.093,
+          19.185,
+          19.032
+        ],
+        "median_planning_ms": 0.052,
+        "counters": {
+          "Rows Read": 8192,
+          "Candidate Rows": 8192,
+          "Unique Inputs": 8108,
+          "Reused Inputs": 0,
+          "Kernel Calls": 16,
+          "Provider Calls": 16,
+          "Batches": 16,
+          "Peak Buffered Rows": 512,
+          "Peak Buffered Bytes": 372747,
+          "Cache Hits": 0,
+          "Cache Entries": 0,
+          "Cache Used Bytes": 0,
+          "Cache Allocated Bytes": 0,
+          "Cache Admission Skips": 0
+        }
+      }
+    ]
+  },
+  {
+    "case": {
+      "name": "kernel_clustered_all",
+      "suite": "kernel",
+      "duplicates": 8,
+      "interleaved": false,
+      "select_every": 1
+    },
+    "data": {
+      "rows": 8192,
+      "candidates": 8192,
+      "heap_bytes": 1998848,
+      "avg_input_bytes": 200.0,
+      "nonnull_candidates": 8108,
+      "global_unique_pairs": 1024
+    },
+    "validation": {
+      "native": {
+        "rows": 2024,
+        "sha256": "4b26f09fd6f0779314ba70472e703ded0ea211105411952655870d98186c3e97"
+      },
+      "scalar": {
+        "rows": 2024,
+        "sha256": "4b26f09fd6f0779314ba70472e703ded0ea211105411952655870d98186c3e97"
+      },
+      "batch_1": {
+        "rows": 2024,
+        "sha256": "4b26f09fd6f0779314ba70472e703ded0ea211105411952655870d98186c3e97"
+      },
+      "batch_16": {
+        "rows": 2024,
+        "sha256": "4b26f09fd6f0779314ba70472e703ded0ea211105411952655870d98186c3e97"
+      },
+      "batch_128": {
+        "rows": 2024,
+        "sha256": "4b26f09fd6f0779314ba70472e703ded0ea211105411952655870d98186c3e97"
+      },
+      "batch_512": {
+        "rows": 2024,
+        "sha256": "4b26f09fd6f0779314ba70472e703ded0ea211105411952655870d98186c3e97"
+      }
+    },
+    "results": [
+      {
+        "mode": "native",
+        "median_ms": 0.607,
+        "min_ms": 0.588,
+        "max_ms": 0.62,
+        "samples_ms": [
+          0.607,
+          0.62,
+          0.607,
+          0.61,
+          0.588
+        ],
+        "median_planning_ms": 0.032
+      },
+      {
+        "mode": "scalar",
+        "median_ms": 414.321,
+        "min_ms": 413.143,
+        "max_ms": 424.581,
+        "samples_ms": [
+          413.143,
+          413.599,
+          414.321,
+          414.445,
+          424.581
+        ],
+        "median_planning_ms": 0.015
+      },
+      {
+        "mode": "batch_1",
+        "median_ms": 414.604,
+        "min_ms": 414.13,
+        "max_ms": 415.301,
+        "samples_ms": [
+          414.604,
+          414.13,
+          414.49,
+          415.301,
+          415.16
+        ],
+        "median_planning_ms": 0.032,
+        "counters": {
+          "Rows Read": 8192,
+          "Candidate Rows": 8192,
+          "Unique Inputs": 8108,
+          "Reused Inputs": 0,
+          "Kernel Calls": 8108,
+          "Provider Calls": 8108,
+          "Batches": 8192,
+          "Peak Buffered Rows": 1,
+          "Peak Buffered Bytes": 1073,
+          "Cache Hits": 0,
+          "Cache Entries": 0,
+          "Cache Used Bytes": 0,
+          "Cache Allocated Bytes": 0,
+          "Cache Admission Skips": 0
+        }
+      },
+      {
+        "mode": "batch_16",
+        "median_ms": 30.8,
+        "min_ms": 30.536,
+        "max_ms": 31.052,
+        "samples_ms": [
+          30.536,
+          30.91,
+          30.726,
+          30.8,
+          31.052
+        ],
+        "median_planning_ms": 0.042,
+        "counters": {
+          "Rows Read": 8192,
+          "Candidate Rows": 8192,
+          "Unique Inputs": 1207,
+          "Reused Inputs": 6901,
+          "Kernel Calls": 512,
+          "Provider Calls": 512,
+          "Batches": 512,
+          "Peak Buffered Rows": 16,
+          "Peak Buffered Bytes": 9734,
+          "Cache Hits": 0,
+          "Cache Entries": 0,
+          "Cache Used Bytes": 0,
+          "Cache Allocated Bytes": 0,
+          "Cache Admission Skips": 0
+        }
+      },
+      {
+        "mode": "batch_128",
+        "median_ms": 8.227,
+        "min_ms": 7.505,
+        "max_ms": 8.301,
+        "samples_ms": [
+          8.227,
+          8.301,
+          7.505,
+          8.294,
+          7.962
+        ],
+        "median_planning_ms": 0.043,
+        "counters": {
+          "Rows Read": 8192,
+          "Candidate Rows": 8192,
+          "Unique Inputs": 1064,
+          "Reused Inputs": 7044,
+          "Kernel Calls": 64,
+          "Provider Calls": 64,
+          "Batches": 64,
+          "Peak Buffered Rows": 128,
+          "Peak Buffered Bytes": 64596,
+          "Cache Hits": 0,
+          "Cache Entries": 0,
+          "Cache Used Bytes": 0,
+          "Cache Allocated Bytes": 0,
+          "Cache Admission Skips": 0
+        }
+      },
+      {
+        "mode": "batch_512",
+        "median_ms": 5.1,
+        "min_ms": 5.0,
+        "max_ms": 5.217,
+        "samples_ms": [
+          5.0,
+          5.1,
+          5.217,
+          5.197,
+          5.035
+        ],
+        "median_planning_ms": 0.047,
+        "counters": {
+          "Rows Read": 8192,
+          "Candidate Rows": 8192,
+          "Unique Inputs": 1032,
+          "Reused Inputs": 7076,
+          "Kernel Calls": 16,
+          "Provider Calls": 16,
+          "Batches": 16,
+          "Peak Buffered Rows": 512,
+          "Peak Buffered Bytes": 256645,
+          "Cache Hits": 0,
+          "Cache Entries": 0,
+          "Cache Used Bytes": 0,
+          "Cache Allocated Bytes": 0,
+          "Cache Admission Skips": 0
+        }
+      }
+    ]
+  },
+  {
+    "case": {
+      "name": "kernel_interleaved_all",
+      "suite": "kernel",
+      "duplicates": 8,
+      "interleaved": true,
+      "select_every": 1
+    },
+    "data": {
+      "rows": 8192,
+      "candidates": 8192,
+      "heap_bytes": 2015232,
+      "avg_input_bytes": 200.0,
+      "nonnull_candidates": 8108,
+      "global_unique_pairs": 1024
+    },
+    "validation": {
+      "native": {
+        "rows": 2024,
+        "sha256": "4b26f09fd6f0779314ba70472e703ded0ea211105411952655870d98186c3e97"
+      },
+      "scalar": {
+        "rows": 2024,
+        "sha256": "4b26f09fd6f0779314ba70472e703ded0ea211105411952655870d98186c3e97"
+      },
+      "batch_1": {
+        "rows": 2024,
+        "sha256": "4b26f09fd6f0779314ba70472e703ded0ea211105411952655870d98186c3e97"
+      },
+      "batch_16": {
+        "rows": 2024,
+        "sha256": "4b26f09fd6f0779314ba70472e703ded0ea211105411952655870d98186c3e97"
+      },
+      "batch_128": {
+        "rows": 2024,
+        "sha256": "4b26f09fd6f0779314ba70472e703ded0ea211105411952655870d98186c3e97"
+      },
+      "batch_512": {
+        "rows": 2024,
+        "sha256": "4b26f09fd6f0779314ba70472e703ded0ea211105411952655870d98186c3e97"
+      }
+    },
+    "results": [
+      {
+        "mode": "native",
+        "median_ms": 0.7,
+        "min_ms": 0.605,
+        "max_ms": 0.781,
+        "samples_ms": [
+          0.745,
+          0.7,
+          0.605,
+          0.781,
+          0.616
+        ],
+        "median_planning_ms": 0.03
+      },
+      {
+        "mode": "scalar",
+        "median_ms": 415.253,
+        "min_ms": 413.713,
+        "max_ms": 593.307,
+        "samples_ms": [
+          413.713,
+          414.596,
+          415.253,
+          593.307,
+          533.39
+        ],
+        "median_planning_ms": 0.023
+      },
+      {
+        "mode": "batch_1",
+        "median_ms": 414.949,
+        "min_ms": 414.839,
+        "max_ms": 422.931,
+        "samples_ms": [
+          414.839,
+          414.949,
+          418.956,
+          414.923,
+          422.931
+        ],
+        "median_planning_ms": 0.049,
+        "counters": {
+          "Rows Read": 8192,
+          "Candidate Rows": 8192,
+          "Unique Inputs": 8108,
+          "Reused Inputs": 0,
+          "Kernel Calls": 8108,
+          "Provider Calls": 8108,
+          "Batches": 8192,
+          "Peak Buffered Rows": 1,
+          "Peak Buffered Bytes": 1073,
+          "Cache Hits": 0,
+          "Cache Entries": 0,
+          "Cache Used Bytes": 0,
+          "Cache Allocated Bytes": 0,
+          "Cache Admission Skips": 0
+        }
+      },
+      {
+        "mode": "batch_16",
+        "median_ms": 45.14,
+        "min_ms": 44.844,
+        "max_ms": 45.434,
+        "samples_ms": [
+          44.844,
+          45.434,
+          44.965,
+          45.169,
+          45.14
+        ],
+        "median_planning_ms": 0.039,
+        "counters": {
+          "Rows Read": 8192,
+          "Candidate Rows": 8192,
+          "Unique Inputs": 8108,
+          "Reused Inputs": 0,
+          "Kernel Calls": 512,
+          "Provider Calls": 512,
+          "Batches": 512,
+          "Peak Buffered Rows": 16,
+          "Peak Buffered Bytes": 11732,
+          "Cache Hits": 0,
+          "Cache Entries": 0,
+          "Cache Used Bytes": 0,
+          "Cache Allocated Bytes": 0,
+          "Cache Admission Skips": 0
+        }
+      },
+      {
+        "mode": "batch_128",
+        "median_ms": 21.764,
+        "min_ms": 21.635,
+        "max_ms": 29.978,
+        "samples_ms": [
+          21.635,
+          21.764,
+          22.242,
+          21.652,
+          29.978
+        ],
+        "median_planning_ms": 0.049,
+        "counters": {
+          "Rows Read": 8192,
+          "Candidate Rows": 8192,
+          "Unique Inputs": 8108,
+          "Reused Inputs": 0,
+          "Kernel Calls": 64,
+          "Provider Calls": 64,
+          "Batches": 64,
+          "Peak Buffered Rows": 128,
+          "Peak Buffered Bytes": 92525,
+          "Cache Hits": 0,
+          "Cache Entries": 0,
+          "Cache Used Bytes": 0,
+          "Cache Allocated Bytes": 0,
+          "Cache Admission Skips": 0
+        }
+      },
+      {
+        "mode": "batch_512",
+        "median_ms": 19.252,
+        "min_ms": 19.173,
+        "max_ms": 19.416,
+        "samples_ms": [
+          19.271,
+          19.242,
+          19.252,
+          19.173,
+          19.416
+        ],
+        "median_planning_ms": 0.049,
+        "counters": {
+          "Rows Read": 8192,
+          "Candidate Rows": 8192,
+          "Unique Inputs": 8108,
+          "Reused Inputs": 0,
+          "Kernel Calls": 16,
+          "Provider Calls": 16,
+          "Batches": 16,
+          "Peak Buffered Rows": 512,
+          "Peak Buffered Bytes": 368712,
+          "Cache Hits": 0,
+          "Cache Entries": 0,
+          "Cache Used Bytes": 0,
+          "Cache Allocated Bytes": 0,
+          "Cache Admission Skips": 0
+        }
+      }
+    ]
+  },
+  {
+    "case": {
+      "name": "kernel_unique_10pct",
+      "suite": "kernel",
+      "duplicates": 1,
+      "interleaved": false,
+      "select_every": 10
+    },
+    "data": {
+      "rows": 8192,
+      "candidates": 820,
+      "heap_bytes": 2080768,
+      "avg_input_bytes": 201.9,
+      "nonnull_candidates": 812,
+      "global_unique_pairs": 812
+    },
+    "validation": {
+      "native": {
+        "rows": 203,
+        "sha256": "e121a2701459cfcf61fe9dfad714d3ddf8f2cc815d14a1c6e11939af2a704c58"
+      },
+      "scalar": {
+        "rows": 203,
+        "sha256": "e121a2701459cfcf61fe9dfad714d3ddf8f2cc815d14a1c6e11939af2a704c58"
+      },
+      "batch_1": {
+        "rows": 203,
+        "sha256": "e121a2701459cfcf61fe9dfad714d3ddf8f2cc815d14a1c6e11939af2a704c58"
+      },
+      "batch_16": {
+        "rows": 203,
+        "sha256": "e121a2701459cfcf61fe9dfad714d3ddf8f2cc815d14a1c6e11939af2a704c58"
+      },
+      "batch_128": {
+        "rows": 203,
+        "sha256": "e121a2701459cfcf61fe9dfad714d3ddf8f2cc815d14a1c6e11939af2a704c58"
+      },
+      "batch_512": {
+        "rows": 203,
+        "sha256": "e121a2701459cfcf61fe9dfad714d3ddf8f2cc815d14a1c6e11939af2a704c58"
+      }
+    },
+    "results": [
+      {
+        "mode": "native",
+        "median_ms": 0.49,
+        "min_ms": 0.433,
+        "max_ms": 0.551,
+        "samples_ms": [
+          0.433,
+          0.478,
+          0.49,
+          0.495,
+          0.551
+        ],
+        "median_planning_ms": 0.028
+      },
+      {
+        "mode": "scalar",
+        "median_ms": 42.346,
+        "min_ms": 42.165,
+        "max_ms": 43.157,
+        "samples_ms": [
+          42.546,
+          43.157,
+          42.346,
+          42.329,
+          42.165
+        ],
+        "median_planning_ms": 0.012
+      },
+      {
+        "mode": "batch_1",
+        "median_ms": 42.699,
+        "min_ms": 42.463,
+        "max_ms": 43.334,
+        "samples_ms": [
+          42.463,
+          42.699,
+          43.334,
+          42.65,
+          42.876
+        ],
+        "median_planning_ms": 0.024,
+        "counters": {
+          "Rows Read": 8192,
+          "Candidate Rows": 820,
+          "Unique Inputs": 812,
+          "Reused Inputs": 0,
+          "Kernel Calls": 812,
+          "Provider Calls": 812,
+          "Batches": 820,
+          "Peak Buffered Rows": 1,
+          "Peak Buffered Bytes": 1073,
+          "Cache Hits": 0,
+          "Cache Entries": 0,
+          "Cache Used Bytes": 0,
+          "Cache Allocated Bytes": 0,
+          "Cache Admission Skips": 0
+        }
+      },
+      {
+        "mode": "batch_16",
+        "median_ms": 5.187,
+        "min_ms": 5.078,
+        "max_ms": 5.371,
+        "samples_ms": [
+          5.089,
+          5.187,
+          5.371,
+          5.078,
+          5.212
+        ],
+        "median_planning_ms": 0.039,
+        "counters": {
+          "Rows Read": 8192,
+          "Candidate Rows": 820,
+          "Unique Inputs": 812,
+          "Reused Inputs": 0,
+          "Kernel Calls": 52,
+          "Provider Calls": 52,
+          "Batches": 52,
+          "Peak Buffered Rows": 16,
+          "Peak Buffered Bytes": 11732,
+          "Cache Hits": 0,
+          "Cache Entries": 0,
+          "Cache Used Bytes": 0,
+          "Cache Allocated Bytes": 0,
+          "Cache Admission Skips": 0
+        }
+      },
+      {
+        "mode": "batch_128",
+        "median_ms": 2.78,
+        "min_ms": 2.727,
+        "max_ms": 3.435,
+        "samples_ms": [
+          2.78,
+          2.727,
+          2.739,
+          3.15,
+          3.435
+        ],
+        "median_planning_ms": 0.039,
+        "counters": {
+          "Rows Read": 8192,
+          "Candidate Rows": 820,
+          "Unique Inputs": 812,
+          "Reused Inputs": 0,
+          "Kernel Calls": 7,
+          "Provider Calls": 7,
+          "Batches": 7,
+          "Peak Buffered Rows": 128,
+          "Peak Buffered Bytes": 93403,
+          "Cache Hits": 0,
+          "Cache Entries": 0,
+          "Cache Used Bytes": 0,
+          "Cache Allocated Bytes": 0,
+          "Cache Admission Skips": 0
+        }
+      },
+      {
+        "mode": "batch_512",
+        "median_ms": 2.553,
+        "min_ms": 2.444,
+        "max_ms": 2.615,
+        "samples_ms": [
+          2.615,
+          2.553,
+          2.577,
+          2.463,
+          2.444
+        ],
+        "median_planning_ms": 0.029,
+        "counters": {
+          "Rows Read": 8192,
+          "Candidate Rows": 820,
+          "Unique Inputs": 812,
+          "Reused Inputs": 0,
+          "Kernel Calls": 2,
+          "Provider Calls": 2,
+          "Batches": 2,
+          "Peak Buffered Rows": 512,
+          "Peak Buffered Bytes": 371503,
+          "Cache Hits": 0,
+          "Cache Entries": 0,
+          "Cache Used Bytes": 0,
+          "Cache Allocated Bytes": 0,
+          "Cache Admission Skips": 0
+        }
+      }
+    ]
+  }
+]

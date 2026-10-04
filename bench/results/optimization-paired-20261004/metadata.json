@@ -1,0 +1,21 @@
+{
+  "started_utc": "2026-10-04T03:15:30.187968+00:00",
+  "platform": "macOS-27.0-arm64-arm-64bit-Mach-O",
+  "postgres": "PostgreSQL 17.10 (Homebrew)",
+  "seed": 20261004,
+  "rows": 8192,
+  "repeats": 7,
+  "batch_size": 128,
+  "cache_budgets_kb": [
+    0,
+    4096
+  ],
+  "methodology": "Warm full-bag validation; paired randomized cache order in every round; exact provider only",
+  "source_sha256": {
+    "src/jev_planner.c": "478c447ceb9631bb5edf5345a9be7480874e26eacb315fceaaf90c5d0025c6c3",
+    "sql/jev--0.2.0.sql": "94d948b13bf4179ba304d99acdf3eecc2bc98304987820322e62bc38fba30ea2",
+    "bench/run.py": "2f7cb3fa09537901d9b068d5cf0ccc5167da6f52406ec27d527baab3866365c0",
+    "bench/cache_compare.py": "fa10bcb8a18f260983c1901377f95a3ad4267d76b2619f29f3b2b3bcf3738246"
+  },
+  "library_sha256": "69c600f1e81e58f6bbbddb84f2044d313a0844757e36345a4ea9af40ba7b9236"
+}

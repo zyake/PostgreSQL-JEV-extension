@@ -1,0 +1,1774 @@
+[
+  {
+    "mode": "scalar",
+    "thread_samples": 3710,
+    "top_of_stack": [
+      {
+        "function": "bsearch",
+        "module": "libsystem_c.dylib",
+        "top_of_stack_samples": 161,
+        "sample_share_pct": 4.339622641509434
+      },
+      {
+        "function": "_platform_memset",
+        "module": "libsystem_platform.dylib",
+        "top_of_stack_samples": 123,
+        "sample_share_pct": 3.315363881401617
+      },
+      {
+        "function": "SearchCatCacheInternal",
+        "module": "postgres",
+        "top_of_stack_samples": 121,
+        "sample_share_pct": 3.261455525606469
+      },
+      {
+        "function": "_platform_memmove",
+        "module": "libsystem_platform.dylib",
+        "top_of_stack_samples": 119,
+        "sample_share_pct": 3.207547169811321
+      },
+      {
+        "function": "AllocSetAlloc",
+        "module": "postgres",
+        "top_of_stack_samples": 112,
+        "sample_share_pct": 3.018867924528302
+      },
+      {
+        "function": "ExecInterpExpr",
+        "module": "postgres",
+        "top_of_stack_samples": 108,
+        "sample_share_pct": 2.9110512129380055
+      },
+      {
+        "function": "palloc0",
+        "module": "postgres",
+        "top_of_stack_samples": 83,
+        "sample_share_pct": 2.2371967654986524
+      },
+      {
+        "function": "base_yyparse",
+        "module": "postgres",
+        "top_of_stack_samples": 73,
+        "sample_share_pct": 1.9676549865229112
+      },
+      {
+        "function": "dispatch_compare_ptr",
+        "module": "postgres",
+        "top_of_stack_samples": 65,
+        "sample_share_pct": 1.752021563342318
+      },
+      {
+        "function": "ExprEvalPushStep",
+        "module": "postgres",
+        "top_of_stack_samples": 57,
+        "sample_share_pct": 1.536388140161725
+      },
+      {
+        "function": "CatalogCacheComputeHashValue",
+        "module": "postgres",
+        "top_of_stack_samples": 56,
+        "sample_share_pct": 1.509433962264151
+      },
+      {
+        "function": "expression_tree_walker_impl",
+        "module": "postgres",
+        "top_of_stack_samples": 54,
+        "sample_share_pct": 1.4555256064690028
+      },
+      {
+        "function": "ResourceOwnerForget",
+        "module": "postgres",
+        "top_of_stack_samples": 53,
+        "sample_share_pct": 1.4285714285714286
+      },
+      {
+        "function": "__lseek",
+        "module": "libsystem_kernel.dylib",
+        "top_of_stack_samples": 51,
+        "sample_share_pct": 1.3746630727762803
+      },
+      {
+        "function": "hash_bytes",
+        "module": "postgres",
+        "top_of_stack_samples": 51,
+        "sample_share_pct": 1.3746630727762803
+      },
+      {
+        "function": "TupleDescInitEntry",
+        "module": "postgres",
+        "top_of_stack_samples": 44,
+        "sample_share_pct": 1.1859838274932615
+      },
+      {
+        "function": "ReleaseCatCacheWithOwner",
+        "module": "postgres",
+        "top_of_stack_samples": 42,
+        "sample_share_pct": 1.1320754716981132
+      },
+      {
+        "function": "expr_setup_walker",
+        "module": "postgres",
+        "top_of_stack_samples": 41,
+        "sample_share_pct": 1.105121293800539
+      },
+      {
+        "function": "ExecInitExprRec",
+        "module": "postgres",
+        "top_of_stack_samples": 39,
+        "sample_share_pct": 1.0512129380053907
+      },
+      {
+        "function": "fill_val",
+        "module": "postgres",
+        "top_of_stack_samples": 39,
+        "sample_share_pct": 1.0512129380053907
+      },
+      {
+        "function": "mach_absolute_time",
+        "module": "libsystem_kernel.dylib",
+        "top_of_stack_samples": 39,
+        "sample_share_pct": 1.0512129380053907
+      },
+      {
+        "function": "palloc",
+        "module": "postgres",
+        "top_of_stack_samples": 37,
+        "sample_share_pct": 0.9973045822102425
+      },
+      {
+        "function": "check_stack_depth",
+        "module": "postgres",
+        "top_of_stack_samples": 36,
+        "sample_share_pct": 0.9703504043126685
+      },
+      {
+        "function": "exprType",
+        "module": "postgres",
+        "top_of_stack_samples": 35,
+        "sample_share_pct": 0.9433962264150944
+      },
+      {
+        "function": "CheckExprStillValid",
+        "module": "postgres",
+        "top_of_stack_samples": 32,
+        "sample_share_pct": 0.862533692722372
+      },
+      {
+        "function": "ExecEvalStepOp",
+        "module": "postgres",
+        "top_of_stack_samples": 32,
+        "sample_share_pct": 0.862533692722372
+      },
+      {
+        "function": "ResourceOwnerEnlarge",
+        "module": "postgres",
+        "top_of_stack_samples": 32,
+        "sample_share_pct": 0.862533692722372
+      },
+      {
+        "function": "_platform_strncpy",
+        "module": "libsystem_platform.dylib",
+        "top_of_stack_samples": 32,
+        "sample_share_pct": 0.862533692722372
+      },
+      {
+        "function": "exprTypmod",
+        "module": "postgres",
+        "top_of_stack_samples": 29,
+        "sample_share_pct": 0.7816711590296496
+      },
+      {
+        "function": "_platform_strncmp$VARIANT$Base",
+        "module": "libsystem_platform.dylib",
+        "top_of_stack_samples": 28,
+        "sample_share_pct": 0.7547169811320755
+      },
+      {
+        "function": "ResourceOwnerRemember",
+        "module": "postgres",
+        "top_of_stack_samples": 26,
+        "sample_share_pct": 0.7008086253369272
+      },
+      {
+        "function": "nocachegetattr",
+        "module": "postgres",
+        "top_of_stack_samples": 26,
+        "sample_share_pct": 0.7008086253369272
+      },
+      {
+        "function": "hash_search_with_hash_value",
+        "module": "postgres",
+        "top_of_stack_samples": 25,
+        "sample_share_pct": 0.6738544474393531
+      },
+      {
+        "function": "ExecTypeFromTLInternal",
+        "module": "postgres",
+        "top_of_stack_samples": 24,
+        "sample_share_pct": 0.6469002695417789
+      },
+      {
+        "function": "MemoryContextDelete",
+        "module": "postgres",
+        "top_of_stack_samples": 24,
+        "sample_share_pct": 0.6469002695417789
+      },
+      {
+        "function": "heap_compute_data_size",
+        "module": "postgres",
+        "top_of_stack_samples": 24,
+        "sample_share_pct": 0.6469002695417789
+      },
+      {
+        "function": "heap_deform_tuple",
+        "module": "postgres",
+        "top_of_stack_samples": 23,
+        "sample_share_pct": 0.6199460916442049
+      },
+      {
+        "function": "exprCollation",
+        "module": "postgres",
+        "top_of_stack_samples": 22,
+        "sample_share_pct": 0.5929919137466307
+      },
+      {
+        "function": "lappend",
+        "module": "postgres",
+        "top_of_stack_samples": 21,
+        "sample_share_pct": 0.5660377358490566
+      },
+      {
+        "function": "_xzm_xzone_malloc_small_freelist",
+        "module": "libsystem_malloc.dylib",
+        "top_of_stack_samples": 20,
+        "sample_share_pct": 0.5390835579514824
+      },
+      {
+        "function": "core_yylex",
+        "module": "postgres",
+        "top_of_stack_samples": 19,
+        "sample_share_pct": 0.5121293800539084
+      },
+      {
+        "function": "exec_stmts",
+        "module": "plpgsql.dylib",
+        "top_of_stack_samples": 19,
+        "sample_share_pct": 0.5121293800539084
+      },
+      {
+        "function": "_SPI_execute_plan",
+        "module": "postgres",
+        "top_of_stack_samples": 18,
+        "sample_share_pct": 0.48517520215633425
+      },
+      {
+        "function": "_xzm_free_outlined",
+        "module": "libsystem_malloc.dylib",
+        "top_of_stack_samples": 18,
+        "sample_share_pct": 0.48517520215633425
+      },
+      {
+        "function": "_xzm_xzone_free_freelist",
+        "module": "libsystem_malloc.dylib",
+        "top_of_stack_samples": 17,
+        "sample_share_pct": 0.4582210242587601
+      },
+      {
+        "function": "MemoryContextReset",
+        "module": "postgres",
+        "top_of_stack_samples": 16,
+        "sample_share_pct": 0.431266846361186
+      },
+      {
+        "function": "__bzero",
+        "module": "libsystem_platform.dylib",
+        "top_of_stack_samples": 16,
+        "sample_share_pct": 0.431266846361186
+      },
+      {
+        "function": "AllocSetContextCreateInternal",
+        "module": "postgres",
+        "top_of_stack_samples": 15,
+        "sample_share_pct": 0.40431266846361186
+      },
+      {
+        "function": "ExecConditionalAssignProjectionInfo",
+        "module": "postgres",
+        "top_of_stack_samples": 15,
+        "sample_share_pct": 0.40431266846361186
+      },
+      {
+        "function": "DYLD-STUB$$bzero",
+        "module": "postgres",
+        "top_of_stack_samples": 14,
+        "sample_share_pct": 0.37735849056603776
+      },
+      {
+        "function": "ExecComputeSlotInfo",
+        "module": "postgres",
+        "top_of_stack_samples": 14,
+        "sample_share_pct": 0.37735849056603776
+      },
+      {
+        "function": "plpgsql_param_eval_var_ro",
+        "module": "plpgsql.dylib",
+        "top_of_stack_samples": 14,
+        "sample_share_pct": 0.37735849056603776
+      },
+      {
+        "function": "tts_buffer_heap_getsomeattrs",
+        "module": "postgres",
+        "top_of_stack_samples": 14,
+        "sample_share_pct": 0.37735849056603776
+      },
+      {
+        "function": "exec_eval_expr",
+        "module": "plpgsql.dylib",
+        "top_of_stack_samples": 13,
+        "sample_share_pct": 0.3504043126684636
+      },
+      {
+        "function": "int4hashfast",
+        "module": "postgres",
+        "top_of_stack_samples": 13,
+        "sample_share_pct": 0.3504043126684636
+      },
+      {
+        "function": "AppendJumble",
+        "module": "postgres",
+        "top_of_stack_samples": 12,
+        "sample_share_pct": 0.32345013477088946
+      },
+      {
+        "function": "ExecInitFunctionScan",
+        "module": "postgres",
+        "top_of_stack_samples": 12,
+        "sample_share_pct": 0.32345013477088946
+      },
+      {
+        "function": "MemoryContextCreate",
+        "module": "postgres",
+        "top_of_stack_samples": 12,
+        "sample_share_pct": 0.32345013477088946
+      },
+      {
+        "function": "int4eqfast",
+        "module": "postgres",
+        "top_of_stack_samples": 12,
+        "sample_share_pct": 0.32345013477088946
+      },
+      {
+        "function": "standard_ExecutorStart",
+        "module": "postgres",
+        "top_of_stack_samples": 12,
+        "sample_share_pct": 0.32345013477088946
+      },
+      {
+        "function": "DYLD-STUB$$memcpy",
+        "module": "postgres",
+        "top_of_stack_samples": 11,
+        "sample_share_pct": 0.29649595687331537
+      },
+      {
+        "function": "ExecReadyInterpretedExpr",
+        "module": "postgres",
+        "top_of_stack_samples": 11,
+        "sample_share_pct": 0.29649595687331537
+      },
+      {
+        "function": "copy_plpgsql_datums",
+        "module": "plpgsql.dylib",
+        "top_of_stack_samples": 11,
+        "sample_share_pct": 0.29649595687331537
+      },
+      {
+        "function": "heap_fill_tuple",
+        "module": "postgres",
+        "top_of_stack_samples": 11,
+        "sample_share_pct": 0.29649595687331537
+      },
+      {
+        "function": "ExecInitNode",
+        "module": "postgres",
+        "top_of_stack_samples": 10,
+        "sample_share_pct": 0.2695417789757412
+      },
+      {
+        "function": "GetPrivateRefCountEntry",
+        "module": "postgres",
+        "top_of_stack_samples": 10,
+        "sample_share_pct": 0.2695417789757412
+      },
+      {
+        "function": "_platform_memcmp",
+        "module": "libsystem_platform.dylib",
+        "top_of_stack_samples": 10,
+        "sample_share_pct": 0.2695417789757412
+      },
+      {
+        "function": "fmgr_info_cxt_security",
+        "module": "postgres",
+        "top_of_stack_samples": 10,
+        "sample_share_pct": 0.2695417789757412
+      },
+      {
+        "function": "text_format",
+        "module": "postgres",
+        "top_of_stack_samples": 10,
+        "sample_share_pct": 0.2695417789757412
+      },
+      {
+        "function": "tuplestore_begin_heap",
+        "module": "postgres",
+        "top_of_stack_samples": 10,
+        "sample_share_pct": 0.2695417789757412
+      },
+      {
+        "function": "AllocSetDelete",
+        "module": "postgres",
+        "top_of_stack_samples": 9,
+        "sample_share_pct": 0.24258760107816713
+      },
+      {
+        "function": "AllocSetFree",
+        "module": "postgres",
+        "top_of_stack_samples": 9,
+        "sample_share_pct": 0.24258760107816713
+      },
+      {
+        "function": "CreateTupleDescCopy",
+        "module": "postgres",
+        "top_of_stack_samples": 9,
+        "sample_share_pct": 0.24258760107816713
+      },
+      {
+        "function": "_bt_first",
+        "module": "postgres",
+        "top_of_stack_samples": 9,
+        "sample_share_pct": 0.24258760107816713
+      },
+      {
+        "function": "pfree",
+        "module": "postgres",
+        "top_of_stack_samples": 9,
+        "sample_share_pct": 0.24258760107816713
+      },
+      {
+        "function": "superuser_arg",
+        "module": "postgres",
+        "top_of_stack_samples": 9,
+        "sample_share_pct": 0.24258760107816713
+      },
+      {
+        "function": "AllocSetReset",
+        "module": "postgres",
+        "top_of_stack_samples": 8,
+        "sample_share_pct": 0.215633423180593
+      },
+      {
+        "function": "ExecEndNode",
+        "module": "postgres",
+        "top_of_stack_samples": 8,
+        "sample_share_pct": 0.215633423180593
+      },
+      {
+        "function": "ExecScan",
+        "module": "postgres",
+        "top_of_stack_samples": 8,
+        "sample_share_pct": 0.215633423180593
+      },
+      {
+        "function": "GetCachedPlan",
+        "module": "postgres",
+        "top_of_stack_samples": 8,
+        "sample_share_pct": 0.215633423180593
+      },
+      {
+        "function": "LWLockRelease",
+        "module": "postgres",
+        "top_of_stack_samples": 8,
+        "sample_share_pct": 0.215633423180593
+      },
+      {
+        "function": "MakeTupleTableSlot",
+        "module": "postgres",
+        "top_of_stack_samples": 8,
+        "sample_share_pct": 0.215633423180593
+      },
+      {
+        "function": "MemoryContextResetOnly",
+        "module": "postgres",
+        "top_of_stack_samples": 8,
+        "sample_share_pct": 0.215633423180593
+      },
+      {
+        "function": "_xzm_free_main",
+        "module": "libsystem_malloc.dylib",
+        "top_of_stack_samples": 8,
+        "sample_share_pct": 0.215633423180593
+      },
+      {
+        "function": "assign_simple_var",
+        "module": "plpgsql.dylib",
+        "top_of_stack_samples": 8,
+        "sample_share_pct": 0.215633423180593
+      },
+      {
+        "function": "expand_array",
+        "module": "postgres",
+        "top_of_stack_samples": 8,
+        "sample_share_pct": 0.215633423180593
+      },
+      {
+        "function": "pg_detoast_datum_packed",
+        "module": "postgres",
+        "top_of_stack_samples": 8,
+        "sample_share_pct": 0.215633423180593
+      },
+      {
+        "function": "planstate_tree_walker_impl",
+        "module": "postgres",
+        "top_of_stack_samples": 8,
+        "sample_share_pct": 0.215633423180593
+      },
+      {
+        "function": "AtEOXact_GUC",
+        "module": "postgres",
+        "top_of_stack_samples": 7,
+        "sample_share_pct": 0.18867924528301888
+      },
+      {
+        "function": "CreateExecutorState",
+        "module": "postgres",
+        "top_of_stack_samples": 7,
+        "sample_share_pct": 0.18867924528301888
+      },
+      {
+        "function": "ExecMakeTableFunctionResult",
+        "module": "postgres",
+        "top_of_stack_samples": 7,
+        "sample_share_pct": 0.18867924528301888
+      },
+      {
+        "function": "GetUserId",
+        "module": "postgres",
+        "top_of_stack_samples": 7,
+        "sample_share_pct": 0.18867924528301888
+      },
+      {
+        "function": "LockAcquireExtended",
+        "module": "postgres",
+        "top_of_stack_samples": 7,
+        "sample_share_pct": 0.18867924528301888
+      },
+      {
+        "function": "construct_md_array",
+        "module": "postgres",
+        "top_of_stack_samples": 7,
+        "sample_share_pct": 0.18867924528301888
+      },
+      {
+        "function": "exec_assign_value",
+        "module": "plpgsql.dylib",
+        "top_of_stack_samples": 7,
+        "sample_share_pct": 0.18867924528301888
+      },
+      {
+        "function": "exec_cast_value",
+        "module": "plpgsql.dylib",
+        "top_of_stack_samples": 7,
+        "sample_share_pct": 0.18867924528301888
+      },
+      {
+        "function": "namestrcpy",
+        "module": "postgres",
+        "top_of_stack_samples": 7,
+        "sample_share_pct": 0.18867924528301888
+      },
+      {
+        "function": "plpgsql_param_eval_recfield",
+        "module": "plpgsql.dylib",
+        "top_of_stack_samples": 7,
+        "sample_share_pct": 0.18867924528301888
+      },
+      {
+        "function": "standard_ExecutorRun",
+        "module": "postgres",
+        "top_of_stack_samples": 7,
+        "sample_share_pct": 0.18867924528301888
+      },
+      {
+        "function": "tts_minimal_clear",
+        "module": "postgres",
+        "top_of_stack_samples": 7,
+        "sample_share_pct": 0.18867924528301888
+      },
+      {
+        "function": "tts_minimal_getsomeattrs",
+        "module": "postgres",
+        "top_of_stack_samples": 7,
+        "sample_share_pct": 0.18867924528301888
+      },
+      {
+        "function": "AllocSetAllocFromNewBlock",
+        "module": "postgres",
+        "top_of_stack_samples": 6,
+        "sample_share_pct": 0.16172506738544473
+      },
+      {
+        "function": "CopyArrayEls",
+        "module": "postgres",
+        "top_of_stack_samples": 6,
+        "sample_share_pct": 0.16172506738544473
+      },
+      {
+        "function": "ExecInitQual",
+        "module": "postgres",
+        "top_of_stack_samples": 6,
+        "sample_share_pct": 0.16172506738544473
+      },
+      {
+        "function": "ExecProcNodeFirst",
+        "module": "postgres",
+        "top_of_stack_samples": 6,
+        "sample_share_pct": 0.16172506738544473
+      },
+      {
+        "function": "ExecPushExprSetupSteps",
+        "module": "postgres",
+        "top_of_stack_samples": 6,
+        "sample_share_pct": 0.16172506738544473
+      },
+      {
+        "function": "ExecResetTupleTable",
+        "module": "postgres",
+        "top_of_stack_samples": 6,
+        "sample_share_pct": 0.16172506738544473
+      },
+      {
+        "function": "MemoryContextAllocZero",
+        "module": "postgres",
+        "top_of_stack_samples": 6,
+        "sample_share_pct": 0.16172506738544473
+      },
+      {
+        "function": "RegisterSnapshotOnOwner",
+        "module": "postgres",
+        "top_of_stack_samples": 6,
+        "sample_share_pct": 0.16172506738544473
+      },
+      {
+        "function": "ScanQueryForLocks",
+        "module": "postgres",
+        "top_of_stack_samples": 6,
+        "sample_share_pct": 0.16172506738544473
+      },
+      {
+        "function": "SearchSysCache1",
+        "module": "postgres",
+        "top_of_stack_samples": 6,
+        "sample_share_pct": 0.16172506738544473
+      },
+      {
+        "function": "_bt_compare",
+        "module": "postgres",
+        "top_of_stack_samples": 6,
+        "sample_share_pct": 0.16172506738544473
+      },
+      {
+        "function": "datumCopy",
+        "module": "postgres",
+        "top_of_stack_samples": 6,
+        "sample_share_pct": 0.16172506738544473
+      },
+      {
+        "function": "exec_move_row",
+        "module": "plpgsql.dylib",
+        "top_of_stack_samples": 6,
+        "sample_share_pct": 0.16172506738544473
+      },
+      {
+        "function": "exec_move_row_from_fields",
+        "module": "plpgsql.dylib",
+        "top_of_stack_samples": 6,
+        "sample_share_pct": 0.16172506738544473
+      },
+      {
+        "function": "get_type_func_class",
+        "module": "postgres",
+        "top_of_stack_samples": 6,
+        "sample_share_pct": 0.16172506738544473
+      },
+      {
+        "function": "get_typlenbyvalalign",
+        "module": "postgres",
+        "top_of_stack_samples": 6,
+        "sample_share_pct": 0.16172506738544473
+      },
+      {
+        "function": "heap_form_tuple",
+        "module": "postgres",
+        "top_of_stack_samples": 6,
+        "sample_share_pct": 0.16172506738544473
+      },
+      {
+        "function": "lookup_type_cache",
+        "module": "postgres",
+        "top_of_stack_samples": 6,
+        "sample_share_pct": 0.16172506738544473
+      },
+      {
+        "function": "new_head_cell",
+        "module": "postgres",
+        "top_of_stack_samples": 6,
+        "sample_share_pct": 0.16172506738544473
+      },
+      {
+        "function": "plpgsql_exec_function",
+        "module": "plpgsql.dylib",
+        "top_of_stack_samples": 6,
+        "sample_share_pct": 0.16172506738544473
+      },
+      {
+        "function": "<deduplicated_symbol>",
+        "module": "libsystem_malloc.dylib",
+        "top_of_stack_samples": 5,
+        "sample_share_pct": 0.1347708894878706
+      },
+      {
+        "function": "CreateTupleDescCopyConstr",
+        "module": "postgres",
+        "top_of_stack_samples": 5,
+        "sample_share_pct": 0.1347708894878706
+      },
+      {
+        "function": "EnsurePortalSnapshotExists",
+        "module": "postgres",
+        "top_of_stack_samples": 5,
+        "sample_share_pct": 0.1347708894878706
+      },
+      {
+        "function": "ExecInitAgg",
+        "module": "postgres",
+        "top_of_stack_samples": 5,
+        "sample_share_pct": 0.1347708894878706
+      },
+      {
+        "function": "ExecInitFunc",
+        "module": "postgres",
+        "top_of_stack_samples": 5,
+        "sample_share_pct": 0.1347708894878706
+      },
+      {
+        "function": "HeapTupleSatisfiesVisibility",
+        "module": "postgres",
+        "top_of_stack_samples": 5,
+        "sample_share_pct": 0.1347708894878706
+      },
+      {
+        "function": "MemoryContextAlloc",
+        "module": "postgres",
+        "top_of_stack_samples": 5,
+        "sample_share_pct": 0.1347708894878706
+      },
+      {
+        "function": "PinBuffer",
+        "module": "postgres",
+        "top_of_stack_samples": 5,
+        "sample_share_pct": 0.1347708894878706
+      },
+      {
+        "function": "ScanKeywords_hash_func",
+        "module": "postgres",
+        "top_of_stack_samples": 5,
+        "sample_share_pct": 0.1347708894878706
+      },
+      {
+        "function": "ShutdownExprContext",
+        "module": "postgres",
+        "top_of_stack_samples": 5,
+        "sample_share_pct": 0.1347708894878706
+      },
+      {
+        "function": "StartReadBuffer",
+        "module": "postgres",
+        "top_of_stack_samples": 5,
+        "sample_share_pct": 0.1347708894878706
+      },
+      {
+        "function": "TransactionIdPrecedes",
+        "module": "postgres",
+        "top_of_stack_samples": 5,
+        "sample_share_pct": 0.1347708894878706
+      },
+      {
+        "function": "UnregisterSnapshot",
+        "module": "postgres",
+        "top_of_stack_samples": 5,
+        "sample_share_pct": 0.1347708894878706
+      },
+      {
+        "function": "_platform_strlen",
+        "module": "libsystem_platform.dylib",
+        "top_of_stack_samples": 5,
+        "sample_share_pct": 0.1347708894878706
+      },
+      {
+        "function": "array_subscript_check_subscripts",
+        "module": "postgres",
+        "top_of_stack_samples": 5,
+        "sample_share_pct": 0.1347708894878706
+      },
+      {
+        "function": "detoast_attr",
+        "module": "postgres",
+        "top_of_stack_samples": 5,
+        "sample_share_pct": 0.1347708894878706
+      },
+      {
+        "function": "eval_const_expressions_mutator",
+        "module": "postgres",
+        "top_of_stack_samples": 5,
+        "sample_share_pct": 0.1347708894878706
+      },
+      {
+        "function": "exec_eval_cleanup",
+        "module": "plpgsql.dylib",
+        "top_of_stack_samples": 5,
+        "sample_share_pct": 0.1347708894878706
+      },
+      {
+        "function": "exec_stmt_block",
+        "module": "plpgsql.dylib",
+        "top_of_stack_samples": 5,
+        "sample_share_pct": 0.1347708894878706
+      },
+      {
+        "function": "exec_stmt_execsql",
+        "module": "plpgsql.dylib",
+        "top_of_stack_samples": 5,
+        "sample_share_pct": 0.1347708894878706
+      },
+      {
+        "function": "expanded_record_lookup_field",
+        "module": "postgres",
+        "top_of_stack_samples": 5,
+        "sample_share_pct": 0.1347708894878706
+      },
+      {
+        "function": "grouping_planner",
+        "module": "postgres",
+        "top_of_stack_samples": 5,
+        "sample_share_pct": 0.1347708894878706
+      },
+      {
+        "function": "init_sexpr",
+        "module": "postgres",
+        "top_of_stack_samples": 5,
+        "sample_share_pct": 0.1347708894878706
+      },
+      {
+        "function": "internal_get_result_type",
+        "module": "postgres",
+        "top_of_stack_samples": 5,
+        "sample_share_pct": 0.1347708894878706
+      },
+      {
+        "function": "namestrcmp",
+        "module": "postgres",
+        "top_of_stack_samples": 5,
+        "sample_share_pct": 0.1347708894878706
+      },
+      {
+        "function": "pg_detoast_datum",
+        "module": "postgres",
+        "top_of_stack_samples": 5,
+        "sample_share_pct": 0.1347708894878706
+      },
+      {
+        "function": "pg_detoast_datum_copy",
+        "module": "postgres",
+        "top_of_stack_samples": 5,
+        "sample_share_pct": 0.1347708894878706
+      },
+      {
+        "function": "pgstat_report_query_id",
+        "module": "postgres",
+        "top_of_stack_samples": 5,
+        "sample_share_pct": 0.1347708894878706
+      },
+      {
+        "function": "plpgsql_estate_setup",
+        "module": "plpgsql.dylib",
+        "top_of_stack_samples": 5,
+        "sample_share_pct": 0.1347708894878706
+      },
+      {
+        "function": "recomputeNamespacePath",
+        "module": "postgres",
+        "top_of_stack_samples": 5,
+        "sample_share_pct": 0.1347708894878706
+      },
+      {
+        "function": "slot_getsomeattrs_int",
+        "module": "postgres",
+        "top_of_stack_samples": 5,
+        "sample_share_pct": 0.1347708894878706
+      }
+    ],
+    "interpretation": "Periodic top-of-stack observations including possible waits; not measured self milliseconds or exact CPU percentages. Counts below five omitted by sample."
+  },
+  {
+    "mode": "batch_128",
+    "thread_samples": 3795,
+    "top_of_stack": [
+      {
+        "function": "hash_bytes",
+        "module": "postgres",
+        "top_of_stack_samples": 346,
+        "sample_share_pct": 9.11725955204216
+      },
+      {
+        "function": "ExecInterpExpr",
+        "module": "postgres",
+        "top_of_stack_samples": 278,
+        "sample_share_pct": 7.325428194993412
+      },
+      {
+        "function": "_platform_memmove",
+        "module": "libsystem_platform.dylib",
+        "top_of_stack_samples": 235,
+        "sample_share_pct": 6.19235836627141
+      },
+      {
+        "function": "tts_minimal_getsomeattrs",
+        "module": "postgres",
+        "top_of_stack_samples": 142,
+        "sample_share_pct": 3.7417654808959155
+      },
+      {
+        "function": "heap_compute_data_size",
+        "module": "postgres",
+        "top_of_stack_samples": 135,
+        "sample_share_pct": 3.5573122529644268
+      },
+      {
+        "function": "fill_val",
+        "module": "postgres",
+        "top_of_stack_samples": 126,
+        "sample_share_pct": 3.3201581027667983
+      },
+      {
+        "function": "AllocSetAlloc",
+        "module": "postgres",
+        "top_of_stack_samples": 96,
+        "sample_share_pct": 2.5296442687747036
+      },
+      {
+        "function": "hash_search_with_hash_value",
+        "module": "postgres",
+        "top_of_stack_samples": 74,
+        "sample_share_pct": 1.9499341238471672
+      },
+      {
+        "function": "_platform_memset",
+        "module": "libsystem_platform.dylib",
+        "top_of_stack_samples": 72,
+        "sample_share_pct": 1.8972332015810276
+      },
+      {
+        "function": "heap_fill_tuple",
+        "module": "postgres",
+        "top_of_stack_samples": 62,
+        "sample_share_pct": 1.6337285902503293
+      },
+      {
+        "function": "FunctionNext",
+        "module": "postgres",
+        "top_of_stack_samples": 51,
+        "sample_share_pct": 1.3438735177865613
+      },
+      {
+        "function": "palloc0",
+        "module": "postgres",
+        "top_of_stack_samples": 50,
+        "sample_share_pct": 1.3175230566534915
+      },
+      {
+        "function": "MemoryContextReset",
+        "module": "postgres",
+        "top_of_stack_samples": 41,
+        "sample_share_pct": 1.080368906455863
+      },
+      {
+        "function": "array_iter_next",
+        "module": "postgres",
+        "top_of_stack_samples": 37,
+        "sample_share_pct": 0.9749670619235836
+      },
+      {
+        "function": "exec_stmts",
+        "module": "plpgsql.dylib",
+        "top_of_stack_samples": 37,
+        "sample_share_pct": 0.9749670619235836
+      },
+      {
+        "function": "tts_minimal_clear",
+        "module": "postgres",
+        "top_of_stack_samples": 34,
+        "sample_share_pct": 0.8959156785243741
+      },
+      {
+        "function": "exec_eval_expr",
+        "module": "plpgsql.dylib",
+        "top_of_stack_samples": 33,
+        "sample_share_pct": 0.8695652173913043
+      },
+      {
+        "function": "ArrayCastAndSet",
+        "module": "postgres",
+        "top_of_stack_samples": 31,
+        "sample_share_pct": 0.8168642951251647
+      },
+      {
+        "function": "tts_heap_getsomeattrs",
+        "module": "postgres",
+        "top_of_stack_samples": 31,
+        "sample_share_pct": 0.8168642951251647
+      },
+      {
+        "function": "ExecScan",
+        "module": "postgres",
+        "top_of_stack_samples": 28,
+        "sample_share_pct": 0.7378129117259552
+      },
+      {
+        "function": "jev_next_batch_tuple",
+        "module": "jev.dylib",
+        "top_of_stack_samples": 28,
+        "sample_share_pct": 0.7378129117259552
+      },
+      {
+        "function": "heap_form_minimal_tuple",
+        "module": "postgres",
+        "top_of_stack_samples": 27,
+        "sample_share_pct": 0.7114624505928854
+      },
+      {
+        "function": "slot_getsomeattrs_int",
+        "module": "postgres",
+        "top_of_stack_samples": 27,
+        "sample_share_pct": 0.7114624505928854
+      },
+      {
+        "function": "tuplestore_gettuple",
+        "module": "postgres",
+        "top_of_stack_samples": 27,
+        "sample_share_pct": 0.7114624505928854
+      },
+      {
+        "function": "SearchCatCacheInternal",
+        "module": "postgres",
+        "top_of_stack_samples": 26,
+        "sample_share_pct": 0.6851119894598156
+      },
+      {
+        "function": "ExecStoreMinimalTuple",
+        "module": "postgres",
+        "top_of_stack_samples": 25,
+        "sample_share_pct": 0.6587615283267457
+      },
+      {
+        "function": "exec_assign_value",
+        "module": "plpgsql.dylib",
+        "top_of_stack_samples": 25,
+        "sample_share_pct": 0.6587615283267457
+      },
+      {
+        "function": "ExecHashJoin",
+        "module": "postgres",
+        "top_of_stack_samples": 24,
+        "sample_share_pct": 0.6324110671936759
+      },
+      {
+        "function": "base_yyparse",
+        "module": "postgres",
+        "top_of_stack_samples": 24,
+        "sample_share_pct": 0.6324110671936759
+      },
+      {
+        "function": "bsearch",
+        "module": "libsystem_c.dylib",
+        "top_of_stack_samples": 23,
+        "sample_share_pct": 0.6060606060606061
+      },
+      {
+        "function": "SearchCatCacheList",
+        "module": "postgres",
+        "top_of_stack_samples": 22,
+        "sample_share_pct": 0.5797101449275363
+      },
+      {
+        "function": "_platform_memcmp",
+        "module": "libsystem_platform.dylib",
+        "top_of_stack_samples": 22,
+        "sample_share_pct": 0.5797101449275363
+      },
+      {
+        "function": "palloc",
+        "module": "postgres",
+        "top_of_stack_samples": 22,
+        "sample_share_pct": 0.5797101449275363
+      },
+      {
+        "function": "kevent",
+        "module": "libsystem_kernel.dylib",
+        "top_of_stack_samples": 21,
+        "sample_share_pct": 0.5533596837944664
+      },
+      {
+        "function": "tts_minimal_store_tuple",
+        "module": "postgres",
+        "top_of_stack_samples": 21,
+        "sample_share_pct": 0.5533596837944664
+      },
+      {
+        "function": "ExecMakeTableFunctionResult",
+        "module": "postgres",
+        "top_of_stack_samples": 20,
+        "sample_share_pct": 0.5270092226613966
+      },
+      {
+        "function": "array_slice_size",
+        "module": "postgres",
+        "top_of_stack_samples": 20,
+        "sample_share_pct": 0.5270092226613966
+      },
+      {
+        "function": "hashtext",
+        "module": "postgres",
+        "top_of_stack_samples": 20,
+        "sample_share_pct": 0.5270092226613966
+      },
+      {
+        "function": "pg_detoast_datum_packed",
+        "module": "postgres",
+        "top_of_stack_samples": 20,
+        "sample_share_pct": 0.5270092226613966
+      },
+      {
+        "function": "heap_deform_tuple",
+        "module": "postgres",
+        "top_of_stack_samples": 19,
+        "sample_share_pct": 0.5006587615283268
+      },
+      {
+        "function": "toast_raw_datum_size",
+        "module": "postgres",
+        "top_of_stack_samples": 19,
+        "sample_share_pct": 0.5006587615283268
+      },
+      {
+        "function": "DYLD-STUB$$memcpy",
+        "module": "postgres",
+        "top_of_stack_samples": 18,
+        "sample_share_pct": 0.4743083003952569
+      },
+      {
+        "function": "array_unnest",
+        "module": "postgres",
+        "top_of_stack_samples": 18,
+        "sample_share_pct": 0.4743083003952569
+      },
+      {
+        "function": "mda_next_tuple",
+        "module": "postgres",
+        "top_of_stack_samples": 18,
+        "sample_share_pct": 0.4743083003952569
+      },
+      {
+        "function": "AllocSetFree",
+        "module": "postgres",
+        "top_of_stack_samples": 17,
+        "sample_share_pct": 0.4479578392621871
+      },
+      {
+        "function": "FunctionCall1Coll",
+        "module": "postgres",
+        "top_of_stack_samples": 17,
+        "sample_share_pct": 0.4479578392621871
+      },
+      {
+        "function": "accumArrayResult",
+        "module": "postgres",
+        "top_of_stack_samples": 17,
+        "sample_share_pct": 0.4479578392621871
+      },
+      {
+        "function": "expression_tree_walker_impl",
+        "module": "postgres",
+        "top_of_stack_samples": 17,
+        "sample_share_pct": 0.4479578392621871
+      },
+      {
+        "function": "heap_getattr",
+        "module": "postgres",
+        "top_of_stack_samples": 17,
+        "sample_share_pct": 0.4479578392621871
+      },
+      {
+        "function": "tuplestore_puttuple_common",
+        "module": "postgres",
+        "top_of_stack_samples": 17,
+        "sample_share_pct": 0.4479578392621871
+      },
+      {
+        "function": "construct_md_array",
+        "module": "postgres",
+        "top_of_stack_samples": 16,
+        "sample_share_pct": 0.42160737812911725
+      },
+      {
+        "function": "heap_form_tuple",
+        "module": "postgres",
+        "top_of_stack_samples": 16,
+        "sample_share_pct": 0.42160737812911725
+      },
+      {
+        "function": "pgstat_init_function_usage",
+        "module": "postgres",
+        "top_of_stack_samples": 15,
+        "sample_share_pct": 0.3952569169960474
+      },
+      {
+        "function": "plpgsql_param_eval_recfield",
+        "module": "plpgsql.dylib",
+        "top_of_stack_samples": 15,
+        "sample_share_pct": 0.3952569169960474
+      },
+      {
+        "function": "ResourceOwnerEnlarge",
+        "module": "postgres",
+        "top_of_stack_samples": 14,
+        "sample_share_pct": 0.3689064558629776
+      },
+      {
+        "function": "ResourceOwnerForget",
+        "module": "postgres",
+        "top_of_stack_samples": 14,
+        "sample_share_pct": 0.3689064558629776
+      },
+      {
+        "function": "dispatch_compare_ptr",
+        "module": "postgres",
+        "top_of_stack_samples": 14,
+        "sample_share_pct": 0.3689064558629776
+      },
+      {
+        "function": "addHyperLogLog",
+        "module": "postgres",
+        "top_of_stack_samples": 13,
+        "sample_share_pct": 0.3425559947299078
+      },
+      {
+        "function": "texteq",
+        "module": "postgres",
+        "top_of_stack_samples": 13,
+        "sample_share_pct": 0.3425559947299078
+      },
+      {
+        "function": "CopyArrayEls",
+        "module": "postgres",
+        "top_of_stack_samples": 12,
+        "sample_share_pct": 0.31620553359683795
+      },
+      {
+        "function": "array_get_element",
+        "module": "postgres",
+        "top_of_stack_samples": 12,
+        "sample_share_pct": 0.31620553359683795
+      },
+      {
+        "function": "exec_cast_value",
+        "module": "plpgsql.dylib",
+        "top_of_stack_samples": 12,
+        "sample_share_pct": 0.31620553359683795
+      },
+      {
+        "function": "lc_collate_is_c",
+        "module": "postgres",
+        "top_of_stack_samples": 12,
+        "sample_share_pct": 0.31620553359683795
+      },
+      {
+        "function": "recomputeNamespacePath",
+        "module": "postgres",
+        "top_of_stack_samples": 12,
+        "sample_share_pct": 0.31620553359683795
+      },
+      {
+        "function": "tuplestore_putvalues",
+        "module": "postgres",
+        "top_of_stack_samples": 12,
+        "sample_share_pct": 0.31620553359683795
+      },
+      {
+        "function": "AllocSetAllocFromNewBlock",
+        "module": "postgres",
+        "top_of_stack_samples": 11,
+        "sample_share_pct": 0.2898550724637681
+      },
+      {
+        "function": "ExecHashGetHashValue",
+        "module": "postgres",
+        "top_of_stack_samples": 11,
+        "sample_share_pct": 0.2898550724637681
+      },
+      {
+        "function": "array_seek",
+        "module": "postgres",
+        "top_of_stack_samples": 11,
+        "sample_share_pct": 0.2898550724637681
+      },
+      {
+        "function": "mach_absolute_time",
+        "module": "libsystem_kernel.dylib",
+        "top_of_stack_samples": 11,
+        "sample_share_pct": 0.2898550724637681
+      },
+      {
+        "function": "pfree",
+        "module": "postgres",
+        "top_of_stack_samples": 11,
+        "sample_share_pct": 0.2898550724637681
+      },
+      {
+        "function": "pg_locale_deterministic",
+        "module": "postgres",
+        "top_of_stack_samples": 11,
+        "sample_share_pct": 0.2898550724637681
+      },
+      {
+        "function": "tuplesort_gettupleslot",
+        "module": "postgres",
+        "top_of_stack_samples": 11,
+        "sample_share_pct": 0.2898550724637681
+      },
+      {
+        "function": "tuplestore_gettupleslot",
+        "module": "postgres",
+        "top_of_stack_samples": 11,
+        "sample_share_pct": 0.2898550724637681
+      },
+      {
+        "function": "AllocSetReset",
+        "module": "postgres",
+        "top_of_stack_samples": 10,
+        "sample_share_pct": 0.2635046113306983
+      },
+      {
+        "function": "DYLD-STUB$$bzero",
+        "module": "postgres",
+        "top_of_stack_samples": 10,
+        "sample_share_pct": 0.2635046113306983
+      },
+      {
+        "function": "__lseek",
+        "module": "libsystem_kernel.dylib",
+        "top_of_stack_samples": 10,
+        "sample_share_pct": 0.2635046113306983
+      },
+      {
+        "function": "assign_simple_var",
+        "module": "plpgsql.dylib",
+        "top_of_stack_samples": 10,
+        "sample_share_pct": 0.2635046113306983
+      },
+      {
+        "function": "tuplesort_puttuple_common",
+        "module": "postgres",
+        "top_of_stack_samples": 10,
+        "sample_share_pct": 0.2635046113306983
+      },
+      {
+        "function": "ExprEvalPushStep",
+        "module": "postgres",
+        "top_of_stack_samples": 9,
+        "sample_share_pct": 0.23715415019762845
+      },
+      {
+        "function": "array_set_element",
+        "module": "postgres",
+        "top_of_stack_samples": 9,
+        "sample_share_pct": 0.23715415019762845
+      },
+      {
+        "function": "pgstat_end_function_usage",
+        "module": "postgres",
+        "top_of_stack_samples": 9,
+        "sample_share_pct": 0.23715415019762845
+      },
+      {
+        "function": "CatalogCacheComputeHashValue",
+        "module": "postgres",
+        "top_of_stack_samples": 8,
+        "sample_share_pct": 0.21080368906455862
+      },
+      {
+        "function": "DYLD-STUB$$CachedPlanIsSimplyValid",
+        "module": "plpgsql.dylib",
+        "top_of_stack_samples": 8,
+        "sample_share_pct": 0.21080368906455862
+      },
+      {
+        "function": "ExecInitExprRec",
+        "module": "postgres",
+        "top_of_stack_samples": 8,
+        "sample_share_pct": 0.21080368906455862
+      },
+      {
+        "function": "ExecJustScanVar",
+        "module": "postgres",
+        "top_of_stack_samples": 8,
+        "sample_share_pct": 0.21080368906455862
+      },
+      {
+        "function": "GetMemoryChunkSpace",
+        "module": "postgres",
+        "top_of_stack_samples": 8,
+        "sample_share_pct": 0.21080368906455862
+      },
+      {
+        "function": "ReleaseCatCacheWithOwner",
+        "module": "postgres",
+        "top_of_stack_samples": 8,
+        "sample_share_pct": 0.21080368906455862
+      },
+      {
+        "function": "_xzm_free_outlined",
+        "module": "libsystem_malloc.dylib",
+        "top_of_stack_samples": 8,
+        "sample_share_pct": 0.21080368906455862
+      },
+      {
+        "function": "_xzm_xzone_free_freelist",
+        "module": "libsystem_malloc.dylib",
+        "top_of_stack_samples": 8,
+        "sample_share_pct": 0.21080368906455862
+      },
+      {
+        "function": "expanded_record_set_tuple",
+        "module": "postgres",
+        "top_of_stack_samples": 8,
+        "sample_share_pct": 0.21080368906455862
+      },
+      {
+        "function": "hash_bytes_uint32",
+        "module": "postgres",
+        "top_of_stack_samples": 8,
+        "sample_share_pct": 0.21080368906455862
+      },
+      {
+        "function": "pg_detoast_datum",
+        "module": "postgres",
+        "top_of_stack_samples": 8,
+        "sample_share_pct": 0.21080368906455862
+      },
+      {
+        "function": "standard_ExecutorRun",
+        "module": "postgres",
+        "top_of_stack_samples": 8,
+        "sample_share_pct": 0.21080368906455862
+      },
+      {
+        "function": "tuplesort_puttupleslot",
+        "module": "postgres",
+        "top_of_stack_samples": 8,
+        "sample_share_pct": 0.21080368906455862
+      },
+      {
+        "function": "CachedPlanIsSimplyValid",
+        "module": "postgres",
+        "top_of_stack_samples": 7,
+        "sample_share_pct": 0.1844532279314888
+      },
+      {
+        "function": "ExecScanFetch",
+        "module": "postgres",
+        "top_of_stack_samples": 7,
+        "sample_share_pct": 0.1844532279314888
+      },
+      {
+        "function": "ExecScanHashBucket",
+        "module": "postgres",
+        "top_of_stack_samples": 7,
+        "sample_share_pct": 0.1844532279314888
+      },
+      {
+        "function": "_platform_strncmp$VARIANT$Base",
+        "module": "libsystem_platform.dylib",
+        "top_of_stack_samples": 7,
+        "sample_share_pct": 0.1844532279314888
+      },
+      {
+        "function": "_platform_strncpy",
+        "module": "libsystem_platform.dylib",
+        "top_of_stack_samples": 7,
+        "sample_share_pct": 0.1844532279314888
+      },
+      {
+        "function": "check_stack_depth",
+        "module": "postgres",
+        "top_of_stack_samples": 7,
+        "sample_share_pct": 0.1844532279314888
+      },
+      {
+        "function": "exec_eval_cleanup",
+        "module": "plpgsql.dylib",
+        "top_of_stack_samples": 7,
+        "sample_share_pct": 0.1844532279314888
+      },
+      {
+        "function": "minimal_tuple_from_heap_tuple",
+        "module": "postgres",
+        "top_of_stack_samples": 7,
+        "sample_share_pct": 0.1844532279314888
+      },
+      {
+        "function": "tts_virtual_clear",
+        "module": "postgres",
+        "top_of_stack_samples": 7,
+        "sample_share_pct": 0.1844532279314888
+      },
+      {
+        "function": "tuplesort_gettuple_common",
+        "module": "postgres",
+        "top_of_stack_samples": 7,
+        "sample_share_pct": 0.1844532279314888
+      },
+      {
+        "function": "<deduplicated_symbol>",
+        "module": "libsystem_malloc.dylib",
+        "top_of_stack_samples": 6,
+        "sample_share_pct": 0.15810276679841898
+      },
+      {
+        "function": "ExecEvalFieldSelect",
+        "module": "postgres",
+        "top_of_stack_samples": 6,
+        "sample_share_pct": 0.15810276679841898
+      },
+      {
+        "function": "ExecHashTableInsert",
+        "module": "postgres",
+        "top_of_stack_samples": 6,
+        "sample_share_pct": 0.15810276679841898
+      },
+      {
+        "function": "ExecTypeFromTLInternal",
+        "module": "postgres",
+        "top_of_stack_samples": 6,
+        "sample_share_pct": 0.15810276679841898
+      },
+      {
+        "function": "GetPrivateRefCountEntry",
+        "module": "postgres",
+        "top_of_stack_samples": 6,
+        "sample_share_pct": 0.15810276679841898
+      },
+      {
+        "function": "MemoryContextResetOnly",
+        "module": "postgres",
+        "top_of_stack_samples": 6,
+        "sample_share_pct": 0.15810276679841898
+      },
+      {
+        "function": "TupleDescInitEntry",
+        "module": "postgres",
+        "top_of_stack_samples": 6,
+        "sample_share_pct": 0.15810276679841898
+      },
+      {
+        "function": "exprType",
+        "module": "postgres",
+        "top_of_stack_samples": 6,
+        "sample_share_pct": 0.15810276679841898
+      },
+      {
+        "function": "exprTypmod",
+        "module": "postgres",
+        "top_of_stack_samples": 6,
+        "sample_share_pct": 0.15810276679841898
+      },
+      {
+        "function": "get_cached_rowtype",
+        "module": "postgres",
+        "top_of_stack_samples": 6,
+        "sample_share_pct": 0.15810276679841898
+      },
+      {
+        "function": "heapgettup_pagemode",
+        "module": "postgres",
+        "top_of_stack_samples": 6,
+        "sample_share_pct": 0.15810276679841898
+      },
+      {
+        "function": "nocachegetattr",
+        "module": "postgres",
+        "top_of_stack_samples": 6,
+        "sample_share_pct": 0.15810276679841898
+      },
+      {
+        "function": "plpgsql_param_eval_var_ro",
+        "module": "plpgsql.dylib",
+        "top_of_stack_samples": 6,
+        "sample_share_pct": 0.15810276679841898
+      },
+      {
+        "function": "qsort_tuple_unsigned",
+        "module": "postgres",
+        "top_of_stack_samples": 6,
+        "sample_share_pct": 0.15810276679841898
+      },
+      {
+        "function": "tts_buffer_heap_getsomeattrs",
+        "module": "postgres",
+        "top_of_stack_samples": 6,
+        "sample_share_pct": 0.15810276679841898
+      },
+      {
+        "function": "AggCheckCallContext",
+        "module": "postgres",
+        "top_of_stack_samples": 5,
+        "sample_share_pct": 0.13175230566534915
+      },
+      {
+        "function": "AllocSetContextCreateInternal",
+        "module": "postgres",
+        "top_of_stack_samples": 5,
+        "sample_share_pct": 0.13175230566534915
+      },
+      {
+        "function": "AllocSetGetChunkSpace",
+        "module": "postgres",
+        "top_of_stack_samples": 5,
+        "sample_share_pct": 0.13175230566534915
+      },
+      {
+        "function": "DYLD-STUB$$memcmp",
+        "module": "postgres",
+        "top_of_stack_samples": 5,
+        "sample_share_pct": 0.13175230566534915
+      },
+      {
+        "function": "ExecFetchSlotMinimalTuple",
+        "module": "postgres",
+        "top_of_stack_samples": 5,
+        "sample_share_pct": 0.13175230566534915
+      },
+      {
+        "function": "ExecJustOuterVar",
+        "module": "postgres",
+        "top_of_stack_samples": 5,
+        "sample_share_pct": 0.13175230566534915
+      },
+      {
+        "function": "ExecReadyInterpretedExpr",
+        "module": "postgres",
+        "top_of_stack_samples": 5,
+        "sample_share_pct": 0.13175230566534915
+      },
+      {
+        "function": "ExecStoreBufferHeapTuple",
+        "module": "postgres",
+        "top_of_stack_samples": 5,
+        "sample_share_pct": 0.13175230566534915
+      },
+      {
+        "function": "ExecStoreHeapTuple",
+        "module": "postgres",
+        "top_of_stack_samples": 5,
+        "sample_share_pct": 0.13175230566534915
+      },
+      {
+        "function": "GetUserId",
+        "module": "postgres",
+        "top_of_stack_samples": 5,
+        "sample_share_pct": 0.13175230566534915
+      },
+      {
+        "function": "HeapTupleHeaderGetDatum",
+        "module": "postgres",
+        "top_of_stack_samples": 5,
+        "sample_share_pct": 0.13175230566534915
+      },
+      {
+        "function": "HeapTupleSatisfiesVisibility",
+        "module": "postgres",
+        "top_of_stack_samples": 5,
+        "sample_share_pct": 0.13175230566534915
+      },
+      {
+        "function": "accumArrayResultAny",
+        "module": "postgres",
+        "top_of_stack_samples": 5,
+        "sample_share_pct": 0.13175230566534915
+      },
+      {
+        "function": "array_iterate",
+        "module": "postgres",
+        "top_of_stack_samples": 5,
+        "sample_share_pct": 0.13175230566534915
+      },
+      {
+        "function": "copy_plpgsql_datums",
+        "module": "plpgsql.dylib",
+        "top_of_stack_samples": 5,
+        "sample_share_pct": 0.13175230566534915
+      },
+      {
+        "function": "dense_alloc",
+        "module": "postgres",
+        "top_of_stack_samples": 5,
+        "sample_share_pct": 0.13175230566534915
+      },
+      {
+        "function": "exec_assign_expr",
+        "module": "plpgsql.dylib",
+        "top_of_stack_samples": 5,
+        "sample_share_pct": 0.13175230566534915
+      },
+      {
+        "function": "exprCollation",
+        "module": "postgres",
+        "top_of_stack_samples": 5,
+        "sample_share_pct": 0.13175230566534915
+      },
+      {
+        "function": "expr_setup_walker",
+        "module": "postgres",
+        "top_of_stack_samples": 5,
+        "sample_share_pct": 0.13175230566534915
+      },
+      {
+        "function": "pg_detoast_datum_copy",
+        "module": "postgres",
+        "top_of_stack_samples": 5,
+        "sample_share_pct": 0.13175230566534915
+      },
+      {
+        "function": "plpgsql_param_eval_var",
+        "module": "plpgsql.dylib",
+        "top_of_stack_samples": 5,
+        "sample_share_pct": 0.13175230566534915
+      },
+      {
+        "function": "spi_printtup",
+        "module": "postgres",
+        "top_of_stack_samples": 5,
+        "sample_share_pct": 0.13175230566534915
+      }
+    ],
+    "interpretation": "Periodic top-of-stack observations including possible waits; not measured self milliseconds or exact CPU percentages. Counts below five omitted by sample."
+  }
+]
