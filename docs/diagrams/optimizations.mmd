@@ -1,0 +1,11 @@
+flowchart TD
+    R[Relational inputs] --> F[Ordinary filters / explicit join-tree reduction]
+    F --> D[Deduplicate identical text pairs]
+    D --> C{Result already cached in this scan?}
+    C -->|Yes| O[Restore every input occurrence]
+    C -->|No| B[Collect a provider batch]
+    B --> P[Primary provider: decision + confidence]
+    P -->|Confident| O
+    P -->|Uncertain| L[Configured fallback provider]
+    L --> O
+    O --> Q[Remaining SQL filters / final exact joins]

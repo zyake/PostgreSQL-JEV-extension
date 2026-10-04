@@ -13,17 +13,9 @@ predicate is a test provider, not an AI model or semantic-similarity algorithm.
 | Relational reduction | Reusable explicit join-tree API with bottom-up/top-down exact semijoins, composite keys, private temporary outputs and before/after counts | Join-tree discovery, automatic reduction planning, outer/cyclic joins and semantic Bloom filters |
 | Real inference | Optional local Ollama embedding-similarity provider with a pinned model digest and validation | Instruction-following LLM decisions and confidence calibration |
 
-```mermaid
-flowchart LR
-  SQL[SQL prepares candidate rows] --> API[jev.evaluate_batch]
-  API --> D[Deduplicate non-NULL text pairs]
-  D --> B[Provider batches]
-  B --> R[Restore each input occurrence]
-  R --> Q[SQL joins / filters / aggregates]
-  P[Simple SELECT with semantic_match] --> H[Opt-in planner hook]
-  H --> C[CustomPath → CustomScan]
-  C --> E[Relational quals → bounded buffer → batch kernel]
-```
+![Explicit evaluation and planner-integrated scan paths through the shared batch kernel](diagrams/api-paths.png)
+
+[Scalable SVG](diagrams/api-paths.svg) · [Diagram source](diagrams/api-paths.mmd)
 
 The explicit API and batched scan use the same kernel and provider contract.
 The scan evaluates simple semantic filters in bounded buffers; complex predicate
@@ -36,19 +28,9 @@ keeps model adapters independent of PostgreSQL's planner internals.
 
 ## Optimization design and on/off comparisons (0.4.0)
 
-```mermaid
-flowchart TD
-    R[Relational inputs] --> F[Ordinary filters / explicit join-tree reduction]
-    F --> D[Deduplicate identical text pairs]
-    D --> C{Result already cached in this scan?}
-    C -->|Yes| O[Restore every input occurrence]
-    C -->|No| B[Collect a provider batch]
-    B --> P[Primary provider: decision + confidence]
-    P -->|Confident| O
-    P -->|Uncertain| L[Configured fallback provider]
-    L --> O
-    O --> Q[Remaining SQL filters / final exact joins]
-```
+![Relational reduction, pair reuse, batching, and selective fallback reduce inference work while restoring every occurrence](diagrams/optimizations.png)
+
+[Scalable SVG](diagrams/optimizations.svg) · [Diagram source](diagrams/optimizations.mmd)
 
 Reduction changes which rows reach inference; deduplication/cache change how
 often a pair is evaluated; batching and saved plans reduce call setup work.
@@ -419,14 +401,9 @@ The root determines traversal, not the final result. Bottom-up passes reduce
 parents using surviving children; top-down passes reduce children using parents.
 The routine does not run providers or materialize the complete join product.
 
-```mermaid
-flowchart LR
-  I[Caller prepares relational inputs] --> C[Copy visible rows once]
-  C --> U[Bottom-up exact semijoins]
-  U --> D[Top-down exact semijoins]
-  D --> E[Evaluate surviving semantic inputs]
-  E --> J[Final exact joins preserve multiplicities]
-```
+![Copy visible rows, apply bottom-up and top-down exact semijoins, evaluate surviving inputs, then join with multiplicities preserved](diagrams/join-reduction.png)
+
+[Scalable SVG](diagrams/join-reduction.svg) · [Diagram source](diagrams/join-reduction.mmd)
 
 The [executable API demo](../examples/join_tree_demo.sql) connects returned relation
 names to `evaluate_relation`, restores every occurrence, and verifies the full

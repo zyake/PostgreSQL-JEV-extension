@@ -107,22 +107,9 @@ PostgreSQL execution. See [scan eligibility and costing](docs/reference.md#stage
 
 ## How it works
 
-```mermaid
-flowchart TD
-    SQL[SQL prepares candidate rows] --> API[Explicit batch / relation API]
-    WHERE[WHERE jev.semantic_match] --> PLAN[Planner hook offers CustomPath]
-    PLAN --> SCAN[CustomScan: ordinary filters and bounded buffers]
-    SCAN --> CACHE{Pair cached in this scan?}
-    CACHE -->|Yes| RESTORE[Restore every input occurrence]
-    CACHE -->|No| KERNEL[Shared SQL batch kernel]
-    API --> KERNEL
-    KERNEL --> DEDUP[Skip NULLs and deduplicate exact pairs]
-    DEDUP --> PRIMARY[Replaceable primary provider]
-    PRIMARY -->|Confident or no cascade| RESTORE
-    PRIMARY -->|Below configured confidence| FALLBACK[Fallback provider]
-    FALLBACK --> RESTORE
-    RESTORE --> RESULT[PostgreSQL joins, filters and aggregates]
-```
+![Explicit SQL batches and eligible semantic WHERE scans share a batch kernel, replaceable providers, and occurrence-preserving results](docs/diagrams/architecture.png)
+
+[Scalable SVG](docs/diagrams/architecture.svg) · [Diagram source](docs/diagrams/architecture.mmd)
 
 The SQL/PL/pgSQL kernel handles metadata, provider validation and occurrence
 restoration. The C module handles planning, buffering, scan caching and execution

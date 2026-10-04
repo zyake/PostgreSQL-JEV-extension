@@ -1,2 +1,4 @@
 # Preserve recorded tool output, including SVG paths and aligned SQL tables.
 bench/results/** -whitespace linguist-generated=true
+docs/diagrams/*.svg -whitespace linguist-generated=true
+docs/diagrams/*.png linguist-generated=true

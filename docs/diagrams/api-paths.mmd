@@ -1,0 +1,9 @@
+flowchart LR
+  SQL[SQL prepares candidate rows] --> API[jev.evaluate_batch]
+  API --> D[Deduplicate non-NULL text pairs]
+  D --> B[Provider batches]
+  B --> R[Restore each input occurrence]
+  R --> Q[SQL joins / filters / aggregates]
+  P[Simple SELECT with semantic_match] --> H[Opt-in planner hook]
+  H --> C[CustomPath → CustomScan]
+  C --> E[Relational quals → bounded buffer → batch kernel]

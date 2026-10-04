@@ -51,14 +51,9 @@ directory; reporting can be repeated over saved measurements.
 
 Every configuration executes the same workflow:
 
-```mermaid
-flowchart LR
-  S[Same A, B, C source tables] --> R[Explicit join-tree reducer]
-  R --> M[CustomScan on copied B: active AND semantic predicate]
-  M --> J[Final exact joins to copied A and C]
-  J --> T[Stop server timer]
-  T --> V[Compare full result bags using EXCEPT ALL both ways]
-```
+![Each benchmark configuration reduces the same source tables, evaluates the copied candidate table, joins results, then checks full result equality after timing](../docs/diagrams/benchmark-workflow.png)
+
+[Scalable SVG](../docs/diagrams/benchmark-workflow.svg) · [Diagram source](../docs/diagrams/benchmark-workflow.mmd)
 
 The fixture contains 8,192 B rows, 256 distinct non-NULL text pairs, adjacent
 repeats and repeats across buffers, NULL texts/keys/business IDs, and duplicate

@@ -1,0 +1,14 @@
+flowchart TD
+    SQL[SQL prepares candidate rows] --> API[Explicit batch / relation API]
+    WHERE[WHERE jev.semantic_match] --> PLAN[Planner hook offers CustomPath]
+    PLAN --> SCAN[CustomScan: ordinary filters and bounded buffers]
+    SCAN --> CACHE{Pair cached in this scan?}
+    CACHE -->|Yes| RESTORE[Restore every input occurrence]
+    CACHE -->|No| KERNEL[Shared SQL batch kernel]
+    API --> KERNEL
+    KERNEL --> DEDUP[Skip NULLs and deduplicate exact pairs]
+    DEDUP --> PRIMARY[Replaceable primary provider]
+    PRIMARY -->|Confident or no cascade| RESTORE
+    PRIMARY -->|Below configured confidence| FALLBACK[Fallback provider]
+    FALLBACK --> RESTORE
+    RESTORE --> RESULT[PostgreSQL joins, filters and aggregates]

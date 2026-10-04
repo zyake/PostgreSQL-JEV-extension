@@ -1,0 +1,6 @@
+flowchart LR
+  S[Same A, B, C source tables] --> R[Explicit join-tree reducer]
+  R --> M[CustomScan on copied B: active AND semantic predicate]
+  M --> J[Final exact joins to copied A and C]
+  J --> T[Stop server timer]
+  T --> V[Compare full result bags using EXCEPT ALL both ways]

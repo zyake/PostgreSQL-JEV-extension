@@ -1,0 +1,6 @@
+flowchart LR
+  I[Caller prepares relational inputs] --> C[Copy visible rows once]
+  C --> U[Bottom-up exact semijoins]
+  U --> D[Top-down exact semijoins]
+  D --> E[Evaluate surviving semantic inputs]
+  E --> J[Final exact joins preserve multiplicities]
