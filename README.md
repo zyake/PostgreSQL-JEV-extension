@@ -276,3 +276,8 @@ isolated integration tests.
 For an existing installation, run `ALTER EXTENSION jev UPDATE TO '0.4.0';` after
 installing the files. Upgrades from 0.1.0–0.3.0 are supplied. Reconnect sessions
 after replacing a loaded C library. See [build and upgrade details](docs/reference.md#build-and-test).
+
+## License
+
+Licensed under the [PostgreSQL License](LICENSE).
+SPDX identifier: `PostgreSQL`.
